@@ -1,0 +1,71 @@
+<% layout('layout') -%>
+
+<script>
+$(document).ready(function(){
+
+
+$.get('/json/patterns/name', function(data){ 
+	$( ".ac-tags" ).each(function(){ 
+		$(this).autocomplete({
+      source: data
+  	})
+  });
+});
+
+$.get('/json/portals/name', function(data){ 
+	$( ".ac-portals" ).each(function(){ 
+		$(this).autocomplete({
+      source: data
+  	})
+  });
+});
+ 
+
+	$("form").submit(function(e) { 
+		  e.preventDefault(); // Prevents the page from refreshing
+		  var $this = $(this); // `this` refers to the current form element
+		  $.post(
+		      $this.attr("action"), // Gets the URL to sent the post to
+		      $this.serialize(), // Serializes form data in standard format
+		      function(data) { alert(data)/** code to handle response **/ },
+		      "json" // The format the response should be in
+		  );
+		  return false;
+	});
+});
+</script>
+
+
+<br><br><br>
+<% i = 0 %>
+<% items.forEach( function ( item ){ %>
+<% i++ %>
+<div class="panel col-md-12" style="margin-bottom:35px;">
+	<form action="/images/update/<%= item._id %>" method="post" accept-charset="utf-8">
+		<div class="col-md-4" style="position:absolur; bottom:0">
+       <img	style="max-height:200px; max-width:100%;" src="<%= item.url %>"/><br> 
+    </div>
+    <div class="col-md-8">
+    	<h3><%= item.filename %></h3>    
+    	<div class="input-group input-group">
+					<span class="input-group-addon" id="sizing-addon1">Caption</span>
+					<input type="text" class="form-control" placeholder="Caption" aria-describedby="sizing-addon1" name="caption" value="<%= item.caption %>">
+			</div>
+			<div class="input-group input-group">
+					<span class="input-group-addon" id="sizing-addon1">Tags</span>
+					<input type="text" class="ac-tags form-control" placeholder="Tags" aria-describedby="sizing-addon1" name="tags" value="<%= item.tags %>">
+			</div>
+			<div class="input-group input-group">
+					<span class="input-group-addon" id="sizing-addon1">Portal</span>
+					<input type="text" class="ac-portals form-control" placeholder="Portal" aria-describedby="sizing-addon1" name="portal" value="<%= item.portal %>">
+			</div>
+			<button class="btn btn-default dropdown-toggle" type="submit">update</button>		
+    </div>         
+  </form>
+</div><br>
+<% }) %>
+ 
+
+ 
+  
+
