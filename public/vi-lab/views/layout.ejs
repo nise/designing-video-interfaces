@@ -71,50 +71,15 @@ color:#eee;
 
 </style>
 
-<!-- Latest compiled and minified JavaScript -->
-
-<script type='text/javascript' src='/vi-lab/js/jquery-1.11.2.min.js'></script>
+<script src='/vi-lab/js/jquery-1.11.2.min.js' type='text/javascript'></script>
 <script src="/vi-lab/js/bootstrap.min.js"></script>
 <script src="/vi-lab/js/bootstrap-switch.min.js"></script>
 <script src="/vi-lab/js/markdown.js"></script>
 <script src="/vi-lab/js/jquery-image-loader.js"></script>
 <script src='/vi-lab/js/db.js'></script>
-
-
-
-
-<!--
-
-<link rel='stylesheet' id='jquery-ui-css' href='/vi-lab/css/ui-lightness/jquery-ui-1.7.2.custom.css' type='text/css' media='all' />
-<link rel='stylesheet' id='vi-two_accordion-css' href='/vi-lab/css/jquery.hrzAccordion.defaults.css' type='text/css' media='all' />
-<link rel='stylesheet' id='vi-lab_cust-css' href='/vi-lab/css/videolab.css' type='text/css' media='all' />
-<link rel='stylesheet' id='vi-lab_cust-css' href='/vi-lab/css/theresienstadt.css' type='text/css' media='all' />
-<link href="/vi-lab/css/introjs.css" rel="stylesheet">
-
-<script type='text/javascript' src='/vi-lab/js/jquery-1.5.2.js'></script>
-<script type='text/javascript' src='/vi-lab/js/jquery-ui-1.8.6.custom.min.js'></script>
-<script type='text/javascript' src='/vi-lab/js/jquery.tinysort.min.js'></script>
-<script type='text/javascript' src='/vi-lab/js/jquery.tooltip.js'></script>
-<script type="text/javascript" src="/vi-lab/js/intro.js"></script>
-<script type='text/javascript' src='js/markdown-js/src/markdown.js'></script>
-<script type='text/javascript' src='js/jquery.colorbox-min.js'></script>
-
-  -->
- 
-<!--
-<script type='text/javascript' src='/vi-lab/js/markdown-/vi-lab/js/src/markdown.js'></script>
-<script type='text/javascript' src='/vi-lab/js/jquery.colorbox-min.js'></script>
--->
-
-<!-- 
-<link rel='stylesheet' id='jquery-ui-css' href='/vi-lab/css/vi-basic-style.min.css' type='text/css' media='all' />
-<script type='text/javascript' src='/vi-lab/js/vi-lab-basic.min.js'></script>
--->
-
-<script type='text/javascript' src="/socket.io/socket.io.js"></script>
-<script data-main="/vi-lab/js/requirejs-conf" src="/vi-lab/js/require.js"></script>
-
-<script type='text/javascript' src='/vi-lab/js/jquery.tooltip.js'></script>
+<script src='/vi-lab/js/jquery.tooltip.js' type='text/javascript' ></script>
+<script src="/socket.io/socket.io.js" type='text/javascript'></script>
+<script src="/vi-lab/js/require.js" data-main="/vi-lab/js/requirejs-conf"></script>
 
 <script type="text/javascript"> 
 
@@ -182,18 +147,16 @@ function fetchAll(){
 }
 
 
-
-
 /*
-The following lines need to be changed regarding the underlaying server
+The following line need to be changed regarding the underlaying server
 **/ 
-
 var server = '';
 
 
 
 
 /*
+// guided tour
 function startIntro(){
         var intro = introJs();
           intro.setOptions({
@@ -226,6 +189,7 @@ function startIntro(){
    //};
 */
 </script> 	
+
 </head>
 
 <body class="">
@@ -300,6 +264,8 @@ function startIntro(){
 <footer>
 <% include footer %>
 </footer>
+
+
 	
 </body>
 </html>

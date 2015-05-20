@@ -1,17 +1,17 @@
 
 
+# Roadmap
 
-# essential todos
-- git
+## Prior improvements
+- launch, import data from file
 - [diss] comments per pattern section 
-- [diss] playlist buggy
-- [diss] wizzard
+- [diss] playlist bug
+- [diss] pattern wizzard
 - [diss] overall search
 - [diss] advanced search by name, description, and each pattern component
 
-
 	
-# later
+## Less prior improvements
 - let users comment on portals: Do you think something is missing?
 - nice header/footer
 - analysis page
@@ -20,17 +20,13 @@
 - sort order: name, date of appearance, updated/added at, number of patterns
 - let users recommend a new pattern or new portal
 - highlight pattern candidates or incomplete patterns
-
-## database 
-- add year of foundation to build a timeline
-- add technology ("made with"), like: flash, html5, javscript, unknown
-
-
+- generate PDF : http://www.feedhenry.com/server-side-pdf-generation-node-js/
+- countries of domain holder: https://www.whois.net/
+- add year of foundation in the database to build a timeline
+- add technology ("made with") to the portals/applications, like: flash, html5, javscript, unknown
 
 
-
-
-
+# Further video applications to consider
 ## list of Javascript Video Player frameworks
 http://player.kaltura.com/docs/
 http://jplayer.org/latest/developer-guide/
@@ -134,8 +130,6 @@ NovoEd
 
 
 # nice to have
-- generate PDF : http://www.feedhenry.com/server-side-pdf-generation-node-js/
-* countries of domain holder: https://www.whois.net/
 * not available: http://www.codoc.org/codoc-documentary-forgive-me-mother/
 * Ältere Literatur, die aus psychologischer Sicht interessant sein könnte
 * Schwan 2005

@@ -1,7 +1,7 @@
 /*
 author: niels.seidel@nise81.com
-titel: Vi-Lal
-description: Video learning environment with support for real-time annotations and collaborative work structured by scripts.
+titel: video pattern and application database
+description: 
 **/
 
 
