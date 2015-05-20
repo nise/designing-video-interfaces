@@ -7,6 +7,6 @@ Interaction Design Patterns of Video Learning Environments including a comprehen
 
 # Aims
 
-* Book: Currently the patterns as well as the application database is work in progress. It is my aim to combine the patterns in book.
+Currently the patterns as well as the application database is work in progress. It is my aim to combine the patterns in a book.
 
-* Pattern Collection: This application is going to be an example for a pattern database that provides some support in the selection and application of the containing patterns.
+Beside that the application is going to be an example for a pattern database. Users are supported when selecting patterns and when they want to get some inspiration about how others solved a certain problem.
