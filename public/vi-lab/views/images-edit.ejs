@@ -3,46 +3,74 @@
 <script>
 $(document).ready(function(){
 
+	//
+	var patterns = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.whitespace,
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		prefetch: '/json/patterns/name',
+	});
 
-$.get('/json/patterns/name', function(data){ 
-	$( ".ac-tags" ).each(function(){ 
-		$(this).autocomplete({
-      source: data
-  	})
-  });
-});
+	$('.ac-tags').typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'patterns',
+		source: patterns
+	});
 
-$.get('/json/portals/name', function(data){ 
-	$( ".ac-portals" ).each(function(){ 
-		$(this).autocomplete({
-      source: data
-  	})
-  });
-});
- 
+	var applications = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.whitespace,
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		prefetch: '/json/portals/name',
+	});
 
-	$("form").submit(function(e) { 
+	$('.ac-portals').typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'applications',
+		source: applications
+	});
+	
+		$("form").submit(function(e) { 
 		  e.preventDefault(); // Prevents the page from refreshing
 		  var $this = $(this); // `this` refers to the current form element
 		  $.post(
 		      $this.attr("action"), // Gets the URL to sent the post to
 		      $this.serialize(), // Serializes form data in standard format
-		      function(data) { alert(data)/** code to handle response **/ },
+		      function(data) { //alert(data)
+		      },
 		      "json" // The format the response should be in
 		  );
 		  return false;
 	});
-});
+
+
+});  
+
+	function deleteImage(id){ 
+		$('#item'+id).addClass('deleted');
+		 //$.post('/images/destroy/'+id, function(data){ alert},'json');
+}
+
+
+	
+
 </script>
 
 
 <br><br><br>
+
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
 <% i++ %>
-<div class="panel col-md-12" style="margin-bottom:35px;">
+<div id="item<%= item._id %>" class="panel col-md-12" style="margin-bottom:35px;">
 	<form action="/images/update/<%= item._id %>" method="post" accept-charset="utf-8">
-		<div class="col-md-4" style="position:absolur; bottom:0">
+		<div class="col-md-4" style="position:absolut; bottom:0">
        <img	style="max-height:200px; max-width:100%;" src="<%= item.url %>"/><br> 
     </div>
     <div class="col-md-8">
@@ -53,13 +81,14 @@ $.get('/json/portals/name', function(data){
 			</div>
 			<div class="input-group input-group">
 					<span class="input-group-addon" id="sizing-addon1">Tags</span>
-					<input type="text" class="ac-tags form-control" placeholder="Tags" aria-describedby="sizing-addon1" name="tags" value="<%= item.tags %>">
+					<input type="text" class="ac-tags form-control" placeholder="Tags" aria-describedby="sizing-addon1" name="tags" autocomplete="off" spellcheck="false" value="<%= item.tags %>">
 			</div>
 			<div class="input-group input-group">
 					<span class="input-group-addon" id="sizing-addon1">Portal</span>
 					<input type="text" class="ac-portals form-control" placeholder="Portal" aria-describedby="sizing-addon1" name="portal" value="<%= item.portal %>">
 			</div>
-			<button class="btn btn-default dropdown-toggle" type="submit">update</button>		
+			<button class="btn btn-default dropdown-toggle" type="submit">update</button>
+			<a class="alert-btn" href="javascript:deleteImage('<%= item._id %>')" title="Delete this item">delete</a>		
     </div>         
   </form>
 </div><br>

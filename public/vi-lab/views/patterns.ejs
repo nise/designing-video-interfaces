@@ -19,9 +19,11 @@
 		<!-- Default panel contents -->
 		<div class="panel-body">  
 			<div class="btn-group" role="group" aria-label="...">
+				<a type="button" class="btn btn-default navbar-btn all-btn vp-filter">All</a>
 				<a type="button" class="btn btn-default navbar-btn structure-btn vp-filter">Structure</a>
 				<a type="button" class="btn btn-default navbar-btn network-btn vp-filter">Network</a>
 				<a type="button" class="btn btn-default navbar-btn wizzard-btn vp-filter">Wizzard</a>
+				<a type="button" class="btn btn-default navbar-btn playlist-btn vp-filter">Playlist</a>
 			</div>
 			<!-- List group -->
 			<ul class="list-group wizzard vp-overview">
@@ -78,13 +80,11 @@
 </div>
 
 
-
-
 <div class="container">
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
 <% i++ %>
-	<div class="col-md-2 portfolio-item" id="<%=: item.name | replace:/\ /g,'-'  %>">
+	<div class="col-md-2 portfolio-item" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
 		<div class="panel panel-default pattern-card">
 			<h5><a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a> 
 				<a class="button" style="display:none;float:right;" href="/patterns/edit/<%= item._id %>" title="Update this item item"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
@@ -99,8 +99,6 @@
 	</div>	
 <% }); %>	
 </div>
-
-
 
 
 
@@ -129,19 +127,30 @@ $(document).ready (function () {
 	$('.vp-overview').hide();
 	
 	$('.vp-filter').click(function() {
-		if( $(this).hasClass('wizzard-btn') ){
+		if( $(this).hasClass('all-btn') ){
+			$('.portfolio-item').show();
+		}else if( $(this).hasClass('wizzard-btn') ){
 			$('.network').hide( "slow" );
 			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
 			$('.wizzard').toggle( "slow" );
-		}else if( $(this).hasClass('network-btn') ){
+		}else if( $(this).hasClass('network-btn') ){ 
 			$('.wizzard').hide( "slow" );
 			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
 			$('.network').toggle( "slow" );
-		}else if( $(this).hasClass('structure-btn') ){
+		}else if( $(this).hasClass('structure-btn') ){ 
 			$('.network').hide( "slow" );
 			$('.wizzard').hide( "slow" );
+			$('.playlist').hide( "slow" );
 			$('.structure').toggle( "slow" );
-		}			
+		}else if( $(this).hasClass('playlist-btn') ){
+			$('.network').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			$('.structure').hide( "slow" );
+			fetchAll();
+			//$('.playlist').toggle( "slow" );
+		}		
 	});
 	
 	

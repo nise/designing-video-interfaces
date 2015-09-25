@@ -7,7 +7,8 @@ description:
 
 require( './db' );
 
-var 
+var
+	compression = require('compression') 
 	express = require('express'),
 	expressValidator = require('express-validator'),
 	app = express(),
@@ -39,17 +40,21 @@ var
 	server.setMaxListeners(0); // xxx: untested: unfinite number of listeners, default: 10;
 	// http://nodejs.org/docs/latest/api/events.html#events_emitter_setmaxlisteners_n
 	
+console.log('\n\n************************************************');
+console.log('Started server on port: '+ port);	
+console.log('************************************************\n\n');
+
+	
 	exports.getServer = function ( req, res ){
 		return server;
 	};
 
 /* configure application **/
-    app.set('port', process.env.PORT || port);
-    app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
-    
-
-    app.use(express.static(path.join(__dirname, 'public')));
-    // Passport:
+  app.set('port', process.env.PORT || port);
+  app.use(express.logger('dev'));  /* 'default', 'short', 'tiny', 'dev' */
+	app.use(compression())
+	
+  app.use(express.static(path.join(__dirname, 'public')));
 	app.set('views', __dirname + '/public/vi-lab/views');
 	app.set('view engine', 'ejs');
 	app.engine('ejs', require('ejs-locals'));
@@ -77,8 +82,6 @@ var
     }));
 	
 	app.use(flash());
-	// Initialize Passport!  Also use passport.session() middleware, to support
-	// persistent login sessions (recommended).
 	app.use(users.passport.initialize());
 	app.use(users.passport.session());
 	//app.use(app.router);
@@ -139,9 +142,9 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 
 
 // test: $ node process-2.js one two=three four
-process.argv.forEach(function (val, index, array) {
+/*process.argv.forEach(function (val, index, array) {
   console.log(index + ': ' + val);
-});
+});*/
 
 
 

@@ -54,6 +54,8 @@ module.exports = function(db, app) {
 	app.get(	'/about', function ( req, res ){ res.render( 'about', { title : 'About' }); });
 	app.get(	'/citation', function ( req, res ){ res.render( 'citation', { title : 'Citation' }); });
   app.get(	'/api', function ( req, res ){ res.render( 'api', { title : 'API' }); });
+  
+  	app.get(	'/eval', function ( req, res ){ res.render( 'eval-pattern-buckets', { title : 'What do you think?' }); });
 
 	// routes for portals
 	app.get(	'/portals', 						portals.list );
@@ -75,6 +77,7 @@ module.exports = function(db, app) {
 	app.get( 	'/json/images/view/:filename' 		, images.getJSONImagePerFilename );
 	app.get(	'/images', 						images.list );
 	app.get(	'/images/edit', 			images.edit );
+	app.get(	'/images/destroy/:id',images.destroy );
 	app.post(	'/images/update/:id', images.update );
 	
 	// routes for patterns
@@ -170,6 +173,8 @@ module.exports = function(db, app) {
 	app.get('/assessment/written/:field', users.ensureAuthenticated, assess.getWrittenAssessment );
 	app.post('/assessment/written/:field', users.ensureAuthenticated, assess.setWrittenAssessment );
 	
+
+/*
 	// routes related to etherpad
 	var etherpad = require('./etherpad');
 	
@@ -177,7 +182,7 @@ module.exports = function(db, app) {
 	app.get('/collaborative-writing2', users.ensureAuthenticated, etherpad.createSession2 )
 	app.get('/json/etherpad', etherpad.getJSON )
 	app.get('/admin/etherpad', users.ensureAuthenticated, etherpad.listPadInput )
-
+*/
 	/*
 	Logging
 	**/

@@ -135,12 +135,21 @@ exports.update = function ( req, res ){
 /*
 **/
 exports.edit = function ( req, res ){
-  Images.find().sort( 'filename' ).lean().exec(function (err, items) {
+  Images.find().sort( 'portal' ).lean().exec(function (err, items) {
   	if(err){
   		console.log(err);
   	}
     res.render( 'images-edit', {
         items   : items
+    });
+  });
+};
+
+// remove todo item by its id
+exports.destroy = function ( req, res ){
+  Images.findById( req.params.id, function ( err, img ){
+    img.remove( function ( err, iimg ){
+      res.end();//redirect( '/images/edit' );
     });
   });
 };

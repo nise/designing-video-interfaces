@@ -71,7 +71,7 @@ exports.folderImport = function ( req, res ){
 							.replace(/\\item/g, "\n\n *  ")
 							.replace(/\\end{itemize}/g,'\n\n')
 							.replace(/\\begin{itemize}/g,'')
-							.replace(/\\textsc\{(.*?)\}/g, "[$1](/patterns/$1)")
+							.replace(/\\textsc\{(.*?)\}/g, "[$1](/patterns/view/$1)")
 							.replace(/\\cite\{(.*?)\}/g, "[$1]")
 							.replace(/\\citeN\{(.*?)\}/g, "[$1]")
 							; 

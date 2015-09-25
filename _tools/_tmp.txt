@@ -1,0 +1,22 @@
+   
+   
+   Zeiten für Video 3
+   
+{"duration": "45", "starttime": "0", "img": "444/e2script_2-0.jpg", "id": "", "type": "seq"},
+{"duration": "38", "starttime": "45", "img": "444/e2script_2-1.jpg", "id": "", "type": "seq"},
+{"duration": "35", "starttime": "83", "img": "444/e2script_2-2.jpg", "id": "", "type": "seq"},
+{"duration": "279", "starttime": "118", "img": "444/e2script_2-3.jpg", "id": "", "type": "seq"},
+{"duration": "205", "starttime": "397", "img": "444/e2script_2-4.jpg", "id": "", "type": "seq"},
+{"duration": "62", "starttime": "602", "img": "444/e2script_2-5.jpg", "id": "", "type": "seq"},
+{"duration": "417", "starttime": "664", "img": "444/e2script_2-6.jpg", "id": "", "type": "seq"},
+{"duration": "262", "starttime": "1081", "img": "444/e2script_2-7.jpg", "id": "", "type": "seq"},
+{"duration": "13", "starttime": "1343", "img": "444/e2script_2-8.jpg", "id": "", "type": "seq"},
+{"duration": "25", "starttime": "1356", "img": "444/e2script_2-9.jpg", "id": "", "type": "seq"},
+{"duration": "264", "starttime": "1381", "img": "444/e2script_2-10.jpg", "id": "", "type": "seq"},
+{"duration": "441", "starttime": "1645", "img": "444/e2script_2-11.jpg", "id": "", "type": "seq"},
+{"duration": "162", "starttime": "2086", "img": "444/e2script_2-12.jpg", "id": "", "type": "seq"},
+{"duration": "270", "starttime": "2248", "img": "444/e2script_2-13.jpg", "id": "", "type": "seq"},
+{"duration": "192", "starttime": "2518", "img": "444/e2script_2-14.jpg", "id": "", "type": "seq"},
+{"duration": "108", "starttime": "2710", "img": "444/e2script_2-15.jpg", "id": "", "type": "seq"},
+{"duration": "400", "starttime": "1818", "img": "444/e2script_2-16.jpg", "id": "", "type": "seq"}
+

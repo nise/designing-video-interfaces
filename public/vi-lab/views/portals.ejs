@@ -3,39 +3,75 @@
 <script>
 
 $(document).ready (function () { 
+	
 
-	$.get('/json/images/all', function(data){ 
-		$.each(data, function(i, val){ 
-			var image = $('<img/>')
-				.attr('src', val.url)
-				.attr('alt', val.filename);
-			var link = $('<a></a>')
-				.attr('href','#')
-				.addClass('thumbnail')
-				.append(image);
-			var div = $('<div></div>')
-				.addClass('col-xs-12 col-md-6')
-				.append(link); //alert('#'+String(val.portal).replace(/\ /g, '-')+'.panel-body.row')
-			var t = $('#'+String(val.portal).replace(/\ /g, '-')+' .panel .panel-body .row')
-				.append(div);
+	$.get('/json/images/all', function(data){  
+		$.each(data, function(i, val){
+			  
+			var portal = String(val.portal).replace(/[\ .,\&\/]/g, '-').toLowerCase();
+			
+			if(portal !== undefined && portal.length !== 0){
+				var link = $('<a></a>')
+					.attr('href', val.url )
+					.attr('onclick', 'javascript:openGallery("' + portal + '", "'+ val.portal+' ('+ val.tags+'): '+ val.caption +'")')
+					.attr('width','30%')
+					.addClass('thumbnail')
+					.addClass('gallery' + portal )
+					;
+				
+				var image = new Image(); 
+				$(image)
+					.attr('src', val.url + '?v' + val.updated_at)
+					.attr('alt', val.filename)
+					.attr('title', val.portal+' ('+ val.tags+'): '+ val.caption )
+					.attr('data-toggle', "tooltip")
+					.attr('data-placement',"bottom")
+					.addClass('gallery' + portal )
+					.appendTo(link)
+					;
+			
+				var div = $('<div></div>')
+					.addClass('col-sm-6 col-md-4')
+					.append(link) //alert('#'+String(val.portal).replace(/\ /g, '-')+'.panel-body.row')
+					.appendTo('#'+ portal +' .panel .panel-body .row');
+			}	
 		});
+		$('[data-toggle="tooltip"]').tooltip();
 	});
 	
+	// save comments
+	$("form").submit(function(e) { 
+		  e.preventDefault(); // Prevents the page from refreshing
+		  var $this = $(this); // `this` refers to the current form element
+		  $.post(
+		      $this.attr("action"), // Gets the URL to sent the post to
+		      $this.serialize(), // Serializes form data in standard format
+		      function(data) { alert(data)/** code to handle response **/ },
+		      "json" // The format the response should be in
+		  );
+		  return false;
+	});
 	
-	
-	/*
-	function openGallery(i){ 
+});
+
+
+	function submitComment(id){
+		alert(id);
+	}
+
+	function openGallery(i, caption){
 		jQuery('a.gallery'+i).colorbox({ 
-			opacity:0.5 , 
+			opacity:0.9 , 
 			rel:'group'+i, 
-			maxHeight: '470px', 
-			maxWidth:'800px', 
+			maxHeight: '90%', 
+			maxWidth:'90%', 
 			fadeout:500, 
 			transition:'none', 
+			scalePhotos:true,
+			title: caption,
 			photo:true
 		});
-	}	*/
-});	
+	}	/**/	
 </script>
 
 
@@ -59,11 +95,12 @@ $(document).ready (function () {
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
 <% i++ %>
+
 <div class="portfolio-item 
 <% item.tags.forEach( function ( tag ){ %>
 <%=: tag | replace:/\ /g,'-' %>
 <% }); %>
-" id="<%=: item.name | replace:/\ /g,'-'  %>">
+" id="<%=: item.name | replace:/[\ .,\&\/]/g,'-' | downcase %>">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h4><%= item.name %> 
@@ -109,30 +146,33 @@ $(document).ready (function () {
 					<% } %>  
 				<% }); %>
 			</div>
+			<div class="row">
+			</div>
 			
 		</div>
 		
-		<div class="panel-footer">
+		<div class="panel-footer" hidden>
 		<!-- add comments -->
-		<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+		<a class="" data-toggle="collapse" href="#collapse-comments-<%= i  %>" aria-expanded="false" aria-controls="collapseExample">
 			Comments <span class="badge">42</span>
-			</a><br><br>
-		<div class="collapse" id="collapseExample">
-			<div class="">
+			</a><br>
+		<div class="collapse" id="collapse-comments-<%= i %>"> 
+			<div class="" hidden>
 				<span hidden class="right glyphicon glyphicon-comment" aria-hidden="true"></span> 
 			</div>
-		<!-- add new comment -->	
-		</div>
-				<form id="<%= item._id %>" action="">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Your name or email" aria-describedby="basic-addon2">
-					<textarea class="form-control" placeholder="Your comment about that video application" aria-describedby="basic-addon3"></textarea>
-					<span class="input-group-btn">
-        		<button class="btn btn-default" type="button">send</button>
-      		</span>
-      	</div>
+				<!-- add new comment -->	
+				<form id="<%= item._id %>" action="" method="post" accept-charset="utf-8">
+					<div class="input-group">
+						<input type="text" class="form-control" name="mail" placeholder="Your name or email" aria-describedby="basic-addon2">
+						<textarea class="form-control" placeholder="Your comment about that video application" aria-describedby="basic-addon3"></textarea><br>
+						
+		    	</div>
+		    	<span class="input-group-btn">
+		      		<button class="btn btn-default" type="submit">send</button>
+		    	</span>
       	</form>
-			</div>
+      </div>
+		</div>
 	</div>
 </div>	
 

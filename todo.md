@@ -1,4 +1,9 @@
 
+# speed up
+-done: image url + "?v"+ updated_at
+- http compression
+- image compression
+
 
 # Roadmap
 
@@ -7,7 +12,7 @@
 - [diss] comments per pattern section 
 - [diss] playlist bug
 - [diss] pattern wizzard
-- [diss] overall search
+- [diss] overall search :: https://github.com/fergiemcdowall/norch
 - [diss] advanced search by name, description, and each pattern component
 
 	
@@ -28,6 +33,8 @@
 
 # Further video applications to consider
 ## list of Javascript Video Player frameworks
+https://www.educanon.com/public/109822/260156
+jwplayer
 http://player.kaltura.com/docs/
 http://jplayer.org/latest/developer-guide/
 http://openvideoplayer.sourceforge.net/html5video/  ==> mrss
@@ -35,6 +42,8 @@ http://www.projekktor.com/
 http://www.videojs.com/ => realy basic
 
 ## further notes about missing portals 
+!! http://www.mobento.com/video/1EA5HMYXM
+SWITCHtube https://tube.switch.ch/
 
 http://ocw.mit.edu/courses/audio-video-courses/
 http://www.extension.harvard.edu/open-learning-initiative

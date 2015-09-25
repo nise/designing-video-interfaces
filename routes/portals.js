@@ -97,11 +97,17 @@ exports.csvImport = function ( req, res ){ return;
 REST API CALL
 **/
 exports.getJSON = function(req, res) {
-	Portals.find().sort( 'id' ).lean().exec(function (err, docs) {
-		res.type('application/json');
-		res.jsonp(docs);
-		res.end('done');
-	});
+	var stream = Portals.find().sort( 'id' ).lean().stream();
+	
+	stream
+		.on('data', function (docs) {
+			res.type('application/json');
+			res.jsonp(docs);
+			res.end('done');
+		})
+		.on('error', function (err) {
+			console.log('stream error @ portals.js')
+		});
 };
 
 
