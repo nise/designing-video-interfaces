@@ -120,13 +120,14 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		//////analysis.getInstancesOfPattern();
 		//analysis.getPatternsPerPortals();
 		//analysis.getTagCoOccurences({},{});
-		//analysis.getPatternCoOccurences({},{});
+		analysis.getPatternCoOccurences({},{});
 		////analysis.getPortalCoOccurences();
 		
 		// buggg xxx analysis.getMissingPatterns();
 		
 		//analysis.renderPortalDataLatex();
 		//analysis.test2();
+		//analysis.kappa();
 		
 		//users.csvImport();
 		//scenes.csvImport();

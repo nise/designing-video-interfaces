@@ -43,7 +43,10 @@ http://www.videojs.com/ => realy basic
 
 ## further notes about missing portals 
 !! http://www.mobento.com/video/1EA5HMYXM
+!! nico nico   http://readwrite.com/2008/06/04/before_youtube_annotations_nico_nico_douga
 SWITCHtube https://tube.switch.ch/
+
+https://h5p.org/  ( angeblich video features )
 
 http://ocw.mit.edu/courses/audio-video-courses/
 http://www.extension.harvard.edu/open-learning-initiative

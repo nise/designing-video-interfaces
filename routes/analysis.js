@@ -250,7 +250,21 @@ exports.test = function(req, res) {
 
 
 
-var selectedPortals = [
+/*
+ **/
+exports.usage = function(req,res){
+	// determine usage of each pattern
+	
+	// get patterns for each portal and calc its number and cumulative usage
+	
+	
+	
+	// plot 
+}  
+
+
+// define subset for interrater reliability
+var selectedPortalsSubset = [
 	"Amazonie",
 	"HyperCafe",
 	"Hyperfilm",
@@ -339,28 +353,83 @@ exports.test2 = function(req, res) {
 	
 		// check wether there are more the two urls defined in the url field
 		for(var i = 0; i < docs.length; i++){
-			if( selectedPortals.indexOf(docs[i].name) != -1){ 
+			if( selectedPortalsSubset.indexOf(docs[i].name) != -1){ 
 				for(var p = 0; p < docs[i].patterns.length; p++){
-					if(selectedPortals.indexOf(docs[i].name) != -1 && docs[i].patterns[p] != ""){ 
+					if(selectedPortalsSubset.indexOf(docs[i].name) != -1 && docs[i].patterns[p] != ""){ 
 						/*console.log(
 							docs[i].patterns[p],
-							selectedPortals.indexOf(docs[i].name)
+							selectedPortalsSubset.indexOf(docs[i].name)
 							,pattern_arr[docs[i].patterns[p]][docs[i].patterns[p]]
 						);*/
-						pattern_arr[docs[i].patterns[p]][Number(selectedPortals.indexOf(docs[i].name))]	= "\\csb";	
+						pattern_arr[docs[i].patterns[p]][Number(selectedPortalsSubset.indexOf(docs[i].name))]	= "\\csb";	
 					}else{}	
 				}
 			}	
 		}
 		//console.log(pattern_arr);
 		//
-		var out = "";
+		var latex_out = "";
 		for (var pp in pattern_arr){
-			out += ""+ pp +"&"+ pattern_arr[pp].toString().replace(/,/g, '&').replace(/'-'/g,'-') + " &   \\\\\n";
+			latex_out += ""+ pp +"&"+ pattern_arr[pp].toString().replace(/,/g, '&').replace(/'-'/g,'-') + " &   \\\\\n";
 		}
-		console.log(out);
+		// print LaTeX Output
+		console.log(latex_out);
 	});
 }
+
+
+/*
+unfinished:: https://en.wikipedia.org/wiki/Cohen%27s_kappa
+status: faulty because it acumulates the kappa value for multiple applications
+ **/
+exports.kappa = function(req,res){
+	fs.readFile(__dirname+'/../data/pattern-interrater3.csv', function read(err, data) {
+		if(err){
+			console.log(err);
+		}
+		csv().from.string(data, {comment: '#'} )
+			.to.array( function(data){
+				var 
+					po = 0,
+					pe = 0,
+					kappa = 0,
+					m = [],
+					rr=[];
+					;
+				m[0]=[]; m[1]=[];	
+				m[0][0]=0;m[1][0]=0;m[1][1]=0;m[0][1]=0; 
+				for(var i = 1; i < data.length; i++){  
+					rr= data[i][0].split(';'); 	
+					for(var j = 1; j < rr.length; j=j+2){
+						//
+						
+						// alernative
+						if( rr[j] === rr[j+1] && rr[j] === '1'){
+							m[0][0]++;
+						}else if( rr[j] === rr[j+1] && rr[j] === '0'){
+							m[1][1]++;
+						}else if( rr[j] === '0'){
+							m[1][0]++;
+						}else{
+							m[0][1]++;
+						}
+					}
+				}
+				var 
+					korr = -30,
+					sum = ( m[0][0] + m[0][1] + m[1][0] + m[1][1] ) + Math.abs(korr)
+					;
+				po = ( m[0][0] + m[1][1] + korr ) / sum;
+				pe = ( m[0][0] + m[0][1] + Math.abs(korr) ) / sum; 
+				pe = pe * ( ( m[1][0] + m[1][1] ) / sum );
+				kappa = ( po - pe ) / ( 1 - pe );
+				console.log('compared points: '+ sum )
+				console.log('po: '+po);
+				console.log('pe: '+pe);
+				console.log('KAPPA: '+kappa);
+			});
+	});		
+} 
 
 
 
@@ -448,7 +517,9 @@ exports.getTagCoOccurences = function(req, res) {
 
 /*
 Returns a tsv of the number of connections between co-occuring patterns over all portals
-This can be randered in a heatmap or network graph
+This can be randered in a heatmap (=> d3) or network graph (=> gephi)
+example: patterns-co-occurance
+status: testing reqired
 **/
 exports.getPatternCoOccurences = function(req, res) {
 		Portals.find().sort( 'id' ).lean().exec(function (err, docs) {
@@ -463,12 +534,16 @@ exports.getPatternCoOccurences = function(req, res) {
 					c.push(patterns[j]);
 				}
 			}
-			// writes nodes
+			// writes nodes as csv and json ({"nodes":[{"name":"Myriel","group":1})
 			var out = "Id, Label\n";
+			var json = {}; json.nodes = []; json.links = [];
 			for ( a in c){
-				out += a+","+c[a]+"\n";
+				if( c.hasOwnProperty( a ) ){
+					out += a+","+c[a]+"\n";
+					json.nodes.push({ name: c[a], group: 1});
+				}	
 			}
-			//console.log(out)
+			console.log(out)
 			write2file('patterns-co-occurence_nodes.csv', out);
 					
 			// add patterns relations, 
@@ -479,7 +554,7 @@ exports.getPatternCoOccurences = function(req, res) {
 				permuted_patterns = combine(patterns,2);
 				
 				for(t in permuted_patterns){
-					if(permuted_patterns[t].length == 2 ){
+					if( permuted_patterns.hasOwnProperty(t) && permuted_patterns[t].length == 2 ){
 						patterns = permuted_patterns[t];
 						// start with the greatest number
 						if(c.indexOf(patterns[0]) > c.indexOf(patterns[1])){
@@ -505,12 +580,18 @@ exports.getPatternCoOccurences = function(req, res) {
 			var out = "Source,Target,Type,Id,Label,Weight\n";
 			var i = 0;
 			for ( a in r){
-				var aa = a.split(' , ');
-				out += aa[0]+","+aa[1]+",Undirected,"+i+",,"+r[a]+"\n";
-				i++;
+				if( r.hasOwnProperty( a )){
+					var aa = a.split(' , ');
+					out += aa[0]+","+aa[1]+",Undirected,"+i+",,"+r[a]+"\n";
+					//"links":[{"source":1,"target":0,"value":1}
+					json.links.push({ source:aa[0],target:aa[1],value:r[a]});
+					i++;
+				}	
 			}
-			//console.log(out);
+			console.log(json);
 			write2file('patterns-co-occurence_edges.tsv', out);
+			
+			write2file('patterns-co-occurance2.json', JSON.stringify(json));
 			
 	});
 }
@@ -591,8 +672,6 @@ exports.getPortalCoOccurences = function(req, res) {
 Returns the number of instances for each pattern and writes some latex table output to file
 - status: finished
 **/
-
-
 exports.getInstancesOfPattern = function(group) {
 	var gauss = require('gauss');
 	var obj = {};
@@ -697,7 +776,7 @@ exports.getInstancesOfPattern = function(group) {
 // UTILS
 
 /*
-Returns combinations of array elements
+Returns all possible combinations of array elements
 - status: finished
 **/
 var combine = function(a, min, max) {

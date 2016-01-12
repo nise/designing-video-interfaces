@@ -14,12 +14,16 @@ Beside that the application is going to be an example for a pattern database. Us
 
 # Install instructions
 
-## Setup
+## Initial setup
 * git clone https://github.com/nise/designing-video-interfaces
 * sudo npm install etherpad-lite-client express express-validator mongodb path socket.io node-fs csv node-schedule ejs-locals passport passport-local connect-flash canvas identicon mongoose csv mv async cookie-parser express-json body-parser method-override express-session
 * mongorestore --db video-patterns ./dump/video-patterns
 * sudo forever start -a -l forever.log -o out.log -e err.log server.js
 * sudo forever stop server.js
+
+## Update from repo
+git fetch --all
+git reset --hard origin/master
 
 ## dump and restore mongoDB
 mongodb: mongodb://localhost/video-patterns
