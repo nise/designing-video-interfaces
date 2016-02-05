@@ -105,8 +105,12 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		// !!! caution images.folderImport();
 		//patterns.folderImport();
 		
+		analysis.checkConsitency();
+		
 		// ANALYSES
-		/*analysis.getInstancesOfPattern(0);
+		analysis.getInstancesOfPattern();
+		/*
+		analysis.getInstancesOfPattern(0);
 		analysis.getInstancesOfPattern(1);
 		analysis.getInstancesOfPattern(2);
 		analysis.getInstancesOfPattern(3);
@@ -120,8 +124,8 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		//////analysis.getInstancesOfPattern();
 		//analysis.getPatternsPerPortals();
 		//analysis.getTagCoOccurences({},{});
-		analysis.getPatternCoOccurences({},{});
-		////analysis.getPortalCoOccurences();
+		//analysis.getPatternCoOccurences({},{});
+		//analysis.getPortalCoOccurences();
 		
 		// buggg xxx analysis.getMissingPatterns();
 		
