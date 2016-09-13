@@ -1,3 +1,6 @@
+##
+- dump: `mongodump --db video-patterns`
+- restore: `mongorestore --db moduleBase ./dump/video-patterns`
 
 
 
