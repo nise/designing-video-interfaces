@@ -1,0 +1,264 @@
+<% layout( 'layout' ) -%>
+
+<script>
+
+$(document).ready (function () { 
+	
+/*
+	$.get('/json/images/all', function(data){  
+		$.each(data, function(i, val){
+			  
+			var portal = String(val.portal).replace(/[\ .,\&\/]/g, '-').toLowerCase();
+			
+			if(portal !== undefined && portal.length !== 0){
+				var link = $('<a></a>')
+					.attr('href', val.url )
+					.attr('onclick', 'javascript:openGallery("' + portal + '", "'+ val.portal+' ('+ val.tags+'): '+ val.caption +'")')
+					.attr('width','30%')
+					.addClass('thumbnail')
+					.addClass('gallery' + portal )
+					;
+				
+				var image = new Image(); 
+				$(image)
+					.attr('src', val.url + '?v' + val.updated_at)
+					.attr('alt', val.filename)
+					.attr('title', val.portal+' ('+ val.tags+'): '+ val.caption )
+					.attr('data-toggle', "tooltip")
+					.attr('data-placement',"bottom")
+					.addClass('gallery' + portal )
+					.appendTo(link)
+					;
+			
+				var div = $('<div></div>')
+					.addClass('col-sm-6 col-md-4')
+					.append(link) //alert('#'+String(val.portal).replace(/\ /g, '-')+'.panel-body.row')
+					.appendTo('#'+ portal +' .panel .panel-body .row');
+			}	
+		});
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+*/	
+	// save comments
+	$("form").submit(function(e) { 
+		  e.preventDefault(); // Prevents the page from refreshing
+		  var $this = $(this); // `this` refers to the current form element
+		  $.post(
+		      $this.attr("action"), // Gets the URL to sent the post to
+		      $this.serialize(), // Serializes form data in standard format
+		      function(data) { alert(data)/** code to handle response **/ },
+		      "json" // The format the response should be in
+		  );
+		  return false;
+	});
+	
+});
+
+
+	function submitComment(id){
+		alert(id);
+	}
+
+	function openGallery(i, caption){
+		jQuery('a.gallery'+i).colorbox({ 
+			opacity:0.9 , 
+			rel:'group'+i, 
+			maxHeight: '90%', 
+			maxWidth:'90%', 
+			fadeout:500, 
+			transition:'none', 
+			scalePhotos:true,
+			title: caption,
+			photo:true
+		});
+	}	/**/	
+</script>
+
+
+
+
+
+<script> 
+$(document).ready (function () { 
+	
+	/*
+	 **/
+	$('#table1').bootstrapTable({
+    data : <%-JSON.stringify(items)%>,
+   // height:'500',
+    showColumns : true,
+    checkboxHeader : true,
+    // search
+    search: true,
+    strictSearch: true,
+    trimOnSearch:true,
+    // details
+    detailView : false,
+   /* detailFormatter : function(index, row) {
+			return '<span class="glyphicon glyphicon-file"><a href="/data/pdf/' + row._id + '">Modulbeschreibung (PDF)</a> | <span class="glyphicon glyphicon-edit"> <a href="/modules/edit/' + row._id + '">bearbeiten</a>'//''+index+'__'+row._id;
+		},*/
+    columns: [
+		  { field: 'name', title: 'Name', sortable : true, formatter: titleFormatter, order: 'asc',searchable : true }, 
+		 	{ field: 'description', title: 'Description', visible:false, sortable : false, order: 'asc',searchable : true }, 
+		  { field: 'tags', title: 'Categories', visible:true, sortable : false, order: 'asc',searchable : true },
+		  { field: 'provider', title: 'Provider', visible:true, formatter: providerFormatter, sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'patterns', title: 'Components', visible:false, sortable : false, order: 'asc',searchable : true }, 
+		  { field: 'updated_at', title: 'Updated', visible:false, formatter: updateFormatter, sortable : false, order: 'asc',searchable : true }, 
+
+		   /*
+		   provider		: String,
+		url					: String,
+		analysis		: {
+			accessible	: Boolean,	 // was it possible to access the portal during the analysis?
+			availability: String     // how was it possible to access the portals? 				:
+		},
+		usability		: {
+			accessible	: Boolean,	 // can I use the portal?
+			open_source	: Boolean,   // can I use the source code?
+			collaborative_work : Boolean,
+			collaborative_work_desc : String,
+			group_management: Boolean,
+			group_management_desc : String
+			
+		},
+		tags				: Array,
+		patterns		:	Array,
+//		screenshots : [{type: Schema.Types.ObjectId, ref: 'Images' }],
+//		comments		: [{type: Schema.Types.ObjectId, ref: 'Messages' }],
+    updated_at 	: Date
+		   
+		   */
+		   
+		/* ,{ field: 'modulnr3', title: 'Modulnummer 3', visible:false, sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'courses', title: 'Studiengang',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'type', title: 'BA/MA',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'university', title: 'Hochschule',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'language', title: 'Sprache',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'sws_total', title: 'SWS',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'workload', title: 'Workload',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'workload_self', title: 'Workload Selbst',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'ects', title: 'ECTS',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'summer_winter', title: 'Semester',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'modulverantwortlicher', title: 'Modulverantwortliche/r',sortable : true, order: 'asc',searchable : true }, 
+		  { field: 'mail', title: 'E-Mail',sortable : true, visible:false, order: 'asc',searchable : true }, 
+		  { field: 'lecturers', title: 'Weitere Dozenten',sortable : true, visible:false, order: 'asc',searchable : true }, 
+		  { field: 'remarks', title: 'Hinweise',sortable : true, order: 'asc',visible:false, searchable : true }, 
+		  { field: 'updated_at', title: 'Letzte Änderung',sortable : true, visible:false, order: 'asc',searchable : true }
+		  */
+    ]
+	});
+	
+	/*
+	 **/
+	function titleFormatter(value, row, index) {
+		return 	'<a href="/modules/view/' + row._id + '">'+value+'</a>';
+	}
+	
+	/*
+	 **/
+	function providerFormatter(value, row, index) {
+		return 	'<a href="' + row.url + '">'+value+'</a>';
+	}
+	
+	/*
+	 **/
+	function updateFormatter(value, row, index) {
+		return 	'';
+	}
+	
+});
+</script>
+
+
+  <!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<div class="container">
+		<h2></h2>
+		<h2><%= title %></h2>
+		<p hidden>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+	 
+		<p hidden>
+		  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+		</p>
+	</div>
+</div>
+
+
+<div class="container">
+	
+		<div class="col-md-8">
+			<table id="table1"></table>
+		</div>
+		<div class="col-md-4">
+			<h4>Filter by application type</h4>
+			<div class="btn-group-xs filter-portals" data-toggle="buttons">
+				<label class="btn btn-primary"><input id="a" type="checkbox" autocomplete="off">Learning Environment</label>
+				<label class="btn btn-primary"><input id="b" type="checkbox" autocomplete="off">Portal</label>
+				<label class="btn btn-primary"><input id="c" type="checkbox" autocomplete="off">Authoring Tool</label>
+				<label class="btn btn-primary"><input id="d" type="checkbox" autocomplete="off">Online App</label>
+				<label class="btn btn-primary"><input id="e" type="checkbox" autocomplete="off">Desktop App</label>
+				<label class="btn btn-primary"><input id="f" type="checkbox" autocomplete="off">Annotation Tool</label>
+				<label class="btn btn-primary"><input id="g" type="checkbox" autocomplete="off">Framework</label>
+				<label class="btn btn-primary"><input id="h" type="checkbox" autocomplete="off">Research Prototype</label>
+				<label class="btn btn-primary"><input id="i" type="checkbox" autocomplete="off">Interactive Film</label>
+				<label class="btn btn-primary"><input id="j" type="checkbox" autocomplete="off">Search Engine</label>
+				<label class="btn btn-primary"><input id="k" type="checkbox" autocomplete="off">Open Source</label>
+				<label class="btn btn-primary"><input id="l" type="checkbox" autocomplete="off">Player</label>
+			</div>
+			<h4>Recent comments</h4>
+			<ul class="recent-comments"></ul>
+			<h4>Recomment a video application</h4>
+		</div>
+	<div class="row"></div>	
+</div>
+
+<script>
+
+/*
+Filter all applications by their annotated tag or category
+**/
+$('.filter-portals input').change(function () {
+	var id = $(this).attr('id');
+	var map = {
+		'a': 'Video-Learning-Environment', 
+		'b': 'Video-Portal', 
+		'c': 'Video-Authoring-Environment',
+		'd': 'Online-Environment',
+		'e': 'Desktop-Environment',
+		'f': 'Annotation-Tool',
+		'g': 'Video-Framework',
+		'h': 'Research-Prototype',
+		'i': 'Interactive-Film',
+		'j': 'Search-Engine',
+		'k': 'Open-Source',
+		'l': 'Player',
+	};
+	
+    if ($('input#'+id).is(':checked')) {
+        $('input#'+id).addClass('checked');
+        $('.'+map[ id ]).hide(); 
+    } else {
+        $('input#'+id).removeClass('checked'); 
+        $('.'+map[ id ]).show();
+    }
+});
+
+/*
+Comments
+**/
+	$.get('/json/messages/portal', function(data){ return;
+		$.each(data, function(i, val){
+			// plot 10 recent comments
+			if( i < 10 ){
+				var li = $('<li></li>')
+					.text( val.content )
+					.appendTo('recent-comments');
+			} 
+			
+		});
+	});
+
+</script>
+
+
+

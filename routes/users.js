@@ -136,29 +136,7 @@ exports.getUserData = function(req, res, next) {
 Returns a jsonp object that contains all users that are in the same group as the current user
 **/
 exports.getGroupData = function(req, res, next) {  
-  if (req.user !== undefined) {
-    // get current script phase
-    mongoose.model('Scripts').collection.find().toArray(function(err, script) {
-    	var phase = script[0].current_phase; 
-    	// get group of current user
-  	  Users.find({ username: req.user.username }).select('groups').setOptions({lean:true}).exec(function ( err, groups ){
-  	  	var group = groups[0].groups[Number(phase)]; 
-  	  	var query = {};
-				query['groups.'+phase] = group;
-  	  	// get users of group 
-				Users.find( query ).select('groups username id firstname name').exec(function ( err, users ){  	  	
-  	  		//for(var i = 0; i < users.length; i++){ console.log(users[i]); }
-  	  		res.type('application/json');
-    			res.jsonp({user:true, username: req.user.username, id: req.user.id, group: users } );
-    			res.end();
-  	  	});
-    	});
-    });
-  }else {
-    res.type('application/json');
-    res.jsonp({user:false, msg:'you are not logged in'});
-    res.end();
-  }
+  res.end();
 }; 
 
 

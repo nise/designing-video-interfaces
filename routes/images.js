@@ -20,14 +20,14 @@ status: unfinished
 exports.folderImport = function ( req, res ){	
 
 	// flush database in order to reload the images later on
-	Images.remove({}, function(err) { console.log('collection of images removed') });
+	Images.remove({}, function(err) { console.log('collection of images removed')
 	
 	//
 	 Images
 		.find()
 		.sort( 'filename' )
 		.exec( function ( err, existing_images ){ 
-			var source_dir = './public/vi-lab/img/upload';
+			var source_dir = './public/vi-lab/img/screenshots';
 			var dest_dir = './public/vi-lab/img/screenshots';
 			var files = fs.readdirSync(source_dir);
 			for(var i in files){
@@ -48,20 +48,24 @@ exports.folderImport = function ( req, res ){
 										file_created_at : file_stats.ctime,
 										updated_at : Date.now()
 									}).save( function( err, todo, count ){
-										console.log('saved: '+ dest_dir.slice(1) + '/' + files[i] );
+										console.log(count);
+										//console.log('saved: '+ dest_dir.slice(1) + '/' + files[i] );
 									});
 						
 						
 					}
 			}// end for
-			mv(source_dir+'', dest_dir, {mkdirp: true}, function(err) {	
+			/*mv(source_dir+'', dest_dir, {mkdirp: true}, function(err) {	
 				if(err){
 					console.log('Error during mv in Images: '+err)
 				}else{
 					console.log('Moved all images from upload to screenshot folder')
 				}
 			});
+			*/
 		});
+		
+	 });	
 	// 		
 };	
 
@@ -112,6 +116,8 @@ exports.getJSONImagePerPattern = function ( req, res ){
 			res.jsonp(image);
 		});
 };
+
+
 
 /*
 **/

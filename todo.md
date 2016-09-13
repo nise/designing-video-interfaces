@@ -1,11 +1,31 @@
 
+
+
+pedagogical classification
+- level of interactivity:
+ - micro / macro
+ - schulmeister
+ - Steuerungsmöglichkeiten umfassen, darunter die Möglichkeit, die Repräsentations-
+form von Inhalten oder die Inhalte selbst zu verändern oder Lernobjekte bzw. Inhal-
+te selbst zu konstruieren. Lernumgebungen umfassen interaktive Elemente wie
+Kommunikations-, Kollaborations-, Content Sharing- und Assessmenttools
+- level of social interactivity
+
+- level of virtuality
+ - 
+
+- availability: open source / commercial / not available
+
 # speed up
--done: image url + "?v"+ updated_at
-- http compression
 - image compression
+- gzip
 
 
 # Roadmap
+
+- proof read patterns
+- load patterns into plattform
+- adopt pattern description layout
 
 ## Prior improvements
 - launch, import data from file
@@ -17,6 +37,11 @@
 
 	
 ## Less prior improvements
+- image management
+ - consider upload folder
+ - 
+- nice icons: http://ionicons.com/ 
+- wizzard could be used for decision about suitable video platforms
 - let users comment on portals: Do you think something is missing?
 - nice header/footer
 - analysis page
@@ -29,10 +54,37 @@
 - countries of domain holder: https://www.whois.net/
 - add year of foundation in the database to build a timeline
 - add technology ("made with") to the portals/applications, like: flash, html5, javscript, unknown
+- plot patterns as a checklist 
 
 
-# Further video applications to consider
+
 ## list of Javascript Video Player frameworks
+
+#Further Video Systems
+https://github.com/DatabayAG/InteractiveVideo
+https://www.e-teaching.org/praxis/erfahrungsberichte/interaktive-videos-mit-ilias
+ Gelungener VideoManager: http://worrydream.com/MediaForThinkingTheUnthinkable/
+
+Portals that need to be watched more carefully:
+- kaltura
+- magma
+- matterhorn
+- 
+
+http://mediathek.hhu.de
+- \cite{Mertens2007}
+ - MANIC
+ - AOF
+ - TeleTeachingTool
+ - ePresence
+ - eClass/Classroom2000
+ - eTEACH: Almeida 2003;Moses, Litzkow, Foertsch & Strikwerda 2002;Litzkow, Anderson, Bundy & Ewers 2004;Foertsch, Moses, Strikwerda & Litzkow 2002
+- wIDEO ..NEW FEATURE SLIDES
+
+
+AV-Portal der TIB,, inkl. Pad.
+ http://bibcast.openbiblio.eu/wohin-mit-meinen-filmen-nutzerorientierte-dienstleistungen-fuer-audiovisuelle-medien-aus-der-wissenschaft/
+
 https://www.educanon.com/public/109822/260156
 jwplayer
 http://player.kaltura.com/docs/

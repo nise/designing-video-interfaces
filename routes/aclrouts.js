@@ -9,17 +9,11 @@ module.exports = function(db, app) {
 	var module = {};
 
 	mongoose = require( 'mongoose' ),
-	admin = require('./admin'),
-	scripts = require('./scripts'),
-	videos = require('./videos'),
 	images = require('./images'),
 	portals = require('./portals'),	
 	patterns = require('./patterns'),	
+	analysis = require('./analysis')
 	users = require('./users'),
-	groups = require('./groups'),
-	// terzin specific
-	scenes = require('./scenes'),
-	persons = require('./persons'),
 	messages = require('./messages')
 	;
 	
@@ -29,33 +23,20 @@ module.exports = function(db, app) {
 	
 /* define routes **/
 
-// routes for files
-/*app.get('/slides/:id', function(req, res){ 
-	console.log('öööööööööööö'+'___public/vi-lab'+req.params.id)
-  var file = 'public/vi-lab'+req.params.id;
-  res.download(file); // Set disposition and send it.
-});
-*/
 
-	// routes related to admin area
-	app.get(	'/admin', 			admin.index );
-	app.get(	'/admin/users', admin.getUsers );
 	
-	// search
-	/*var regex = new RegExp('noodles', 'i');  // 'i' makes it case insensitive
-    return Questions.find({text: regex}, function(err,q){
-        return res.send(q);
-    });
-  */  
-  
+
   // misc
-  app.get(	'/', function ( req, res ){ res.render( 'intro', { title : 'Designing Video Interfaces' }); });
+  //app.get(	'/', function ( req, res ){ res.render( 'intro', { title : 'Designing Video Interfaces' }); });
+	app.get(	'/', 						portals.list );
 	app.get(	'/wizzard', function ( req, res ){ res.render( 'wizzard', { title : 'Pattern Wizzard' }); });
 	app.get(	'/about', function ( req, res ){ res.render( 'about', { title : 'About' }); });
 	app.get(	'/citation', function ( req, res ){ res.render( 'citation', { title : 'Citation' }); });
   app.get(	'/api', function ( req, res ){ res.render( 'api', { title : 'API' }); });
+  app.get(	'/analysis', analysis.renderPortalDataLatex );
   
-  	app.get(	'/eval', function ( req, res ){ res.render( 'eval-pattern-buckets', { title : 'What do you think?' }); });
+  
+  app.get(	'/eval', function ( req, res ){ res.render( 'eval-pattern-buckets', { title : 'What do you think?' }); });
 
 	// routes for portals
 	app.get(	'/portals', 						portals.list );
@@ -98,35 +79,6 @@ module.exports = function(db, app) {
 
 
 	
-	// routes for videos
-	// http://localhost:3000/popcorn-maker/popcorn-maker/#
-	app.get(	'/videos' , 	users.ensureAuthenticated,					videos.list );
-	app.get(	'/videos/view/:id' , users.ensureAuthenticated, videos.show );
-	app.get(	'/admin/videos',  admin.getVideos )
-	app.get(	'/admin/videos/new' , 			 users.authCallback(['user','editor']), videos.new_one );
-	app.get(	'/admin/videos/metadata/edit/:id' , 	videos.editMetadata );
-	app.get(	'/admin/videos/annotations/edit/:id' , 	videos.editAnnotations );
-	app.get(	'/videos/destroy/:id' ,videos.destroy );
-	app.post(	'/videos/update/:id' ,videos.update );
-	app.post(	'/videos/create' , 		videos.create );
-	app.post(	'/videos/annotate', users.ensureAuthenticated, videos.annotate);
-	app.get( 	'/json/videos' , 			videos.getJSON );
-	app.get( 	'/json/videos/:id' , 	videos.getOneJSON );
-	app.get( 	'/json/film' , 				videos.getJSON );
-
-
-	///////xxx todo :: app.get('/related-videos/:id' , users.ensureAuthenticated, wine.getRelatedVideos);
-
-	// routes related to scripts	
-	app.get('/json/script', users.ensureAuthenticated, scripts.getScript);
-
-
-	// routes for user management
-	app.get('/groups', groups.getGroups);
-	app.get('/json/groups', groups.getGroups);
-	//	app.get('/messages', users.ensureAuthenticated, wine.getMessages);
-	//	app.post('/messages', users.ensureAuthenticated, wine.addMessage);
-	
 	// routes for system purpose	
 	app.post('/log', function(req, res) {
 		log.write(req.param('data'));	
@@ -162,27 +114,6 @@ module.exports = function(db, app) {
 	app.post('/login', users.authenticate );
 
 	
-	// routes related to E-Assessment
-	var assess = require('./assessment');
-	app.get('/json/assessment', assess.getTest);
-	app.get('/assessment', assess.index);
-	app.get('/assessment/results', users.ensureAuthenticated, assess.getResults );
-	app.post('/assessment/results', users.ensureAuthenticated , assess.setResults );
-	app.get('/assessment/fill-in/:field', users.ensureAuthenticated, assess.getFillins );
-	app.post('/assessment/fill-in/:field', users.ensureAuthenticated, assess.setFillins );
-	app.get('/assessment/written/:field', users.ensureAuthenticated, assess.getWrittenAssessment );
-	app.post('/assessment/written/:field', users.ensureAuthenticated, assess.setWrittenAssessment );
-	
-
-/*
-	// routes related to etherpad
-	var etherpad = require('./etherpad');
-	
-	app.get('/collaborative-writing', users.ensureAuthenticated, etherpad.createSession )
-	app.get('/collaborative-writing2', users.ensureAuthenticated, etherpad.createSession2 )
-	app.get('/json/etherpad', etherpad.getJSON )
-	app.get('/admin/etherpad', users.ensureAuthenticated, etherpad.listPadInput )
-*/
 	/*
 	Logging
 	**/

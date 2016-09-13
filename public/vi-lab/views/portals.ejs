@@ -38,7 +38,7 @@ $(document).ready (function () {
 		});
 		$('[data-toggle="tooltip"]').tooltip();
 	});
-	
+
 	// save comments
 	$("form").submit(function(e) { 
 		  e.preventDefault(); // Prevents the page from refreshing
@@ -75,17 +75,23 @@ $(document).ready (function () {
 </script>
 
 
+
+
+
+
+
+
   <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
-  <h2></h2>
-  <h2><%= title %></h2>
-  <p hidden>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
- 
-  <p hidden>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-  </p>
-  </div>
+		<h2></h2>
+		<h2><%= title %></h2>
+		<p hidden>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+	 
+		<p hidden>
+		  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+		</p>
+	</div>
 </div>
 
 
@@ -126,7 +132,7 @@ $(document).ready (function () {
 			</div>
 			<div class="analysis">
 				<strong>Remark:</strong> <%= item.availability %><br>
-				<% if (item.accessible == true) { %>
+				<% if (item.accessible === true) { %>
 				This video environment could be analysed by the author.
 				<%}%><br><br>
 			</div>
@@ -177,29 +183,32 @@ $(document).ready (function () {
 </div>	
 
 <% }); %>
-</div>
 
-<div class="col-md-4">
-
-		<h4>Filter by application type</h4>
-		<div class="btn-group-xs filter-portals" data-toggle="buttons">
-			<label class="btn btn-primary"><input id="a" type="checkbox" autocomplete="off">Learning Environment</label>
-			<label class="btn btn-primary"><input id="b" type="checkbox" autocomplete="off">Portal</label>
-			<label class="btn btn-primary"><input id="c" type="checkbox" autocomplete="off">Authoring Tool</label>
-			<label class="btn btn-primary"><input id="d" type="checkbox" autocomplete="off">Online App</label>
-			<label class="btn btn-primary"><input id="e" type="checkbox" autocomplete="off">Desktop App</label>
-			<label class="btn btn-primary"><input id="f" type="checkbox" autocomplete="off">Annotation Tool</label>
-			<label class="btn btn-primary"><input id="g" type="checkbox" autocomplete="off">Framework</label>
-			<label class="btn btn-primary"><input id="h" type="checkbox" autocomplete="off">Research Prototype</label>
-			<label class="btn btn-primary"><input id="i" type="checkbox" autocomplete="off">Interactive Film</label>
-			<label class="btn btn-primary"><input id="j" type="checkbox" autocomplete="off">Search Engine</label>
-			<label class="btn btn-primary"><input id="k" type="checkbox" autocomplete="off">Open Source</label>
-			<label class="btn btn-primary"><input id="l" type="checkbox" autocomplete="off">Player</label>
+		<div class="col-md-4">
+			<h4>Filter by application type</h4>
+			<div class="btn-group-xs filter-portals" data-toggle="buttons">
+				<label class="btn btn-primary"><input id="a" type="checkbox" autocomplete="off">Learning Environment</label>
+				<label class="btn btn-primary"><input id="b" type="checkbox" autocomplete="off">Portal</label>
+				<label class="btn btn-primary"><input id="c" type="checkbox" autocomplete="off">Authoring Tool</label>
+				<label class="btn btn-primary"><input id="d" type="checkbox" autocomplete="off">Online App</label>
+				<label class="btn btn-primary"><input id="e" type="checkbox" autocomplete="off">Desktop App</label>
+				<label class="btn btn-primary"><input id="f" type="checkbox" autocomplete="off">Annotation Tool</label>
+				<label class="btn btn-primary"><input id="g" type="checkbox" autocomplete="off">Framework</label>
+				<label class="btn btn-primary"><input id="h" type="checkbox" autocomplete="off">Research Prototype</label>
+				<label class="btn btn-primary"><input id="i" type="checkbox" autocomplete="off">Interactive Film</label>
+				<label class="btn btn-primary"><input id="j" type="checkbox" autocomplete="off">Search Engine</label>
+				<label class="btn btn-primary"><input id="k" type="checkbox" autocomplete="off">Open Source</label>
+				<label class="btn btn-primary"><input id="l" type="checkbox" autocomplete="off">Player</label>
+			</div>
+			<h4>Recent comments</h4>
+			<ul class="recent-comments"></ul>
+			<h4>Recomment a video application</h4>
 		</div>
-		<h4>Recent comments</h4>
-		<ul class="recent-comments"></ul>
-		<h4>Recomment a video application</h4>
+	<div class="row"></div>	
 </div>
+
+
+
 
 <script>
 
@@ -250,5 +259,4 @@ Comments
 </script>
 
 
-</div>	
-</div>
+

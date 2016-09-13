@@ -76,10 +76,11 @@ exports.csvImport = function ( req, res ){ return;
 							category		: data[i][3],
 							provider		: data[i][4],
 							url					: data[i][5],
-							accessible	: data[i][6],
-							availability: data[i][9],
+							accessible	: data[i][6],  // xxx update necessary
+							availability: data[i][9], // xxx update necessary
 							tags				: tags,
 							patterns		: String(data[i][8]).split(', '),
+							
 							updated_at : Date.now()
 						}).save( function( err, todo, count ){
 							//res.redirect( '/portals' );
@@ -92,22 +93,53 @@ exports.csvImport = function ( req, res ){ return;
 };
 
 
+/*
+MAINTANANCE
+*/
+
+exports.maintain = function(req, res){ res.end();// xxx
+	var up = require('../data/2016_08_25_backup_portals.json');
+	aop = function(name){
+		for(var i = 0; i < up.length; i++){
+			if(up[i].name === name){
+				return up[i].availability;
+			}
+		}
+	}
+	Portals.find().exec(function(err, p){
+		if(err){ console.error(err); }
+		for (var i = 0; i < p.length; i++){
+			p[i].usability = {};
+			p[i].usability.open_source = p[i].tags.indexOf("Open Source") === -1 ? false : true;
+			p[i].analysis = {};
+			p[i].analysis.availability = aop(p[i].name);
+			//console.log(p[i].usability.open_source)
+			p[i].save();
+		}
+	});
+};
+
 
 /*
 REST API CALL
 **/
 exports.getJSON = function(req, res) {
-	var stream = Portals.find().sort( 'id' ).lean().stream();
+	Portals.find().sort( 'id' ).lean().exec(function(err, portals){
+		if(err){ console.error(err); }
+		res.jsonp(portals);
+	});
+	/*var stream = Portals.find().sort( 'id' ).lean().stream();
 	
 	stream
 		.on('data', function (docs) {
-			res.type('application/json');
+			//res.type('application/json');
 			res.jsonp(docs);
 			res.end('done');
 		})
 		.on('error', function (err) {
 			console.log('stream error @ portals.js')
 		});
+		*/
 };
 
 
@@ -142,7 +174,7 @@ exports.getPortalsOfTag = function(req, res) {
 };
 
 
-exports.getJSONPatterns = function(req, res) { res.end('done');}
+exports.getJSONPatterns = function(req, res) { res.end('done');} // xxx
 
 
 /*

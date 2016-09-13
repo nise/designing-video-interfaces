@@ -18,18 +18,11 @@ var
 	fs = require('node-fs'),
 
 	// database entities
-	videos = require('./routes/videos'),
 	users = require('./routes/users'),
 	images = require('./routes/images'),
-	scripts = require('./routes/scripts'),
 	portals = require('./routes/portals'),
 	patterns = require('./routes/patterns'),
-	analysis = require('./routes/analysis'),
-		
-	groups = require('./routes/groups'),
-	// terzin specific entities
-	scenes = require('./routes/scenes'),
-	persons = require('./routes/persons')
+	analysis = require('./routes/analysis')
 	;
 	
 
@@ -101,14 +94,19 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		/*
 		Import data
 		**/
-		// !!! do not!! portals.csvImport();
-		// !!! caution images.folderImport();
-		//patterns.folderImport();
 		
-		analysis.checkConsitency();
+		// !!! do not!1 portals.maintain();
+		// !!! do not!! portals.csvImport();
+		images.folderImport();
+		//patterns.folderImport();
+//		utils.addPattern();
+
+		// checks
+		//analysis.checkConsitency();
+		//analysis.getMissingPatterns();
 		
 		// ANALYSES
-		analysis.getInstancesOfPattern();
+		//analysis.getInstancesOfPattern();
 		/*
 		analysis.getInstancesOfPattern(0);
 		analysis.getInstancesOfPattern(1);
@@ -127,21 +125,18 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		//analysis.getPatternCoOccurences({},{});
 		//analysis.getPortalCoOccurences();
 		
-		// buggg xxx analysis.getMissingPatterns();
-		
-		//analysis.renderPortalDataLatex();
-		//analysis.test2();
+		// Kappa
+		//analysis.kappe_blanc_matrix();
 		//analysis.kappa();
 		
-		//users.csvImport();
-		//scenes.csvImport();
-		//videos.csvImport(); // !!! caution
 		
-		//scripts.importScript();
+		
+		
+		//users.csvImport();
 		//groups.csvImport();
 		//groups.csvImportFromJSON();
 		//require('./routes/etherpad').generatePadGroups(); // !!!
-		var ACL = require('./routes/aclrouts')(db, app, io);
+		var ACL = require('./routes/aclrouts')(db, app);
 	}	
 });
 
@@ -150,88 +145,5 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 /*process.argv.forEach(function (val, index, array) {
   console.log(index + ': ' + val);
 });*/
-
-
-
-
-
-
-
-
-
-
-/* 
-Setup socket.io 
-**/
-//io.set('heartbeat interval', 1);
-//io.set('transports', ['xhr-polling']);
-//{ rememberTransport: false, transports: ['WebSocket', 'Flash Socket', 'AJAX long-polling'] }).listen(server),
-io = require('socket.io')(server);
-io.sockets.on('connection', function (socket) {
-	
-  socket.on("disconnect", function(){
-  	//console.log("ping : user disconnect");
-  });
-	 
-	  
-	/*
-	socket.emit('news', { hello: 'world' });
-	socket.on('my other event', function (data) {
-	  console.log(data);
-	});
-	*/
-	
-	//socket.broadcast.emit('user connected');
-	
-	/*
-	socket.on('registered user', function(data) {
-		console.log('socket.io:: User has registered');
-		socket.broadcast.emit('broadcast-user-online', data); 
-	});
-	
-	socket.on('updated video', function (data) {
-		//console.log('socket.io:: update info eingegangen ' + data.videoid);
-		console.log('video updated at client')
-	  socket.broadcast.emit('broadcast',{hello: 'world2'}); 
-	});*/
-});
-
-
-
-/*var io = require('socket.io').listen(80);
-
-io.sockets.on('connection', function (socket) {
-  socket.join('justin bieber fans'); // put socket in a channel
-  socket.broadcast.to('justin bieber fans').emit('new fan'); // broadcast a message to a channel
-  io.sockets.in('rammstein fans').emit('new non-fan'); // to another channel
-});*/
-
-exports.socketio = function (event, data){
-	var io = require('socket.io')(server); 
-	io.sockets.on('connection', function (socket) {
-		switch(event){
-			case "user.connected" :
-				socket.broadcast.emit( event, {user: data[0].id, online:true } );
-				//require('routes/users').setOnlineStatus({params:{ id: data[0].id}, body:{online_status:true, online_location:'index'}}, {});
-				break;
-			case "user.disconnected" :
-				socket.broadcast.emit( event, {user: data.id, online:false } );
-				//require('routes/users').setOnlineStatus({params:{ id: data[0].id}, body:{online_status:true, online_location:'index'}}, {});
-				break;	
-		}	
-		
-		socket.on('updated video', function (data) {
-			//console.log('socket.io:: update info eingegangen ' + data.videoid);
-			console.log('video updated at client');
-		});	
-	});					
-}						
-
-
-// 
-//var lec = require('./utils/lecturnity');
-
-
-
 
 
