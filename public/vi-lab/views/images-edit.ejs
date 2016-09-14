@@ -1,66 +1,6 @@
 <% layout('layout') -%>
 
-<script>
-$(document).ready(function(){
 
-	//
-	var patterns = new Bloodhound({
-		datumTokenizer: Bloodhound.tokenizers.whitespace,
-		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		prefetch: '/json/patterns/name',
-	});
-
-	$('.ac-tags').typeahead({
-		hint: true,
-		highlight: true,
-		minLength: 1
-	},
-	{
-		name: 'patterns',
-		source: patterns
-	});
-
-	var applications = new Bloodhound({
-		datumTokenizer: Bloodhound.tokenizers.whitespace,
-		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		prefetch: '/json/portals/name',
-	});
-
-	$('.ac-portals').typeahead({
-		hint: true,
-		highlight: true,
-		minLength: 1
-	},
-	{
-		name: 'applications',
-		source: applications
-	});
-	
-		$("form").submit(function(e) { 
-		  e.preventDefault(); // Prevents the page from refreshing
-		  var $this = $(this); // `this` refers to the current form element
-		  $.post(
-		      $this.attr("action"), // Gets the URL to sent the post to
-		      $this.serialize(), // Serializes form data in standard format
-		      function(data) { //alert(data)
-		      },
-		      "json" // The format the response should be in
-		  );
-		  return false;
-	});
-
-
-});  
-
-	function deleteImage(id){ 
-		$('#item'+id).addClass('deleted');
-		 //$.post('/images/destroy/'+id, function(data){ alert},'json');
-}
-
-
-	
-
-</script>
 
 
 <br><br><br>
@@ -95,6 +35,72 @@ $(document).ready(function(){
 <% }) %>
  
 
- 
+ <script>
+$(document).ready(function(){
+
+	var patterns = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.whitespace,
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		prefetch: '/json/patterns/name',
+	});
+	
+	$('.ac-tags').on('focus', function(){
+		$(this).typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+		},
+		{
+			name: 'patterns',
+			source: patterns
+		});
+	});
+	
+	var applications = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.whitespace,
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		prefetch: '/json/portals/name',
+	});
+	
+	$('.ac-portals').on('focus', function(){
+		$(this).typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+		},
+		{
+			name: 'applications',
+			source: applications
+		});
+	});
+
+
+		$("form").submit(function(e) {  
+		  e.preventDefault(); // Prevents the page from refreshing
+		  var _this = this;
+			$.ajax({
+		      type: "POST", 
+		      url: $(_this).attr('action'),
+		      data: $(_this).serialize(),
+		      success: function(data) { },
+		      error: function(msg){
+		      	console.dir(msg)
+		      }
+		   });
+		  return true;
+	});
+
+
+});  
+
+	function deleteImage(id){ 
+		$('#item'+id).addClass('deleted');
+		 //$.post('/images/destroy/'+id, function(data){ alert},'json');
+}
+
+
+	
+
+</script>
   
 

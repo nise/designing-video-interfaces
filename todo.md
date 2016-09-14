@@ -4,20 +4,6 @@
 
 
 
-pedagogical classification
-- level of interactivity:
- - micro / macro
- - schulmeister
- - Steuerungsmöglichkeiten umfassen, darunter die Möglichkeit, die Repräsentations-
-form von Inhalten oder die Inhalte selbst zu verändern oder Lernobjekte bzw. Inhal-
-te selbst zu konstruieren. Lernumgebungen umfassen interaktive Elemente wie
-Kommunikations-, Kollaborations-, Content Sharing- und Assessmenttools
-- level of social interactivity
-
-- level of virtuality
- - 
-
-- availability: open source / commercial / not available
 
 # speed up
 - image compression
@@ -25,18 +11,33 @@ Kommunikations-, Kollaborations-, Content Sharing- und Assessmenttools
 
 
 # Roadmap
-
 - proof read patterns
 - load patterns into plattform
 - adopt pattern description layout
 
-## Prior improvements
+- Produktvergleich durch Mehrfachauswahl an Portals und Mehrfachauswahl an Patterns
+- Page, die den Erhebungs- und Analyseprozess beschreibt, inkl. Limitationen
+- Table filter
 - launch, import data from file
 - [diss] comments per pattern section 
 - [diss] playlist bug
 - [diss] pattern wizzard
 - [diss] overall search :: https://github.com/fergiemcdowall/norch
 - [diss] advanced search by name, description, and each pattern component
+- klassifikationen / filter
+ - micro/macro
+ - schulmeisters interaktivität
+ - availability: open source / commercial / usabale / full available / not available
+ - level of social interactivity
+ - level of virtuality
+ - kollaborativ nutzbar / ..
+ - geschlossene Räume
+
+# marketting
+- Domain
+- Flyer / vcards
+- eteaching.org
+- publisch dataset at gsis
 
 	
 ## Less prior improvements
@@ -73,6 +74,9 @@ Portals that need to be watched more carefully:
 - magma
 - matterhorn
 - 
+
+- ramp
+- production junkies
 
 http://mediathek.hhu.de
 - \cite{Mertens2007}

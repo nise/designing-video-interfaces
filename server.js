@@ -97,7 +97,8 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		
 		// !!! do not!1 portals.maintain();
 		// !!! do not!! portals.csvImport();
-		images.folderImport();
+		//images.folderImport();
+		images.validate();
 		//patterns.folderImport();
 //		utils.addPattern();
 

@@ -4,7 +4,8 @@
 
 var 
 	mongoose = require( 'mongoose' ),
-	Images  = mongoose.model( 'Images' )
+	Images  = mongoose.model( 'Images' ),
+	Portals  = mongoose.model( 'Portals' ),
 	fs = require('node-fs'),
 	mv = require('mv'),
 	path = require('path'),
@@ -21,8 +22,7 @@ exports.folderImport = function ( req, res ){
 
 	// flush database in order to reload the images later on
 	Images.remove({}, function(err) { console.log('collection of images removed')
-	
-	//
+		//
 	 Images
 		.find()
 		.sort( 'filename' )
@@ -37,13 +37,21 @@ exports.folderImport = function ( req, res ){
 					if (file_stats.isDirectory()){
 						  // getFiles(dir, files[i]); 
 					}else{
-						var portall = files[i].split('_')[1];
+						var prep = function(str){
+//							var arr = .split(/\ /);
+							if(str === 'app'){
+								return '';
+							}
+							return str.replace(/-/g,' ').toLowerCase();
+						}
+						var portall = files[i].split('_')[1]
+						var pattern = []; pattern.push( prep(files[i].split('_')[0]) );
 									var img = new Images({
 										filename : files[i],
 										url : dest_dir.slice(1).replace(/\/public/,'') + '/' + files[i],
 										caption : '',
-										tags		: [],
-										portal : portall == undefined ? 'unknown' : portall.replace(".png",""),
+										tags		: pattern,
+										portal : portall == undefined ? 'unknown' : portall.replace(/-/g,' ').replace(".png",""),
 										file_modified_at : file_stats.mtime,
 										file_created_at : file_stats.ctime,
 										updated_at : Date.now()
@@ -69,6 +77,37 @@ exports.folderImport = function ( req, res ){
 	// 		
 };	
 
+
+/*
+ * Validates the images against the portals 
+ **/
+exports.validate = function ( req, res ){
+  Images
+		.find()
+		.sort( 'filename' )
+		.exec( function ( err, images ){ 
+			if(err){
+				console.error(err); res.end();
+			}
+			Portals.find().exec( function(err, portals ){
+				if(err){
+					console.error(err); res.end();
+				}
+				var flag = false;
+				for(var i = 0; i < images.length; i++){
+					for(var j = 0; j < portals.length; j++){
+						if( portals[j].name.toLowerCase().replace(/-/g,' ') === images[i].portal.toLowerCase().replace(/-/g,' ') ){
+							flag = true;
+						}
+					}
+					if(flag === false){
+						console.log( ' cp ./'+ images[i].filename +' ../screenshots-unsorted/ ;')
+					}
+					flag = false;
+				}
+			});
+		});
+};
 
 /*
 **/
