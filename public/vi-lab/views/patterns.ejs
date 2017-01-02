@@ -90,7 +90,8 @@
 			</h5>
 
 			<% if (item.evidence.length > 0) { %>
-		 			<img	class="card-image" src="/vi-lab/img/screenshots/<%= item.evidence[0].example %>"/><br> 
+		 			<div class="image-<%=: item.name | replace:/\ /g,'-' %>"></div><!--<img	class="card-image" src="/vi-lab/img/screenshots/<%= item.evidence[0].example %>"/>-->
+		 			<br>
 		 			<span hidden class="mark"><%= item.evidence[0].rational %></span>
 			<% } %>
 			<span onclick="javascript:addToFav('<%= item.name %>')" class="glyphicon glyphicon-plus  add-fav" aria-hidden="true"></span>	
@@ -104,20 +105,16 @@
 <script>
 $(document).ready (function () {  
 
-	$.get('/json/images/all', function(data){ return;
-		$.each(data, function(i, val){ 
-			var image = $('<img/>')
-				.attr('src', val.url)
-				.attr('alt', val.filename);
-			var link = $('<a></a>')
-				.attr('href','#')
-				.addClass('thumbnail')
-				.append(image);
-			var div = $('<div></div>')
-				.addClass('col-xs-12 col-md-6')
-				.append(link); //alert('#'+String(val.portal).replace(/\ /g, '-')+'.panel-body.row')
-			var t = $('#'+String(val.portal).replace(/\ /g, '-')+' .panel .panel-body .row')
-				.append(div);
+	$.get('/json/images/all', function(data){ 
+		$.each(data, function(i, val){
+			if(!$.contains('.image-'+val.tags[0].replace(/\ /g,'-'), '.card-image')){
+				var image = new Image();//$('<img></img>')
+					$(image).attr('src', val.url)
+					.attr('alt', val.filename)
+					.addClass('card-image')
+					;
+				$('.image-'+val.tags[0]).html(image);
+			}				
 		});
 	});
 	

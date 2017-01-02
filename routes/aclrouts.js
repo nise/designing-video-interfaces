@@ -55,6 +55,7 @@ module.exports = function(db, app) {
 	// routes for images
 	app.get( 	'/json/images/all' , 			images.getJSON );
 	app.get( 	'/json/images/by-pattern/:pattern', images.getJSONImagePerPattern );
+	app.get( 	'/json/images/by-portal/:portal', images.getJSONImagePerPortal );
 	app.get( 	'/json/images/view/:filename' 		, images.getJSONImagePerFilename );
 	app.get(	'/images', 						images.list );
 	app.get(	'/images/edit', 			images.edit );

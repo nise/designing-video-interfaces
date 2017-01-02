@@ -2,8 +2,9 @@
 - dump: `mongodump --db video-patterns`
 - restore: `mongorestore --db moduleBase ./dump/video-patterns`
 
-
-
+# other pattern languages
+http://groupworksdeck.org/patterns_by_category
+http://patternry.com/
 
 # speed up
 - image compression
@@ -11,7 +12,6 @@
 
 
 # Roadmap
-- proof read patterns
 - load patterns into plattform
 - adopt pattern description layout
 
@@ -65,6 +65,8 @@
 ## list of Javascript Video Player frameworks
 
 #Further Video Systems
+coursemapper aachen mooc platform
+http://smfplayer.synote.org/smfplayer/
 https://github.com/DatabayAG/InteractiveVideo
 https://www.e-teaching.org/praxis/erfahrungsberichte/interaktive-videos-mit-ilias
  Gelungener VideoManager: http://worrydream.com/MediaForThinkingTheUnthinkable/

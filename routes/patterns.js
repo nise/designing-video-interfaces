@@ -206,7 +206,7 @@ exports.listOne = function ( req, res ){
 };
 
 /*
-**/
+
 exports.update = function ( req, res ){
   Patterns.findById( req.params.id, function ( err, image ){
    	//image.filename    = req.body.filename;
@@ -223,11 +223,28 @@ exports.update = function ( req, res ){
     });
   });
 };
+**/
+
+/*
+ * Updates data of an existing Pattern
+ **/
+exports.update = function ( req, res ){ 
+	var data = req.body;
+			data.updated_at = Date.now();
+	Patterns.findOneAndUpdate( { '_id':req.params.id }, data, { returnNewDocument: true}, function ( err, pattern ){
+    if(err){ 
+    	console.error(err);
+    	res.end(); 
+    }else{
+    	res.redirect( '/patterns/view/'+req.params.id );
+    }	   
+  });
+};
 
 /*
 **/
 exports.edit = function ( req, res ){
-  Patterns.find({}).sort( 'name' ).lean().exec(function (err, items) {
+  Patterns.find({'_id':req.params.id}).lean().exec(function (err, items) {
   	if(err){
   		console.log(err);
   	}

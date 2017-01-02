@@ -157,6 +157,32 @@ exports.getJSONImagePerPattern = function ( req, res ){
 };
 
 
+/*
+ not working xxx
+**/
+exports.getJSONImagePerPortal = function ( req, res ){
+  Images
+  	.aggregate([
+  		{
+							"$match" 	:	{ tags: req.params.portal }
+					},
+    { "$project": {
+       "caption": 1,
+       //"portal" : 1,
+       "url"		: 1,
+       "filename": 1,
+       "portal_lower": { "$toLower": "$portal" }
+    }},
+    { "$sort": { "portal_lower": 1 } }
+	])
+		//.find()
+		//.sort('portal')
+		.exec( function ( err, image ){ 
+			res.jsonp(image);
+		});
+};
+
+
 
 /*
 **/

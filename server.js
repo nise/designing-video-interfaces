@@ -98,7 +98,7 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		// !!! do not!1 portals.maintain();
 		// !!! do not!! portals.csvImport();
 		//images.folderImport();
-		images.validate();
+//images.validate();
 		//patterns.folderImport();
 //		utils.addPattern();
 
@@ -134,10 +134,14 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		
 		
 		//users.csvImport();
-		//groups.csvImport();
-		//groups.csvImportFromJSON();
-		//require('./routes/etherpad').generatePadGroups(); // !!!
+		var maintainance = 1;
+		if( !maintainance ){
 		var ACL = require('./routes/aclrouts')(db, app);
+		}else{
+				app.get('/', function(req, res) {	
+					res.send('<h1>Designing Video Interfaces</h1><ul><li>Interaction Design Patterns for Video Learning Environments</li><li>Database of video-based Learning Environments</li></ul>Page under maintainance due server updates.');
+				});
+		}
 	}	
 });
 

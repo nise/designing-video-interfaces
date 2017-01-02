@@ -53,7 +53,7 @@ $(document).ready (function () {
 			<div class="solution" style="font-weight:bold;"><%= items.solution %></div>
 			<div class="consequences mark"><%= items.consequences %></div>
 			<div class="examples">
-			<% if (items.evidence != undefined) { %>
+			<!--<% if (items.evidence != undefined) { %>
 				<% items.evidence.forEach( function ( example ){ %>
 					<div class="col-md-6" style="position:absolut; bottom:0">
        			<img	style="max-height:300px; max-width:100%;" src="/vi-lab/img/screenshots/<%= example.example %>"/><br> 
@@ -61,9 +61,9 @@ $(document).ready (function () {
     			</div>
 					
 				<% }); %>
-			<% }; %>	
+			<% }; %>	-->
 			</div>
-			<div class="related mark"><%= items.name %></div>
+			<div class="related mark"><%= items.related_patterns %></div>
 			
 		</div>
 		
