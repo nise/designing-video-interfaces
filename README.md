@@ -17,9 +17,10 @@ Beside that the application is going to be an example for a pattern database. Us
 ## Initial setup
 
 * `git clone https://github.com/nise/designing-video-interfaces`
-* `sudo npm update`
+* `sudo npm install`
 * `mongorestore --db video-patterns ./dump/video-patterns`
-* `sudo forever start -a -l forever.log -o out.log -e err.log server.js`
+* Run it `node server` or run permanently `sudo forever start -a -l forever.log -o out.log -e err.log server.js`
+* Open page in your browser: `http://<your-domain>:3000`
 * `sudo forever stop server.js`
 
 ## Update from repo

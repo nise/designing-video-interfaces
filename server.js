@@ -141,6 +141,12 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 				app.get('/', function(req, res) {	
 					res.send('<h1>Designing Video Interfaces</h1><ul><li>Interaction Design Patterns for Video Learning Environments</li><li>Database of video-based Learning Environments</li></ul>Page under maintainance due server updates.');
 				});
+				app.get('/portals', function(req, res) {	
+					res.send('<h1>Designing Video Interfaces</h1><ul><li>Interaction Design Patterns for Video Learning Environments</li><li>Database of video-based Learning Environments</li></ul>Page under maintainance due server updates.');
+				});
+				app.get('/patterns', function(req, res) {	
+					res.send('<h1>Designing Video Interfaces</h1><ul><li>Interaction Design Patterns for Video Learning Environments</li><li>Database of video-based Learning Environments</li></ul>Page under maintainance due server updates.');
+				});
 		}
 	}	
 });
