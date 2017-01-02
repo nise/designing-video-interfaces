@@ -23,7 +23,7 @@
         "ml-distance": "*",
         "compute-hamming":"*",
         "ejs": "*",
-        "ejs-locals":"*",
+        "ejs-locals":"*"
     },
     "engines": {
         "node": "0.8.4",
