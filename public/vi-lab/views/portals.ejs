@@ -122,9 +122,9 @@ $(document).ready (function () {
 			return arr.join('');;
 		},
     columns: [
-		  { field: 'name', title: 'Name', sortable : true, formatter: titleFormatter, order: 'asc',searchable : true }, 
+		  { field: 'name', title: 'Name', sortable : true, formatter: titleFormatter, order: 'asc', searchable : true }, 
 		 //	{ field: 'description', title: 'Description', visible:false, sortable : false, order: 'asc',searchable : true }, 
-		  { field: 'tags', title: 'Categories', visible:true, sortable : false, order: 'asc',searchable : true },
+		  { field: 'tags', title: 'Categories', visible:true, formatter: categoryFormatter, sortable : false, order: 'asc',searchable : true },
 		  { field: 'provider', title: 'Provider', visible:true, formatter: providerFormatter, 'sortable': true, searchable : true }, 
 		  { field: 'patterns', title: 'UI Components / UI Patterns', visible:true, sortable : false, formatter:patternFormatter, searchable : true },
 //		  { field: 'operate', title: '', visible:true, formatter: operateFormatter }, 
@@ -180,8 +180,28 @@ $(document).ready (function () {
 	
 	/*
 	 **/
-	function titleFormatter(value, row, index) {
+	function titleFormatter(value, row, index) { return '<b>'+value+'</b>';
 		return 	'<a href="/modules/view/' + row._id + '">'+value+'</a>';
+	}
+	
+	/*
+	 **/
+	function categoryFormatter(value, row, index) {
+		var s = '';
+		for(var i=0; i < value.length; i++){
+			s +=	'<a href="/portals/tag/' + value[i].replace(/ /g,'-') + '">'+value[i]+'</a>, ';
+		}	
+		return s;
+	}
+	
+		/*
+	 **/
+	function patternFormatter(value, row, index) {
+		var s = '';
+		for(var i=0; i < value.length; i++){
+			s +=	'<a href="/portals/patterns/' + value[i].replace(/ /g,'-') + '">'+value[i]+'</a>, ';
+		}	
+		return s;
 	}
 	
 	/*
@@ -196,7 +216,7 @@ $(document).ready (function () {
 		return moment(value).fromNow();
 	}
 	
-	function patternFormatter(value, row, index) {
+	function patternFormatterXX(value, row, index) {
 		var a = '';
 		for(var i = 0; i < value.length; i++){
 			a += '<a class="table-link" href="/patterns/view/'+value[i].toLowerCase()+'" title="">';
@@ -228,7 +248,7 @@ $(document).ready (function () {
 <div class="jumbotron">
 	<div class="container">
 		<h2></h2>
-		<h2><%= title %></h2>
+		<h3><%= title %></h3>
 		<p hidden>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
 	 
 		<p hidden>
@@ -243,6 +263,7 @@ $(document).ready (function () {
 		<div class="col-md-12">
 			<table id="table1"></table>
 		</div>
+		<!--
 		<div class="col-md-4">
 			<h4>Filter by application type</h4>
 			<div class="btn-group-xs filter-portals" data-toggle="buttons">
@@ -264,13 +285,14 @@ $(document).ready (function () {
 			<h4>Recomment a video application</h4>
 		</div>
 	<div class="row"></div>	
+	-->
 </div>
 
 <script>
 
 /*
 Filter all applications by their annotated tag or category
-**/
+
 $('.filter-portals input').change(function () {
 	var id = $(this).attr('id');
 	var map = {
@@ -296,10 +318,10 @@ $('.filter-portals input').change(function () {
         $('.'+map[ id ]).show();
     }
 });
-
+**/
 /*
 Comments
-**/
+
 	$.get('/json/messages/portal', function(data){ return;
 		$.each(data, function(i, val){
 			// plot 10 recent comments
@@ -311,7 +333,7 @@ Comments
 			
 		});
 	});
-
+**/
 </script>
 
 

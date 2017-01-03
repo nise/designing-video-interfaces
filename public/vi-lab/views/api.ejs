@@ -32,25 +32,25 @@ To get an impression about these datasets you can open on of the following link 
   <h3>Patterns</h3>
   <div class="input-group">
 		<span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
-		<input style="cursor:pointer;" readonly type="text" class="form-control" placeholder="" value="http://designing-video.com/json/patterns" aria-describedby="sizing-addon2">
-	</div>
+		<input style="cursor:pointer;" readonly type="text" class="form-control url" placeholder="" value="http://<our-site>/json/patterns" aria-describedby="URL for accessing all interaction design pattern in raw format (JSON)">
+	</div><br>
 	Patter Language Markup Language (PLML)
 	<div class="input-group">
 		<span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
-		<input style="cursor:pointer;" readonly type="text" class="form-control" placeholder="" value="http://designing-video.com/plml/patterns" aria-describedby="sizing-addon2">
+		<input style="cursor:pointer;" readonly type="text" class="form-control url" placeholder="" value="http://<our-site>/plml/patterns" aria-describedby="URL for accessing all interaction design patterns in PLML format">
 	</div>
   
   
   <h3>Video Learning Environments</h3>
    <div class="input-group">
   <span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
-  <input style="cursor:pointer;" readonly type="text" class="form-control" value="http://designing-video.com/json/portals" aria-describedby="sizing-addon2">
+  <input style="cursor:pointer;" readonly type="text" class="url form-control" value="http://<our-site>/json/portals" aria-describedby="URL for accessing all raw data of the collected video learning environments">
 </div>
   
   <h3>Images</h3>
    <div class="input-group">
   <span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
-  <input style="cursor:pointer;" readonly type="text" class="form-control" value="http://designing-video.com/json/images/all" aria-describedby="sizing-addon2">
+  <input style="cursor:pointer;" readonly type="text" class="url form-control" placeholder="" value="http://<our-site>/json/images/all" aria-describedby="URL for accessing all images">
 </div>
  
   <p hidden>
@@ -62,6 +62,14 @@ To get an impression about these datasets you can open on of the following link 
   
   
 </div>
+<script>
+	$(document).ready(function() {
+		$('.url').each(function(i, val){ 
+			var t =  $(this).attr('value').replace('<our-site>', window.location.host); 
+			$(this).attr('value', t );
+		});
+	});	
+</script>
 
 
 

@@ -230,27 +230,34 @@ exports.update = function ( req, res ){
  **/
 exports.update = function ( req, res ){ 
 	var data = req.body;
-			data.updated_at = Date.now();
-	Patterns.findOneAndUpdate( { '_id':req.params.id }, data, { returnNewDocument: true}, function ( err, pattern ){
-    if(err){ 
-    	console.error(err);
-    	res.end(); 
-    }else{
-    	res.redirect( '/patterns/view/'+req.params.id );
-    }	   
-  });
+	data.updated_at = Date.now();
+	Patterns
+		.findOneAndUpdate( { '_id':req.params.id }, data, { returnNewDocument: true}, function ( err, pattern ){
+		  if(err){ 
+		  	console.error(err);
+		  	res.end(); 
+		  }else{
+		  	console.log('/patterns/view/' + String( pattern.name ).replace(/ /g, '-'))
+		  	res.redirect( '/patterns/view/' + String( pattern.name ).replace(/ /g, '-') );
+		  }	   
+		});
 };
 
 /*
 **/
-exports.edit = function ( req, res ){
-  Patterns.find({'_id':req.params.id}).lean().exec(function (err, items) {
+exports.edit = function ( req, res ){ 
+  Patterns
+  	.find({ name: String(req.params.name).replace(/-/g,' ') })
+  	.exec(function (err, items) {
   	if(err){
   		console.log(err);
-  	}
-    res.render( 'patterns-edit', {
-        items   : items
-    });
+  		res.end();
+  	}else{ 
+	  	console.log(items);
+		  res.render( 'patterns-edit', {
+		      items   : items[0]
+		  });
+		 } 
   });
 };
 

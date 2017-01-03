@@ -144,9 +144,23 @@ exports.getJSON = function(req, res) {
 
 
 /*
+ * View a single portal
+ **/
+exports.view = function(req, res) {
+	Portals.findOne( req.params.id ).exec(function (err, portal) {
+		if( err ){
+			console.log(err);
+		}else{
+			res.render( 'portal-single', { items : portal });
+		}	
+	});
+};
+
+
+/*
 **/
 exports.getJSONPortalsOfPattern = function(req, res) {
-	Portals.find({ patterns: String(req.params.id) }).sort( 'id' ).lean().exec(function (err, docs) {
+	Portals.find({ patterns: String(req.params.id).replace(/-/g,' ')  }).sort( 'name' ).lean().exec(function (err, docs) {
 		res.type('application/json');
 		res.jsonp(docs);
 		res.end('done');
@@ -155,9 +169,9 @@ exports.getJSONPortalsOfPattern = function(req, res) {
 
 /***/
 exports.getPortalsOfPattern = function(req, res) {
-	Portals.find({ patterns: String(req.params.id).replace('-',' ') }).sort( 'id' ).lean().exec(function (err, docs) {
+	Portals.find({ patterns: String(req.params.id).replace(/-/g,' ') }).sort( 'id' ).lean().exec(function (err, docs) {
 		res.render( 'portals', {
-			  title : docs.length + ' Video Learning Environments containing the Pattern "'+req.params.id+'"',
+			  title : docs.length + ' video learning environments containing the UI Component / UI Pattern "'+req.params.id+'"',
 			  items : docs
 		});
 	});
@@ -165,9 +179,9 @@ exports.getPortalsOfPattern = function(req, res) {
 
 /***/
 exports.getPortalsOfTag = function(req, res) {
-	Portals.find({ tags: String(req.params.id).replace('-',' ') }).sort( 'id' ).lean().exec(function (err, docs) {
+	Portals.find({ tags: String(req.params.id).replace(/-/g,' ') }).sort( 'id' ).lean().exec(function (err, docs) {
 		res.render( 'portals', {
-			  title : docs.length + ' Video Learning Environments are tagged with "'+req.params.id+'"',
+			  title : docs.length + ' video learning environments categorizes as "'+req.params.id+'"',
 			  items : docs
 		});
 	});

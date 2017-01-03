@@ -134,7 +134,7 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		
 		
 		//users.csvImport();
-		var maintainance = 1;
+		var maintainance = 0;
 		if( !maintainance ){
 		var ACL = require('./routes/aclrouts')(db, app);
 		}else{

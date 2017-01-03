@@ -40,6 +40,7 @@ module.exports = function(db, app) {
 
 	// routes for portals
 	app.get(	'/portals', 						portals.list );
+	app.get(	'/portals/view/:id',		portals.view );
 	app.get(	'/portals/patterns/:id',portals.getPortalsOfPattern );
 	app.get(	'/portals/tag/:id',			portals.getPortalsOfTag );
 	app.get(	'/portals/new', 				portals.new_one );
@@ -69,8 +70,8 @@ module.exports = function(db, app) {
 	app.get(	'/proto-patterns/list', patterns.listProtopatterns );
 	app.get(	'/patterns/view/:name', patterns.listOne );
 //	app.get(	'/patterns/view/:id', 	patterns.listOne );
-	app.get(	'/patterns/edit/:id', 	patterns.edit );
-//	app.get(	'/patterns/edit/:name', patterns.edit );
+//	app.get(	'/patterns/edit/:id', 	patterns.edit );
+	app.get(	'/patterns/edit/:name', patterns.edit );
 	app.post(	'/patterns/update/:id', patterns.update );
 	
 	
