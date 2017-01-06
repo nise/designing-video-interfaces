@@ -12,6 +12,16 @@ var
 	csv = require('csv')
 	;
 
+/*
+ **/
+exports.maintain = function(){
+	Images.find().exec( function ( err, imgs ){ 
+		for(var i =0; i < imgs.length; i++){
+			imgs[i].url = imgs[i].url.replace('/vi-lab/','/static/');
+			imgs[i].save();
+		}
+	});	
+}	
 
 /*
 Import files from upload folder into database and moves the files into another folder

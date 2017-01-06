@@ -1,0 +1,240 @@
+
+<% layout( 'layout' ) -%>
+
+		<div class="jumbotron">
+			<div class="container">
+			<h2>Edit Pattern: <%= items.name %></h2>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="col-md-8">
+				<div id="errors"></div>
+				<form class="patterns-edit" id="form"></form>
+				<div id="res" class="alert"></div>
+			 </div> 
+		</div>
+		<script src='/static/js/jquery-1.11.2.min.js' type='text/javascript'></script>
+		<script src="/static/js/underscore.js" type="text/javascript" ></script>
+		<script src="/static/js/jsv.js"type="text/javascript" ></script>
+    <script src="/static/js/jsonform.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+ 
+      var formObject = {
+        schema: {
+          "name": {
+            type: 'string',
+            title: 'Name',
+            default: '<%= items.name %>',
+            required: true
+          },
+           "alias": {
+            type: 'string',
+            title: 'Alias',
+            default: '<%= items.alias %>',
+            allowEmpty: true,
+            required: false
+          },
+           "synopsis": {
+            type: 'string',
+            title: 'Synopsis',
+            default: '<%= items.synopsis %>',
+            allowEmpty: true,
+            required: false
+          },
+           "confidence": {
+            type: 'integer',
+            title: 'Confidence',
+            default: '<%= items.confidence == undefined ? 0 : items.confidence  %>',
+            description: "...",
+            required: false,
+            "enum": [ 0, 1, 2, 3 ]
+          },
+          "illustration": {
+            type: 'string',
+            title: 'Illustration',
+            default:  '<%= items.illustration == '' ? "/static/img/illustrations/"+items.name.replace(/ /g,"-") : items.illustration %>',
+            required: false
+          },
+          "context": {
+						"title": "Context",
+						//"description": "Your gender",
+						"type": "string",
+						default: '<%= items.context %>',
+						required: true
+					},	
+					 "problem": {
+						"title": "Problem",
+						"type": "string",
+						default: '<%= items.problem %>',
+						required: true
+					},
+					"forces": {
+						"title": "Forces",
+						"type": "string",
+						default: '<%= items.forces %>',
+						required: false
+					},	
+          "solution": {
+						"title": "Solution",
+						"type": "string",
+						default: '<%= items.solution %>',
+						required: true
+					}, 
+					"consequences": {
+						"title": "Consequences",
+						"type": "string",
+						default: '<%= items.consequences %>',
+						required: false
+					}, 
+					"rational": {
+            type: 'string',
+            title: 'Rational',
+            default: '<%= items.rational %>',
+            required: false
+          },
+          "diagram": {
+						"title": "Diagram",
+						"type": "string",
+						default: '<%= items.diagram %>',
+						required: false
+					}, 
+					"example_description": {
+            type: 'string',
+            title: 'Example description',
+            default: '<%= items.example_description %>',
+            required: false
+          },
+           "literature": {
+						"title": "Literature",
+						"type": "string",
+						default: '<%= items.literature %>',
+						required: false
+					}, 
+					"implementation": {
+            type: 'string',
+            title: 'Implementation',
+            default: '<%= items.implementation %>',
+            required: false
+          }
+        },
+        /**************************/
+        "form": [
+		     {
+						"key": "name",
+						"type": "text"
+					},
+        	{
+						"key": "synopsis",
+						"type": "textarea"
+					},
+        	{
+						"key": "confidence",
+						"titleMap": {
+						  0: "0",
+						  1: "1",
+						  2: "2",
+						  3: "3"
+						}
+					},
+        	{
+						"key": "illustration",
+						"type": "text"
+					},
+					{
+						"key": "context",
+						"type": "textarea"
+					},
+        	{
+						"key": "problem",
+						"type": "textarea"
+					},
+					{
+						"key": "forces",
+						"type": "textarea"
+					},
+        	{
+						"key": "solution",
+						"type": "textarea"
+					},
+        	{
+						"key": "consequences",
+						"type": "textarea"
+					},
+        	{
+						"key": "rational",
+						"type": "textarea"
+					},
+					{
+						"key": "diagram",
+						"type": "text"
+					},
+        	{
+						"key": "example_description",
+						"type": "textarea"
+					},
+					{
+						"key": "literature",
+						"type": "textarea"
+					},
+        	{
+						"key": "implementation",
+						"type": "textarea"
+					},
+					{
+						"type": "submit",
+						"title": "save"
+					},
+					{
+		        "type": "button",
+		        "title": "cancel"
+		      },
+		      {
+		        "type": "button",
+		        "title": "delete",
+		        "onClick": function (evt) {
+						  evt.preventDefault();
+						  $.ajax({
+								type: "GET",
+								url: "/patterns/destroy/<%= items._id %>",
+								success: function(){ 
+									window.location.replace("/patterns/list");
+								},
+								error: function(err){ 
+									console.error(JSON.stringify(err))
+								},
+							});	        
+						}
+		      }  	
+				],
+        //
+        "onSubmit": function (error, values) { 
+        	
+          if (error) {
+            console.error()
+          }
+          else {
+						$.ajax({
+								type: "POST",
+								url: "/patterns/update/<%= items._id %>",
+								data: JSON.stringify( values ),
+								success: function(){ 
+									window.location.replace("/patterns/view/<%= items.name.replace(/ /g,'-') %>");
+								},
+								error: function(err){ 
+									console.error(JSON.stringify(err))
+								},
+								contentType : "application/json"
+							});
+          }
+        },
+        "displayErrors": function (errors, formElt) {
+					for (var i=0; i<errors.length; i++) {
+						errors[i].message = "Avast! Ye best be fixin' that field!";
+					}
+					$('#errors').jsonFormErrors(errors, formObject);
+				}
+      }
+      
+      $('form.patterns-edit').jsonForm( formObject );
+    </script>

@@ -10,6 +10,40 @@ var
 	csv = require('csv')
 	;
 
+//
+exports.maintain = function(){
+	
+	Patterns.find().exec( function ( err, patterns ){ 
+		for(var i =0; i < patterns.length; i++){
+			
+			patterns[i].illustration = '/static/img/illustrations/' + patterns[i].name.replace(/\ /g, '-') + '.png'; 
+
+			var t = getpp(patterns[i].name);
+			if(t.context === undefined || t.problem === undefined || t.solution === undefined){
+				console.log(patterns[i].name);
+			}
+			
+			if(t !== 0){
+				patterns[i].context = t.context;
+				patterns[i].problem = t.problem;
+				patterns[i].solution = t.solution;
+				patterns[i].save();
+			}else{
+				console.log('_0_'+patterns[i].name);
+			}
+		}		
+	});
+}
+
+var pp = require('../data/pattern-import.json');
+getpp = function(name){
+	for(var i =0; i < pp.length; i++){
+		if(pp[i].name === name){
+			return pp[i];
+		}
+	}
+	return 0;
+}
 
 /*
 Import Pattern data from LaTeX files
@@ -261,6 +295,15 @@ exports.edit = function ( req, res ){
   });
 };
 
+
+// remove pattern
+exports.destroy = function ( req, res ){ console.log(req.params.id)
+  Patterns.findById( req.params.id, function ( err, pattern ){
+    pattern.remove( function ( err, patt ){
+      res.redirect( '/patterns/list' );
+    });
+  });
+};
 	
 /*
 REST API CALL

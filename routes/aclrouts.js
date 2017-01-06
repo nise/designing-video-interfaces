@@ -69,6 +69,7 @@ module.exports = function(db, app) {
 	app.get(	'/patterns/list', 			patterns.list );
 	app.get(	'/proto-patterns/list', patterns.listProtopatterns );
 	app.get(	'/patterns/view/:name', patterns.listOne );
+	app.get(	'/patterns/destroy/:id',	patterns.destroy );
 //	app.get(	'/patterns/view/:id', 	patterns.listOne );
 //	app.get(	'/patterns/edit/:id', 	patterns.edit );
 	app.get(	'/patterns/edit/:name', patterns.edit );

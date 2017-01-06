@@ -1,0 +1,229 @@
+[{
+	"name": "Add Video",
+	"context": "The provided video learning environment contains a limited set of instructional videos. Other relevant videos  might have been found or stored outside the platform.",
+	"problem": "Videos outside the provided learning environment are difficult to handle for both instructors and learners. First of all the learners need to know about the video. Second, the videos need to become accessible and remain accessible for all learners. Even if they are known and accessible the user will experience media breaks and might be destructed by unrelated content on the remote platforms. %Although the system only provides a limited set of videos users come up with interesting material. They produced it on their own or found it somewhere else in the web.",
+	"solution": "Provide a learning environment where videos from different sources can be integrated in a consistent manner. Make sure learners get sufficient privileges to upload or embed resources in the system"
+}, {
+	"name": "Annotated Timeline",
+	"context": "Enriched videos incorporate time-related contents like chapter marks or tags as well as further contents like pictures, websites or hyperlinks. Their presentation is determined by a temporal layout that contains the position and dimension of these events and marks",
+	"problem": "The distribution of time-related and time-dependent annotations within the duration of a video is neither visible nor is it possible to navigate precisely to the corresponding positions in time. The learner should have a chance to develop its own mental model on how the interactive video works, and how its temporal events and marks relate to the playback time.",
+	"solution": "Indicate temporal events and scenes alongside the timeline by different icons, colours or on parallel tracks. Allow users to jump to these temporal positions."
+}, {
+	"name": "Annotations",
+	"context": "A learning environment is not closed, but rather open for contributions made by teachers and students.",
+	"problem": "Compared to text or images, it is difficult to modify a video file. Videos are technically self-contained, which implies their use as a broadcast medium in terms of teaching and learning. The involved people are impeded from making contributions or additions that are directly related to the time-based information structure.",
+	"solution": "Make video extensible for the user through spatial and temporal annotations. Place them on top or beside the video."
+}, {
+	"name": "Appropriate Delivery",
+	"context": "The file size as well as the experienced image quality of a video is determined by the product of the pixels per frame, their colour depth, and the frame rate. When delivering web video there is a trade-off between fast delivery and the quality of the audiovisual content. This is determined by the individual system and network capabilities of the user",
+	"problem": "While users expect a fast delivery of a high-quality video they would be overwhelmed in finding the optimal way of content delivery.",
+	"solution": "Automatically deliver an appropriate video of maximum frame size and quality in a supported format that does not conflict with the possible data transfer capacity. Therefore provide several instances of the video that correlate with common screen resolutions, supported video formats, and network delivery capacities."
+}, {
+	"name": "Assessment",
+	"context": "A video consists of several content units that are build on each other. A key concept is explained in the video that students need to understand before continuing the video",
+	"problem": "Learners tend to continue watching a video even if they did not understand the previous content section. With a lack of understanding, it becomes more and more difficult to comprehend the subsequent contents.",
+	"solution": "Pause the video after a key concept has been explained. Present a question as a little challenge that is suitable to determine how well the student understood the previous section. Since we focus on self-assessment it is important to provide immediate feedback including the correct solution. Neither make the submission of an answer mandatory nor define its result as a threshold for continuing the playback."
+}, {
+	"name": "Basic Controls",
+	"context": "An application is dedicated to deliver the content of a video to the user",
+	"problem": "How to control the audiovisual presentation of a video?",
+	"solution": "Every video player needs to provide basic control elements regarding the playback (play / pause), temporal navigation (skip, timeline), display mode (normal view / full screen), and volume control"
+}, {
+	"name": "Branching Videos",
+	"context": "Learners differ in their interests, learning styles, and prior knowledge. In contrast to that an instructional video has been designed for an audience with particular interests and expected prior knowledge.",
+	"problem": "When watching a video learners are faced with different (content-driven) opportunities to leave the video. For instance, learners may want to close individual knowledge gaps or they may want to deepen a topic before or instead of continuing the playback. In this cases, they might not learn as much as they could if they continue the video. But if they would leave the video with an unclear goal in mind they will loose track towards the learning objectives.",
+	"solution": "Therefore, provide hyperlinks as branches on the designated learning path. Each branch is  constructively aligned with your learning objectives. Offer branches of topic-related videos that address required prior knowledge, different interests of your audience, and desired topics for deepening learning"
+}, {
+	"name": "Classified Marks",
+	"context": "A large number of time-accurate annotations of the same type have been added to a video.",
+	"problem": "Viewers get confused by a large number of indistinguishable annotations and tend to miss the important ones.",
+	"solution": "Therefore, find a meaningful classification scheme that helps the user to distinguish and filter different annotation. Such a scheme could rely on the type (e.g. comment, hyperlink, quiz), the content (e.g. question, remark, and mistake for annotated comments), relevance or ratings (e.g. green, yellow, red)"
+}, {
+	"name": "Closed Captions",
+	"context": "An instructional video is usually accompanied by spoken word in a certain language",
+	"problem": "Audio information in a video can not be understood by audiences that are deaf, hard of hearing, or that have insufficient language competencies. These audiences are hardly able to participate in learning",
+	"solution": "Support comprehension by providing closed captions of transcribed speech and other relevant audiovisual information. Let the user decide whether the subtitles should be visible or not. If they are visible they should be displayed inside the video frame."
+}, {
+	"name": "Comments",
+	"context": "The video is delivered like broadcast media",
+	"problem": "When watching an instructional video one might have questions, a remark or the will to  start a discussion. In typical broadcast media, users can not express themselves while the content providers don't notice user feedback.",
+	"solution": "Let users anchor comments related to specific points in time. Also, enable re-comments to enable discussions. Do not restrict the form or style of the comments."
+}, {
+	"name": "Detail on Demand",
+	"context": "Transfer of knowledge requires particular prior knowledge. The prior knowledge of individual learners almost always differs to some extent.",
+	"problem": "Within an instructional video you can neither expect the same prior knowledge from every learner nor can you explain every mentioned term or concept in detail to consider individual prior knowledge.",
+	"solution": "Provide necessary prior knowledge as details on demand. Therefore, use a hyperlink that  refers to a segment of another video. As soon as the playback of the on-demand video ends the presentation of the original video should be continued"
+}, {
+	"name": "Direct Authoring",
+	"context": "The video delivered in the player can be extended by additional time-dependent and time-related contents. These annotations can be created, edited or removed.",
+	"problem": "The playback facilities are typically separated from the authoring tools. For adding or editing an annotation the user needs to switch from the player to the authoring interface in the back-end of the application. As a consequence, the task flow of watching and annotating is interrupted. Furthermore, it has a negative effect on the viewing experience. Finally, users hesitate to annotate content, because they do not want to loose focus on the current scene or topic. % In the player the authoring results are often presented in a different way than in the authoring environment.",
+	"solution": "Therefore, integrate the most important authoring tools directly in the user interface of the video player"
+}, {
+	"name": "Follow Revisions",
+	"context": "Students are encouraged to extend the instructional video with additional information. They do this by working individually or in small groups. Furthermore, the augmented content and the video itself can be manipulated and changed.",
+	"problem": "It is difficult to determine which parts of a video or which video annotations have been added, modified or removed since the last visit. If users are not able to identify these changes they may miss important contributions from other users.",
+	"solution": "Implement comprehension of changes since the last visit. Provide a revision log that expresses different editing processes, whether they result in changes of visual, audio, and text content or the overall content structure (e.g. changes in the sequence of concatenated videos)"
+}, 
+{
+	"name": "Full Screen",
+	"context": "A video is enriched by further time-dependent resources such as synchronized slides, \textsc{Overlays} or \textsc{Annotations}.",
+	"problem": "Browsers built-in full-screen presentation of the video dismisses time-related contents and navigational instruments. So the user cannot see all relevant contents and has only limited possibilities to control and navigate the video.",
+	"solution": "In full screen mode consider all contents that are related with the playback time of the video (e.g. synchronized slides). Also provide essential navigational elements such as \textsc{Table of Content}, \textsc{Hyperlinks} or buttons to turn \textsc{Closed Captions} on or off."
+}, 
+{
+	"name": "Hyperlinks",
+	"context":"There are several videos collected in a video learning environment. Some contents relate on each other or contain implicit references to topics covered by another video or web resource.",
+	"problem":"Students often don't know about content-related relations between learning resources. It is difficult to make use of these relations because they are not easy to find. In case one might have identified a cross-relation between videos the relation remains implicit and not visible for other learners.",
+	"solution":"Therefore, make content relations explicit by linking segments in one video with another video or learning resource. Distinguish visually, whether a link points to another video within the same environment or to any other external resource. When of referencing continuous media such as video or audio enable time-accurate link targets to address contents more precisely."
+},
+{
+	"name": "Journaled Navigation",
+	"context": "Browsing from one video to another leaves a trace that is not just resource-related but also related to the viewed scenes of each video",
+	"problem": "Browsing between videos must be supported in both directions. While the forward directed links are commonly implemented, the way back is not considered.",
+	"solution": "Provide journaled navigation to go smoothly and time-accurately back and forth in the sequence of watched videos. In addition to the \textsc{Viewing History} and the browser history users should be able to recall the starting point of the previously watched segments."
+}, {
+	"name": "Loading Indicator",
+	"context": "Video browsing can be delayed by network latency, script execution and display problems.",
+	"problem": "User gets frustrated if the video player is not responding but remaining in an inexplicable state at start-up or during the playback.",
+	"solution": "Immediately indicate a delay of data transmission or presentation not just for the video, but also for other attached resources (e.g. slides, images or parts of the web page)"
+}, {
+	"name": "Loop",
+	"context": "The moving images of a video contain great visual details.",
+	"problem": "Understanding a visual presented process or animation sometimes requires the user repeat the presentation multiple times in order to grasp all relevant details. Jumping back on timeline after every run is very cumbersome, especially if the requested scene is only a few seconds long.",
+	"solution": "Therefore, enable the repetition of segments of a video. Inform the user when entering such a loop and provide a way to stop it"
+}, {
+	"name": "Media Fragments",
+	"context": "Video has a very high resolution or includes multiple camera angles (e.g. a multi-angle video).",
+	"problem": "Analysis and discussions that only related to a very small part of the video require the user frequently to navigate and zoom. User tasks that only relate to small area of the video   like an analysis or discussion  about visual details  focus ",
+	"solution": "Therefore, allow the user to extract a fragment of the video in order to work with this fragment. Provide handy tools to cut out parts of the video frame and to select a time range on the timeline"
+}, {
+	"name": "Multi-Timeline Editing",
+	"context": "A video has been augmented with different types of annotations. Some of the annotations overlap in their temporal extent",
+	"problem": "Overlaps and clusters make it difficult to overview annotations that are displayed on a single timeline track. When managing these content annotations might be overlooked and ignored in the clutter.",
+	"solution": "For editing spread annotations on different timeline tracks. Preserve at least one track for each type of annotation."
+}, {
+	"name": "Object Tracking",
+	"context": "An annotated video has been augmented with \textsc{Overlays} whose temporal and spatial position is related to a certain visual object in the video. This visual object can change its position over time",
+	"problem": "The semantic relation of the annotation and its corresponding object in the video can not be ensured if they are not presented close to each other. Without this spatial context information an annotation can become meaningless. % Spatial proximity between a time-depending annotation and its semantically corresponding object in the video can not be ensured if the object is moving.",
+	"solution": "Therefore, dynamically adjust the position of the annotation by analysing the movement of its corresponding object. Computer vision algorithm can be used for tracking the position of an object over time."
+}, {
+	"name": "Overlays",
+	"context": "The instructor or students want to augment the video with further information. These additional contents can be synchronized with the video. The available space to present these contents is limited by the display size and the size of the video that is required to distinguish all necessary content.",
+	"problem": "Displaying synchronized additional information beside the video reduces the available display size of the video.",
+	"solution": "Present additional visual information in a time-dependent layer on top of the video. Make sure to place it closely to its corresponding visual contents. Avoid overlapping relevant visual information in the video"
+}, {
+	"name": "Playback Speed",
+	"context": "The presentation of video contents can result in the two extremes of a cognitive load. On the one hand, overload can be caused by fast scene changes or volatile details in visual dynamic processes. Mental underload, on the other hand, is related to almost unchanging images or irrelevant content",
+	"problem": "The density of presented information in a video differs from the expected level of detail, sometimes it is perceived as too slow, sometimes as too fast.",
+	"solution": "Integrate a mechanism to change the speed of presentation from slow motion to normal speed to time-lapse and vice versa.% as well as the direction of playback from forwards to backwards and vice versa"
+}, {
+	"name": "Playlist",
+	"context": "Videos in a large collection are filed in a predefined category system.",
+	"problem": "When browsing a large collection of videos, users need to organize resources by their own needs. Selected, previously watched resources should not need to be searched over and over again.",
+	"solution": "Provide learners a playlist, where they can collect and store subsets of a video collection for later use. These personal subsets can be freely extended or reduced by videos that are part of the learning environment"
+}, {
+	"name": "Related Videos",
+	"context": "A set of videos that strongly build on each other in a sequential manner should be rather interlinked with each other or concatenated in the way of \textsc{Sequential Media}. Hence additional learning resources are not intended to provide a linear learning path. The content of a video bears many implicit ties to other learning resources. Learners can be motivated to follow these ties and consume resources that are part of the learning environment",
+	"problem": "The desire to watch another video awakes during or after a video presentation. The viewer might be looking for another video during the playback if the one presented does not fulfil his/her needs. After completion, the viewer would like to continue with a subsequent or deepening lecture. In both cases, the learner should not leave the learning environment if he/she could proceed the learning with an appropriate resource.",
+	"solution": "Always offer links to additional learning resources that fosters continued learning activities. Provide these links after one video has ended. In addition to that display a set of related videos beside the current video. Consider resources that are semantically or didactically related to the current video."
+}, {
+	"name": "Remix",
+	"context": "Producing a video from scratch takes a lot of time. The same is true for video annotations  such as \textsc{Table of Content}, \textsc{Hyperlinks} or \textsc{Assessment}. The video and its annotations can be modified or extended by other users",
+	"problem": "To create a new video users cannot make use of existing parts of a video or video annotations",
+	"solution": "Therefore, allow users to take an instance of a video including all its annotations as a starting point for their own version or remix of the original content. Make it possible to integrate or connect artefacts from different sources"
+}, {
+	"name": "Search",
+	"context": "A video can be seen as a continuous stream of audible and visual information. This information can not be scanned as quickly as a piece of text. The longer a video the harder it gets especially to overview the verbal content.",
+	"problem": "Verbal information stored in a video is not accessible at a stroke. Increasing the playback rate or listening all speech takes to much time. Beside that, one may also have to look for written words that are part of the video and its synchronized media streams. In consequence, the verbal content related to a video can not be searched directly.",
+	"solution": "Enable a search within all available sources that are related to the video. Consider video related meta data and all available media streams including audio. Take also information into account that needs to be extracted from annotated contents such as synchronized slides, images, tags, or links. Provide a link from each search result back to its corresponding artefact at a given playback time."
+}, {
+	"name": "Sequential Media",
+	"context": "There is set of videos that should be watched in certain order",
+	"problem": "If the video would be watched in a different order it would become difficult to comprehend them. Important prior knowledge (e.g. about term, concepts, theories) could be missing or the sequence of an explanation or a process order would be messed up.",
+	"solution": "Therefore, sequence the videos in fixed order and make the order visible to the user. Provide a menu or enumerated list to emphasize the sequence of videos. Foster navigation between adjacent videos through direct links. Automatically load the subsequent video when a video ends"
+}, {
+	"name": "Shortcut Commands",
+	"context": "Video players incorporate different designs and provide different user interfaces.",
+	"problem": "Graphical user interfaces are not accessible for the blind without a screen reader. These interfaces can also become frustrating for users who are not impaired in their vision, especially for frequently executed tasks. ",
+	"solution": "Enable keyboard shortcuts and touch gestures for the most frequent user interactions. Specifically, define those shortcuts that most of the video players have in common."
+}, {
+	"name": "Simultaneous Media",
+	"context": "Different types and formats of instructional media are provided to enable learning, whereas the given video contains the most important information.",
+	"problem": "A subject matter is not fully covered by the video, but provided with separate learning resources that are indispensable for learning. Despite the strong relations between the video and the other resources, they are stored and presented separately.",
+	"solution": "Synchronize corresponding contents with segments of the video. Present them side by side to the video"
+}, {
+	"name": "Skip Back",
+	"context": "The visual presentation is accompanied by a narration. Or the visual contents has volatile details",
+	"problem": "The user can have difficulties to understand currently spoken words or to recognize volatile visual details. In terms of understanding audio, one might not be familiar with the language, the used vocabulary the level of difficulty. Regarding volatile visual content, an object might disappear after a very short time or change their gestalt or look.",
+	"solution": "Provide a short-cut button to jump back a few seconds back in time in order to repeat the last sentence or the previous scene of the video image"
+}, {
+	"name": "Synchronized Map",
+	"context": "The content of a video contains many geographic or location-related references. These details are not directly visualized in the video (e.g as a map or an arial image)",
+	"problem": "Learners who can not integrate places or regions mentioned in the video will have difficulties to comprehend the contents that are related to these locations. ",
+	"solution": "Show an interactive map beside the video that provides the geographic context. Synchronize the presentation of locations, routes, and areas, but do not restrict the user to navigate the map"
+}, {
+	"name": "Table of Content",
+	"context": "The video is longer then 20 Minutes. Its content stretches across several sections",
+	"problem": "Content units of a video can be neither overviewed nor accessed precisely. So the user wastes time for searching and navigating.",
+	"solution": "Provide a navigable table of content next to the video that provides a brief overview of the video content. Enable time accurate access to the corresponding content sections. Highlight the currently watched section in the table of content"
+}, {
+	"name": "Temporal Bookmarks",
+	"context": "In a video learning environment links are used to reference a video to be loaded by a player. These links can be easily copied, saved or shares. Particularly they are used to bookmark the video or for setting a link somewhere else in the web",
+	"problem": "Time-related events or periods in the video are not part of a URL. If you are sharing a URL you cannot point to a certain moment or period in the video. This information needs to be transferred separately. Often it is missing or only verbally described. The one who would like to watch a particular scene has to open the link and navigate manually to the desired scene. ",
+	"solution": "Implement media fragments like time stamps, periods or section names as part of the URL. When opening a URL that includes these fragment identifiers parse them and navigate the video player to the given temporal position."
+}, {
+	"name": "Temporal Tags",
+	"context": "Many videos have been collected in a video learning environment. They were filed into categories and subcategories. In addition, the video files were annotated with keywords (tags)",
+	"problem": "Tags that are related to an entire resource  do not tell the user what parts of the video cover the related contents. The user has to navigate and search to find the corresponding time stamps or periods. It is also unclear how often a tag occurs in the video.",
+	"solution": "Therefore, provide tags that correspond to a point or period of time. Combine tags in a separate view that belong to the current video. Offer another view that integrates temporal tags from multiple videos (e.g. all videos in a certain category). Facilitate browsing by linking each tag to its (multiple) time-accurate link target(s)"
+}, {
+	"name": "Transcript",
+	"context": "An instructional video is usually accompanied by spoken language.",
+	"problem": "Auditory information of a video is volatile and can be neither accessed or skimmed at the users own pace.",
+	"solution": "Provide a transcript of all auditory information as a text equivalent beside the video. Make this transcript navigable and highlight paragraphs that correspond to the current playback position"
+}, {
+	"name": "User Notes",
+	"context": "Comprehensive knowledge is delivered by video",
+	"problem": "Expressing knowledge with you own words fosters learning. Taking notes while watching a video can be cumbersome if the speaker talks faster then the user is writing down things. Notes on a sheet of paper or in a text document make it difficult to link back to the video. Because of the missing relations notes remain separate from the video.",
+	"solution": "Enable the user to take personal notes during the video playback. Relate each section of the notes to a segment of the video. Make these relations navigable in both directions - from a video segment to a section in the notes and vice versa."
+}, {
+	"name": "User Ratings",
+	"context": "User have access to a comprehensive collection of videos. These videos can be organized by categories and tags.",
+	"problem": "Users are overwhelmed of similar videos. Differences in quality or relevance can not be recognized at a glance. They cannot estimate which videos are worth to watch. ",
+	"solution": "Therefore, let users rate the videos regarding their quality or relevance. Show the rating results whenever users will have the choice to select one of many video, e.g. in a list of search results or category contents"
+}, {
+	"name": "User Traces",
+	"context": "In asynchronous communication learners tend to miss each other when watching a video. So they are not aware of each other and cannot relate to their progress in learning.",
+	"problem": "Learners do not know what contents their peers have watched or skipped. Both instructors and learners are interested in what parts of the video had been already watched and processed by a group.",
+	"solution": "Visualize the frequency of perception on the timeline so that one can estimate which parts they have been watching often, rarely or not at all. Provide these user traces to peers and the instructor"
+}, {
+	"name": "Video Manager",
+	"context": "The video learning environment contains a collection of videos that might be organized by categories and tags.",
+	"problem": "User can select videos from a list or menu. Because of a lack of sufficient information about the video content the user needs to open the videos one by one in order to find the desired one.",
+	"solution": "Support browsing and searching by providing a meaningful overview of any set or subset of the videos in the system. Include necessary meta data (e.g. title, author, tags, description, duration, ratings) as well as a visual preview. Provide a direct link to the video player in order to start the playback"
+}, {
+	"name": "Video Manipulation",
+	"context": "An uploaded video file has some failures, e.g. the image is too dark, it is wrong orientated or the first three seconds need to be trimmed",
+	"problem": "If a video has been uploaded the file has to be used as is. For editing the file needs to be (1) downloaded, (2) opened in a video editing software, (3) edited and re-encoded, and (4) finally uploaded to the system again. For applying only minor changes this process is too time-consuming and reduces the quality because of the re-encoding.",
+	"solution": "Enable basic editing tools that only manipulate the presentation and leave the file untouched. For example, one could adjust image properties like brightness, contrast, and colours by using filters. One might also need to change the orientation from landscape to portrait. Unwanted scenes can be excluded from playback instead of trimming or cutting the file"
+}, {
+	"name": "Viewing History",
+	"context": "Learners have access to a collection of videos that they want or need to watch.",
+	"problem": "The learner cannot exactly remember which videos they have already watched. Furthermore, they hardly remember what parts they have seen so far.",
+	"solution": "Offer a viewing history that lists the previously watched videos. Make sure the user can estimate to what extent a video has been watched already"
+}, {
+	"name": "Visual Highlighting",
+	"context": "A narrated video includes multiple visual aspects or details that are relevant to understand the content",
+	"problem": "Learners are not aware of a visually presented object that is referred to by the narration or online discussion.",
+	"solution": "Highlight visual objects or details inside the video as longs as they are necessary to understand the oral presentation or content-related communication"
+}, {
+	"name": "Visual Summary",
+	"context": "Dynamic visualizations such as videos are presented little by little. Despite an increased \textsc{Playback Speed} it can not be scanned as quickly as a piece of text. The longer a video the harder it gets to overview the visual content",
+	"problem": "Visual information stored in a video is not accessible at a stroke. Browsing along the timeline can be cumbersome the longer the video and the more similar the scenes are. Neither visual content can be overviewed nor certain visual anchors are searchable.",
+	"solution": "Therefore, provide an overview of the visual contents that summarizes the information inside the player and in the \textsc{Video Manager}. Represent the summary in the \textsc{Video Manager} as generic still images or flicker-book-like animations to overview and search visual cues. In addition, provide a scrubber preview on the timeline of the player. When hovering a point on the timeline the corresponding preview image should be presented"
+}, {
+	"name": "Zoom",
+	"context": "A video or its synchronized contents contain visual details that are essential for comprehension",
+	"problem": "Users miss essential visual details that are presented too small.",
+	"solution": "Therefore, it is advisable to let the user zoom in and out all time-dependent contents including the video itself"
+}]

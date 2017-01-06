@@ -48,7 +48,7 @@ console.log('************************************************\n\n');
 	app.use(compression())
 	
   app.use(express.static(path.join(__dirname, 'public')));
-	app.set('views', __dirname + '/public/vi-lab/views');
+	app.set('views', __dirname + '/public/static/views');
 	app.set('view engine', 'ejs');
 	app.engine('ejs', require('ejs-locals'));
 		
@@ -91,6 +91,7 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 	if(err){
 		console.log(err);
 	}else{
+		//images.maintain();
 		/*
 		Import data
 		**/
