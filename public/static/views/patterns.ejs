@@ -83,7 +83,7 @@
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
 <% i++ %>
-	<div class="col-md-2 portfolio-item" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
+	<div class="col-md-2 col-xs-2  portfolio-item" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
 		<div class="panel panel-default pattern-card">
 			<h5><a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a> 
 				<a class="button" style="display:none;float:right;" href="/patterns/edit/<%= item._id %>" title="Update this item item"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>

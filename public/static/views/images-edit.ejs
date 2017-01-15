@@ -9,7 +9,7 @@
 <% items.forEach( function ( item ){ %>
 <% i++ %>
 <div id="item<%= item._id %>" class="panel col-md-12" style="margin-bottom:35px;">
-	<form action="/images/update/<%= item._id %>" method="post" accept-charset="utf-8">
+	<form id="form<%= item._id %>" action="/images/update/<%= item._id %>" method="post" accept-charset="utf-8">
 		<div class="col-md-4" style="position:absolut; bottom:0">
        <img	style="max-height:200px; max-width:100%;" src="<%= item.url %>"/><br> 
     </div>
@@ -27,7 +27,7 @@
 					<span class="input-group-addon" id="sizing-addon1">Portal</span>
 					<input type="text" class="ac-portals form-control" placeholder="Portal" aria-describedby="sizing-addon1" name="portal" value="<%= item.portal %>">
 			</div>
-			<button class="btn btn-default dropdown-toggle" type="submit">update</button>
+			<button data-id="<%= item._id %>" data-path="/images/update/<%= item._id %>" class="imgsubmit btn btn-default dropdown-toggle" type="button">update</button>
 			<a class="alert-btn" href="javascript:deleteImage('<%= item._id %>')" title="Delete this item">delete</a>		
     </div>         
   </form>
@@ -37,7 +37,7 @@
 
  <script>
 $(document).ready(function(){
-
+/*
 	var patterns = new Bloodhound({
 		datumTokenizer: Bloodhound.tokenizers.whitespace,
 		queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -73,17 +73,18 @@ $(document).ready(function(){
 			source: applications
 		});
 	});
+*/
 
-
-		$("form").submit(function(e) {  
-		  e.preventDefault(); // Prevents the page from refreshing
+		$(".imgsubmit").click(function(e) {  
+		  //e.preventDefault(); // Prevents the page from refreshing
 		  var _this = this;
 			$.ajax({
 		      type: "POST", 
-		      url: $(_this).attr('action'),
-		      data: $(_this).serialize(),
+		      url: $(_this).data('path'),//$(_this).attr('action'),
+		      data: $('#form'+$(_this).data('id')).serialize(),
 		      success: function(data) { },
 		      error: function(msg){
+		      alert(JSON.stringify(msg));
 		      	console.dir(msg)
 		      }
 		   });

@@ -1,32 +1,33 @@
 {
-    "name": "VI-LAB",
-    "description": "VI-LAB",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "express": "3.4.x",
-        "express-validator":"*",
-        "express-json":"*",
-        "express-session":"*",
-        "body-parser":"*",
-        "connect-flash":"*",
-        "cookie-parser":"*",
-        "method-override":"*",
-        "compression": "*",
-        "node-fs":"*",
-        "mv":"*",
-        "passport":"*",
-        "passport-local":"*",
-        "csv":"*",
-        "mongodb": "1.1.8",
-        "mongoose":	"*",
-        "ml-distance": "*",
-        "compute-hamming":"*",
-        "ejs": "*",
-        "ejs-locals":"*"
-    },
-    "engines": {
-        "node": "0.8.4",
-        "npm": "1.1.49"
-    }
+  "name": "VI-LAB",
+  "description": "VI-LAB",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "*",
+    "compression": "*",
+    "compute-hamming": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "csv": "*",
+    "ejs": "*",
+    "ejs-locals": "*",
+    "express": "3.4.x",
+    "express-json": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "method-override": "*",
+    "ml-distance": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mongoose-text-search": "0.0.2",
+    "mv": "*",
+    "node-fs": "*",
+    "passport": "*",
+    "passport-local": "*"
+  },
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  }
 }

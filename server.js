@@ -91,7 +91,25 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 	if(err){
 		console.log(err);
 	}else{
-		//images.maintain();
+		// list all collection lists
+		var collections = mongoose.connections[0].collections;
+		var names = [];
+
+		Object.keys(collections).forEach(function(k) {
+				names.push(k);
+		});
+		console.log(names);
+		
+		//db.patterns.createIndex({"$**":"text"});
+
+		
+	
+	
+		//patterns.maintain();
+		patterns.init();
+		
+		
+
 		/*
 		Import data
 		**/
@@ -137,7 +155,11 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		//users.csvImport();
 		var maintainance = 0;
 		if( !maintainance ){
+		
+		
 		var ACL = require('./routes/aclrouts')(db, app);
+			
+	
 		}else{
 				app.get('/', function(req, res) {	
 					res.send('<h1>Designing Video Interfaces</h1><ul><li>Interaction Design Patterns for Video Learning Environments</li><li>Database of video-based Learning Environments</li></ul>Page under maintainance due server updates.');

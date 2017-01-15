@@ -14,17 +14,17 @@ var
 
 
 //
-exports.create = function ( req, res ){
+exports.create = function ( req, res ){ console.log(req.body)
   new Messages({
-  	id					: Number,
-		type				: String,  // pattern, pattern-section or portal, general
+		type				: req.body.type,  // pattern, pattern-section or portal, general
+		context			: req.body.context,
 		author			: req.body.author,
 		contact			: req.body.contact,
  		message			: req.body.message,
  		reply_to		: '',
  		updated_at 	: Date.now()	
-  }).save( function( err, todo, count ){
-    res.redirect( '/users' );
+  }).save( function( err, msg ){
+    res.end();
   });
 };
 
@@ -54,6 +54,31 @@ exports.getJSONbyType = function(req, res) {
 			res.jsonp(docs);
 		}
 	);
+};
+
+
+/*
+ * 
+ **/
+exports.getJSONbyPortal = function ( req, res ){
+  Messages
+  	.find({ type:'portal', context: req.params.portal.replace(/_/g, ' ') })
+  	.sort('updated_at')
+		.exec( function ( err, messages ){ 
+			res.jsonp(messages);
+		});
+};
+
+/*
+ * 
+ **/
+exports.getJSONbyPattern = function ( req, res ){
+  Messages
+  	.find({ type:'pattern', context: req.params.pattern.replace(/_/g, ' ') })
+  	.sort('updated_at')
+		.exec( function ( err, messages ){ 
+			res.jsonp(messages);
+		});
 };
 
 

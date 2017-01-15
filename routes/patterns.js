@@ -4,35 +4,47 @@
 
 var 
 	mongoose = require( 'mongoose' ),
-	Patterns  = mongoose.model( 'Patterns' )
+	Patterns  = mongoose.model( 'Patterns' ),
+	Images  = mongoose.model( 'Images' ),
 	fs = require('node-fs'),
 	path = require('path'),
 	csv = require('csv')
 	;
 
+
+
+
 //
 exports.maintain = function(){
-	
-	Patterns.find().exec( function ( err, patterns ){ 
-		for(var i =0; i < patterns.length; i++){
-			
-			patterns[i].illustration = '/static/img/illustrations/' + patterns[i].name.replace(/\ /g, '-') + '.png'; 
+		
+	Patterns.find().exec( function ( err, patterns ){
+	 Images.find().exec( function(err, img){
+			for(var i =0; i < patterns.length; i++){
+				for(var j =0; j < img.length; j++){
+					if(img[j].tags.indexOf(patterns[i].name) !== -1){
+						patterns[i].illustration = img[j].url;
+						break;
+					}
 
-			var t = getpp(patterns[i].name);
-			if(t.context === undefined || t.problem === undefined || t.solution === undefined){
-				console.log(patterns[i].name);
-			}
+					//patterns[i].illustration = '/static/img/illustrations/' + patterns[i].name.replace(/\ /g, '-') + '.png'; 
+
+					var t = getpp(patterns[i].name);
+					if(t.context === undefined || t.problem === undefined || t.solution === undefined){
+						console.log(patterns[i].name);
+					}
 			
-			if(t !== 0){
-				patterns[i].context = t.context;
-				patterns[i].problem = t.problem;
-				patterns[i].solution = t.solution;
-				patterns[i].save();
-			}else{
-				console.log('_0_'+patterns[i].name);
+					if(t !== 0){
+						patterns[i].context = t.context;
+						patterns[i].problem = t.problem;
+						patterns[i].solution = t.solution;
+						patterns[i].save();
+					}else{
+						console.log('_0_'+patterns[i].name);
+					}
+				}	
 			}
-		}		
-	});
+		});// end img		
+	});// end pattern
 }
 
 var pp = require('../data/pattern-import.json');
@@ -198,6 +210,50 @@ exports.folderImport = function ( req, res ){
 };	
 
 
+exports.init = function ( req, res ){
+/*	Patterns.ensureIndex(
+  	{ "$**": "text" },
+ 		{ name: "TextIndex" }
+	);*/
+};
+
+// Search
+exports.searchText = function( req, res ){ console.log(req.params.query)
+	
+	Patterns
+		.find({$text: {$search: 'video'}})
+       .skip(20)
+       .limit(10)
+       .exec(function(err, res) { 
+       	if(err){
+				console.log(err);
+			}else{
+				res.jsonp( results );
+			}	
+        });
+    
+     /*  
+		.find({$text: {$search: "image"}}) // , {score: {$meta: "textScore"}}
+//		.sort({score:{$meta:"textScore"}})
+		.exec(function ( err, results ){ 
+			if(err){
+				console.log(err);
+			}else{
+				res.jsonp( results );
+			}	
+		});
+		*/
+	/*Patterns
+		.find( { $text: { $search: req.params.query } } )
+		.exec(function ( err, results ){ 
+			if(err){
+				console.log(err);
+			}else{
+				res.jsonp( results );
+			}	
+		});
+	*/	
+}
 
 /*
 Returns all patterns that are no proto-patterns and calls the rendering engin ejs. to display them.

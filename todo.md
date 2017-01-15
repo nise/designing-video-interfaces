@@ -1,3 +1,17 @@
+
+#bugfixes
+
+@pattern-single
+- relatd patterns unclear
+- complete EuroPlop Patterns
+- ***-confidence
+
+@ favorites
+- can not be deleted 
+- feedback on adding
+- shopping cart
+- Schnittmenge aufgrund Patternauswahl
+
 ##
 - dump: `mongodump --db video-patterns`
 - restore: `mongorestore --db moduleBase ./dump/video-patterns`
@@ -12,18 +26,15 @@ http://patternry.com/
 
 
 # Roadmap
-- load patterns into plattform
-- adopt pattern description layout
 
-- Produktvergleich durch Mehrfachauswahl an Portals und Mehrfachauswahl an Patterns
+- adopt pattern description layout
+- /data/foundation-Portals.csv => year of foundation => D3.js
 - Page, die den Erhebungs- und Analyseprozess beschreibt, inkl. Limitationen
 - Table filter
 - launch, import data from file
-- [diss] comments per pattern section 
-- [diss] playlist bug
-- [diss] pattern wizzard
-- [diss] overall search :: https://github.com/fergiemcdowall/norch
-- [diss] advanced search by name, description, and each pattern component
+- [d] overall search 
+- [d] advanced search by name, description, and each pattern component
+
 - klassifikationen / filter
  - micro/macro
  - schulmeisters interaktivität
@@ -42,17 +53,15 @@ http://patternry.com/
 	
 ## Less prior improvements
 - image management
- - consider upload folder
- - 
+
 - nice icons: http://ionicons.com/ 
 - wizzard could be used for decision about suitable video platforms
-- let users comment on portals: Do you think something is missing?
+
 - nice header/footer
 - analysis page
 - plml api
 - add description per portal category and pattern category
 - sort order: name, date of appearance, updated/added at, number of patterns
-- let users recommend a new pattern or new portal
 - highlight pattern candidates or incomplete patterns
 - generate PDF : http://www.feedhenry.com/server-side-pdf-generation-node-js/
 - countries of domain holder: https://www.whois.net/
@@ -61,6 +70,9 @@ http://patternry.com/
 - plot patterns as a checklist 
 
 
+
+# Änderungen: 
+Anmerkung: bei ADIVI -  die flashbasierte Version ist seit 2009 als Lizenz zu erwerben. Die Online Version, die auf HTML5 basiert, gibt es als Dienstleistung seit 2016. In der Tabelle habe ich 2016 eingetragen, da in Deiner Liste ADIVI als "online environment" gruppiert ist.
 
 ## list of Javascript Video Player frameworks
 

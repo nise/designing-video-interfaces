@@ -84,7 +84,7 @@
 					"consequences": {
 						"title": "Consequences",
 						"type": "string",
-						default: '<%= items.consequences %>',
+						default: '<%=: items.consequences | replace:/\n/g,"\\n" | replace:/\t/g," " %>',
 						required: false
 					}, 
 					"rational": {

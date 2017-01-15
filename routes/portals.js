@@ -147,11 +147,11 @@ exports.getJSON = function(req, res) {
  * View a single portal
  **/
 exports.view = function(req, res) {
-	Portals.findOne( req.params.id ).exec(function (err, portal) {
+	Portals.findOne({ _id: req.params.id }).exec(function (err, portal) {
 		if( err ){
 			console.log(err);
 		}else{
-			res.render( 'portal-single', { items : portal });
+			res.render( 'portals-single', { items : portal });
 		}	
 	});
 };

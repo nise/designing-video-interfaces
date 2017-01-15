@@ -27,6 +27,12 @@ font-weight:bold;
 	opacity:0.3;
 }
 
+
+.pattern-illustration{
+	max-width:100%;
+	max-height:300px;
+}
+
 .patterns{
 	margin-bottom:20px;
 }
@@ -48,11 +54,10 @@ font-weight:bold;
 	font-weight:bold;
 }
 .card-image {
-	max-height:70%;
+	max-height:60%;
 	max-width: 86%;
-	bottom:6%;
-	left:6%;
-	position:absolute;
+	text-align:center;
+	vertical-align:middle;
 }
 
 .filter-portals .btn {

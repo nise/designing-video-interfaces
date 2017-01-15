@@ -11,6 +11,7 @@ var Schema   = mongoose.Schema;
 var Messages = new Schema({
 		id					: Number,
 		type				: String,  // pattern, pattern-section or portal, general
+		context			: String, // e.g. name of the related pattern, portal or page
 		author			: { type: String, trim: true },
 		contact			: { type: String, trim: true },
  		message			: { type: String, trim: true },
@@ -103,26 +104,16 @@ var Patterns = new Schema({
 		revision_number		: Number		
 	}	
 });
-/*
-		name 					: String,
-		context				: String,
-		problem				: String,
-		forces				: String, 
-		solution			: String,
-		consequences 	: String,
-		example_description : String,
-		examples			: [Schema.Types.Mixed],
-		related 			:	String,
-		comment				: String,
-		status				: Number,
-    updated_at 		: Date
-{
 
-}
-*/
-mongoose.model( 'Patterns', Patterns ); 
+
+//Patterns.index({ name: 1, problem: 1, solution: 1, forces: 1 });	
+
+Patterns.index({'name': 'text', 'problem': 'text'});
+//Patterns.index({'$**': 'text'});
+
+// add a text index to the tags array
  
- 
+ mongoose.model( 'Patterns', Patterns );
  
  
  

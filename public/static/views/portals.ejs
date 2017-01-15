@@ -93,6 +93,9 @@ $(document).ready (function () {
     //filterShowClear:true,
     onExpandRow : function(index, row, detail){
     	$('[data-toggle="tooltip"]').tooltip();
+    	$('.mark').each(function(i, val){
+				$(val).html(markdown.toHTML($(val).text()))
+			});
     },
     detailFormatter : function(index, row) {
 			var arr = [
@@ -103,7 +106,7 @@ $(document).ready (function () {
 				' <i class="xs glyphicon glyphicon-pencil"></i>',
 				'</a>  ',
 				'</h3>',
-				'<div>' + row.description + '</div>',
+				'<div class="mark">' + row.description + '</div>',
 				'<br>',
 				'<div class="img-'+row.name+'" id="images-' + row.name.replace(/\ /g,'-') + '"></div>',
 				'</div>',
@@ -182,8 +185,9 @@ $(document).ready (function () {
 	
 	/*
 	 **/
-	function titleFormatter(value, row, index) { return '<b>'+value+'</b>';
-		return 	'<a href="/modules/view/' + row._id + '">'+value+'</a>';
+	function titleFormatter(value, row, index) { 
+		//return '<b>'+value+'</b>';
+		return 	'<a href="/portals/view/' + row._id + '">'+value+'</a>';
 	}
 	
 	/*

@@ -23,12 +23,11 @@ module.exports = function(db, app) {
 	
 /* define routes **/
 
-
-	
+		
 
   // misc
-  //app.get(	'/', function ( req, res ){ res.render( 'intro', { title : 'Designing Video Interfaces' }); });
-	app.get(	'/', 						portals.list );
+  app.get(	'/', function ( req, res ){ res.render( 'intro', { title : 'Designing Video Interfaces' }); });
+	//app.get(	'/', 						portals.list );
 	app.get(	'/wizzard', function ( req, res ){ res.render( 'wizzard', { title : 'Pattern Wizzard' }); });
 	app.get(	'/about', function ( req, res ){ res.render( 'about', { title : 'About' }); });
 	app.get(	'/citation', function ( req, res ){ res.render( 'citation', { title : 'Citation' }); });
@@ -69,6 +68,7 @@ module.exports = function(db, app) {
 	app.get(	'/patterns/list', 			patterns.list );
 	app.get(	'/proto-patterns/list', patterns.listProtopatterns );
 	app.get(	'/patterns/view/:name', patterns.listOne );
+	app.get(	'/patterns/search/:query', patterns.searchText );
 	app.get(	'/patterns/destroy/:id',	patterns.destroy );
 //	app.get(	'/patterns/view/:id', 	patterns.listOne );
 //	app.get(	'/patterns/edit/:id', 	patterns.edit );
@@ -77,8 +77,11 @@ module.exports = function(db, app) {
 	
 	
 	// routes for messages
-	app.get( 	'/json/messages/all' , 			messages.getJSON );
-	app.get( 	'/json/messages/:type' , 		messages.getJSONbyType );
+	app.post( 	'/messages/new', messages.create );
+	app.get( 	'/json/messages/all', messages.getJSON );
+	app.get( 	'/json/messages/:type', messages.getJSONbyType );
+	app.get( 	'/json/messages/portal/:portal', messages.getJSONbyPortal );
+	app.get( 	'/json/messages/pattern/:pattern', messages.getJSONbyPattern );
 
 
 	
