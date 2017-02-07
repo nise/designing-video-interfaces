@@ -64,8 +64,9 @@ module.exports = function(db, app) {
 	
 	// routes for patterns
 	app.get( 	'/json/patterns' , 			patterns.getJSON );
-	app.get(	'/json/patterns/name',	patterns.getJSONPatternNames );
+	app.get(	'/json/patterns/:name',	patterns.getJSONPatternNames );
 	app.get(	'/patterns/list', 			patterns.list );
+	app.get(	'/patterns/new/:name', 			patterns.create );
 	app.get(	'/proto-patterns/list', patterns.listProtopatterns );
 	app.get(	'/patterns/view/:name', patterns.listOne );
 	app.get(	'/patterns/search/:query', patterns.searchText );
@@ -73,6 +74,7 @@ module.exports = function(db, app) {
 //	app.get(	'/patterns/view/:id', 	patterns.listOne );
 //	app.get(	'/patterns/edit/:id', 	patterns.edit );
 	app.get(	'/patterns/edit/:name', patterns.edit );
+	app.get(	'/patterns/edit-by-id/:id', patterns.editID );
 	app.post(	'/patterns/update/:id', patterns.update );
 	
 	

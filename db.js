@@ -84,17 +84,20 @@ var Patterns = new Schema({
 		example						: { type: String, trim: true }
 	}],		
 	literature				: String,
-	implementation 		: String,  
+	implementation 		: String, 
+	related 					: String,  
 	related_patterns	:	[{
 		type							: { type: String, enum: [ 'is-a', 'is-contained-by', 'contains' ] }, 
-		pattern_id					: Number, 
-		//collection 				: String,
+		pattern_id				: Number, 
+		pattern_collection 				: String, 
 		label 						: { type: String, trim: true },
-	}],
+		description				: { type: String, trim: true }
+	}],				
 	management				: {
 		author						: String,
 		credits						: String,
 		editor_comment		: String,
+		tags							: Array, // e.g. assessment-pattern, general-video, micro, macro, ...
 		status						: { 		 // additional
 													type: String, 
 													enum: [ 'proto-pattern', 'pattern', 'workshoped-pattern' ] 
@@ -108,7 +111,7 @@ var Patterns = new Schema({
 
 //Patterns.index({ name: 1, problem: 1, solution: 1, forces: 1 });	
 
-Patterns.index({'name': 'text', 'problem': 'text'});
+//Patterns.index({'name': 'text', 'problem': 'text'});
 //Patterns.index({'$**': 'text'});
 
 // add a text index to the tags array

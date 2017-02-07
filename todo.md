@@ -2,8 +2,11 @@
 #bugfixes
 
 @pattern-single
-- relatd patterns unclear
+- sort images by length of it description
 - complete EuroPlop Patterns
+ - cite: https://github.com/vkaravir/bib-publication-list
+- introduction for each section
+- tables (@ follow revisions, shortcut commands, ...)
 - ***-confidence
 
 @ favorites
@@ -26,7 +29,7 @@ http://patternry.com/
 
 
 # Roadmap
-
+- include sections in order to integrate the video assessment patterns
 - adopt pattern description layout
 - /data/foundation-Portals.csv => year of foundation => D3.js
 - Page, die den Erhebungs- und Analyseprozess beschreibt, inkl. Limitationen

@@ -28,6 +28,7 @@ font-weight:bold;
 }
 
 
+
 .pattern-illustration{
 	max-width:100%;
 	max-height:300px;
@@ -142,6 +143,35 @@ background-color:transparent;
 .btn-primary.active{
 background-image:none;
 background-color:#999;
+}
+
+/* Edit Patterns */
+.miniform{
+	margin-bottom:20px;
+}
+.miniform div{
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+.miniform label {
+	font-size: 10px;
+	font-weight: normal;
+	vertical-align:top;
+}
+.miniform input, .miniform textarea, .miniform select{
+	float:right;
+	font-size: 10px;
+	width:70%;
+}
+
+/* ..... */
+
+blockquote, pre{
+	border:none;
+	border-left:10px #8c8c8c solid;
+	background-color: #fff;
+	border-radius:0;
 }
 
 .footer{

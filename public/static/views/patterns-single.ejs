@@ -16,7 +16,10 @@
 				<% if(items.confidence==2){  %>**<% } %>	
 				<% if(items.confidence==3){  %>***<% } %>
 			</h4>
+			<div class="synopsis mark">**<%= items.synopsis %>**</div>
+			<br>
 			<% if(items.illustration != undefined){  %><img class="pattern-illustration"src="<%= items.illustration %>"/><% } %>
+		
 		</div>	
 		<div class="panel-body">
 			<div class="context mark"><%= items.context  %></div>
@@ -27,8 +30,11 @@
 			<div class="forces mark"><%= items.forces %></div>
 			<div class="solution" style="font-weight:bold;"><%= items.solution %></div>
 			<div class="consequences mark"><%= items.consequences %></div>
+			<div class="related mark">####Related Patterns
+<%= items.related %></div>
 			<div class="examples"></div>
 			<div class="evidence"></div> 
+
 		</div>
 	</div>		
 </div>	
@@ -48,7 +54,11 @@
 	<label>Related Patterns:</label>
 	<ul id="pattern_related">
 		<% items.related_patterns.forEach( function ( related ){ %>
-			<li><a href="/patterns/view/<%= related._id %>"><%= related.label %></a></li>
+			<% if ( related.pattern_collection == 'own' ) { %>
+			<li><a href="/patterns/view/<%= related.label %>"><%= related.label %>:</a> <%= related.description %></li>
+			<% }else{ %>
+			<li><%= related.label %> (see <%= related.pattern_collection %>): <%= related.description %></li>	
+			<% } %>
 		<% }); %>	
 	</ul>
 	<% } %>		

@@ -4,6 +4,7 @@
 		<div class="jumbotron">
 			<div class="container">
 			<h2>Edit Pattern: <%= items.name %></h2>
+			<%= items._id %>
 			</div>
 		</div>
 
@@ -13,6 +14,40 @@
 				<form class="patterns-edit" id="form"></form>
 				<div id="res" class="alert"></div>
 			 </div> 
+			 <div class="col-md-4">
+			 <h4>Related Patterns</h4>
+				<div id="relatedpatterns">
+				<% if( items.related_patterns ){ %>
+				 	<% items.related_patterns.forEach( function ( related ){ %>
+				 		<div class="miniform" id="related-<%= related.label %>">
+					 		<div><label>Pattern:</label><input name="label" value="<%= related.label %>" /></div>
+					 		<div><label>Description:</label><textarea name="description"><%= related.description %></textarea></div>
+					 		<div><label>Relation:</label>
+					 		<select name="type">
+					 			<option value="is-a" <% if( related.type == 'is-a'){ %>selected <% } %> >is-a</option>
+					 			<option value="is-contained-by" <% if( related.type == 'is-contained-by'){ %>selected <% } %>>is-contained-by</option>
+					 			<option value="contains" <% if( related.type == 'contains'){ %>selected <% } %>>contains</option>
+					 		</select></div>
+					 		<div><label>Collection:</label><input name="collection" value="<%= related.pattern_collection %>" /></div>
+						</div>		 		
+				 	<% }) %>
+				<% }else{ %>
+				<div class="miniform" id="related-new %>">
+					 		<div><label>Pattern:</label><input name="label" value="" /></div>
+					 		<div><label>Description:</label><textarea name="description"></textarea></div>
+					 		<div><label>Relation:</label>
+					 		<select name="type">
+					 			<option value="is-a">is-a</option>
+					 			<option value="is-contained-by">is-contained-by</option>
+					 			<option value="contains">contains</option>
+					 		</select></div>
+					 		<div><label>Collection:</label><input name="collection" value="" /></div>
+					 		<div><button><span class="glyphicon glyphicon-remove"></button></div>
+						</div>	
+				<% } %>
+				</div>	 	
+			 </div>
+			 <button id="addRelPattern"><span class="glyphicon glyphicon-plus"></span> add related pattern</button> 
 		</div>
 		<script src='/static/js/jquery-1.11.2.min.js' type='text/javascript'></script>
 		<script src="/static/js/underscore.js" type="text/javascript" ></script>
@@ -27,6 +62,18 @@
             title: 'Name',
             default: '<%= items.name %>',
             required: true
+          },
+           "id": {
+            type: 'string',
+            title: 'ID',
+            default: '<%= items._id %>',
+            required: true
+          },
+          "tags": {
+            type: 'string',
+            title: 'Tags',
+            default: '<%= items.management.tags %>',
+            required: false
           },
            "alias": {
             type: 'string',
@@ -45,7 +92,7 @@
            "confidence": {
             type: 'integer',
             title: 'Confidence',
-            default: '<%= items.confidence == undefined ? 0 : items.confidence  %>',
+            default: <%= items.confidence == undefined ? 0 : items.confidence  %>,
             description: "...",
             required: false,
             "enum": [ 0, 1, 2, 3 ]
@@ -58,9 +105,8 @@
           },
           "context": {
 						"title": "Context",
-						//"description": "Your gender",
 						"type": "string",
-						default: '<%= items.context %>',
+						default: '<%=: items.context | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
 						required: true
 					},	
 					 "problem": {
@@ -72,7 +118,7 @@
 					"forces": {
 						"title": "Forces",
 						"type": "string",
-						default: '<%= items.forces %>',
+						default: '<%=: items.forces | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
 						required: false
 					},	
           "solution": {
@@ -84,7 +130,7 @@
 					"consequences": {
 						"title": "Consequences",
 						"type": "string",
-						default: '<%=: items.consequences | replace:/\n/g,"\\n" | replace:/\t/g," " %>',
+						default: '<%=: items.consequences | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
 						required: false
 					}, 
 					"rational": {
@@ -116,12 +162,26 @@
             title: 'Implementation',
             default: '<%= items.implementation %>',
             required: false
+          }, 
+					"related": {
+            type: 'string',
+            title: 'Related Patterns',
+            default: '<%=: items.related | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
+            required: false
           }
         },
         /**************************/
         "form": [
 		     {
 						"key": "name",
+						"type": "text"
+					},
+					{
+						"key": "id",
+						"type": "text"
+					},
+					{
+						"key": "tags",
 						"type": "text"
 					},
         	{
@@ -161,7 +221,12 @@
 						"key": "consequences",
 						"type": "textarea"
 					},
+        	
         	{
+						"key": "example_description",
+						"type": "textarea"
+					},
+					/*{
 						"key": "rational",
 						"type": "textarea"
 					},
@@ -169,16 +234,16 @@
 						"key": "diagram",
 						"type": "text"
 					},
-        	{
-						"key": "example_description",
-						"type": "textarea"
-					},
 					{
 						"key": "literature",
 						"type": "textarea"
 					},
         	{
 						"key": "implementation",
+						"type": "textarea"
+					},*/
+					{
+						"key": "related",
 						"type": "textarea"
 					},
 					{
@@ -214,10 +279,25 @@
             console.error()
           }
           else {
+          	var data = values;
+          	data.management = <%-JSON.stringify(items.management)%>;
+          	data.management.revision_number = data.management.revision_number + 1;
+          	data.management.tags = data.tags.split(',');
+          	// colelct related patterns
+          	data.related_patterns = [];
+          	$('.miniform').each(function(i, val){ 
+          		data.related_patterns[i] = {};
+          		data.related_patterns[i].label = $(this).find('input[name="label"]').val();
+          		data.related_patterns[i].description = $(this).find('textarea[name="description"]').val();
+          		data.related_patterns[i].pattern_collection = $(this).find('input[name="collection"]').val();
+          		data.related_patterns[i].type = $(this).find('select[name="type"]').attr('selected');
+          		
+          	});
+          	// send
 						$.ajax({
 								type: "POST",
-								url: "/patterns/update/<%= items._id %>",
-								data: JSON.stringify( values ),
+								url: "/patterns/update/"+data.id, //<%= items._id %>",
+								data: JSON.stringify( data ),
 								success: function(){ 
 									window.location.replace("/patterns/view/<%= items.name.replace(/ /g,'-') %>");
 								},
@@ -237,4 +317,23 @@
       }
       
       $('form.patterns-edit').jsonForm( formObject );
+      
+      
+      var relpaform = [
+      	'<div class="miniform">',
+				'<div><label>Pattern:</label><input name="label" value="" /></div>',
+				'<div><label>Description:</label><textarea name="description"></textarea></div>',
+				'<div><label>Relation:</label>',
+					 		'<select name="type">',
+					 			'<option value="is-a">is-a</option>',
+					 			'<option value="is-contained-by">is-contained-by</option>',
+					 			'<option value="contains">contains</option>',
+					 		'</select></div>',
+					 		'<div><label>Collection:</label><input name="collection" value="own" /></div>',
+						'</div>'
+      ];
+      $('#addRelPattern').click(function(){
+      	$('#relatedpatterns').append( relpaform.join('') );
+      });
+      
     </script>

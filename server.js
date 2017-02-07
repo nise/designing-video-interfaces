@@ -103,10 +103,10 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		//db.patterns.createIndex({"$**":"text"});
 
 		
+		
 	
-	
-		//patterns.maintain();
-		patterns.init();
+		//patterns.maintain(); !!
+		//patterns.init();
 		
 		
 

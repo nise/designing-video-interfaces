@@ -16,6 +16,13 @@ var
 
 //
 exports.maintain = function(){
+	
+	Patterns.findOne( {name:'Skip '}, function ( err, pattern ){
+    pattern.remove( function ( err, patt ){
+      res.redirect( '/patterns/list' );
+    });
+  });
+	return;
 		
 	Patterns.find().exec( function ( err, patterns ){
 	 Images.find().exec( function(err, img){
@@ -260,7 +267,7 @@ Returns all patterns that are no proto-patterns and calls the rendering engin ej
 **/
 exports.list = function ( req, res ){
   Patterns
-		.find( { $or:[ { 'management.status' : 'pattern' }, { 'management.status' : 'workshoped-pattern' } ] } )
+		.find( )//{ $or:[ { 'management.status' : 'pattern' }, { 'management.status' : 'workshoped-pattern' } ] } )
 		.sort( 'name' )
 		.exec( function ( err, patterns ){ 
 			res.render( 'patterns', {
@@ -295,25 +302,25 @@ exports.listOne = function ( req, res ){
 		});
 };
 
-/*
 
-exports.update = function ( req, res ){
-  Patterns.findById( req.params.id, function ( err, image ){
-   	//image.filename    = req.body.filename;
-   	//image.url    = req.body.url;
-   	image.portal    = req.body.portal;
-    image.caption = req.body.caption; 
-    image.tags = String(req.body.tags).split(',');
-    image.updated_at = Date.now();
-    image.save( function ( err, ix, count ){
-    	if(err){ console.log(err); }
-    	res.end();
-    
-    	//res.redirect( '/images' );
-    });
-  });
+/*
+ * Creates a new Pattern
+ **/
+exports.create = function ( req, res ){
+	var item = { 
+		name: String(req.params.name).replace(/-/g,' '), 
+		related_patterns: [], 
+		management: { tags:[], revision_number:0 } 
+	};
+  var pattern = new Patterns(item)
+		.save( function( err, data, count ){
+			console.log('saved pattern: '+ data.name + '/' );
+			//res.render( '/patterns/edit/'+req.params.name );
+			res.render( 'patterns-edit', {
+		      items   : data
+		  });
+		});
 };
-**/
 
 /*
  * Updates data of an existing Pattern
@@ -321,16 +328,17 @@ exports.update = function ( req, res ){
 exports.update = function ( req, res ){ 
 	var data = req.body;
 	data.updated_at = Date.now();
+
 	Patterns
 		.findOneAndUpdate( { '_id':req.params.id }, data, { returnNewDocument: true}, function ( err, pattern ){
-		  if(err){ 
-		  	console.error(err);
-		  	res.end(); 
-		  }else{
-		  	console.log('/patterns/view/' + String( pattern.name ).replace(/ /g, '-'))
-		  	res.redirect( '/patterns/view/' + String( pattern.name ).replace(/ /g, '-') );
-		  }	   
-		});
+			if(err){ 
+				console.error(err);
+				res.end(); 
+			}else{
+				console.log('/patterns/view/' + String( pattern.name ).replace(/ /g, '-'))
+				res.redirect( '/patterns/view/' + String( pattern.name ).replace(/ /g, '-') );
+			}	   
+		});	
 };
 
 /*
@@ -343,9 +351,23 @@ exports.edit = function ( req, res ){
   		console.log(err);
   		res.end();
   	}else{ 
-	  	console.log(items);
-		  res.render( 'patterns-edit', {
+	  	res.render( 'patterns-edit', {
 		      items   : items[0]
+		  });
+		 } 
+  });
+};
+
+exports.editID = function ( req, res ){ 
+  Patterns
+  	.findOne({ _id: String(req.params.id).replace(/-/g,' ') })
+  	.exec(function (err, items) {
+  	if(err){
+  		console.log(err);
+  		res.end();
+  	}else{ 
+	  	res.render( 'patterns-edit', {
+		      items   : items
 		  });
 		 } 
   });
@@ -362,8 +384,8 @@ exports.destroy = function ( req, res ){ console.log(req.params.id)
 };
 	
 /*
-REST API CALL
-**/
+ * REST API CALL
+ **/
 exports.getJSON = function(req, res) {
 	Patterns.find().sort( 'name' ).lean().exec(function (err, docs) {
 		res.jsonp(docs);
@@ -372,19 +394,15 @@ exports.getJSON = function(req, res) {
 
 
 /*
-**/
-exports.getJSONPatternNames = function ( req, res ){
+ * 
+ **/
+exports.getJSONPatternNames = function ( req, res ){ 
   Patterns
-		.find( { })
-		.select('name -_id')
-		.sort( 'name' )
-		.exec( function ( err, patterns ){
-			var arr = [];
-			for(var p in patterns){
-				if(patterns.hasOwnProperty(p)){
-					arr.push(patterns[p].name);	
-				}
-			} 
-			res.jsonp(arr);
+		.find({ name: String(req.params.name).replace(/-/g,' ') })
+		.exec( function ( err, pattern ){
+			if(err){
+				res.end();
+			}
+			res.jsonp(pattern);
 		});
 };	
