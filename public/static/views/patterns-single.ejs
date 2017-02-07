@@ -108,18 +108,20 @@ $(document).ready (function () {
 				.attr('alt', val.filename);
 			var link = $('<a></a>')
 				.attr('href','#')
-				.addClass('thumbnail')
+				.addClass('')
 				.append(image);
 			var div = $('<div></div>')
+				.addClass('pattern-image')
 				.append($('<h4></h4>').html('#'+(i+1)+': '+val.portal)) 	
-				.append(link)
-				.append($('<span></span>').html(val.caption))
+				.append(image)
+				.append($('<div></div>').addClass('caption').append(val.caption))
 				;
 			$('.evidence')
 				.append(div);
 				
 		});
 	});	
+	
 	
 	/*
 	 * Related Portals / Known uses
@@ -129,6 +131,7 @@ $(document).ready (function () {
 			$('#pattern_known_uses').append('<li><a href="/portals/view/'+ val._id +'">'+ val.name +'</a></li>')
 		});
 	});
+	
 	
 	/*
 	 * Comments

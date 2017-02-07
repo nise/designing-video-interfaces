@@ -152,15 +152,16 @@ exports.getJSONImagePerPattern = function ( req, res ){
 					},
     { "$project": {
        "caption": 1,
+       "caption_length": 1,
        "portal" : 1,
        "url"		: 1,
        "filename": 1,
-       "portal_lower": { "$toLower": "$portal" }
-    }},
-    { "$sort": { "portal_lower": 1 } }
+       "portal_lower": { "$toLower": "$portal" }//,
+//       "caption_length": { $strLenCP: "$caption" } // requires MongoDb 3.4
+    }}/*,
+    { "$sort": { "caption_length": -1 } }*/ 
 	])
-		//.find()
-		//.sort('portal')
+		.sort({'caption_length': -1}) 
 		.exec( function ( err, image ){ 
 			res.jsonp(image);
 		});
@@ -189,8 +190,10 @@ exports.update = function ( req, res ){
    	//image.url    = req.body.url;
    	image.portal    = req.body.portal;
     image.caption = req.body.caption; 
+    image.caption_length = req.body.caption === ''  ? 0 : req.body.caption.length;
     image.tags = String(req.body.tags).split(',');
     image.updated_at = Date.now();
+    console.log(image.caption_length)
     image.save( function ( err, ix, count ){
     	if(err){ console.log(err); }
     	res.end();

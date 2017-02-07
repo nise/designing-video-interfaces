@@ -2,12 +2,12 @@
 #bugfixes
 
 @pattern-single
-- sort images by length of it description
 - complete EuroPlop Patterns
- - cite: https://github.com/vkaravir/bib-publication-list
+- missing images for some patterns
+- complete pattern links
+- cite: https://github.com/vkaravir/bib-publication-list
 - introduction for each section
-- tables (@ follow revisions, shortcut commands, ...)
-- ***-confidence
+- catorize by tag pairs
 
 @ favorites
 - can not be deleted 

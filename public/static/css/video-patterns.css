@@ -7,6 +7,21 @@ font-family: 'Oswald', sans-serif;
 font-weight:bold;
 }
 
+table {
+	margin: 20px 0;
+}
+table thead tr th {
+	border-top:solid 1px #ccc;
+	padding:3px;
+	border-bottom:solid 2px #ccc;
+}
+table tbody tr td {
+	padding:3px;
+	vertical-align:top;
+}
+table tbody tr:last-child td {	
+	border-bottom:solid 1px #ccc;
+}
 .navbar-default {
     background-color: #CCEBFF;
     border-color: #e7e7e7;
@@ -166,6 +181,20 @@ background-color:#999;
 }
 
 /* ..... */
+
+.pattern-image{
+	margin-bottom:40px;
+}
+
+.pattern-image img{
+	border:solid 1px #ccc;
+	max-width:100%;
+}
+
+.pattern-image .caption{
+	display:block;
+	margin: 0 0 10px 0;
+}
 
 blockquote, pre{
 	border:none;

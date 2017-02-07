@@ -55,6 +55,7 @@ var Images = new Schema({
 		url 							: String,
 		filename					: String,
 		caption						: String,
+		caption_length		: { type:Number },
 		tags							: Array, // patterns
 		portal						: String,
 		file_modified_at 	: Date,
