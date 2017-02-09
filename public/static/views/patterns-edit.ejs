@@ -24,11 +24,12 @@
 					 		<div><label>Description:</label><textarea name="description"><%= related.description %></textarea></div>
 					 		<div><label>Relation:</label>
 					 		<select name="type">
-					 			<option value="is-a" <% if( related.type == 'is-a'){ %>selected <% } %> >is-a</option>
-					 			<option value="is-contained-by" <% if( related.type == 'is-contained-by'){ %>selected <% } %>>is-contained-by</option>
-					 			<option value="contains" <% if( related.type == 'contains'){ %>selected <% } %>>contains</option>
+					 			<option value="is-a" <% if( related.type == 'is-a'){ %>selected <% } %> ><%= items.name%> ist ähnlich/alternativ</option>
+					 			<option value="is-contained-by" <% if( related.type == 'is-contained-by'){ %>selected <% } %>><%= items.name%> ist Bestandteil von ...</option>
+					 			<option value="contains" <% if( related.type == 'contains'){ %>selected <% } %>><%= items.name%> beinhaltet ...</option>
 					 		</select></div>
 					 		<div><label>Collection:</label><input name="collection" value="<%= related.pattern_collection %>" /></div>
+					 		<div><button class="button removeRelPattern"><span class="glyphicon glyphicon-remove"></span></button></div>
 						</div>		 		
 				 	<% }) %>
 				<% }else{ %>
@@ -42,7 +43,7 @@
 					 			<option value="contains">contains</option>
 					 		</select></div>
 					 		<div><label>Collection:</label><input name="collection" value="" /></div>
-					 		<div><button><span class="glyphicon glyphicon-remove"></button></div>
+					 		
 						</div>	
 				<% } %>
 				</div>	 	
@@ -165,7 +166,7 @@
           }, 
 					"related": {
             type: 'string',
-            title: 'Related Patterns',
+            title: 'Related Patterns in other Pattern Languages',
             default: '<%=: items.related | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
             required: false
           }
@@ -325,9 +326,9 @@
 				'<div><label>Description:</label><textarea name="description"></textarea></div>',
 				'<div><label>Relation:</label>',
 					 		'<select name="type">',
-					 			'<option value="is-a">is-a</option>',
-					 			'<option value="is-contained-by">is-contained-by</option>',
-					 			'<option value="contains">contains</option>',
+					 			'<option value="is-a"><%= items.name%> ist ähnlich/alternativ</option>',
+					 			'<option value="is-contained-by"><%= items.name%> ist Bestandteil von</option>',
+					 			'<option value="contains"><%= items.name %> beinhaltet</option>',//contains
 					 		'</select></div>',
 					 		'<div><label>Collection:</label><input name="collection" value="own" /></div>',
 						'</div>'
@@ -335,5 +336,10 @@
       $('#addRelPattern').click(function(){
       	$('#relatedpatterns').append( relpaform.join('') );
       });
+      
+      $('.removeRelPattern').click(function(){
+      	$(this).parent().parent().remove();
+      });
+      
       
     </script>

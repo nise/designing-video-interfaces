@@ -22,6 +22,13 @@ table tbody tr td {
 table tbody tr:last-child td {	
 	border-bottom:solid 1px #ccc;
 }
+
+
+.highlight{
+	background-color:yellow;
+}
+
+
 .navbar-default {
     background-color: #CCEBFF;
     border-color: #e7e7e7;

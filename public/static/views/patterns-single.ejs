@@ -30,10 +30,26 @@
 			<div class="forces mark"><%= items.forces %></div>
 			<div class="solution" style="font-weight:bold;"><%= items.solution %></div>
 			<div class="consequences mark"><%= items.consequences %></div>
-			<div class="related mark">####Related Patterns
-<%= items.related %></div>
+			<div class="related">
+				<h4>Related Patterns</h4>
+				<% if (items.related_patterns != undefined) { %>
+				<ul id="pattern_related">
+					<% items.related_patterns.forEach( function ( related ){ %>
+						<% if ( related.pattern_collection == 'own' || related.pattern_collection == 'this') { %>
+	<li><a href="/patterns/view/<%= related.label %>"><%= related.label %></a><!-- <% related.description %>--></li>
+						<% }else{ %>
+						<li><%= related.label %> (see <%= related.pattern_collection %>): <%= related.description %></li>	
+						<% } %>
+					<% }); %>	
+				</ul>
+				<% } %>	
+<div class="mark"><%= items.related %></div>
+			</div>
+			<div class="evidence mark">####Examples
+<%= items.example_description %></div>
+			
 			<div class="examples"></div>
-			<div class="evidence"></div> 
+			 
 
 		</div>
 	</div>		
@@ -49,19 +65,7 @@
 		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 		Edit
 	</a>
-	<br><br>
-	<% if (items.related_patterns != undefined) { %>
-	<label>Related Patterns:</label>
-	<ul id="pattern_related">
-		<% items.related_patterns.forEach( function ( related ){ %>
-			<% if ( related.pattern_collection == 'own' ) { %>
-			<li><a href="/patterns/view/<%= related.label %>"><%= related.label %>:</a> <%= related.description %></li>
-			<% }else{ %>
-			<li><%= related.label %> (see <%= related.pattern_collection %>): <%= related.description %></li>	
-			<% } %>
-		<% }); %>	
-	</ul>
-	<% } %>		
+	<br><br>	
 	<label>Known Uses:</label>
 	<ul id="pattern_known_uses"></ul>
 	<br>
@@ -112,11 +116,11 @@ $(document).ready (function () {
 				.append(image);
 			var div = $('<div></div>')
 				.addClass('pattern-image')
-				.append($('<h4></h4>').html('#'+(i+1)+': '+val.portal)) 	
+				.append($('<div></div>').html('#'+(i+1)+': '+val.portal)).css({'font-weight':'bold'}) 	
 				.append(image)
 				.append($('<div></div>').addClass('caption').append(val.caption))
 				;
-			$('.evidence')
+			$('.examples')
 				.append(div);
 				
 		});

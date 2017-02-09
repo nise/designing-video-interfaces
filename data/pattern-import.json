@@ -220,7 +220,7 @@
 	"name": "Visual Summary",
 	"context": "Dynamic visualizations such as videos are presented little by little. Despite an increased \textsc{Playback Speed} it can not be scanned as quickly as a piece of text. The longer a video the harder it gets to overview the visual content",
 	"problem": "Visual information stored in a video is not accessible at a stroke. Browsing along the timeline can be cumbersome the longer the video and the more similar the scenes are. Neither visual content can be overviewed nor certain visual anchors are searchable.",
-	"solution": "Therefore, provide an overview of the visual contents that summarizes the information inside the player and in the \textsc{Video Manager}. Represent the summary in the \textsc{Video Manager} as generic still images or flicker-book-like animations to overview and search visual cues. In addition, provide a scrubber preview on the timeline of the player. When hovering a point on the timeline the corresponding preview image should be presented"
+	"solution": "Therefore, provide an overview of the visual contents that summarizes the information inside the player and in the \textsc{Video Manager}. Represent the summary in the \textsc{Video Manager} as generic still images or flicker-book-like animations to overview and search visual cues. In addition, provide a scrubber preview on the timeline of the player. When hovering a point on the timeline the corresponding preview image should be presented."
 }, {
 	"name": "Zoom",
 	"context": "A video or its synchronized contents contain visual details that are essential for comprehension",

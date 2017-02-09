@@ -1,13 +1,17 @@
 
-#bugfixes
+
+# todo
 
 @pattern-single
-- complete EuroPlop Patterns
+- complete patterns
 - missing images for some patterns
+- introduction for each section
+- editable imgae captions via xedit
+- [d] overall search 
+- [d] advanced search by name, description, and each pattern component
 - complete pattern links
 - cite: https://github.com/vkaravir/bib-publication-list
-- introduction for each section
-- catorize by tag pairs
+
 
 @ favorites
 - can not be deleted 
@@ -15,29 +19,14 @@
 - shopping cart
 - Schnittmenge aufgrund Patternauswahl
 
-##
-- dump: `mongodump --db video-patterns`
-- restore: `mongorestore --db moduleBase ./dump/video-patterns`
 
-# other pattern languages
-http://groupworksdeck.org/patterns_by_category
-http://patternry.com/
-
-# speed up
-- image compression
-- gzip
-
-
-# Roadmap
-- include sections in order to integrate the video assessment patterns
+# Backlog
 - adopt pattern description layout
 - /data/foundation-Portals.csv => year of foundation => D3.js
 - Page, die den Erhebungs- und Analyseprozess beschreibt, inkl. Limitationen
 - Table filter
 - launch, import data from file
-- [d] overall search 
-- [d] advanced search by name, description, and each pattern component
-
+- render Card Deck as SVG
 - klassifikationen / filter
  - micro/macro
  - schulmeisters interaktivität
@@ -46,17 +35,10 @@ http://patternry.com/
  - level of virtuality
  - kollaborativ nutzbar / ..
  - geschlossene Räume
-
-# marketting
-- Domain
-- Flyer / vcards
-- eteaching.org
-- publisch dataset at gsis
-
+- speed up: image compression, gzip
 	
 ## Less prior improvements
 - image management
-
 - nice icons: http://ionicons.com/ 
 - wizzard could be used for decision about suitable video platforms
 
@@ -65,21 +47,35 @@ http://patternry.com/
 - plml api
 - add description per portal category and pattern category
 - sort order: name, date of appearance, updated/added at, number of patterns
-- highlight pattern candidates or incomplete patterns
 - generate PDF : http://www.feedhenry.com/server-side-pdf-generation-node-js/
 - countries of domain holder: https://www.whois.net/
-- add year of foundation in the database to build a timeline
 - add technology ("made with") to the portals/applications, like: flash, html5, javscript, unknown
 - plot patterns as a checklist 
 
 
+# Marketing
+- Domain
+- Flyer / vcards
+- eteaching.org
+- publisch dataset at gsis
 
-# Änderungen: 
+
+# Maintainance
+- dump: `mongodump --db video-patterns`
+- restore: `mongorestore --db moduleBase ./dump/video-patterns`
+
+
+# Content 
 Anmerkung: bei ADIVI -  die flashbasierte Version ist seit 2009 als Lizenz zu erwerben. Die Online Version, die auf HTML5 basiert, gibt es als Dienstleistung seit 2016. In der Tabelle habe ich 2016 eingetragen, da in Deiner Liste ADIVI als "online environment" gruppiert ist.
 
 ## list of Javascript Video Player frameworks
+?
 
-#Further Video Systems
+## related pattern languages
+http://groupworksdeck.org/patterns_by_category
+http://patternry.com/
+
+## Further Video Systems
 coursemapper aachen mooc platform
 http://smfplayer.synote.org/smfplayer/
 https://github.com/DatabayAG/InteractiveVideo
@@ -90,8 +86,6 @@ Portals that need to be watched more carefully:
 - kaltura
 - magma
 - matterhorn
-- 
-
 - ramp
 - production junkies
 
@@ -104,7 +98,6 @@ http://mediathek.hhu.de
  - eClass/Classroom2000
  - eTEACH: Almeida 2003;Moses, Litzkow, Foertsch & Strikwerda 2002;Litzkow, Anderson, Bundy & Ewers 2004;Foertsch, Moses, Strikwerda & Litzkow 2002
 - wIDEO ..NEW FEATURE SLIDES
-
 
 AV-Portal der TIB,, inkl. Pad.
  http://bibcast.openbiblio.eu/wohin-mit-meinen-filmen-nutzerorientierte-dienstleistungen-fuer-audiovisuelle-medien-aus-der-wissenschaft/
@@ -216,8 +209,7 @@ NovoEd
 4266	Younico
 
 
-
-# nice to have
+## nice to have
 * not available: http://www.codoc.org/codoc-documentary-forgive-me-mother/
 * Ältere Literatur, die aus psychologischer Sicht interessant sein könnte
 * Schwan 2005
@@ -229,7 +221,7 @@ NovoEd
 * TV: https://www.maxdome.de/marines-gehetzt-und-verraten-5227565.html
 
 
-# not relevant
+## not relevant
 * Alternative Navigation: http://vimeo.com/2345579?pg=embed&sec=2345579
 * death page: Blog:: Overlays/marketting: http://www.quicktvpro.com/blog.html#
 * disappeared: http://www.sutree.com/

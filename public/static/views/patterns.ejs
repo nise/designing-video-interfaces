@@ -6,12 +6,9 @@
   <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
 	<div class="container">
-  <h2>Video Interaction Design Patterns</h2>
-  <p hidden>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
- 
-  <p hidden>
-    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-  </p>
+  <h2  data-toggle="popover" title="eee" data-content="xxxx" data-placement="bottom" data-container="body">Video Interaction Design Patterns</h2>
+  
+  Find the right Patterns for your needs.
   </div>
 </div>
 
@@ -20,11 +17,21 @@
 		<div class="panel-body">  
 			<div class="btn-group" role="group" aria-label="...">
 				<a type="button" class="btn btn-default navbar-btn all-btn vp-filter">All</a>
-				<a type="button" class="btn btn-default navbar-btn structure-btn vp-filter">Structure</a>
+				<a type="button" class="btn btn-default navbar-btn structure-btn vp-filter">Classification</a>
 			<!--	<a type="button" class="btn btn-default navbar-btn network-btn vp-filter">Network</a>-->
 				<a type="button" class="btn btn-default navbar-btn wizzard-btn vp-filter">Wizzard</a>
 				<a type="button" class="btn btn-default navbar-btn playlist-btn vp-filter">Playlist</a>
 			</div>
+			
+			<!-- Structure -->
+			<div class="structure">
+				Interactivity: <a href="#" id="struc1">Micro Level | Macro Level</a><br>
+				Functionality: <a href="#" id="struc2">Playback | Annotations | Portal</a><br>
+				Tasks: <a href="#" id="struc3">Watch | Time Access | Contribute | Self Organise | Layout</a><br><br>
+				Status: <a href="#" id="struc4">Workshoped at *PLoP Conference | Not yet Workshoped | Proto-Patterns</a><br>
+			</div>
+			
+			<!-- WIZZARD -->
 			<ul class="list-group wizzard vp-overview">
 				<li class="list-group-item">
 					<input name="f1" id="switchOnText1"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
@@ -79,13 +86,24 @@
 </div>
 
 
+<!-- Pattern List -->
+<div class="container patter-card-container-2col">
+	
+</div>
 <div class="container patter-card-container">
+<h3></h3>
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
+	<% highlight = item.forces.length <= 20 ? 'highlight' : '' %>
+	<% highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
+	<% tags = item.management.tags.join(' ')  
+		tags += ' '+item.management.status
+
+	%>
 <% i++ %>
-	<div class="col-md-2 col-xs-2  portfolio-item" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
-		<div class="panel panel-default pattern-card <%=: item.management.tags | replace:/,/g,' '  %>">
-			<h5><a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.confidence %></a> 
+	<div class="col-md-2 col-xs-2  portfolio-item <%= tags %>" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
+		<div class="panel panel-default pattern-card <%= highlight %>" >
+			<h5><a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a> 
 				<a class="button" style="display:none;float:right;" href="/patterns/edit/<%= item._id %>" title="Update this item item"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 			</h5>
 			<% if (item.illustration != undefined) { %>
@@ -103,7 +121,40 @@
 
 <script>
 $(document).ready (function () {  
-		
+
+	$('.vp-filter').click(function() {
+		if( $(this).hasClass('all-btn') ){
+			$('.portfolio-item').show();
+			$('.network').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+		}else if( $(this).hasClass('wizzard-btn') ){
+			$('.network').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.wizzard').toggle( "slow" );
+		}else if( $(this).hasClass('network-btn') ){ 
+			$('.wizzard').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.network').toggle( "slow" );
+		}else if( $(this).hasClass('structure-btn') ){ 
+			$('.network').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			//applyStructur()
+			$('.structure').toggle( "slow" );
+		}else if( $(this).hasClass('playlist-btn') ){
+			$('.network').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			$('.structure').hide( "slow" );
+			fetchAll();
+			$('.playlist').toggle( "slow" );
+		}		
+	});
+	
+
 	/* WIZZARD */
 	//$(".wizzard-switch").bootstrapSwitch();
 	var wizzard_checked = [];
@@ -144,45 +195,110 @@ $(document).ready (function () {
 	
 	$('.vp-overview').hide();
 	
-	function applyStructure(){
-		/*$('.pattern-card').each(function(i, val){
-			if( $(this).has)
-		});*/
+	
+	
+	
+	
+	/* CLASSIFICATION */
+	$('#struc1').click(function(){ splitContainer(['micro','macro']); });
+	$('#struc2').click(function(){ splitContainer(['player','annotation','portal']); });
+	$('#struc3').click(function(){ splitContainer(['basic','timeaccess','structure','contribution','selforga','layout']); });
+	$('#struc4').click(function(){ splitContainer(['workshoped-pattern','pattern','proto-pattern']); });
+		
+	var structure_data = {
+		micro : {
+			title:'Micro Level',
+			description:'some...'
+		},
+		macro : {
+			title:'Macro Level',
+			description:'some...'
+		},
+		player : {
+			title:'Playback',
+			description:'some...'
+		},
+		annotation : {
+			title:'Annotations',
+			description:'some...'
+		},
+		portal : {
+			title:'Portal',
+			description:'some...'
+		},
+		basic : {
+			title:'Basic',
+			description:'some...'
+		},
+		layout : {
+			title:'Layout',
+			description:'some...'
+		},
+		timeaccess : {
+			title:'Time Access',
+			description:'some...'
+		},
+		structure : {
+			title:'Structur',
+			description:'some...'
+		},
+		selforga : {
+			title:'Self Organisation',
+			description:'some...'
+		},
+		contribution : {
+			title:'Contribution',
+			description:'some...'
+		},
+		workshopedpattern : {
+			title:'Workshoped Pattern',
+			description:'some...'
+		},
+		pattern : {
+			title:'Pattern',
+			description:'some...'
+		},
+		protopattern : {
+			title:'Proto-Pattern',
+			description:'some...'
+		}
 	}
 	
-	$('.vp-filter').click(function() {
-		if( $(this).hasClass('all-btn') ){
-			$('.portfolio-item').show();
-			$('.network').hide( "slow" );
-			$('.structure').hide( "slow" );
-			$('.playlist').hide( "slow" );
-			$('.wizzard').hide( "slow" );
-		}else if( $(this).hasClass('wizzard-btn') ){
-			$('.network').hide( "slow" );
-			$('.structure').hide( "slow" );
-			$('.playlist').hide( "slow" );
-			$('.wizzard').toggle( "slow" );
-		}else if( $(this).hasClass('network-btn') ){ 
-			$('.wizzard').hide( "slow" );
-			$('.structure').hide( "slow" );
-			$('.playlist').hide( "slow" );
-			$('.network').toggle( "slow" );
-		}else if( $(this).hasClass('structure-btn') ){ 
-			$('.network').hide( "slow" );
-			$('.wizzard').hide( "slow" );
-			$('.playlist').hide( "slow" );
-			applyStructur()
-			$('.structure').toggle( "slow" );
-		}else if( $(this).hasClass('playlist-btn') ){
-			$('.network').hide( "slow" );
-			$('.wizzard').hide( "slow" );
-			$('.structure').hide( "slow" );
-			fetchAll();
-			$('.playlist').toggle( "slow" );
+	function splitContainer(con){
+		// reset
+		$('.patter-card-container h3').text('');
+		$('.patter-card-container-2col .portfolio-item').each(function(i, val){
+			$('.patter-card-container').append( $(this) );
+		});
+		$('.patter-card-container-2col').empty();
+		//
+		var size = 12;//12 / con.length;
+		
+		for(var i = 0; i < con.length; i++){
+			var container = [
+				'<div id="container'+i+'" class="col-md-'+size+' col-xs-'+size+'">',
+				'<h3>'+ structure_data[ con[i].replace('-','') ].title +'</h3>',
+				'<div>'+ structure_data[ con[i].replace('-','') ].description +'</div>',
+				'<div class="patterns"></div>',
+				'</div>'
+			];
+			$('.patter-card-container-2col').append( container.join('') );
+			// fill container
+			$('.portfolio-item.'+con[i] ).each(function(j, val){	 
+				$('#container'+i+' .patterns').append( $(this) );
+			});
+		}// end for
+		
+		// other patters
+		if($('.patter-card-container .portfolio-item').length > 0){
+			$('.patter-card-container')
+				.css({'border-top':'solid 4px #ccc'})
+				.find('h3').text('Others');
+				;
 		}		
-	});
+	}
 	
-	
+
 });	// end document ready
 </script>
 
