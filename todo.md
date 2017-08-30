@@ -5,9 +5,9 @@
 @pattern-single
 - complete pattern relations
 - missing images for some patterns
+
 - introduction for each section
 - editable imgae captions via xedit
-- [d] overall search 
 - [d] advanced search by name, description, and each pattern component
 - complete pattern links
 - cite: https://github.com/vkaravir/bib-publication-list
