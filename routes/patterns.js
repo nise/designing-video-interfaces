@@ -220,7 +220,7 @@ exports.init = function (req, res) {
 };
 
 // Search
-exports.searchText = function (req, res) {
+exports.searchText = function (req, res) { //bam
 	console.log(req.params.query)
 
 	Patterns
