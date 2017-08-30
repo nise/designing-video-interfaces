@@ -3,7 +3,7 @@
 # todo
 
 @pattern-single
-- complete patterns
+- complete pattern relations
 - missing images for some patterns
 - introduction for each section
 - editable imgae captions via xedit
@@ -62,7 +62,7 @@
 
 # Maintainance
 - dump: `mongodump --db video-patterns`
-- restore: `mongorestore --db moduleBase ./dump/video-patterns`
+- restore: `mongorestore --db video-patterns ./dump/video-patterns`
 
 
 # Content 

@@ -36,7 +36,7 @@
 				<ul id="pattern_related">
 					<% items.related_patterns.forEach( function ( related ){ %>
 						<% if ( related.pattern_collection == 'own' || related.pattern_collection == 'this') { %>
-	<li><a href="/patterns/view/<%= related.label %>"><%= related.label %></a><!-- <% related.description %>--></li>
+	<li><a href="/patterns/view/<%= related.label %>"><%= related.label %></a> (<%= related.type %>)<!-- <% related.type %>--></li>
 						<% }else{ %>
 						<li><%= related.label %> (see <%= related.pattern_collection %>): <%= related.description %></li>	
 						<% } %>
@@ -66,10 +66,17 @@
 		Edit
 	</a>
 	<br><br>	
-	<label>Known Uses:</label>
+	<label>Known Uses <a class="badge" href="/portals/patterns/<%=: items.name | replace:/\ /g,'-'  %>" id="numberofuses"></a></label>
 	<ul id="pattern_known_uses"></ul>
 	<br>
 	
+	<!-- List comments-->
+	<div>
+		<label>Comments</label>
+		<span class="badge" id="comments-badge">0</span>
+		<br>
+		<ul id="commentsList"></ul>
+	</div>
 	<!-- Comments -->
 	<a class="" data-toggle="collapse" href="#collapse-comments" aria-expanded="false" aria-controls="collapseExample">
 		<span  class="right glyphicon glyphicon-comment" aria-hidden="true"></span> 
@@ -89,13 +96,7 @@
 			</span>
 		</form>
 	</div>
-	<!-- List comments-->
-	<div>
-		<label>Comments</label>
-		<span class="badge" id="comments-badge">0</span>
-		<br>
-		<ul id="commentsList"></ul>
-	</div>
+	
 			
 </div>
 
@@ -130,7 +131,8 @@ $(document).ready (function () {
 	/*
 	 * Related Portals / Known uses
 	 **/
-	$.get('/json/portals/patterns/<%=: items.name | replace:/-/g,' ' %>', function(data){ 
+	$.get('/json/portals/patterns/<%=: items.name | replace:/-/g,' ' %>', function(data){
+		$('#numberofuses').html(data.length) 
 		$.each(data, function(i, val){ 
 			$('#pattern_known_uses').append('<li><a href="/portals/view/'+ val._id +'">'+ val.name +'</a></li>')
 		});

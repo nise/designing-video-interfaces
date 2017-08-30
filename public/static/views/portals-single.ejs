@@ -1,0 +1,155 @@
+<% layout( 'layout' ) -%>
+
+
+  <!-- Main component for a primary marketing message or call to action -->
+<br><br><br>
+<div class="container">
+	<div class="col-md-7 portfolio-item"> 	
+		<h3><%= items.name %></h3>
+		<div class="description mark"><%= items.description %></div>
+		<div class="category" hidden>
+			<%= items.category %>
+		</div>
+		<div class="provider">
+			<% j=items.url.length %>
+			<% jj=items.provider.length %> 
+			<% if (j > 5) { %>
+			<strong>Provider/Link:</strong> <a href="<%= items.url %>"><%= items.provider %></a><br>
+			<% }else if(jj == 0) { %>
+			<strong>Provider/Link:</strong> <a href="<%= items.url %>">Link</a><br>
+			<% } else{ %>
+			<strong>Provider/Link:</strong> <%= items.provider %><br>
+			<% } %>
+		</div>
+		<div class="analysis">
+			<strong>Remark:</strong> <%= items.availability %><br>
+			<% if (items.accessible === true) { %>
+			This video environment could be analysed by the author.
+			<%}%><br><br>
+		</div>
+		<div class="tags">
+			<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> 
+			<% items.tags.forEach( function ( tag ){ %>
+				<a href="/portals/tag/<%=: tag | replace:/\ /g,'-' %>"><%=: tag %></a>, 
+				<% if (tag) { %><% }%>
+			<% }); %>
+		</div>
+		<div class="patterns">
+			<strong>Patterns:</strong>
+			<% items.patterns.forEach( function ( pattern ){ %>
+				<a class="label label-primary" href="/portals/patterns/<%=: pattern | replace:' ','-'  %>"><%=: pattern %></a>
+				<% if(pattern.slice(-1) === " "){ %>
+					xxx
+				<% } %>  
+			<% }); %>
+		</div>
+		<div id="images" style="-moz-column-count:3; -webkit-column-count:3; column-count:3; column-gap:20px; -moz-column-gap: 1.5em; -webkit-column-gap: 1.5em;">
+		</div>
+	</div>
+
+		
+	<div class="col-md-4" >
+		<br><br>
+		<!-- Add comment -->
+		<a class="button" href="/portals/edit/<%= items._id %>" title="Edit this pattern"> 				
+			<span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span> edit
+		</a><br>
+		<a class="" data-toggle="collapse" href="#collapse-comments" aria-expanded="false" aria-controls="collapseExample">
+			<span  class="right glyphicon glyphicon-comment" aria-hidden="true"></span> 
+			Write a comment
+			</a><br>
+		<div class="collapse" id="collapse-comments"> 
+			<!-- add new comment -->	
+			<form id="commentForm" action="/messages/new" method="post" accept-charset="utf-8">
+				<div class="input-group">
+					<input type="hidden" name="context" value="<%= items.name %>" />
+					<input type="hidden" name="type" value="portal" />
+					<input type="text" class="form-control" name="author" placeholder="Your name or email" aria-describedby="basic-addon2">
+					<textarea name="message" class="form-control" placeholder="Your comment about that video application" aria-describedby="basic-addon3"></textarea><br>
+				</div>
+				<span class="input-group-btn">
+			  		<button class="btn btn-default" type="submit">send</button>
+				</span>
+			</form>
+		</div>
+		<!-- List comments-->
+		<div>
+			<label>Comments</label>
+			<span class="badge" id="comments-badge">0</span>
+			<br>
+			<ul id="commentsList"></ul>
+		</div>
+	</div>
+</div>
+
+
+<script>
+
+$(document).ready (function () { 
+	
+	/*
+	 * Images
+	 **/	
+	$.get('/json/images/by-portal/<%=: items.name | replace:/ /g,"_"  %>', function(images){
+		
+		var arr = [];
+		for(var i = 0; i < images.length; i++){ 
+				var img = [
+				'<div  style="display: inline-block; width: 100%; margin-bottom: 7px;">',
+				'<a  style="margin-bottom: 0px;" class="thumbnail gallery-'+ images[i].portal +'" href="'+images[i].url+'" onclick="javascript:openGallery("' + images[i].portal + '", "'+ images[i].portal+' ('+ images[i].tags+'): '+ images[i].caption +');">',
+				'<img style="width: 100%; margin-bottom:0;" alt="'+images[i].filename+'" title="'+images[i].portal+' ('+ images[i].tags+'): '+ images[i].caption+'" class="gallery" data-toggle="tooltip" data-placement="bottom" alt="'+images[i].filename+'" src="'+images[i].url + '?v' + images[i].updated_at +'" />',
+				'</a>',
+				'<span>'+images[i].portal+' ('+ images[i].tags+'): '+ images[i].caption+'</span>',
+				'</div>'
+			];
+			arr.push( img.join('') );	
+		}
+		$('#images').html( arr.join('') );
+
+	});
+	
+	
+	/*
+	 * Comments
+	 **/ 
+	//$('#collapse-comments').click(function(){ $(this).fadeIn().toggle(); }); 
+	$( "#commentForm" ).submit(function( event ) {
+ 		event.preventDefault();
+	 	var $form = $( this ),
+		  url = $form.attr( "action" );
+	 	var posting = $.post( url, { 
+	 			context: $form.find( "input[name='context']" ).val(),
+	 			type: $form.find( "input[name='type']" ).val(),  
+	 			author: $form.find( "input[name='author']" ).val(),
+	 			message: $form.find( "textarea[name='message']" ).val()
+	 		})
+	 		.done(function( val ) {
+	 			$('#comments-badge').text( Number($('#comments-badge').text()) + 1 );
+	 			$('#collapse-comments').css({'background-color':'green'}).toggle(); //.fadeOut();//; 
+				var arr = [
+						'<li style="background-color:green;">',
+						'<b>'+ $form.find( "input[name='author']" ).val() +': </b>',
+						'<span>'+ $form.find( "textarea[name='message']" ).val() +'</span>',
+						'</li>',
+					];
+				$('#commentsList').append( arr.join('') );
+			});
+	});
+	 
+	$.get('/json/messages/portal/<%=: items.name | replace:/ /g,"_" %>', function(data){ 
+		$('#comments-badge').text(data.length);
+		$.each(data, function(i, val){
+			// plot 10 recent comments
+			if( i < 40 ){
+				var arr = [
+					'<li>',
+					'<b>'+ val.author+': </b>',
+					'<span>'+val.message+'</span>',
+					'</li>',
+				];
+				$('#commentsList').append( arr.join('') );
+			} 
+		});// end each
+	}); // end get
+});
+</script>

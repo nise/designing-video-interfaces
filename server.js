@@ -87,7 +87,7 @@ console.log('************************************************\n\n');
 //
 
 var mongoose = require( 'mongoose' );
-var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err, db){
+var conn = mongoose.connect( 'mongodb://127.0.0.1/video-patterns' , function(err, db){
 	if(err){
 		console.log(err);
 	}else{
@@ -102,7 +102,7 @@ var conn = mongoose.connect( 'mongodb://localhost/video-patterns' , function(err
 		
 		//db.patterns.createIndex({"$**":"text"});
 
-		
+		analysis.patternRelations();
 		
 	
 		//patterns.maintain(); !!

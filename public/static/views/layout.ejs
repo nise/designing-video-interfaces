@@ -35,6 +35,7 @@
 
 <% } %>
 <!--xxx <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700|Roboto|Droid+Sans:400,700' rel='stylesheet' type='text/css'>-->
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700|Roboto|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 <script src="/static/js/require.js" data-main="/static/js/requirejs-conf"></script>
 
 <script type="text/javascript"> 
@@ -46,6 +47,10 @@ $(document).ready (function () {
 		$(val).html( converter.makeHtml( $(val).text() ) );
 	});
 
+	$('#searchBtn').click(function(){
+		var text = $('#searchField').val();
+		alert(text)
+	});
 }); 
 
 
@@ -233,6 +238,18 @@ function startIntro(){
 				  </form>-->
 				  <ul class="nav navbar-nav navbar-right">
 				   	<!--<li><a href="/getinvolved">Get Involved<span class="sr-only"></span></a></li>-->
+				  	<li>
+				  	<div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input id="searchField" type="text" class="form-control input-lg" placeholder="search" />
+                    <span class="input-group-btn">
+                        <button id="searchBtn" class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+				  	</li>
 				  	<li><a href="/api">Data API</a></li>
 				  	<li><a href="/citation">Citation</a></li>
 				    <li><a href="/about">About</a></li>

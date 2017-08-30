@@ -159,7 +159,7 @@
 }, {
 	"name": "Synchronized Map",
 	"context": "The content of a video contains many geographic or location-related references. These details are not directly visualized in the video (e.g as a map or an arial image)",
-	"problem": "Learners who can not integrate places or regions mentioned in the video will have difficulties to comprehend the contents that are related to these locations. ",
+	"problem": "Learners who can not integrate places or regions mentioned in the video will have difficulties to comprehend the contents that are related to these locations.",
 	"solution": "Show an interactive map beside the video that provides the geographic context. Synchronize the presentation of locations, routes, and areas, but do not restrict the user to navigate the map"
 }, {
 	"name": "Table of Content",

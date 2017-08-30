@@ -149,7 +149,7 @@
 					"example_description": {
             type: 'string',
             title: 'Example description',
-            default: '<%= items.example_description %>',
+            default: '<%=: items.example_description | replace:/\n/g,"\\n" | replace:/\t/g," " | replace:/\r/g," " %>',
             required: false
           },
            "literature": {
@@ -286,12 +286,12 @@
           	data.management.tags = data.tags.split(',');
           	// colelct related patterns
           	data.related_patterns = [];
-          	$('.miniform').each(function(i, val){ 
+          	$('.miniform').each(function(i, val){
           		data.related_patterns[i] = {};
           		data.related_patterns[i].label = $(this).find('input[name="label"]').val();
           		data.related_patterns[i].description = $(this).find('textarea[name="description"]').val();
           		data.related_patterns[i].pattern_collection = $(this).find('input[name="collection"]').val();
-          		data.related_patterns[i].type = $(this).find('select[name="type"]').attr('selected');
+          		data.related_patterns[i].type = $(this).find('select option:selected').val();
           		
           	});
           	// send
@@ -330,7 +330,7 @@
 					 			'<option value="is-contained-by"><%= items.name%> ist Bestandteil von</option>',
 					 			'<option value="contains"><%= items.name %> beinhaltet</option>',//contains
 					 		'</select></div>',
-					 		'<div><label>Collection:</label><input name="collection" value="own" /></div>',
+					 		'<div><label>Collection:</label><input name="collection" value="this" /></div>',
 						'</div>'
       ];
       $('#addRelPattern').click(function(){

@@ -210,6 +210,44 @@ blockquote, pre{
 	border-radius:0;
 }
 
+#custom-search-input{
+    padding: 1px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: inherit;
+}
+
+#custom-search-input input{
+		margin: 15px 0;
+    border: 0;
+    box-shadow: none;
+    width:140px;
+    height:20px;
+    font-size:14px;
+    padding:0 8px;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 6px 0 5px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 17px;
+}
+
+
 .footer{
 display:inline-block;
 height: 400px;

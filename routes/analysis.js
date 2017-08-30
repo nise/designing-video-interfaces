@@ -8,6 +8,7 @@
 var 
 	mongoose = require( 'mongoose' ),
 	Portals  = mongoose.model( 'Portals' ),
+	Patterns  = mongoose.model( 'Patterns' ),
 	fs = require('node-fs'),
 	csv = require('csv'),
 	structs = require('./analysisStructs')
@@ -673,6 +674,48 @@ exports.getPortalCoOccurences = function(req, res) {
 				
 	});// end exec		
 }
+
+
+
+
+/*
+ * Patter relation
+ * Purpose SNA with gephi
+ **/
+exports.patternRelations = function() {
+	Patterns.find().select('name related_patterns').lean().exec(function (err, patterns) {
+		if(err){
+			console.log(err);
+			throw new Error('whatever');
+		}	
+		var 
+			nodes = 'id,Label\n',
+			edges = 'source,target,type',
+			index = {},
+			rel = null,
+			type = null
+		;
+		
+		for(var i=0; i < patterns.length; i++){
+			index[patterns[i].name] = i;
+		}
+		
+		for(var i=0; i < patterns.length; i++){
+			nodes += i + ',' + patterns[i].name + ','+ structs.pattern_dim[ patterns[i].name ] +'\n';
+			for(var j=0; j < patterns[i].related_patterns.length; j++ ){
+				rel = patterns[i].related_patterns[j];
+				type = 'unidirected';//rel.type == 'is-a' ? 'unidirected' : 'directed';
+				edges += i + ',' + index[ rel.label ] + ',' + type + '\n';
+				// debug	
+				if(index[ rel.label ] == null){ console.log(patterns[i].name+'___-'+rel.label+'\n\n'); }
+			}
+		}
+		console.log(nodes);
+		console.log(edges);
+		write2file('pattern_relations_nodes,csv', nodes, '/home/abb/Documents/www2/video-patterns/data/');
+		write2file('pattern_relations_edges,csv', edges, '/home/abb/Documents/www2/video-patterns/data/');
+	});
+}	
 
 
 

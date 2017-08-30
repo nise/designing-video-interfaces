@@ -96,6 +96,7 @@
 <% items.forEach( function ( item ){ %>
 	<% highlight = item.forces.length <= 20 ? 'highlight' : '' %>
 	<% highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
+	<% //highlight2 = item.related_patterns[0].type == undefined ? 'highlight' : '' %>
 	<% tags = item.management.tags.join(' ')  
 		tags += ' '+item.management.status
 
