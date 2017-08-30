@@ -26,6 +26,7 @@ module.exports = function (db, app) {
 	app.get('/about', function (req, res) { res.render('about', { title: 'About' }); });
 	app.get('/citation', function (req, res) { res.render('citation', { title: 'Citation' }); });
 	app.get('/api', function (req, res) { res.render('api', { title: 'API' }); });
+	app.get('/search/:query', patterns.searchText);
 	
 	// hidden routes
 	app.get('/analysis', analysis.renderPortalDataLatex);
@@ -63,7 +64,6 @@ module.exports = function (db, app) {
 	app.get('/patterns/new/:name', patterns.create);
 	app.get('/proto-patterns/list', patterns.listProtopatterns);
 	app.get('/patterns/view/:name', patterns.listOne);
-	app.get('/patterns/search/:query', patterns.searchText);
 	app.get('/patterns/destroy/:id', patterns.destroy);
 	app.get('/patterns/edit/:name', patterns.edit);
 	app.get('/patterns/edit-by-id/:id', patterns.editID);

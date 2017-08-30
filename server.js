@@ -102,7 +102,7 @@ var conn = mongoose.connect( 'mongodb://127.0.0.1/video-patterns' , function(err
 		
 		//db.patterns.createIndex({"$**":"text"});
 
-		analysis.patternRelations();
+		//analysis.patternRelations();
 		
 	
 		//patterns.maintain(); !!

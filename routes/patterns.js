@@ -3,11 +3,18 @@
 var
 	mongoose = require('mongoose'),
 	Patterns = mongoose.model('Patterns'),
+	Portals = mongoose.model('Portals'),
 	Images = mongoose.model('Images'),
 	fs = require('node-fs'),
 	path = require('path'),
-	csv = require('csv')
+	csv = require('csv'),
+	Promise = require('bluebird')
 	;
+
+require('mongoose').Promise = require('bluebird')
+Promise.promisifyAll(mongoose); // key part - promisification
+
+
 
 //
 exports.maintain = function () {
@@ -219,43 +226,30 @@ exports.init = function (req, res) {
 		);*/
 };
 
-// Search
-exports.searchText = function (req, res) { //bam
-	console.log(req.params.query)
+/**
+ * Searches Patterns, Image descriptions, and Portals for a given String and returns templates for the search results
+*/
+exports.searchText = function (req, res) {
 
-	Patterns
-		.find({ $text: { $search: 'video' } })
-		.skip(20)
-		.limit(10)
-		.exec(function (err, res) {
-			if (err) {
-				console.log(err);
-			} else {
-				res.jsonp(results);
+	Promise.props({
+		patterns: Patterns.find({ $text: { $search: req.params.query } }).limit(10).select('name').execAsync(),
+		portals: Portals.find({ $text: { $search: req.params.query } }).limit(10).execAsync(),
+		images: Images.find({ $text: { $search: req.params.query } }).limit(10).execAsync()
+	}).then(function (results) {
+		var items = [];
+		for (var item in results) { 
+			if (results.hasOwnProperty(item)) {
+				for (var j = 0; j < results[item].length; j++) {
+					results[item][j].type = item;
+					items.push(results[item][j]); console.log(item);
+				}
 			}
-		});
-
-	/*  
-	   .find({$text: {$search: "image"}}) // , {score: {$meta: "textScore"}}
-//		.sort({score:{$meta:"textScore"}})
-	   .exec(function ( err, results ){ 
-		   if(err){
-			   console.log(err);
-		   }else{
-			   res.jsonp( results );
-		   }	
-	   });
-	   */
-	/*Patterns
-		.find( { $text: { $search: req.params.query } } )
-		.exec(function ( err, results ){ 
-			if(err){
-				console.log(err);
-			}else{
-				res.jsonp( results );
-			}	
-		});
-	*/
+		}
+		res.render('search', { items: items });
+	}).catch(function (err) {
+		console.log(err)
+		res.send(500); // oops - we're even handling errors!
+	});
 }
 
 /*
