@@ -168,6 +168,9 @@ background-color:#999;
 }
 
 /* Edit Patterns */
+input {
+	width:100%;
+}
 .miniform{
 	margin-bottom:20px;
 }
@@ -186,6 +189,7 @@ background-color:#999;
 	font-size: 10px;
 	width:70%;
 }
+
 
 /* ..... */
 
@@ -210,15 +214,32 @@ blockquote, pre{
 	border-radius:0;
 }
 
+
+ul.navbar-right{
+	width:10%;
+	float:right;
+	padding-right:0;
+}
+
+ul.navbar-right li{
+	display:table-cell;
+	max-width:100%;
+}
+
 #custom-search-input{
     padding: 1px;
     border: solid 1px #E4E4E4;
     border-radius: 6px;
-    background-color: inherit;
+	background-color: inherit;
+	
+	
+	border:red sold 1px;
+	float:right;
 }
 
+
 #custom-search-input input{
-		margin: 15px 0;
+	margin: 15px 0;
     border: 0;
     box-shadow: none;
     width:140px;
@@ -250,7 +271,7 @@ blockquote, pre{
 
 .footer{
 display:inline-block;
-height: 400px;
+height: 100px;
 width:100%;
 margin-top:50px;
 padding:20px;

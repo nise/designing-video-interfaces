@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "video-patterns.portals", "name" : "_id_" } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"video-patterns.portals"},{"v":2,"key":{"_fts":"text","_ftsx":1},"name":"name_text","ns":"video-patterns.portals","background":true,"weights":{"name":1},"default_language":"english","language_override":"language","textIndexVersion":3}]}

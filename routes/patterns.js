@@ -15,6 +15,34 @@ require('mongoose').Promise = require('bluebird')
 Promise.promisifyAll(mongoose); // key part - promisification
 
 
+exports.importRelations = function(){
+	var patterns = [];
+	var lineReader = require('readline').createInterface({
+		input: require('fs').createReadStream(__dirname +'/../datapattern_nodes.csv')
+	});
+
+	lineReader.on('line', function (line) {
+		var li = line.split(',');
+		patterns[li[0]] = li[1];
+	});
+
+	lineReader.on('close', function (line) {
+		//console.log(patterns);
+		var lineReader2 = require('readline').createInterface({
+			input: require('fs').createReadStream(__dirname + '/../datapattern_edges.csv')
+		});
+		lineReader2.on('line', function (line) {
+			var li = line.split(',');
+			console.log(patterns[li[0]] + ' ---> ' + patterns[  li[1] ])
+			
+			// 
+			
+			//patterns[li[0]] = li[1];
+		});
+	});
+
+	
+}
 
 //
 exports.maintain = function () {

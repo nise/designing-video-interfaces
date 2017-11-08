@@ -104,7 +104,19 @@ exports.validate = function (req, res) {
 				if (err) {
 					console.error(err); res.end();
 				}
+				for (var i = 0; i < images.length; i++) {
+					if (images[i].tags.length === 0) {
+						console.log('no pattern related: ' + images[i].name)
+					}
+					if (images[i].tags.portal === '') {
+						console.log('no portal related: ' + images[i].name)
+					}
+					if (images[i].tags.caption === '') {
+						console.log('no caption found: ' + images[i].name)
+					}
+				}
 				var flag = false;
+				console.log('The following images (filenames) are not related to a portal.\n These files could be moved into a different folder.');
 				for (var i = 0; i < images.length; i++) {
 					for (var j = 0; j < portals.length; j++) {
 						if (portals[j].name.toLowerCase().replace(/-/g, ' ') === images[i].portal.toLowerCase().replace(/-/g, ' ')) {

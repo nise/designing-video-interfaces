@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "video-patterns.patterns", "name" : "_id_" }, { "v" : 1, "key" : { "context" : 1, "problem" : 1, "solution" : 1 }, "ns" : "video-patterns.patterns", "name" : "context_1_problem_1_solution_1", "background" : true } ] }
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"video-patterns.patterns"},{"v":2,"key":{"_fts":"text","_ftsx":1},"name":"name_text","ns":"video-patterns.patterns","background":true,"weights":{"name":1},"default_language":"english","language_override":"language","textIndexVersion":3}]}

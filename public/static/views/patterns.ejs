@@ -94,11 +94,11 @@
 <h3></h3>
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
-	<% highlight = item.forces.length <= 20 ? 'highlight' : '' %>
-	<% highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
+	<% highlight= item.related_patterns.length !== 0 ? 'highlight2' : '' //highlight = item.forces.length <= 20 ? 'highlight' : '' %>
+	<% //highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
 	<% //highlight2 = item.related_patterns[0].type == undefined ? 'highlight' : '' %>
 	<% tags = item.management.tags.join(' ')  
-		tags += ' '+item.management.status
+		//tags += ' '+item.management.status
 
 	%>
 <% i++ %>
@@ -130,6 +130,7 @@ $(document).ready (function () {
 			$('.structure').hide( "slow" );
 			$('.playlist').hide( "slow" );
 			$('.wizzard').hide( "slow" );
+			splitContainer([]);
 		}else if( $(this).hasClass('wizzard-btn') ){
 			$('.network').hide( "slow" );
 			$('.structure').hide( "slow" );
@@ -207,61 +208,65 @@ $(document).ready (function () {
 	$('#struc4').click(function(){ splitContainer(['workshoped-pattern','pattern','proto-pattern']); });
 		
 	var structure_data = {
+		all: {
+			title: '',
+			description: ''
+		},
 		micro : {
 			title:'Micro Level',
-			description:'some...'
+			description:''
 		},
 		macro : {
 			title:'Macro Level',
-			description:'some...'
+			description:''
 		},
 		player : {
 			title:'Playback',
-			description:'some...'
+			description:''
 		},
 		annotation : {
 			title:'Annotations',
-			description:'some...'
+			description:''
 		},
 		portal : {
 			title:'Portal',
-			description:'some...'
+			description:''
 		},
 		basic : {
 			title:'Basic',
-			description:'some...'
+			description:''
 		},
 		layout : {
 			title:'Layout',
-			description:'some...'
+			description:''
 		},
 		timeaccess : {
 			title:'Time Access',
-			description:'some...'
+			description:''
 		},
 		structure : {
 			title:'Structur',
-			description:'some...'
+			description:''
 		},
 		selforga : {
 			title:'Self Organisation',
-			description:'some...'
+			description:''
 		},
 		contribution : {
 			title:'Contribution',
-			description:'some...'
+			description:''
 		},
 		workshopedpattern : {
-			title:'Workshoped Pattern',
-			description:'some...'
+			title:'Workshoped Patterns',
+			description:''
 		},
 		pattern : {
-			title:'Pattern',
-			description:'some...'
+			title:'Patterns',
+			description:''
 		},
 		protopattern : {
-			title:'Proto-Pattern',
-			description:'some...'
+			title:'Proto-Patterns',
+			description:''
 		}
 	}
 	
@@ -294,7 +299,7 @@ $(document).ready (function () {
 		if($('.patter-card-container .portfolio-item').length > 0){
 			$('.patter-card-container')
 				.css({'border-top':'solid 4px #ccc'})
-				.find('h3').text('Others');
+				.find('h3').text( con.length === 0 ? '' : 'Uncategorized Patterns');
 				;
 		}		
 	}

@@ -1,20 +1,20 @@
 
+# Installation
+
+* dump `mongodump --forceTableScan --db video-patterns`
+* restore data from dump `mongorestore --db video-patterns ./dump/etutor`
 
 # todo
 
-@pattern-single
-- complete pattern relations
-- missing images for some patterns
-
-- introduction for each section
+- text cleaning
 - editable imgae captions via xedit
 - [d] advanced search by name, description, and each pattern component
-- complete pattern links
 - cite: https://github.com/vkaravir/bib-publication-list
 
 
-@ favorites
+**favorites**
 - can not be deleted 
+- not working under chromium
 - feedback on adding
 - shopping cart
 - Schnittmenge aufgrund Patternauswahl

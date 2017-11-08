@@ -5,32 +5,56 @@
  */
 
 module.exports = function (db, app) {
-	var
+	let
 		module = {},
+		fs = require('node-fs'),
 		mongoose = require('mongoose'),
 		images = require('./images'),
 		portals = require('./portals'),
 		patterns = require('./patterns'),
 		analysis = require('./analysis'),
 		users = require('./users'),
-		messages = require('./messages')
-		;
+		messages = require('./messages');
 
 
 	//if (req.isAuthenticated()) { return next(); }
 	//res.redirect('/login')
 
 	// general routes
-	app.get('/', function (req, res) { res.render('intro', { title: 'Designing Video Interfaces' }); });
-	app.get('/wizzard', function (req, res) { res.render('wizzard', { title: 'Pattern Wizzard' }); });
-	app.get('/about', function (req, res) { res.render('about', { title: 'About' }); });
-	app.get('/citation', function (req, res) { res.render('citation', { title: 'Citation' }); });
-	app.get('/api', function (req, res) { res.render('api', { title: 'API' }); });
+	app.get('/', function (req, res) {
+		res.render('intro', {
+			title: 'Designing Video Interfaces'
+		});
+	});
+	app.get('/wizzard', function (req, res) {
+		res.render('wizzard', {
+			title: 'Pattern Wizzard'
+		});
+	});
+	app.get('/about', function (req, res) {
+		res.render('about', {
+			title: 'About'
+		});
+	});
+	app.get('/citation', function (req, res) {
+		res.render('citation', {
+			title: 'Citation'
+		});
+	});
+	app.get('/api', function (req, res) {
+		res.render('api', {
+			title: 'API'
+		});
+	});
 	app.get('/search/:query', patterns.searchText);
-	
+
 	// hidden routes
 	app.get('/analysis', analysis.renderPortalDataLatex);
-	app.get('/eval', function (req, res) { res.render('eval-pattern-buckets', { title: 'What do you think?' }); });
+	app.get('/eval', function (req, res) {
+		res.render('eval-pattern-buckets', {
+			title: 'What do you think?'
+		});
+	});
 
 	// routes for portals
 	app.get('/portals', portals.list);
@@ -93,12 +117,12 @@ module.exports = function (db, app) {
 
 
 	// routes related to User Management and Passport - Local Authentication
-	app.get('/users/view/:username', users.show);// showAccountDetails);
+	app.get('/users/view/:username', users.show); // showAccountDetails);
 	app.get('/admin/users/new', users.addUserForm); // opens input form
 	app.get('/users/register', users.registrationForm); // opens input form
 	app.post('/users/register', users.registerUser); // saves user
 	app.post('/users/create', users.create); // saves user
-	app.post('/users/update/:id', users.authCallback(['editor']), users.update);//users.updateUsers);	
+	app.post('/users/update/:id', users.authCallback(['editor']), users.update); //users.updateUsers);	
 	app.get('/admin/users/destroy/:id', users.destroy);
 	app.get('/admin/users/edit/:username', users.edit);
 	app.post('/users/online/:username', users.setOnlineStatus);
@@ -117,7 +141,9 @@ module.exports = function (db, app) {
 	/*
 	Logging
 	**/
-	var log = fs.createWriteStream('logfile.debug', { 'flags': 'a' }); // use {'flags': 'a'} to append and {'flags': 'w'} to erase and write a new file
+	var log = fs.createWriteStream('logfile.debug', {
+		'flags': 'a'
+	}); // use {'flags': 'a'} to append and {'flags': 'w'} to erase and write a new file
 
 
 } // end module
