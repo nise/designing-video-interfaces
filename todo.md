@@ -11,8 +11,8 @@
 - highlight fav patterns
 - fix index db ... reactiv manifesto
 - rights management => allow editing
-- editable imgae captions via xedit
 - [d] advanced search by name, description, and each pattern component
+- image caption form PLoP-papers could be transfered to the website
 - cite: https://github.com/vkaravir/bib-publication-list
 
 
@@ -25,6 +25,7 @@
 
 
 # Backlog
+- editable imgae captions via xedit
 - adopt pattern description layout
 - /data/foundation-Portals.csv => year of foundation => D3.js
 - Page, die den Erhebungs- und Analyseprozess beschreibt, inkl. Limitationen
