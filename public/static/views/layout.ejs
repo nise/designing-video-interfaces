@@ -4,6 +4,7 @@
 <head>
 	<title>Designing Video Interfaces</title>
 	<meta name='robots' content='noindex,nofollow' />
+	<link rel="manifest" href="/manifest.json">
 	<% production=0 %>
 		<% if (production) { %>
 			<link rel="stylesheet" href="/static/css/video-patterns-style.min.css">
@@ -25,6 +26,7 @@
 				<script src="/static/js/bootstrap-table-all.min.js"></script>
 				<!--<script src="/static/js/bootstrap-table-filter-control.min.js"></script>-->
 				<script src="/static/js/bootstrap-table-export.min.js"></script>
+				<script src="/static/js/markdown.min.js"></script>
 
 				<script src="/static/js/FileSaver.min.js" type="text/javascript"></script>
 				<script src="/static/js/tableExport.js"></script>
@@ -41,14 +43,28 @@
 
 					<script type="text/javascript">
 						$(document).ready(function () {
+							/*$(".nav a").on("click", function () {
+								$(".nav").find(".active").removeClass("active");
+								$(this).parent().addClass("active");
+							});
+							*/
+
 							var converter = new showdown.Converter();
 							converter.setOption('tables', 'true');
 							$('.mark').each(function (i, val) {
 								//$(val).html(markdown.toHTML($(val).text()))
 								$(val).html(converter.makeHtml($(val).text()));
 							});
-
+							$('#searchField').keydown(function (e) {
+									if (e.keyCode == 13) {
+										submitSearch();
+									}
+							});
 							$('#searchBtn').click(function () {
+								submitSearch();
+							});
+
+							function submitSearch(){	
 								var text = $('#searchField').val();
 								$.get('/search/' + text, function (data, status) {
 									$("#searchModal").modal(
@@ -62,12 +78,13 @@
 											"z-index": 10040,
 											overflow: "auto",
 											"overflow-y": "auto",
-											show: true
+											show: true,
+											keyboard: true
 										}
 									);
 									$('#searchModal').find('.modal-body').html(data);
 								}, 'html');
-							});
+							};
 						});
 
 
@@ -263,8 +280,8 @@ function startIntro(){
 
 </head>
 
-<body class="">
-	<div id="searchModal" class="modal fade">
+<body>
+	<div id="searchModal" class="modal fade" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -277,8 +294,7 @@ function startIntro(){
 					<p>One fine body&hellip;</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
+					
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -339,9 +355,10 @@ function startIntro(){
 									<input id="searchField" type="text" class="form-control input-lg" placeholder="search" />
 									<span class="input-group-btn">
 										<button id="searchBtn" class="btn btn-info btn-lg" type="button">
-											<i class="glyphicon glyphicon-search"></i>
+											<span class="glyphicon glyphicon-search"></span>
 										</button>
 									</span>
+									
 								</div>
 							</div>
 						</li>
@@ -354,12 +371,8 @@ function startIntro(){
 
 	</header>
 
-	<content>
-		<%- body %>
-	</content>
-	<footer>
-		<% include footer %>
-	</footer>
+	<content><%- body %></content>
+	<footer><% include footer %></footer>
 
 </body>
 

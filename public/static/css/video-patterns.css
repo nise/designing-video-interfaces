@@ -7,6 +7,7 @@ font-family: 'Oswald', sans-serif;
 font-weight:bold;
 }
 
+
 table {
 	margin: 20px 0;
 }
@@ -29,6 +30,17 @@ table tbody tr:last-child td {
 }
 
 
+ .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default:hover .navbar-toggle:focus{
+	background-color: inherit;
+	border:none;
+	margin-right:20px;
+	padding:8px 4px 6px 4px;
+}
+
+.navbar-default:hover .navbar-toggle:hover {
+	background-color: #fff;
+}
+
 .navbar-default {
     background-color: #CCEBFF;
     border-color: #e7e7e7;
@@ -40,7 +52,8 @@ table tbody tr:last-child td {
 }    
 
 .jumbotron {
-    background-color: #87D0E8;
+	background-color: #87D0E8;
+	padding-top:50px;
 }
 
 .spacer200 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
@@ -171,6 +184,21 @@ background-color:#999;
 input {
 	width:100%;
 }
+
+li.list-group-item, ul.list-group{
+	margin:0 10px 0 0; padding:0; border:0;
+}
+label.checkbox input[type=checkbox] {
+	display: inline;
+	margin-left:4px;
+	width:10px;
+}
+
+label.checkbox  span {
+	margin-left:9%;
+	display:block;
+	width:80%;
+}
 .miniform{
 	margin-bottom:20px;
 }
@@ -216,25 +244,17 @@ blockquote, pre{
 
 
 ul.navbar-right{
-	width:10%;
-	float:right;
-	padding-right:0;
+	position: inline-block;
+	width: 20%;
+	margin:0;
 }
 
-ul.navbar-right li{
-	display:table-cell;
-	max-width:100%;
-}
+
 
 #custom-search-input{
     padding: 1px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
 	background-color: inherit;
 	
-	
-	border:red sold 1px;
-	float:right;
 }
 
 
@@ -242,7 +262,7 @@ ul.navbar-right li{
 	margin: 15px 0;
     border: 0;
     box-shadow: none;
-    width:140px;
+    min-width:140px;
     height:20px;
     font-size:14px;
     padding:0 8px;
@@ -254,14 +274,12 @@ ul.navbar-right li{
     box-shadow: none;
     border: 0;
     color: #666666;
-    padding: 0 6px 0 5px;
-    border-left: solid 1px #ccc;
+	padding: 0 6px 0 5px;
 }
 
 #custom-search-input button:hover{
     border: 0;
     box-shadow: none;
-    border-left: solid 1px #ccc;
 }
 
 #custom-search-input .glyphicon-search{
@@ -271,7 +289,7 @@ ul.navbar-right li{
 
 .footer{
 display:inline-block;
-height: 100px;
+min-height: 100px;
 width:100%;
 margin-top:50px;
 padding:20px;
