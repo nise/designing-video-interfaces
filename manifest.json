@@ -1,0 +1,29 @@
+{
+    "short_name": "Designing Video Interfaces",
+    "description": "A simply readable Hacker News app.",
+    "name": "Niels Seidel",
+    "lang": "en-US",
+    "icons": [
+        {
+            "src": "launcher-icon-1x.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "launcher-icon-2x.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "launcher-icon-4x.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#2196F3",
+    "display": "browser",
+    "orientation": "landscape",
+    "prefer_related_applications": false
+    
+}
