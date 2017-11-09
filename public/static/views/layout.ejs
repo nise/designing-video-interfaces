@@ -80,10 +80,11 @@
 						var server = 0;
 						db.open({
 							server: 'videopatterns',
-							version: 1,
+							version: 2,
 							schema: {
 								pattern: {
 									key: { keyPath: 'id', autoIncrement: true },
+									name: '',
 									// Optionally add indexes
 									indexes: {
 										name: { unique: true },
@@ -95,40 +96,90 @@
 							server = s;
 						});
 
+						//Components.utils.importGlobalProperties(["indexedDB"]);
+						if (window.indexedDB) {
+							// From here on, it's like using IndexedDB from content
+							var req = indexedDB.open("videopatterns");
 
-						/*
-						Add pattern to index db
-						**/
-						function addToFav(pattern) {
-							server.pattern.add({ name: pattern }).then(function (item) {
-								//alert(JSON.stringify(item));
-								// add to  
-								//playlist.push( item.replace(/\ /g,'-').toLowerCase() );  
-							});
+							var req2 = window.indexedDB.open("videodatabase", 3);
+
+							req.onerror = function (event) {
+								console.log('error');
+							};
+							req.onsuccess = function (event) {
+								console.log('success');
+							};
+							req2.onerror = function (event) {
+								console.log('error2');
+							};
+							req2.onsuccess = function (event) {
+								console.log('success2');
+							};
+
+							req.onupgradeneeded = function (event) {
+								var db = event.target.result;
+
+								// Create an objectStore to hold information about our customers. We're
+								// going to use "ssn" as our key path because it's guaranteed to be
+								// unique - or at least that's what I was told during the kickoff meeting.
+								var objectStore = db.createObjectStore("playlist", { keyPath: "ssn" });
+
+								// Create an index to search customers by name. We may have duplicates
+								// so we can't use a unique index.
+								objectStore.createIndex("pattern", "pattern", { unique: true });
+
+								// Use transaction oncomplete to make sure the objectStore creation is 
+								// finished before adding data into it.
+								objectStore.transaction.oncomplete = function (event) {
+									// Store values in the newly created objectStore.
+									var customerObjectStore = db.transaction("playlist", "readwrite").objectStore("playlist");
+									
+									customerObjectStore.add( {pattern: 'bam'} );
+									
+								};
+							};
 						}
 
 						/*
+						Add pattern to index db
+						
+						function addToFav(pattern) {
+							//playlist.push(pattern.replace(/\ /g, '-').toLowerCase());  
+							server.pattern.add({ key: pattern.replace(/\ /g, '-').toLowerCase() }).then(function (item) {
+								//alert(JSON.stringify(item));
+								// add to  
+								console.log('added fav')
+								//playlist.push( item.replace(/\ /g,'-').toLowerCase() );  
+							}).catch((err) => {// mongoose connection error will be handled here
+								console.error('add error:', err);
+							});
+						}
+**/
+						/*
 						Remove pattern from index db
-						**/
+						
 						function removeFav(key) {  //alert('__'+key+'__'); alert(JSON.stringify(pp))
 							server.pattern.remove(pp.indexOf(key)).then(function (res) {
 								alert('removed ' + JSON.stringify(res));
 								fetchAll();
-							})/*.remove( 1 ).done( function ( keyy ) {
-									alert('removed ')
-							} );*/
+							}).catch((err) => {// mongoose connection error will be handled here
+								console.error('remove error:', err.stack);
+							});
 							// query().filter('name', key).execute()
 						}
 
-
-						/**/
+*/
+						/*
 						function clear() {
 							server.pattern.clear().execute()
 								.then(function () {
 									alert('cleared index db')
+								}).catch((err) => {// mongoose connection error will be handled here
+									console.error('clear error:', err.stack);
+									
 								});
 						}
-
+*/
 
 
 						/*

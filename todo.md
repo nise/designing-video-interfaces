@@ -6,7 +6,11 @@
 
 # todo
 
-- text cleaning
+- make nice filter
+- show selected option (filter, all, wizzard)
+- highlight fav patterns
+- fix index db ... reactiv manifesto
+- rights management => allow editing
 - editable imgae captions via xedit
 - [d] advanced search by name, description, and each pattern component
 - cite: https://github.com/vkaravir/bib-publication-list
@@ -40,8 +44,8 @@
 ## Less prior improvements
 - image management
 - nice icons: http://ionicons.com/ 
-- wizzard could be used for decision about suitable video platforms
-
+- onboarding: wizzard could be used for decision about suitable video platforms
+- 
 - nice header/footer
 - analysis page
 - plml api

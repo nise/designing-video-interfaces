@@ -4,188 +4,216 @@
 
 
 
-  <!-- Main component for a primary marketing message or call to action -->
+	<!-- Main component for a primary marketing message or call to action -->
 
-<br><br><br>
-<div class="col-md-8 portfolio-item" id="<%=: items.name | replace:/\ /g,'-'  %>">
-	<div class="panel">
-		<div class="panel-heading">
-			<h4>
-				<%= items.name %>
-				<% if(items.confidence==1){  %>*<% } %>
-				<% if(items.confidence==2){  %>**<% } %>	
-				<% if(items.confidence==3){  %>***<% } %>
-			</h4>
-			<div class="synopsis mark">**<%= items.synopsis %>**</div>
-			<br>
-			<% if(items.illustration != undefined){  %><img class="pattern-illustration"src="<%= items.illustration %>"/><% } %>
-		
-		</div>	
-		<div class="panel-body">
-			<div class="context mark"><%= items.context  %></div>
-			<div class="sep" hidden class="text-center pagination-centered">
-				<span class="glyphicon glyphicon-play" aria-hidden="true"></span> 
-			</div>
-			<div class="problem" style="font-weight:bold;"><%=: items.problem | replace:'\n','' %></div>
-			<div class="forces mark"><%= items.forces %></div>
-			<div class="solution" style="font-weight:bold;"><%= items.solution %></div>
-			<div class="consequences mark"><%= items.consequences %></div>
-			<div class="related">
-				<h4>Related Patterns</h4>
-				<% if (items.related_patterns != undefined) { %>
-				<ul id="pattern_related">
-					<% items.related_patterns.forEach( function ( related ){ %>
-						<% if ( related.pattern_collection == 'own' || related.pattern_collection == 'this') { %>
-	<li><a href="/patterns/view/<%= related.label %>"><%= related.label %></a> (<%= related.type %>)<!-- <% related.type %>--></li>
-						<% }else{ %>
-						<li><%= related.label %> (see <%= related.pattern_collection %>): <%= related.description %></li>	
-						<% } %>
-					<% }); %>	
-				</ul>
-				<% } %>	
-<div class="mark"><%= items.related %></div>
-			</div>
-			<div class="evidence mark">####Examples
-<%= items.example_description %></div>
-			
-			<div class="examples"></div>
-			 
-
-		</div>
-	</div>		
-</div>	
-
-<div class="col-md-4">
-	<div class="spacer200"></div>
-	<a href="#" onclick="javascript:addToFav('<%= items.name %>')" class="button" title="Add pattern to favorites"> 				
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-		Add to favorites
-	</a><br>
-	<a class="button" href="/patterns/edit/<%=: items.name | replace:/\ /g,'-'  %>" title="Update this item item"> 				
-		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-		Edit
-	</a>
-	<br><br>	
-	<label>Known Uses <a class="badge" href="/portals/patterns/<%=: items.name | replace:/\ /g,'-'  %>" id="numberofuses"></a></label>
-	<ul id="pattern_known_uses"></ul>
 	<br>
-	
-	<!-- List comments-->
-	<div>
-		<label>Comments</label>
-		<span class="badge" id="comments-badge">0</span>
-		<br>
-		<ul id="commentsList"></ul>
-	</div>
-	<!-- Comments -->
-	<a class="" data-toggle="collapse" href="#collapse-comments" aria-expanded="false" aria-controls="collapseExample">
-		<span  class="right glyphicon glyphicon-comment" aria-hidden="true"></span> 
-		Write a comment
-	</a><br>
-	<div class="collapse" id="collapse-comments"> 
-		<!-- add new comment -->	
-		<form id="commentForm" action="/messages/new" method="post" accept-charset="utf-8">
-			<div class="input-group">
-				<input type="hidden" name="context" value="<%= items.name %>" />
-				<input type="hidden" name="type" value="pattern" />
-				<input type="text" class="form-control" name="author" placeholder="Your name or email" aria-describedby="basic-addon2">
-				<textarea name="message" class="form-control" placeholder="Your comment about that video application" aria-describedby="basic-addon3"></textarea><br>
+	<br>
+	<br>
+	<div class="col-md-8 portfolio-item" id="<%=: items.name | replace:/\ /g,'-'  %>">
+		<div class="panel">
+			<div class="panel-heading">
+				<h4>
+					<%= items.name %>
+						<% if(items.confidence==1){  %>*
+							<% } %>
+								<% if(items.confidence==2){  %>**
+									<% } %>
+										<% if(items.confidence==3){  %>***
+											<% } %>
+				</h4>
+				<div class="synopsis mark">**<%= items.synopsis %>**</div>
+				<br>
+				<% if(items.illustration != undefined){  %>
+					<img class="pattern-illustration" src="<%= items.illustration %>" />
+					<% } %>
+
 			</div>
-			<span class="input-group-btn">
-		  		<button class="btn btn-default" type="submit">send</button>
-			</span>
-		</form>
-	</div>
-	
-			
-</div>
-
-
-<script>
-$(document).ready (function () {
-	/*
-	 * Images
-	 **/  
-	$.get('/json/images/by-pattern/<%=: items.name | replace:/-/g,' '  %>', function(data){
-		$.each(data, function(i, val){ 
-			var image = $('<img />')
-				.attr('src', val.url)
-				.attr('alt', val.filename);
-			var link = $('<a></a>')
-				.attr('href','#')
-				.addClass('')
-				.append(image);
-			var div = $('<div></div>')
-				.addClass('pattern-image')
-				.append($('<div></div>').html('#'+(i+1)+': '+val.portal)).css({'font-weight':'bold'}) 	
-				.append(image)
-				.append($('<div></div>').addClass('caption').append(val.caption))
-				;
-			$('.examples')
-				.append(div);
+			<div class="panel-body">
+				<div class="context mark"><%= items.context  %></div>
+				<div class="sep" hidden class="text-center pagination-centered">
+					<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+				</div>
+				<div class="problem" style="font-weight:bold;"><%=: items.problem | replace:'\n','' %></div>
+				<div class="forces mark"><%= items.forces %></div>
+				<div class="solution" style="font-weight:bold;"><%= items.solution %></div>
+				<div class="consequences mark"><%= items.consequences %></div>
+				<div class="related">
+					<h4>Related Patterns</h4>
+					<% if (items.related_patterns != undefined) { %>
+						<ul id="pattern_related">
+							<% items.related_patterns.forEach( function ( related ){ %>
+								<% if ( related.pattern_collection == 'own' || related.pattern_collection == 'this') { %>
+									<li>
+										<a href="/patterns/view/<%= related.label %>"><%= related.label %></a> (<%= related.type %>)
+									</li>
+								<% }else{ collections = { 
+									'schuemmer':'Till Schümmer & Stephan Lukosch (2007)',
+									'tidwell2005':'Jenifer Tidwel (2005)',
+									'welie':'Welie',
+									'bernstein':'Bernstein (1998)',
+									'ypatterns':'ypatterns, yahoo!',
+									'quince':'Quince UX Pattern Collection',
+									'kunert':'Tibor Kunert',
+									'malone':'Erin Malone & Chris Crumlish (2009)'
+								} %>
+									<li>
+										<%= related.label %> (<%= collections[ related.pattern_collection ] %>, <%= related.description %>)
+									</li>
+								<% } %>
+							<% }); %>
+						</ul>
+						<% } %>
+							<div class="mark"><% if (items.related !== undefined) { %><%= items.related %><% } %></div>
+				</div>
 				
-		});
-	});	
-	
-	
-	/*
-	 * Related Portals / Known uses
-	 **/
-	$.get('/json/portals/patterns/<%=: items.name | replace:/-/g,' ' %>', function(data){
-		$('#numberofuses').html(data.length) 
-		$.each(data, function(i, val){ 
-			$('#pattern_known_uses').append('<li><a href="/portals/view/'+ val._id +'">'+ val.name +'</a></li>')
-		});
-	});
-	
-	
-	/*
-	 * Comments
-	 **/ 
-	//$('#collapse-comments').click(function(){ $(this).fadeIn().toggle(); }); 
-	$( "#commentForm" ).submit(function( event ) {
- 		event.preventDefault();
-	 	var $form = $( this ),
-		  url = $form.attr( "action" );
-	 	var posting = $.post( url, { 
-	 			context: $form.find( "input[name='context']" ).val(),
-	 			type: $form.find( "input[name='type']" ).val(),  
-	 			author: $form.find( "input[name='author']" ).val(),
-	 			message: $form.find( "textarea[name='message']" ).val()
-	 		})
-	 		.done(function( val ) {
-	 			$('#comments-badge').text( Number($('#comments-badge').text()) + 1 );
-	 			$('#collapse-comments').css({'background-color':'green'}).toggle(); //.fadeOut();//; 
-				var arr = [
-						'<li style="background-color:green;">',
-						'<b>'+ $form.find( "input[name='author']" ).val() +': </b>',
-						'<span>'+ $form.find( "textarea[name='message']" ).val() +'</span>',
-						'</li>',
-					];
-				$('#commentsList').append( arr.join('') );
+					<div class="evidence mark">####Examples
+<% if (items.example_description !== 'undefined') { %>
+<%= items.example_description %>
+<% } %>
+					</div>
+					
+				<div class="examples">(comming soon)</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="spacer200"></div>
+		<a href="#" onclick="javascript:addToFav('<%= items.name %>')" class="button" title="Add pattern to favorites">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			Add to favorites
+		</a>
+		<br>
+		<a class="button" href="/patterns/edit/<%=: items.name | replace:/\ /g,'-'  %>" title="Update this item item">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+			Edit
+		</a>
+		<br>
+		<br>
+		<label>Known Uses
+			<a class="badge" href="/portals/patterns/<%=: items.name | replace:/\ /g,'-'  %>" id="numberofuses"></a>
+		</label>
+		<ul id="pattern_known_uses"></ul>
+		<br>
+
+		<!-- List comments-->
+		<div>
+			<label>Comments</label>
+			<span class="badge" id="comments-badge">0</span>
+			<br>
+			<ul id="commentsList"></ul>
+		</div>
+		<!-- Comments -->
+		<a class="" data-toggle="collapse" href="#collapse-comments" aria-expanded="false" aria-controls="collapseExample">
+			<span class="right glyphicon glyphicon-comment" aria-hidden="true"></span>
+			Write a comment
+		</a>
+		<br>
+		<div class="collapse" id="collapse-comments">
+			<!-- add new comment -->
+			<form id="commentForm" action="/messages/new" method="post" accept-charset="utf-8">
+				<div class="input-group">
+					<input type="hidden" name="context" value="<%= items.name %>" />
+					<input type="hidden" name="type" value="pattern" />
+					<input type="text" class="form-control" name="author" placeholder="Your name or email" aria-describedby="basic-addon2">
+					<textarea name="message" class="form-control" placeholder="Your comment about that video application" aria-describedby="basic-addon3"></textarea>
+					<br>
+				</div>
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="submit">send</button>
+				</span>
+			</form>
+		</div>
+
+
+	</div>
+
+
+	<script>
+		$(document).ready(function () {
+			/*
+			 * Images
+			 **/
+			$.get('/json/images/by-pattern/<%=: items.name | replace:/-/g,' '  %>', function (data) {
+				if(data.length > 0){$('.examples').empty();}
+				$.each(data, function (i, val) {
+					var image = $('<img />')
+						.attr('src', val.url)
+						.attr('alt', val.filename);
+					var link = $('<a></a>')
+						.attr('href', '#')
+						.addClass('')
+						.append(image);
+					var div = $('<div></div>')
+						.addClass('pattern-image')
+						.append($('<div></div>').html('#' + (i + 1) + ': ' + val.portal)).css({ 'font-weight': 'bold' })
+						.append(image)
+						.append($('<div></div>').addClass('caption').append(val.caption))
+						;
+					$('.examples')
+						.append(div);
+
+				});
 			});
-	});
-	 
-	$.get('/json/messages/pattern/<%=: items.name | replace:/ /g,"_" %>', function(data){ 
-		$('#comments-badge').text(data.length);
-		$.each(data, function(i, val){
-			// plot 10 recent comments
-			if( i < 40 ){
-				var arr = [
-					'<li>',
-					'<b>'+ val.author+': </b>',
-					'<span>'+val.message+'</span>',
-					'</li>',
-				];
-				$('#commentsList').append( arr.join('') );
-			} 
-		});// end each
-	}); // end get
-	
-	
-	
-});	
-</script>
 
-	
 
+			/*
+			 * Related Portals / Known uses
+			 **/
+			$.get('/json/portals/patterns/<%=: items.name | replace:/-/g,' ' %>', function (data) {
+				$('#numberofuses').html(data.length)
+				$.each(data, function (i, val) {
+					$('#pattern_known_uses').append('<li><a href="/portals/view/' + val._id + '">' + val.name + '</a></li>')
+				});
+			});
+
+
+			/*
+			 * Comments
+			 **/
+			//$('#collapse-comments').click(function(){ $(this).fadeIn().toggle(); }); 
+			$("#commentForm").submit(function (event) {
+				event.preventDefault();
+				var $form = $(this),
+					url = $form.attr("action");
+				var posting = $.post(url, {
+					context: $form.find("input[name='context']").val(),
+					type: $form.find("input[name='type']").val(),
+					author: $form.find("input[name='author']").val(),
+					message: $form.find("textarea[name='message']").val()
+				})
+					.done(function (val) {
+						$('#comments-badge').text(Number($('#comments-badge').text()) + 1);
+						$('#collapse-comments').css({ 'background-color': 'green' }).toggle(); //.fadeOut();//; 
+						var arr = [
+							'<li style="background-color:green;">',
+							'<b>' + $form.find("input[name='author']").val() + ': </b>',
+							'<span>' + $form.find("textarea[name='message']").val() + '</span>',
+							'</li>',
+						];
+						$('#commentsList').append(arr.join(''));
+					});
+			});
+
+			$.get('/json/messages/pattern/<%=: items.name | replace:/ /g,"_" %>', function (data) {
+				$('#comments-badge').text(data.length);
+				$.each(data, function (i, val) {
+					// plot 10 recent comments
+					if (i < 40) {
+						var arr = [
+							'<li>',
+							'<b>' + val.author + ': </b>',
+							'<span>' + val.message + '</span>',
+							'</li>',
+						];
+						$('#commentsList').append(arr.join(''));
+					}
+				});// end each
+			}); // end get
+
+
+
+		});	
+	</script>
