@@ -88,194 +88,74 @@
 						});
 
 
-						/*******************/
-						/* INDEXDB*/
+						// local storage
+						var the_playlist = '', pp = [];
+						
+						function isInPlaylist(key){
+							return the_playlist.split(',').indexOf(key) === -1 ? 0 : 1;
+							
+						}
 
+						function toggleFav(key){
+							var selector = '#playlist_' + key.replace(/ /g, '_');
+							if( isInPlaylist( key ) ){
+								removeFav(key);
+								$(selector).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+							}else{
+								addToFav(key);
+								$(selector).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+							}	
+						}
 
-						// indexdb via db.js
-						var playlist = [], pp = [];
-						var server = 0;
-						db.open({
-							server: 'videopatterns',
-							version: 2,
-							schema: {
-								pattern: {
-									key: { keyPath: 'id', autoIncrement: true },
-									name: '',
-									// Optionally add indexes
-									indexes: {
-										name: { unique: true },
-										answer: { unique: true }
+						function initFav(){ 
+							var playlist = localStorage.getItem("pattern-playlist").split(',');
+							for(var i=0,len = playlist.length; i<len;i++){
+								key = playlist[i];
+								var selector = '#playlist_' + key.replace(/ /g, '_');
+								
+								if(key !== '' && key !== undefined && key !== null){
+									var sel2 = '#'+ key.replace(/ /g, '-').toLowerCase() + ' .pattern-card';
+									if (isInPlaylist(key) === 1) {
+										$(selector).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+										$(sel2).removeClass('highlight-favorites');
+									} else {
+										$(selector).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+										$(sel2).addClass('highlight-favorites');
 									}
-								}
+								}	
 							}
-						}).then(function (s) {
-							server = s;
-						});
-
-						//Components.utils.importGlobalProperties(["indexedDB"]);
-						if (window.indexedDB) {
-							// From here on, it's like using IndexedDB from content
-							var req = indexedDB.open("videopatterns");
-
-							var req2 = window.indexedDB.open("videodatabase", 3);
-
-							req.onerror = function (event) {
-								console.log('error');
-							};
-							req.onsuccess = function (event) {
-								console.log('success');
-							};
-							req2.onerror = function (event) {
-								console.log('error2');
-							};
-							req2.onsuccess = function (event) {
-								console.log('success2');
-							};
-
-							req.onupgradeneeded = function (event) {
-								var db = event.target.result;
-
-								// Create an objectStore to hold information about our customers. We're
-								// going to use "ssn" as our key path because it's guaranteed to be
-								// unique - or at least that's what I was told during the kickoff meeting.
-								var objectStore = db.createObjectStore("playlist", { keyPath: "ssn" });
-
-								// Create an index to search customers by name. We may have duplicates
-								// so we can't use a unique index.
-								objectStore.createIndex("pattern", "pattern", { unique: true });
-
-								// Use transaction oncomplete to make sure the objectStore creation is 
-								// finished before adding data into it.
-								objectStore.transaction.oncomplete = function (event) {
-									// Store values in the newly created objectStore.
-									var customerObjectStore = db.transaction("playlist", "readwrite").objectStore("playlist");
-									
-									customerObjectStore.add( {pattern: 'bam'} );
-									
-								};
-							};
 						}
 
-						/*
-						Add pattern to index db
-						
-						function addToFav(pattern) {
-							//playlist.push(pattern.replace(/\ /g, '-').toLowerCase());  
-							server.pattern.add({ key: pattern.replace(/\ /g, '-').toLowerCase() }).then(function (item) {
-								//alert(JSON.stringify(item));
-								// add to  
-								console.log('added fav')
-								//playlist.push( item.replace(/\ /g,'-').toLowerCase() );  
-							}).catch((err) => {// mongoose connection error will be handled here
-								console.error('add error:', err);
+						function filterFav(){
+							$('.pattern-card').each(function(i,val){
+								if( ! $(this).hasClass('highlight-favorites') ){
+									$(this).parent().hide();
+								}
 							});
 						}
-**/
-						/*
-						Remove pattern from index db
-						
-						function removeFav(key) {  //alert('__'+key+'__'); alert(JSON.stringify(pp))
-							server.pattern.remove(pp.indexOf(key)).then(function (res) {
-								alert('removed ' + JSON.stringify(res));
-								fetchAll();
-							}).catch((err) => {// mongoose connection error will be handled here
-								console.error('remove error:', err.stack);
-							});
-							// query().filter('name', key).execute()
+
+						//localStorage.setItem("pattern-playlist", '');
+						function addToFav(key) {
+							if (typeof (Storage) !== "undefined"  && key !== '') {
+								var playlist = localStorage.getItem("pattern-playlist") === null || undefined ? '' : localStorage.getItem("pattern-playlist");
+								playlist = playlist +','+ key;
+								localStorage.setItem("pattern-playlist", playlist); //alert(localStorage.getItem("pattern-playlist"));
+								the_playlist = playlist;
+								var sel2 = '#' + key.replace(/ /g, '-').toLowerCase() + ' > .pattern-card';
+								$(sel2).addClass('highlight-favorites');
+							}
 						}
 
-*/
-						/*
-						function clear() {
-							server.pattern.clear().execute()
-								.then(function () {
-									alert('cleared index db')
-								}).catch((err) => {// mongoose connection error will be handled here
-									console.error('clear error:', err.stack);
-									
-								});
-						}
-*/
-
-
-						/*
-						 * Fetch all patterns from index db and displays them
-						 * status: ok
-						 **/
-						function fetchAll() {
-							server.pattern.query().all()
-								.execute()
-								.then(function (results) {
-									var playlst = {}; playlist = [];
-									for (var i = 0; i < results.length; i++) {
-										playlst[results[i].name.replace(/\ /g, '-').toLowerCase()] = results[i].name.replace(/\ /g, '-').toLowerCase();
-									}
-									//
-									for (var el in playlst) {
-										pp.push(el)
-										if (playlst.hasOwnProperty(el)) {
-											playlist.push(el);
-										}
-									}
-									// hide patterns that are not part of the playlist
-									$('.portfolio-item').each(function (i, val) { //alert( $(val).attr('id') )
-										if (playlist.indexOf($(val).attr('id')) == -1) {
-											$(val).hide();
-										} else { // replace icon
-											$(val)
-												.find('.add-fav')
-												.removeClass('glyphicon-plus')
-												.addClass('glyphicon-minus')
-												.attr('onclick', '')
-												.unbind('click')
-												.click(function () {
-													alert($(val).find('h5').text())
-													removeFav($(val).find('h5').text().replace(/\t|\n|\r|\ /g, ''));
-												})
-												;
-										}
-									});
-
-								});
+						function removeFav(key) {
+							if (typeof (Storage) !== "undefined" && key !== '') {
+								var playlist = localStorage.getItem("pattern-playlist").replace(key+',','');
+								localStorage.setItem("pattern-playlist", playlist); //alert(localStorage.getItem("pattern-playlist"));
+								the_playlist = playlist;
+								var sel2 = '#' + key.replace(/ /g, '-').toLowerCase() + ' > .pattern-card';
+								$(sel2).removeClass('highlight-favorites');
+							}
 						}
 
-
-
-
-/*
-// guided tour
-function startIntro(){
-        var intro = introJs();
-          intro.setOptions({
-            steps: [
-              {intro: "Herzlich willkommen zur Tour"},
-              {
-                element: document.querySelector('h1')[0],
-                intro: "Willkommen bei der E-Tutoren Qualifizierung!"
-              },
-              {
-                element: document.querySelectorAll('.user-menu')[0],
-                intro: "Dies hier ist Ihr Icon. Durch einen Klick können Sie ihr Profil einsehen oder sich ausloggen.",
-                position: 'left'
-              },
-              {
-                element: document.querySelectorAll('.scene-view')[0],
-                intro: "Hier gehts zum ersten Video der E-Tutoren Qualifizierung",
-                position: 'top'
-              }
-            ]
-          }).setOption('doneLabel', 'Nächste Seite').oncomplete(function() {
-          	window.location.href = '/videos/view/52a13d2e2aa9d35f24000074';
-        	});
-
-          intro.start();
-      } 
-      	//introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
-          //window.location.href = 'second.html?multipage=true';
-        //});
-   //};
-*/
 					</script>
 
 </head>

@@ -26,6 +26,38 @@ module.exports = function (db, app) {
 			title: 'Designing Video Interfaces'
 		});
 	});
+
+	app.get('/manifest.json', function (req, res) {
+		res.jsonp({
+				"name": "Designing Video Interfaces for video learning environemnts.",
+				"short_name": "Designing Video Interfaces",
+				"description": "Designing Video Interfaces for video learning environemnts. Patterns, Applications, and more",
+
+				"lang": "en-US",
+				"icons": [
+					{
+						"src": "/static/img/launcher-icon-1x.png",
+						"type": "image/png",
+						"sizes": "48x48"
+					},
+					{
+						"src": "/static/img/launcher-icon-2x.png",
+						"type": "image/png",
+						"sizes": "96x96"
+					},
+					{
+						"src": "/static/img/launcher-icon-4x.png",
+						"type": "image/png",
+						"sizes": "192x192"
+					}
+				],
+				"start_url": "/",
+				"background_color": "#fff",
+				"display": "browser",
+				"orientation": "landscape",
+				"prefer_related_applications": false
+			});
+	});
 	app.get('/wizzard', function (req, res) {
 		res.render('wizzard', {
 			title: 'Pattern Wizzard'

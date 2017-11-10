@@ -25,6 +25,9 @@
 				<li role="presentation" data-toggle="pill">
 					<a type="button" class="btn btn-default navbar-btn wizzard-btn vp-filter">Selection Wizzard</a>
 				</li>
+				<li role="presentation" data-toggle="pill">
+					<a type="button" class="btn btn-default navbar-btn playlist-btn vp-filter">Your Favorites</a>
+				</li>
 			</ul>
 				
 			<!--	<a type="button" class="btn btn-default navbar-btn network-btn vp-filter">Network</a>-->	
@@ -125,7 +128,7 @@
 <div class="container patter-card-container">
 <% i = 0 %>
 <% items.forEach( function ( item ){ %>
-	<% highlight= item.related === '-' || item.related === 'undefined' ? 'highlight3' : '' //highlight = item.forces.length <= 20 ? 'highlight' : '' %>
+	<% highlight = item.related === '-' || item.related === 'undefined' ? 'highlight3' : '' //highlight = item.forces.length <= 20 ? 'highlight' : '' %>
 	<% //highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
 	<% //highlight2 = item.related_patterns[0].type == undefined ? 'highlight' : '' %>
 	<% tags = item.management.tags.join(' ')  
@@ -143,7 +146,7 @@
 				<img class="card-image" src="<%= item.illustration %>" />
 			</a>
 			<% }%>
-			<div onclick="javascript:addToFav('<%= item.name %>')" class="glyphicon glyphicon-plus add-fav" aria-hidden="true"></div>	
+			<div id="playlist_<%=: item.name | replace:/\ /g,'_' %>" onclick="javascript:toggleFav('<%= item.name %>')" class="glyphicon glyphicon-plus add-fav" aria-hidden="true"></div>
 		</div>
 	</div>	
 <% }); %>	
@@ -152,8 +155,8 @@
 
 
 <script>
-$(document).ready (function () {  
-
+$(document).ready (function () {
+	initFav();
 	$('.vp-filter').click(function() {
 		if( $(this).hasClass('all-btn') ){
 			$('.portfolio-item').show();
@@ -182,7 +185,7 @@ $(document).ready (function () {
 			$('.network').hide( "slow" );
 			$('.wizzard').hide( "slow" );
 			$('.structure').hide( "slow" );
-			fetchAll();
+			filterFav();
 			$('.playlist').toggle( "slow" );
 		}		
 	});

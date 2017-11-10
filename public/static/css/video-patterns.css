@@ -29,6 +29,10 @@ table tbody tr:last-child td {
 	background-color:yellow;
 }
 
+.highlight-favorites{
+	background-color:#87D0E8;
+}
+
 
  .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default:hover .navbar-toggle:focus{
 	background-color: inherit;
