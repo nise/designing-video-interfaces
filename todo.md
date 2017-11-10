@@ -5,7 +5,6 @@
 * restore data from dump `mongorestore --db video-patterns ./dump/etutor`
 
 # todo
-- manifest icons
 - make nice filter
 - show selected option (filter, all, wizzard)
 - rights management => allow editing
