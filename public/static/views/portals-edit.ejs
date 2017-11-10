@@ -1,5 +1,5 @@
 <% layout('layout') -%>
- 
+<% if(!production) { %>
 <div class="col-md-8 portfolio-item"> 
  
   <h3><%= item.name %></h3>
@@ -54,4 +54,4 @@
     </div>
 </div> 
   
-
+<% } %>

@@ -51,9 +51,11 @@
 	<div class="col-md-4" >
 		<br><br>
 		<!-- Add comment -->
+		<% if(!production) { %>
 		<a class="button" href="/portals/edit/<%= items._id %>" title="Edit this pattern"> 				
 			<span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span> edit
 		</a><br>
+		<% } %>
 		<a class="" data-toggle="collapse" href="#collapse-comments" aria-expanded="false" aria-controls="collapseExample">
 			<span  class="right glyphicon glyphicon-comment" aria-hidden="true"></span> 
 			Write a comment

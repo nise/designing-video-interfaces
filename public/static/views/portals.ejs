@@ -124,9 +124,11 @@
 						//'<h4>' + row.name + '</h4>',
 						"<div style='margin-left:25px; width:600px;'>",
 						'<h3>' + row.name,
-						'<a class="xs table-link" href="/portal/edit/' + row._id + '" title="Activate script instance">',
+						<% if(!production) { %>	
+						'<a class="xs table-link" href="/portals/edit/' + row._id + '" title="Activate script instance">',
 						' <i class="xs glyphicon glyphicon-pencil"></i>',
 						'</a>  ',
+						<% } %>	
 						'</h3>',
 						'<div class="mark">' + row.description + '</div>',
 						'<br>',

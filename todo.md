@@ -7,10 +7,12 @@
 # todo
 - make nice filter
 - show selected option (filter, all, wizzard)
-- rights management => allow editing
 - [d] advanced search by name, description, and each pattern component
 - image caption form PLoP-papers could be transfered to the website
 - cite: https://github.com/vkaravir/bib-publication-list
+- batches for the number of favorite patterns
+- single page
+- acl, protection
 
 **favorites**
 - can not be deleted 

@@ -137,11 +137,11 @@
 <% i++ %>
 	<div class="col-md-2 col-sm-4 col-xs-6  portfolio-item <%= tags %>" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
 		<div class="panel panel-default pattern-card <%= highlight %>" >
-			<h5><a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a> 
-				<a class="button" style="display:none;float:right;" href="/patterns/edit/<%= item._id %>" title="Update this item item"><span class="right glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+			<h5>
+				<a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a>
 			</h5>
 			<% if (item.illustration != undefined) { %>
-			<a class="" href="/patterns/edit/<%=: item.name | replace:/\ /g,'-' %>">
+			<a class="" href="/patterns/<%=: production ? 'view' : 'edit' %>/<%=: item.name | replace:/\ /g,'-' %>">
 				<img class="card-image" src="<%= item.illustration %>" />
 			</a>
 			<% }%>
