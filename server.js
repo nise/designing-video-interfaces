@@ -96,7 +96,7 @@ const conn = mongoose.connect('mongodb://localhost/video-patterns', () => { /* d
 		});
 		console.log(names);
 
-		patterns.importRelations();
+		//patterns.importRelations();
 		// db.patterns.createIndex({"$**":"text"});
 
 		// analysis.patternRelations();

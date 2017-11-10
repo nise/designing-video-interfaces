@@ -5,16 +5,13 @@
 * restore data from dump `mongorestore --db video-patterns ./dump/etutor`
 
 # todo
-
+- manifest icons
 - make nice filter
 - show selected option (filter, all, wizzard)
-- highlight fav patterns
-- fix index db ... reactiv manifesto
 - rights management => allow editing
 - [d] advanced search by name, description, and each pattern component
 - image caption form PLoP-papers could be transfered to the website
 - cite: https://github.com/vkaravir/bib-publication-list
-
 
 **favorites**
 - can not be deleted 
