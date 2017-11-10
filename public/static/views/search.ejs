@@ -2,11 +2,11 @@
 	<% i=0 %>	
         <% items.forEach(function(item){ i++ %>
             <% if(item.type === 'patterns'){ %>
-                [pattern] <a href="/patterns/view/<%=: item.name | replace:/\ /g,'-' | downcase  %>"><%=: item.name %></a><br/>
+                [pattern] <a href="/patterns/view/<%=: item.name | replace:/\ /g,'-'  %>"><%=: item.name %></a><br/>
             <%}else if(item.type === 'portals'){%>
-                [application] <a href="/portals/view/<%=: item.name | replace:/\ /g,'-' | downcase  %>"><%=: item.name %></a><br/>
+                [application] <a href="/portals/view/<%=: item._id | replace:/\ /g,'-' | downcase  %>"><%=: item.name %></a><br/>
             <%}else if(item.type === 'images'){%>
-                [image] <a href="/images/view/<%=: item.name | replace:/\ /g,'-' | downcase  %>"><%=: item.name %></a><br/>
+                [image] <a href="/images/view/<%=: item.name | replace:/\ /g,'-'  | downcase %>"><%=: item.name %></a><br/>
             <% } %>
     <% }) %>
 <% } %>
