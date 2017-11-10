@@ -258,12 +258,13 @@ exports.init = function (req, res) {
  * Searches Patterns, Image descriptions, and Portals for a given String and returns templates for the search results
 */
 exports.searchText = function (req, res) {
-
+	
 	Promise.props({
-		patterns: Patterns.find({ $text: { $search: req.params.query } }).limit(10).select('name').execAsync(),
-		portals: Portals.find({ $text: { $search: req.params.query } }).limit(10).execAsync(),
-		images: Images.find({ $text: { $search: req.params.query } }).limit(10).execAsync()
+		patterns: Patterns.find( { $text: { $search: req.params.query } } ).execAsync(),
+		portals: Portals.find({ $text: { $search: req.params.query }  }).execAsync(),
+		images: Images.find({ $text: { $search: req.params.query } }).execAsync()
 	}).then(function (results) {
+		console.log(results)
 		var items = [];
 		for (var item in results) { 
 			if (results.hasOwnProperty(item)) {

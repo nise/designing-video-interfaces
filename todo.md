@@ -5,22 +5,14 @@
 * restore data from dump `mongorestore --db video-patterns ./dump/etutor`
 
 # todo
-- make nice filter
-- show selected option (filter, all, wizzard)
-- [d] advanced search by name, description, and each pattern component
+- make nice filter ... icons
+- [d] advanced search by name, in description, and each pattern component
 - image caption form PLoP-papers could be transfered to the website
 - cite: https://github.com/vkaravir/bib-publication-list
 - batches for the number of favorite patterns
 - single page
-- acl, protection
-
-**favorites**
-- can not be deleted 
-- not working under chromium
-- feedback on adding
-- shopping cart
-- Schnittmenge aufgrund Patternauswahl
-
+- user mgmt, acl, protection
+- index mongodb
 
 # Backlog
 - editable imgae captions via xedit
@@ -39,12 +31,9 @@
  - kollaborativ nutzbar / ..
  - geschlossene Räume
 - speed up: image compression, gzip
-	
-## Less prior improvements
 - image management
 - nice icons: http://ionicons.com/ 
 - onboarding: wizzard could be used for decision about suitable video platforms
-- 
 - nice header/footer
 - analysis page
 - plml api

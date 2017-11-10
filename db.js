@@ -47,7 +47,10 @@ var Portals = new Schema({
 	//		comments		: [{type: Schema.Types.ObjectId, ref: 'Messages' }],
 	updated_at: Date
 });
+
 mongoose.model('Portals', Portals);
+
+
 
 
 // 
