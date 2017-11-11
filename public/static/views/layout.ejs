@@ -134,7 +134,7 @@
 							});
 						}
 
-						//localStorage.setItem("pattern-playlist", '');
+						localStorage.setItem("pattern-playlist", '');
 						function addToFav(key) {
 							if (typeof (Storage) !== "undefined" && key !== '') {
 								var playlist = localStorage.getItem("pattern-playlist") === null || undefined ? '' : localStorage.getItem("pattern-playlist");
