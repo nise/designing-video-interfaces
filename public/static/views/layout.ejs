@@ -54,15 +54,15 @@
 								$(val).html(converter.makeHtml($(val).text()));
 							});
 							$('#searchField').keydown(function (e) {
-									if (e.keyCode == 13) {
-										submitSearch();
-									}
+								if (e.keyCode == 13) {
+									submitSearch();
+								}
 							});
 							$('#searchBtn').click(function () {
 								submitSearch();
 							});
 
-							function submitSearch(){	
+							function submitSearch() {
 								var text = $('#searchField').val();
 								$.get('/search/' + text, function (data, status) {
 									$("#searchModal").modal(
@@ -88,45 +88,47 @@
 
 						// local storage
 						var the_playlist = '', pp = [];
-						
-						function isInPlaylist(key){
+
+						function isInPlaylist(key) {
 							return the_playlist.split(',').indexOf(key) === -1 ? 0 : 1;
-							
+
 						}
 
-						function toggleFav(key){
+						function toggleFav(key) {
 							var selector = '#playlist_' + key.replace(/ /g, '_');
-							if( isInPlaylist( key ) ){
+							if (isInPlaylist(key)) {
 								removeFav(key);
 								$(selector).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-							}else{
+							} else {
 								addToFav(key);
 								$(selector).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-							}	
-						}
-
-						function initFav(){ 
-							var playlist = localStorage.getItem("pattern-playlist").split(',');
-							for(var i=0,len = playlist.length; i<len;i++){
-								key = playlist[i];
-								var selector = '#playlist_' + key.replace(/ /g, '_');
-								
-								if(key !== '' && key !== undefined && key !== null){
-									var sel2 = '#'+ key.replace(/ /g, '-').toLowerCase() + ' .pattern-card';
-									if (isInPlaylist(key) === 1) {
-										$(selector).removeClass('glyphicon-minus').addClass('glyphicon-plus');
-										$(sel2).removeClass('highlight-favorites');
-									} else {
-										$(selector).removeClass('glyphicon-plus').addClass('glyphicon-minus');
-										$(sel2).addClass('highlight-favorites');
-									}
-								}	
 							}
 						}
 
-						function filterFav(){
-							$('.pattern-card').each(function(i,val){
-								if( ! $(this).hasClass('highlight-favorites') ){
+						function initFav() {
+							if (typeof (Storage) !== "undefined" && key !== '') {
+								var playlist = localStorage.getItem("pattern-playlist").split(',');
+								for (var i = 0, len = playlist.length; i < len; i++) {
+									key = playlist[i];
+									var selector = '#playlist_' + key.replace(/ /g, '_');
+
+									if (key !== '' && key !== undefined && key !== null) {
+										var sel2 = '#' + key.replace(/ /g, '-').toLowerCase() + ' .pattern-card';
+										if (isInPlaylist(key) === 1) {
+											$(selector).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+											$(sel2).removeClass('highlight-favorites');
+										} else {
+											$(selector).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+											$(sel2).addClass('highlight-favorites');
+										}
+									}
+								}
+							}
+						}
+
+						function filterFav() {
+							$('.pattern-card').each(function (i, val) {
+								if (!$(this).hasClass('highlight-favorites')) {
 									$(this).parent().hide();
 								}
 							});
@@ -134,9 +136,9 @@
 
 						//localStorage.setItem("pattern-playlist", '');
 						function addToFav(key) {
-							if (typeof (Storage) !== "undefined"  && key !== '') {
+							if (typeof (Storage) !== "undefined" && key !== '') {
 								var playlist = localStorage.getItem("pattern-playlist") === null || undefined ? '' : localStorage.getItem("pattern-playlist");
-								playlist = playlist +','+ key;
+								playlist = playlist + ',' + key;
 								localStorage.setItem("pattern-playlist", playlist); //alert(localStorage.getItem("pattern-playlist"));
 								the_playlist = playlist;
 								var sel2 = '#' + key.replace(/ /g, '-').toLowerCase() + ' > .pattern-card';
@@ -146,7 +148,7 @@
 
 						function removeFav(key) {
 							if (typeof (Storage) !== "undefined" && key !== '') {
-								var playlist = localStorage.getItem("pattern-playlist").replace(key+',','');
+								var playlist = localStorage.getItem("pattern-playlist").replace(key + ',', '');
 								localStorage.setItem("pattern-playlist", playlist); //alert(localStorage.getItem("pattern-playlist"));
 								the_playlist = playlist;
 								var sel2 = '#' + key.replace(/ /g, '-').toLowerCase() + ' > .pattern-card';
@@ -172,7 +174,7 @@
 					<p>One fine body&hellip;</p>
 				</div>
 				<div class="modal-footer">
-					
+
 				</div>
 			</div>
 			<!-- /.modal-content -->
@@ -236,7 +238,7 @@
 											<span class="glyphicon glyphicon-search"></span>
 										</button>
 									</span>
-									
+
 								</div>
 							</div>
 						</li>
@@ -249,8 +251,12 @@
 
 	</header>
 
-	<content><%- body %></content>
-	<footer><% include footer %></footer>
+	<content>
+		<%- body %>
+	</content>
+	<footer>
+		<% include footer %>
+	</footer>
 
 </body>
 

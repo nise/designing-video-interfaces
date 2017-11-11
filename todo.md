@@ -5,6 +5,7 @@
 * restore data from dump `mongorestore --db video-patterns ./dump/etutor`
 
 # todo
+- clean files
 - make nice filter ... icons
 - [d] advanced search by name, in description, and each pattern component
 - image caption form PLoP-papers could be transfered to the website
