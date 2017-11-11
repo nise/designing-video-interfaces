@@ -107,7 +107,7 @@
 
 						function initFav() {
 							if (typeof (Storage) !== "undefined" || localStorage.getItem("pattern-playlist") !== null) {
-								var playlist = localStorage.getItem("pattern-playlist").split(',');
+								var playlist = localStorage.getItem("pattern-playlist") === null ? [] : localStorage.getItem("pattern-playlist").split(',');
 								for (var i = 0, len = playlist.length; i < len; i++) {
 									key = playlist[i];
 									var selector = '#playlist_' + key.replace(/ /g, '_');
