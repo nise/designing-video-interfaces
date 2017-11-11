@@ -24,7 +24,7 @@ let
 
 // io.set('transports', ['websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling']);
 
-const port = 80;
+const port = 3000;
 server.listen(port);
 server.setMaxListeners(0); // xxx: untested: unfinite number of listeners, default: 10;
 // http://nodejs.org/docs/latest/api/events.html#events_emitter_setmaxlisteners_n
