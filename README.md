@@ -31,7 +31,7 @@ Beside that the application is going to be an example for a pattern database. Us
 
 mongodb: mongodb://localhost/video-patterns
 **dump**
-`mongodump --db video-patterns`
+`mongodump --forceTableScan --db video-patterns`
 **restore**
 `mongorestore --db video-patterns ./dump/video-patterns`
 
