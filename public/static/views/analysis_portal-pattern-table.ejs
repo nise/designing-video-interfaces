@@ -1,0 +1,250 @@
+<html>
+<script src="/static/js/d3.v3.min.js"></script>
+<script src="/static/js/d3-jetpack.js"></script>
+<style type="text/css">
+body { font-family: 'Helvetica Neue', Helvetica; font-size:8px; font-weight: 10; padding: 0px;}
+
+th, td { }
+th.center, td.center { text-align: center; }
+th.num, td.num { text-align: right; }
+td { background-color:#111; white-space: wrap; width: 50px !important;  border: none; margin:0; padding:0; }
+th{
+  transform: 
+    /* Magic Numbers */
+    translate(0px, 1px)
+    /* 45 is really 360 - 45 */
+    rotate(270deg);
+
+  height: 140px;
+  white-space: nowrap;
+ } 
+.zugang-zu-zeitbasierter-information {
+background-color:lightgreen;
+} 
+</style>
+
+<body>
+
+    <script>
+
+    // the table rows, typically loaded from data file using d3.csv
+    var portals = <%-JSON.stringify( data, null,'\t') %>; 
+    portawls = [{
+		"name": "56.com",
+		"Video Portal": true,
+		"Online Environment": true
+	},
+	{
+		"name": "ADIVI",
+		"Video Authoring Environment": true,
+		"Online Environment": true
+	},
+	{
+		"name": "Adobe Captivate",
+		"Video Learning Environment": true,
+		"Video Authoring Environment": true,
+		"Desktop Environment": true
+	},
+	{
+		"name": "Advene",
+		"Video Authoring Environment": true,
+		"Desktop Environment": true,
+		"Annotation Tool": true,
+		"Visual Highlighting 3": true
+	}];
+    /*[
+        { title: "The Godfather", year: 1972, length: 175, budget: 6000000, rating: 9.1 },
+        { title: "The Shawshank Redemption", year: 1994, length: 142, budget: 25000000, rating: 9.1 },
+        { title: "The Lord of the Rings: The Return of the King", year: 2003, length: 251, budget: 94000000, rating: 9 },
+        { title: "The Godfather: Part II", year: 1974, length: 200, budget: 13000000, rating: 8.9 },
+        { title: "Shichinin no samurai", year: 1954, length: 206, budget: 500000, rating: 8.9 },
+        { title: "Buono, il brutto, il cattivo, Il", year: 1966, length: 180, budget: 1200000, rating: 8.8 },
+        { title: "Casablanca", year: 1942, length: 102, budget: 950000, rating: 8.8 },
+        { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001, length: 208, budget: 93000000, rating: 8.8 },
+        { title: "The Lord of the Rings: The Two Towers", year: 2002, length: 223, budget: 94000000, rating: 8.8 },
+        { title: "Pulp Fiction", year: 1994, length: 168, budget: 8000000, rating: 8.8 }
+    ];*/
+
+    // column definitions
+    var columns = <%-JSON.stringify( columns, null,'\t') %>; 
+    columns = [ 
+    { head: 'Name',
+    cl: 'name',
+    html: f('name') },
+  { head: 'Zoom',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Zoom') },
+  { head: 'Visual Summary',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Visual Summary') },
+  { head: 'Annotated Timeline',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Annotated Timeline') },
+  { head: 'Transcript',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Transcript') },
+  { head: 'Closed Captions',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Closed Captions') },
+  { head: 'Skip Back',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Skip Back') },
+  { head: 'Journaled Navigation',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Journaled Navigation') },
+  { head: 'Loop',
+    cl: 'zugang-zu-zeitbasierter-information',
+    html: f('Loop') },
+  { head: 'Add Video', cl: 'kontribution', html: f('Add Video') },
+  { head: 'Annotations', cl: 'kontribution', html: f('Annotations') },
+  { head: 'Comments', cl: 'kontribution', html: f('Comments') },
+  { head: 'Inline Drawing',
+    cl: 'kontribution',
+    html: f('Inline Drawing') },
+  { head: 'Polls', cl: 'kontribution', html: f('Polls') },
+  { head: 'Direct Authoring',
+    cl: 'kontribution',
+    html: f('Direct Authoring') },
+  { head: 'Remix', cl: 'kontribution', html: f('Remix') },
+  { head: 'Video Manipulation',
+    cl: 'kontribution',
+    html: f('Video Manipulation') },
+  { head: 'Multi-Timeline Editing',
+    cl: 'kontribution',
+    html: f('Multi-Timeline Editing') },
+  { head: 'Video Manager',
+    cl: 'strukturierung',
+    html: f('Video Manager') },
+  { head: 'Sequential Media',
+    cl: 'strukturierung',
+    html: f('Sequential Media') },
+  { head: 'Related Videos',
+    cl: 'strukturierung',
+    html: f('Related Videos') },
+  { head: 'Hyperlinks', cl: 'strukturierung', html: f('Hyperlinks') },
+  { head: 'Branching Videos',
+    cl: 'strukturierung',
+    html: f('Branching Videos') },
+  { head: 'Detail on Demand',
+    cl: 'strukturierung',
+    html: f('Detail on Demand') },
+  { head: 'Media Fragments',
+    cl: 'strukturierung',
+    html: f('Media Fragments') },
+  { head: 'Classified Marks',
+    cl: 'strukturierung',
+    html: f('Classified Marks') },
+  { head: 'User Ratings',
+    cl: 'strukturierung',
+    html: f('User Ratings') },
+  { head: 'Break', cl: 'strukturierung', html: f('Break') },
+  { head: 'Viewing History',
+    cl: 'selbstorganisation',
+    html: f('Viewing History') },
+  { head: 'Playlist', cl: 'selbstorganisation', html: f('Playlist') },
+  { head: 'Follow Revisions',
+    cl: 'selbstorganisation',
+    html: f('Follow Revisions') },
+  { head: 'User Notes',
+    cl: 'selbstorganisation',
+    html: f('User Notes') },
+  { head: 'Assessment',
+    cl: 'selbstorganisation',
+    html: f('Assessment') },
+  { head: 'User Traces',
+    cl: 'selbstorganisation',
+    html: f('User Traces') },
+  { head: 'Full Screen', cl: 'layout', html: f('Full Screen') },
+  { head: 'Simultaneous Media',
+    cl: 'layout',
+    html: f('Simultaneous Media') },
+  { head: 'Synchronized Map',
+    cl: 'layout',
+    html: f('Synchronized Map') },
+  { head: 'Overlays', cl: 'layout', html: f('Overlays') },
+  { head: 'Visual Highlighting',
+    cl: 'layout',
+    html: f('Visual Highlighting') },
+  { head: 'Object Tracking',
+    cl: 'layout',
+    html: f('Object Tracking') },
+  { head: 'Multi-Angle Video',
+    cl: 'layout',
+    html: f('Multi-Angle Video') } ]
+;
+
+    /*[
+        { head: 'Movie title', cl: 'title', html: f('title') },
+        { head: 'Year', cl: 'center', html: f('year') },
+        { head: 'Length', cl: 'center', html: f('length', length()) },
+        { head: 'Budget', cl: 'num', html: f('budget', d3.format('$,')) },
+        { head: 'Rating', cl: 'num', html: f('rating', d3.format('.1f')) }
+    ];*/
+
+    // create table
+    var table = d3.select('body')
+        .append('table');
+
+    // create table header
+    table.append('thead').append('tr')
+        .selectAll('th')
+        .data( columns ).enter()
+        .append('th')
+        
+        	.attr('class', f('cl')) 
+        	.append('text')
+        	
+        	.attr("dy", ".35em")
+   				.attr("transform", "rotate(90)")
+   				.style("text-anchor", "start")
+        	.text(f('head'));
+ 
+    
+    // create table body
+    table.append('tbody')
+        .selectAll('tr')
+        .data( portals ).enter()
+        .append('tr')
+        .selectAll('td')
+        .data(function(row, i) { 
+            return columns.map(function(c) {
+                // compute cell values for this specific row
+                var cell = {};
+                d3.keys(c).forEach(function(k) { //alert()
+                	if(typeof c[k] == 'function'){
+                		cell[k] =  c[k](row,i);
+                	}else{
+                    cell[k] = c[k];
+                  }   
+                });
+                return cell;
+            });
+        }).enter()
+        .append('td')
+        
+        .html(function(d){ 
+        	if( typeof d.html === 'string' ){ 
+        		return d.html;
+        	}else if( typeof d.html === 'boolean'  ){
+        		return 'x';
+        	}
+        	return '-';
+        })
+        .style("opacity", function(d, i){ 
+        	if( portals[i].stats[ d.cl ] === undefined){ 
+        		//alert(portals[i].stats[d.cl]+'--'+d.cl);
+        		return 1;
+        	}
+        	return portals[i].stats[ d.cl ];
+        })
+        .attr('class', f('cl'));
+
+    function length() {
+        var fmt = d3.format('02d');
+        return function(l) { return Math.floor(l / 60) + ':' + fmt(l % 60) + ''; };
+    }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<% layout( 'layout' ) -%>
+
+<script>
+$(document).ready (function () { 
+	$("input:text").focus(function() {;$(this).select(); } );
+});	
+</script>
+
+
+<div class="jumbotron">
+	<div class="container">
+  <h2>Data API</h2>
+  </div>
+</div>
+
+<div class="container">
+  <p class="mark">
+It is intended to encourage other people to make further research regarding video patterns and video learning environments. Hence, all stored data is accessible through a REST API in JSON format. There are three data sets provided:
+
+* one about the design patterns that is structured by the pattern components,
+* a second about all analysed video learning environments including a categorisation and references to the patterns, and
+* a structured description of images that are related to the former two data sets.
+  
+To get an impression about these data sets you can open on of the following link in your browser. </p>
+  
+  <h4>Patterns</h4>
+  <div class="input-group">
+		<span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
+		<input style="cursor:pointer;" readonly type="text" class="form-control url" placeholder="" value="http://<our-site>/json/patterns" aria-describedby="URL for accessing all interaction design pattern in raw format (JSON)">
+	</div><br>
+	Patter Language Markup Language (PLML)
+	<div class="input-group">
+		<span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
+		<input style="cursor:pointer;" readonly type="text" class="form-control url" placeholder="" value="http://<our-site>/plml/patterns" aria-describedby="URL for accessing all interaction design patterns in PLML format">
+	</div>
+  <br>
+  
+  <h4>Video Learning Environments</h4>
+   <div class="input-group">
+  <span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
+  <input style="cursor:pointer;" readonly type="text" class="url form-control" value="http://<our-site>/json/portals" aria-describedby="URL for accessing all raw data of the collected video learning environments">
+</div>
+<br>
+  
+  <h4>Images</h4>
+   <div class="input-group">
+  <span class="input-group-addon" id="sizing-addon2">HTTP GET</span>
+  <input style="cursor:pointer;" readonly type="text" class="url form-control" placeholder="" value="http://<our-site>/json/images/all" aria-describedby="URL for accessing all images">
+</div>
+<br>
+   
+
+	<div class="mark">
+---
+#### Lisenses	
+Data: [ODC-BY 1.0 license](http://opendatacommons.org/licenses/by/summary/) ![Open Data Logo](/static/img/opendata.png).
+
+Software: [MIT License](https://opensource.org/licenses/MIT), available at [https://github.com/nise/designingvideointerfaces](https://github.com/nise/designingvideointerfaces)
+
+	</div>  
+
+</div>  
+</div>
+<script>
+	$(document).ready(function() {
+		$('.url').each(function(i, val){ 
+			var t =  $(this).attr('value').replace('<our-site>', window.location.host); 
+			$(this).attr('value', t );
+		});
+	});	
+</script>
+
+
+

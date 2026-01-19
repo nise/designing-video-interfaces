@@ -1,0 +1,35 @@
+{
+  "name": "video-patterns",
+  "description": "Designing Video Interfaces is a Database includes 42 Interaction Design Patterns that describe common solutions of recurring problems in the design and development of video learning environments.",
+  "version": "2",
+  "jslint.version": "es6",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "*",
+    "compression": "*",
+    "compute-hamming": "*",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "*",
+    "csv": "*",
+    "ejs": "*",
+    "ejs-locals": "^1.0.2",
+    "express": "3.4.x",
+    "express-json": "*",
+    "express-session": "*",
+    "express-validator": "^7.3.1",
+    "method-override": "*",
+    "ml-distance": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mongoose-text-search": "0.0.2",
+    "mv": "*",
+    "node-fs": "^0.1.7",
+    "passport": "*",
+    "passport-local": "*"
+  },
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  }
+}

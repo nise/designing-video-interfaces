@@ -1,0 +1,351 @@
+<% layout( 'layout' ) -%>
+
+
+<!-- Main component for a primary marketing message or call to action -->
+
+  <!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<div class="container">
+  <h2 data-toggle="popover" title="eee" data-content="xxxx" data-placement="bottom" data-container="body">Video Interaction Design Patterns</h2>
+  
+  Find the right patterns for your needs.
+  </div>
+</div>
+<div class="container">
+		<!-- Default panel contents  -->
+		<div class="panel-body">  
+			<ul class="nav nav-pills">
+				<li role="presentation" class="active" data-toggle="pill">
+					<a type="button" class="btn btn-default navbar-btn all-btn vp-filter">All Patterns</a>
+				</li>
+				<li role="presentation" data-toggle="pill">
+					<a type="button" class="btn btn-default navbar-btn structure-btn vp-filter"><span class="glyphicon glyphicon-filter"></span> Classification filters</a>
+				</li>
+				<li role="presentation" data-toggle="pill">
+					<a type="button" class="btn btn-default navbar-btn wizzard-btn vp-filter"><span class="glyphicon glyphicon-check"></span> Selection wizzard</a>
+				</li>
+				<li role="presentation" data-toggle="pill">
+					<a type="button" class="btn btn-default navbar-btn playlist-btn vp-filter"><span class="glyphicon glyphicon-heart"></span> My favorites</a>
+				</li>
+			</ul>
+				
+			<!--	<a type="button" class="btn btn-default navbar-btn network-btn vp-filter">Network</a>-->	
+			<!--	<a type="button" class="btn btn-default navbar-btn playlist-btn vp-filter">Your Favorites</a>-->
+			
+			
+			<!-- Structure -->
+			<div class="structure">
+				Filter by <br>
+				- <a href="#" id="struc1">level of interactivity (micro/macro interactions)</a><br>
+				- <a href="#" id="struc2">functionality (Playback, Annotations, Portal, Authoring, Assessment)</a><br>
+				- <a href="#" id="struc3">task (Watch, Time Access, Contribute, Self Organise, Layout)</a><br>
+				- <a href="#" id="struc4">status of elaboration (workshoped at *PLoP conference, pattern draft, proto-pattern)</a><br>
+			</div>
+			
+			<!-- WIZZARD -->
+			<ul class="list-group wizzard vp-overview">
+				<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f1" id="switchOnText1"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Beinhaltet die Lernumgebung mehrere Medien (z.B. Videos, Bilder, Texte/Hypertexte)?</span>
+					</label>
+				</li>
+			 	<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f2" id="switchOnText2"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Sind mehrere Videos in die Anwendung integriert?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f3" id="switchOnText3"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Stellen Sie weitere Medien synchron zum Video dar?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f4" id="switchOnText4"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Umfasst Ihre Zielgruppe Personen mit eingeschränkten visuellen, auditiven oder sprachlichen Fähigkeiten (z.B. Personen mit Sehschwäche, Schwerhörige oder Nicht-Muttersprachler)?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f5" id="switchOnText5"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Möchten Sie innerhalb der Videos oder zwischen Videos und anderen Lernressourcen Verknüpfungen herstellen?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f6" id="switchOnText6"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Ist mindestens ein Video länger als 10 Minuten?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f7" id="switchOnText7"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Besitzt mindestens ein Video eine hohe visuelle Dynamik oder viele visuelle Details?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f8" id="switchOnText8"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Ist die Menge an Lerninhalten unveränderlich oder prinzipiell durch die Lernenden erweiterbar?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f9" id="switchOnText9"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Sollen sich die Lernenden selbstständig mit den Lernressourcen auseinandersetzen?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f10" id="switchOnText10"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Beabsichtigen Sie die Schaffung eines Rückkanals für Kommentare oder Anmerkungen?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f11" id="switchOnText11"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Interagieren die Lernenden innerhalb der Anwendung miteinander oder bearbeiten sie eine gemeinsame Aufgabe?</span>
+					</label>
+				</li>
+		 		<li class="list-group-item">
+					<label class="checkbox">
+					<input name="f12" id="switchOnText12"  class="wizzard-switch" type="checkbox" data-on-text="Yes" data-off-text="No" data-size="mini">
+					<span>Gehen Sie davon aus, dass Ihre Zielgruppe vornehmlich mobile Endgeräte mit kleinem Display nutzt?</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+</div>
+
+
+<!-- Pattern List -->
+<div class="container patter-card-container-2col"></div>
+
+<div class="container patter-card-container">
+<% i = 0 %>
+<% items.forEach( function ( item ){ %>
+	<% highlight = item.related === '-' || item.related === 'undefined' ? 'highlight3' : '' //highlight = item.forces.length <= 20 ? 'highlight' : '' %>
+	<% //highlight = item.consequences.length <= 20 ? 'highlight' : highlight %>
+	<% //highlight2 = item.related_patterns[0].type == undefined ? 'highlight' : '' %>
+	<% tags = item.management.tags.join(' ')  
+		//tags += ' '+item.management.status
+
+	%>
+<% i++ %>
+	<div class="col-md-2 col-sm-4 col-xs-6  portfolio-item <%= tags %>" id="<%=: item.name | replace:/\ /g,'-' | downcase  %>">
+		<div class="panel panel-default pattern-card <%= highlight %>" >
+			<h5>
+				<a class="" href="/patterns/view/<%=: item.name | replace:/\ /g,'-' %>"><%= item.name %></a>
+			</h5>
+			<% if (item.illustration != undefined) { %>
+			<a class="" href="/patterns/<%=: production ? 'view' : 'edit' %>/<%=: item.name | replace:/\ /g,'-' %>">
+				<img class="card-image" src="<%= item.illustration %>" />
+			</a>
+			<% }%>
+			<div id="playlist_<%=: item.name | replace:/\ /g,'_' %>" onclick="javascript:toggleFav('<%= item.name %>')" class="glyphicon glyphicon-plus add-fav" aria-hidden="true"></div>
+		</div>
+	</div>	
+<% }); %>	
+</div>
+
+
+
+<script>
+$(document).ready (function () {
+	initFav();
+	$('.vp-filter').click(function() {
+		if( $(this).hasClass('all-btn') ){
+			$('.portfolio-item').show();
+			$('.network').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			splitContainer([]);
+		}else if( $(this).hasClass('wizzard-btn') ){
+			$('.network').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.wizzard').toggle( "slow" );
+		}else if( $(this).hasClass('network-btn') ){ 
+			$('.wizzard').hide( "slow" );
+			$('.structure').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			$('.network').toggle( "slow" );
+		}else if( $(this).hasClass('structure-btn') ){ 
+			$('.network').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			$('.playlist').hide( "slow" );
+			//applyStructur()
+			$('.structure').toggle( "slow" );
+		}else if( $(this).hasClass('playlist-btn') ){
+			$('.network').hide( "slow" );
+			$('.wizzard').hide( "slow" );
+			$('.structure').hide( "slow" );
+			filterFav();
+			$('.playlist').toggle( "slow" );
+		}		
+	});
+	
+
+	/* WIZZARD */
+	//$(".wizzard-switch").bootstrapSwitch();
+	var wizzard_checked = [];
+	var decision_modell = {
+		"f1" : ['Sequential Media'],
+		"f2" : ['Branching Video', 'Detail on Demand', 'Hyperlinks', 'Journaled Navigation', 'Playlist', 'Related Videos', 'User Ratings', 'Viewing History', 'Visual Summary'],
+		"f3" : ['Full Screen', 'Simultaneous Media', 'Synchronizes Map', ],
+		"f4" : ['Closed Captions', 'Transcript'],
+		"f5" : ['Annotated Timeline', 'Branching Videos', 'Detail on Demand', 'Hyperlinks', 'Journaled Navigation', 'Temporal Tags'],
+		"f6" : ['Table of Content', 'Temporal Tags', 'Visual Summary', ],
+		"f7" : ['Loop', 'Object Tracking', 'Playback Speed', 'Skip Back', 'Visual Highlighting', 'Zoom'],
+		"f8" : ['Add Video', 'Annotations', 'Comments', 'Direct Authoring', 'Follow Revisions', 'Media Fragments', 'Object Tracking', 'Remix', 'User Notes', 'Video Manipulation'],
+		"f9" : ['Assessment', 'Playlist', 'Related Videos', 'Search','Table of Content', 'Temporal Bookmarks', 'User Notes', 'User Traces', 'Viewing History'],
+		"f10" : ['Annotations', 'Assessment', 'Comments', 'User Ratings'],
+		"f11" : ['Comments', 'User Ratings', 'User Traces'],
+		"f12" : ['Annotated Timeline', 'Classified Marks', 'Multi-Timeline Editing', 'Overlays', 'Remix', 'Simultaneous Media', 'Synchronized Maps', 'User Traces', 'Video Manipulation']
+	};
+	
+	$("input.wizzard-switch").on('change', function (e, state) { 
+		wizzard_checked = [];
+		$("input").each(function(i, val){ 
+			if($(val).prop('checked') ){ 
+				wizzard_checked = wizzard_checked.concat( decision_modell[ $(val).attr('name') ] )
+			}
+		});
+		showPatterns();
+	});
+	
+
+	function showPatterns(){ 
+		// hide all
+		$('.portfolio-item').hide();
+		// show selected
+		for(var i = 0; i < wizzard_checked.length; i++){
+			$( '#'+wizzard_checked[i].replace(/\ /g,'-').toLowerCase() ).show();	
+		}
+	}
+	
+	$('.vp-overview').hide();
+	
+	
+	
+	
+	
+	/* CLASSIFICATION */
+	$('#struc1').click(function(){ splitContainer(['micro','macro']); });
+	$('#struc2').click(function(){ splitContainer(['player','annotation','portal','authoring','assessmnet']); });
+	$('#struc3').click(function(){ splitContainer(['basic','timeaccess','structure','contribution','selforga','layout']); });
+	$('#struc4').click(function(){ splitContainer(['workshoped-pattern','pattern','proto-pattern']); });
+		
+	var structure_data = {
+		all: {
+			title: '',
+			description: ''
+		},
+		micro : {
+			title:'Micro Level',
+			description:''
+		},
+		macro : {
+			title:'Macro Level',
+			description:''
+		},
+		player : {
+			title:'Playback',
+			description:''
+		},
+		annotation : {
+			title:'Annotations',
+			description:''
+		},
+		portal : {
+			title:'Portal',
+			description:''
+		},
+		authoring: {
+			title: 'Authoring',
+			description:''
+		},
+		assessment: {
+			title: 'Assessment',
+			description: ''
+		},
+		basic : {
+			title:'Basic',
+			description:''
+		},
+		layout : {
+			title:'Layout',
+			description:''
+		},
+		timeaccess : {
+			title:'Time Access',
+			description:''
+		},
+		structure : {
+			title:'Structur',
+			description:''
+		},
+		selforga : {
+			title:'Self Organisation',
+			description:''
+		},
+		contribution : {
+			title:'Contribution',
+			description:''
+		},
+		workshopedpattern : {
+			title:'Workshoped Patterns',
+			description:''
+		},
+		pattern : {
+			title:'Patterns',
+			description:''
+		},
+		protopattern : {
+			title:'Proto-Patterns',
+			description:''
+		}
+	}
+	
+	function splitContainer(con){
+		// reset
+		$('.patter-card-container h3').text('');
+		$('.patter-card-container-2col .portfolio-item').each(function(i, val){
+			$('.patter-card-container').append( $(this) );
+		});
+		$('.patter-card-container-2col').empty();
+		//
+		var size = 12;//12 / con.length;
+		
+		for(var i = 0; i < con.length; i++){
+			var container = [
+				'<div id="container'+i+'" class="col-md-'+size+' col-xs-'+size+'">',
+				'<h3>'+ structure_data[ con[i].replace('-','') ].title +'</h3>',
+				'<div>'+ structure_data[ con[i].replace('-','') ].description +'</div>',
+				'<div class="patterns"></div>',
+				'</div>'
+			];
+			$('.patter-card-container-2col').append( container.join('') );
+			// fill container
+			$('.portfolio-item.'+con[i] ).each(function(j, val){	 
+				$('#container'+i+' .patterns').append( $(this) );
+			});
+		}// end for
+		
+		// other patters
+		if($('.patter-card-container .portfolio-item').length > 0){
+			$('.patter-card-container')
+				.css({'border-top':'solid 4px #ccc'})
+				.find('h3').text( con.length === 0 ? '' : 'Uncategorized Patterns');
+				;
+		}		
+	}
+	
+
+});	// end document ready
+</script>
+

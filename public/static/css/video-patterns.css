@@ -1,0 +1,302 @@
+
+body{
+font-family: 'Droid Sans', sans-serif;
+}
+h1,h2,h3,h4 {
+font-family: 'Oswald', sans-serif;
+font-weight:bold;
+}
+
+
+table {
+	margin: 20px 0;
+}
+table thead tr th {
+	border-top:solid 1px #ccc;
+	padding:3px;
+	border-bottom:solid 2px #ccc;
+}
+table tbody tr td {
+	padding:3px;
+	vertical-align:top;
+}
+table tbody tr:last-child td {	
+	border-bottom:solid 1px #ccc;
+}
+
+
+.highlight{
+	background-color:yellow;
+}
+
+.highlight-favorites{
+	background-color:#87D0E8;
+}
+
+
+ .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default:hover .navbar-toggle:focus{
+	background-color: inherit;
+	border:none;
+	margin-right:20px;
+	padding:8px 4px 6px 4px;
+}
+
+.navbar-default:hover .navbar-toggle:hover {
+	background-color: #fff;
+}
+
+.navbar-default {
+    background-color: #CCEBFF;
+    border-color: #e7e7e7;
+}
+
+.panel-default > .panel-heading {
+    background-color:#E3F4FF;
+    border: none;
+}    
+
+.jumbotron {
+	background-color: #87D0E8;
+	padding-top:50px;
+}
+
+.spacer200 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+.deleted {
+	opacity:0.3;
+}
+
+
+
+.pattern-illustration{
+	max-width:100%;
+	max-height:300px;
+}
+
+.patterns{
+	margin-bottom:20px;
+}
+
+.panel-heading > h4 {
+	font-size:20pt;
+}
+
+.pattern-card {
+	display:block;
+	height:120px; 
+	text-align:center; 
+	position:relative;
+}
+.pattern-card:hover{
+	background-color:lightblue;
+}
+.pattern-card h5{
+	font-weight:bold;
+}
+.card-image {
+	max-height:60%;
+	max-width: 86%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.filter-portals .btn {
+	margin-bottom: 4px;
+}
+
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 396px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 14px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
+
+
+.pattern-card .add-fav{
+	display:none;
+	padding:4px;
+	background-color:gray;
+	color:#fff;
+	margin-top:60%;
+	right:0%;
+	bottom:0%;
+	position:absolute;
+	height:22px;
+	width:22px;
+	cursor:pointer;
+	vertical-align:bottom;
+}
+
+.pattern-card .add-fav:hover{
+	background-color:#f1f1f1;
+	color:#101010;
+}
+
+.pattern-card:hover .add-fav{
+	display:block;
+
+}
+
+.mark {
+background-color:transparent;
+}
+
+.btn-primary.active{
+background-image:none;
+background-color:#999;
+}
+
+/* Edit Patterns */
+input {
+	width:100%;
+}
+
+li.list-group-item, ul.list-group{
+	margin:0 10px 0 0; padding:0; border:0;
+}
+label.checkbox input[type=checkbox] {
+	display: inline;
+	margin-left:4px;
+	width:10px;
+}
+
+label.checkbox  span {
+	margin-left:9%;
+	display:block;
+	width:80%;
+}
+.miniform{
+	margin-bottom:20px;
+}
+.miniform div{
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+.miniform label {
+	font-size: 10px;
+	font-weight: normal;
+	vertical-align:top;
+}
+.miniform input, .miniform textarea, .miniform select{
+	float:right;
+	font-size: 10px;
+	width:70%;
+}
+
+
+/* ..... */
+
+.pattern-image{
+	margin-bottom:40px;
+}
+
+.pattern-image img{
+	border:solid 1px #ccc;
+	max-width:100%;
+}
+
+.pattern-image .caption{
+	display:block;
+	margin: 0 0 10px 0;
+}
+
+blockquote, pre{
+	border:none;
+	border-left:10px #8c8c8c solid;
+	background-color: #fff;
+	border-radius:0;
+}
+
+
+ul.navbar-right{
+	position: inline-block;
+	width: 20%;
+	margin:0;
+}
+
+
+
+#custom-search-input{
+    padding: 1px;
+	background-color: inherit;
+	
+}
+
+
+#custom-search-input input{
+	margin: 15px 0;
+    border: 0;
+    box-shadow: none;
+    min-width:140px;
+    height:20px;
+    font-size:14px;
+    padding:0 8px;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+	padding: 0 6px 0 5px;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 17px;
+}
+
+
+.footer{
+display:inline-block;
+min-height: 100px;
+width:100%;
+margin-top:50px;
+padding:20px;
+background-color:#333;
+color:#eee;
+}

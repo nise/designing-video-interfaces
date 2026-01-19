@@ -1,0 +1,45 @@
+id,Label
+0,Annotations,Kontribution
+1,Appropriate Delivery,Grundfunktionen
+2,Assessment,Selbstorganisation
+3,Basic Controls,Grundfunktionen
+4,Classified Marks,Strukturierung
+5,Closed Captions,Zugang zu zeitbasierter Information
+6,Comments,Kontribution
+7,Follow Revisions,Selbstorganisation
+8,Full Screen,Layout
+9,Shortcut Commands,Grundfunktionen
+10,Loop,Zugang zu zeitbasierter Information
+11,Loading Indicator,Grundfunktionen
+12,Media Fragments,Strukturierung
+13,Object Tracking,Layout
+14,Overlays,Layout
+15,Playback Speed,Zugang zu zeitbasierter Information
+16,Simultaneous Media,Layout
+17,Table of Content,Zugang zu zeitbasierter Information
+18,Temporal Tags,Zugang zu zeitbasierter Information
+19,User Notes,Selbstorganisation
+20,Transcript,Zugang zu zeitbasierter Information
+21,User Traces,Selbstorganisation
+22,Visual Highlighting,Layout
+23,Visual Summary,Zugang zu zeitbasierter Information
+24,Zoom,Zugang zu zeitbasierter Information
+25,Add Video,Kontribution
+26,Branching Videos,Strukturierung
+27,Detail on Demand,Strukturierung
+28,Direct Authoring,Kontribution
+29,Hyperlinks,Strukturierung
+30,Journaled Navigation,Zugang zu zeitbasierter Information
+31,Playlist,Selbstorganisation
+32,Related Videos,Strukturierung
+33,Remix,Kontribution
+34,Search,Zugang zu zeitbasierter Information
+35,Temporal Bookmarks,Zugang zu zeitbasierter Information
+36,User Ratings,Strukturierung
+37,Sequential Media,Strukturierung
+38,Video Manager,Strukturierung
+39,Video Manipulation,Kontribution
+40,Viewing History,Selbstorganisation
+41,Annotated Timeline,Zugang zu zeitbasierter Information
+42,Skip Back,Zugang zu zeitbasierter Information
+43,Multi Timeline Editing,undefined

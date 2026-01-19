@@ -1,0 +1,3166 @@
+[
+  {
+    "__v": 7,
+    "_id": "54c8b3b7e0f5a9e07b3ddaba",
+    "availability": "Online demo is available that provides a subset of the mentioned features.",
+    "category": "-99",
+    "description": "Leanbackplayer is a basic video player that comes with a comprehensive support of keyboard controls.\r\n\r\nIn the product description a adjustable playback rate as well as subtitels are mentioned but unfortunately it was not possible to see these features in the demo.",
+    "name": "Leanbackplayer",
+    "open_source": false,
+    "patterns": [
+      "Shortcut Commands",
+      "Basic Controls"
+    ],
+    "provider": "Kapelan Media GmbH",
+    "tags": [
+      "Player",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-17T22:52:30.692Z",
+    "url": "http://www.leanbackplayer.com/"
+  },
+  {
+    "__v": 9,
+    "_id": "54c8b521e0f5a9e07b3ddabb",
+    "availability": "",
+    "category": "-99",
+    "description": "Yendif Player supports several video formats and offers a responsive design. Remarkable is the playlist that can be shown in the reight or below the player. Subtitles can be included as <track>-element in WebVVT-format. The player can be controled via keyboard commands.",
+    "name": "Yendif Player",
+    "open_source": false,
+    "patterns": [
+      "Shortcut Commands",
+      "Playlist",
+      "Closed Captions",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Yendif Player",
+    "tags": [
+      "Player",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-17T22:52:39.936Z",
+    "url": "http://yendifplayer.com"
+  },
+  {
+    "__v": 7,
+    "_id": "54c8b130e0f5a9e07b3ddab9",
+    "availability": "It is an open source porject that is freely available.",
+    "category": "-99",
+    "description": "Playr is a video Playr that integrates WebVVT and SubRip subtitles and advanced keyboard shortcuts to delay the subtitle presentation. Further more the position, alignment, and size of the presented subtitles can be configured. The subtitles are integrated by an <track>-element. ",
+    "name": "Playr",
+    "open_source": false,
+    "patterns": [
+      "Closed Captions",
+      "Shortcut Commands",
+      "Basic Controls"
+    ],
+    "provider": "Julien Villetorte ",
+    "tags": [
+      "Open Source",
+      "Video Framework",
+      "Player"
+    ],
+    "updated_at": "2016-01-17T22:52:20.385Z",
+    "url": "http://www.delphiki.com/html5/playr/"
+  },
+  {
+    "__v": 8,
+    "_id": "54c89665e0f5a9e07b3ddab3",
+    "availability": "Public available as download. Well documented.",
+    "category": "-99",
+    "description": "The flowplayer is a HTML5 video player based on Javascript including an API for customizing the functions and design. \r\nBy the use of \"cuepoint\" arbitrary HTML or Javascrip code can be called during playback or at pre-defined points in time. A cuepoint is defined by a the time in seconds, an index and some data. Therefor subtitles and sequential media sets and many types of annotations (e.g. Hyperlinks, Overlays, Simultaneous Media, ect.) become possible. Beside the ability to provide these features, there is no authoring interface or anything like a template to qucikly set up a special type of annotation.\r\n\r\nFlowplayer offers also playlist that are literally a HTML snipet of links to video files inside the player div-tag. When clicking on a link the player loads the video file. Multiple playlists can be included on a singe page.\r\n\r\nBy the use of the HTML5 track element subtitles (e.g. referenced from a WEBVTT-file) can be displayed.\r\n\r\nThe analytics component of the flowplayer tracks the seconds that a video was played. If it is played twice the number of seconds is twice the duration. Beside that rough playtime measurement (pausing, fullscreen, seeking are not important in their opinion) the name of the video file and the title of the video is stored. All the collected data is getting forwarded to Google Analytics in order to obtain some neat visualizations. That means without the use of Google Analytics there will be not analysis possible. Flow player is also not capable to capture all events because of using the jQuery unload event that is not fired on window close events, at least in certain browsers.\r\n",
+    "name": "Flowplayer",
+    "open_source": false,
+    "patterns": [
+      "Playlist",
+      "Closed Captions",
+      "Sequential Media",
+      "Hyperlinks",
+      "Overlays",
+      "User Traces",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Flowplayer Ltd.",
+    "tags": [
+      "Video Framework",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T12:47:14.629Z",
+    "url": "http://www.flowplayer.org/"
+  },
+  {
+    "__v": 7,
+    "_id": "54c8a3cce0f5a9e07b3ddab6",
+    "availability": "Online demo is available.",
+    "category": "-99",
+    "description": "SproutVideo is video hosting service that offers a few features that are worth mentioning. At first there is a neat playlist that works out of the box. Second, they offer some comprehensive analytics and engagement measurements:\r\n- play impression over time/date\r\n- user origin on map and the distribution by country\r\n- popular videos\r\n- per video: number of loads, visitors, plays, hours watched, play rate, average engagement\r\n",
+    "name": "SproutVideo",
+    "open_source": false,
+    "patterns": [
+      "Playlist",
+      "User Traces",
+      "Add Video",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "SproutVideo",
+    "tags": [
+      "Video Portal"
+    ],
+    "updated_at": "2015-02-16T21:55:28.711Z",
+    "url": "https://sproutvideo.com"
+  },
+  {
+    "__v": 17,
+    "_id": "54bd8e6f94be6836466c5838",
+    "availability": "",
+    "category": "-99",
+    "description": "YouTube  (including YouTube Edu) is part of the worlds largest video distribution platform and social network in the web. Its main feature is search. It provides also facilities to upload, edit, annotate, organize and share video content. The community of the surrounding social network of registered users is invited to discuss the videos verbal or videographically. The main structuring elements are channels and playlists. Content providers (users) can make use of the extensive analytics features.\r\nThe \"History\" provides a chronological list of the recently watched videos and searched terms.\r\n\"Watch later\" allows the user to mark video to watch them later.\r\n\r\nYouTube provides basic editing facilities to trim and cut a videos.\r\n\r\nVideos can be tags as a whole, while contents inside can not be related with semantical information.\r\n\r\nThe player timeline is not annotated with further contents or links to annotations but it provides a preview for the corresponding scenes. In some cases these scrubber preview has multiple levels in order to obtain a precise thumbnail image at a given time. \r\n\r\nRemarkable are the various types of annotations that can be layered on top of the video. A overlay can contain images, text as well as hyperlinks (e.g. to other videos).  The user is allowed to closed these overlays during the playback (e.g. to see the video content behind the overlay). Only the publisher is allowed to add or edit annotations. \r\n\r\nBelow the video player some sharing facilities (e.g. embedding) are provided next to some statistical data. Further below users can comment the video. Although the comments are not related with the playback time, simple time reference like mm:ss (e.g. 7:22) get automatically converted as links.\r\n\r\nSubtitles are well readable. Sometimes multiple languages can be provided. More recent are automatically generated subtitles.\r\n\r\nRelated videos are shown in panel next to the small video player and after the playback has finished. The user is not able to influence or comprehend the selection process behind the presented related videos. The video manager on the landing page has several section like recommended, recently uploaded and recently watched videos.\r\nFurther more, related videos are considered as a sequence of videos that get played one after another. The user can stop the execution of that sequential presentation within an animated time frame of five seconds.\r\n\r\nSince YouTube is currently the biggest market player, its shortcut commands have became a common standard. All control elements are accessible with the keyboard. \r\n\r\n",
+    "name": "YouTube",
+    "open_source": false,
+    "patterns": [
+      "Related Videos",
+      "Closed Captions",
+      "Annotations",
+      "Add Video",
+      "Journaled Navigation",
+      "Search",
+      "Video Manager",
+      "Loading Indicator",
+      "User Traces",
+      "Appropriate Delivery",
+      "Viewing History",
+      "Playlist",
+      "Branching Videos",
+      "Visual Highlighting",
+      "Shortcut Commands",
+      "User Ratings",
+      "Sequential Media",
+      "Hyperlinks",
+      "Overlays",
+      "Visual Summary",
+      "Multi-Timeline Editing",
+      "Basic Controls"
+    ],
+    "provider": "YouTube Inc.",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Search Engine",
+      "Video Authoring Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-03T08:18:14.777Z",
+    "url": "http://www.youtube.com/edu"
+  },
+  {
+    "__v": 7,
+    "_id": "56b4db4a6f82cb6b2b14bb46",
+    "availability": "Online demo.",
+    "category": "-99",
+    "description": "\"Matterhorn is a free, open-source system that provides a lecture capture solution and an enterprise media infrastructure for educational audio and video content.\"\r\n\r\nThe media module of Matterhorn contains the player component. A media gallery is the starting point for selecting or searching a video within the library. For particular search term an RSS/Atom feed is provided.\r\nThe video player is capable to present two media streams at ones (e.g. video and slides). These streams can be arranged and presented in different sizes and positions. The navigation on the timeline comes with a preview of the corresponding slides. It is possible to skip a few seconds back and forth. Also segments can be navigated precisely. The segments are also annotated on the timeline and they are listed below the player. Thus, the way of presenting the segments can be considered as a table of content. \r\nMatterhorn also includes an speech extraction. At least the text belonging to each of the segments is presented in the way of a transcript. That means the user can follow the currently spoken segments or select a segment to start the playback from there. This text is used for a in-video search.\r\nBeside the segments and segments text there are two more tabs below the play. One contains typical metadata (dublin core), the other stores all comments. Like the segments, the comments are also annotated on the timeline. Comments can be private or public. Replies are possible.  A comment is not necessarily related to a point in time.\r\n\r\nThe link to the video can be shared with others. Also the current playback position can be part of such a bookmark following the time schema known from YouTube, e.g. http://demo.opencastproject.org:8080/engage/ui/watch.html?id=Unscheduled-demo_capture_agent-1415720718417&t=3m31s\r\n\r\n\r\nA few keyboard shortcuts help the user to control the player.\r\n\r\n\r\nAlong the timeline usage statistics can be enabled. ",
+    "name": "Matterhorn",
+    "open_source": false,
+    "patterns": [
+      "Video Manager",
+      "Classified Marks",
+      "Visual Summary",
+      "Transcript",
+      "Skip Back",
+      "Simultaneous Media",
+      "Annotations",
+      "Direct Authoring",
+      "Comments",
+      "Table of Content",
+      "User Traces",
+      "Search",
+      "Temporal Bookmarks",
+      "Shortcut Commands",
+      "Annotated Timeline",
+      "Basic Controls"
+    ],
+    "provider": "ETH Zurüch",
+    "tags": [
+      "Open Source",
+      "Video Learning Environment",
+      "Online Environment",
+      "Video Portal",
+      "Player",
+      "Video Authoring Environment"
+    ],
+    "updated_at": "2016-02-08T15:23:33.731Z",
+    "url": "http://demo.opencast.org:8080/welcome.html"
+  },
+  {
+    "__v": 8,
+    "_id": "56b511ec6f82cb6b2b14bb47",
+    "availability": "Open Source Code and public demo online available",
+    "category": "-99",
+    "description": "Annotating Academic Video (AAV) is a video annotation service. It designed as a stand-alone application that can be integrated in other learning management systems.\r\n\r\nThe UI consists of two parts. On the right side is a simple video player with an extended timeline below. On the left is a text area for entering annotations. AAV only supports text annotation. Other media elements, URLs or complex data is not supported, although their might be some workarounds to do that. Below the text area coding categories can be defined. For each category labels can be defines. These labels can be assigned to an annotation. Below the category/labels a list of all annotation including the coded labels is shown. With this box the user can edit, comment or delete existing annotations as well as assigned labels. All labels and annotation are mapped on the timeline. \r\nThe timeline handles multiple tracks if needed. A track can be ether public or private.  Unfortunately it is very difficult to navigate along the timeline, because the usual scrolling behavior has been mapped to zoom in and out. \r\n\r\nSee demo: http://entwinemedia.github.io/annotations/\r\n ",
+    "name": "Annotating Academic Video",
+    "open_source": false,
+    "patterns": [
+      "Annotations",
+      "User Notes",
+      "Annotated Timeline",
+      "Classified Marks",
+      "Comments",
+      "Multi-Timeline Editing",
+      "Direct Authoring",
+      "Basic Controls"
+    ],
+    "provider": "ETH Zürich, SWITCH, University of Bern, PHZH and others",
+    "tags": [
+      "Online Environment",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-08T15:08:16.381Z",
+    "url": "https://github.com/entwinemedia/annotations"
+  },
+  {
+    "__v": 7,
+    "_id": "56b520366f82cb6b2b14bb49",
+    "availability": "open source, demo on request",
+    "category": "-99",
+    "description": "Opencast is complete suite for automatical lecture recording, post processing and delivery. The Opencast Player (v2.2) comes with some remarkable features. First it breaks with the tradition to show the timeline including all controls below the video frame. The clean design makes the most prominent features visible at a glance.\r\n\r\nThe player is capable to present and synchronize two different video streams in parallel. The layout of both streams can be changed in the following way: left, right,picture in picture, and off. In case on stream is a slide video. Opencast comes with algorithm to determine the slides as segments and extracts the containing text. The combination of a still image of the (sometimes animated) slide and the text build a mixture of a table of contents and a transcript. The transcript cannot be searched directly but the built-in browser search should help. \r\n\r\nOpencast provides a nice zoom function which is very usefull for full HD videos where the lecturer presents hand writings on a white board. Three steps are predefined for zooming (150%, 200%, 250%), but the standard mouse gesture allows values in-between. The zoom allows the user to pan the segment of the video frame. In the provided demo the zoom did not work for two synchronized videos.\r\n\r\nThe playback rate is also adjustable between 75% and 300%. The six steps can be chosen from a drop down like the zoom. Very nice are the calculations about the resulting playback duration when changing the playback speed to a higher or lower rate. This usefull if you want to know how much time you could save when watching the video a bit faster.  \r\n\r\nMost of the player functions are accessible with the keyboard.\r\n\r\nSurprisingly the full screen mode does not provide any of the previously mentioned control elements. ",
+    "name": "Opencast",
+    "open_source": false,
+    "patterns": [
+      "Zoom",
+      "Annotated Timeline",
+      "Appropriate Delivery",
+      "Playback Speed",
+      "Table of Content",
+      "Transcript",
+      "Simultaneous Media",
+      "Shortcut Commands",
+      "Basic Controls"
+    ],
+    "provider": "Universität Osnabrück/virtuOS and others",
+    "tags": [
+      "Open Source",
+      "Video Learning Environment",
+      "Online Environment",
+      "Video Portal",
+      "Player",
+      "Video Authoring Environment"
+    ],
+    "updated_at": "2016-02-08T15:24:34.091Z",
+    "url": "http://www.opencast.org"
+  },
+  {
+    "__v": 8,
+    "_id": "54c9f7f71507e7df6382b53e",
+    "availability": "Description in research papers and in a doctoral thesis.",
+    "category": "-99",
+    "description": "As an academic prototype the WhiteBoardPlayer has been developed at the Albert-Ludwigs University Freiburg. \r\n\r\nLauer, T., & Trahasch, S. (2005). Strukturierte verankerte Diskussion als Form kooperativen Lernens mit eLectures (Structured Anchored Discussion as a Means of Collaborative Learning with eLectures). I-Com Zeitschrift Für Interaktive Und Kooperative Medien, 4(3), 48–51.\r\n\r\nTrahasch, S. (2006). Skriptgesteuerte Wissenskommunikation und personalisierte Vorlesungsaufzeichnungen. Berlin: Logos Verlag.",
+    "name": "WhiteBoardPlayer",
+    "open_source": false,
+    "patterns": [
+      "Comments",
+      "Classified Marks",
+      "Annotations",
+      "Simultaneous Media",
+      "Table of Content",
+      "Search",
+      "Overlays",
+      "Basic Controls"
+    ],
+    "provider": "Albert-Ludwigs University Freiburg",
+    "tags": [
+      "Video Learning Environment"
+    ],
+    "updated_at": "2016-02-06T23:49:28.020Z",
+    "url": ""
+  },
+  {
+    "__v": 7,
+    "_id": "54c8ac1ce0f5a9e07b3ddab8",
+    "availability": "Online demo is available.",
+    "category": "-99",
+    "description": "Wistia is a video hosting service that offers remarkable video heatmaps to analyze video usage over playback time.\r\nWhen uploading a video it is going to be converted into different version dedicated for different browsers, output devices and connections qualities. On delivery the optimal frame size and quality is estimated.\r\nVideo comments are related with time.",
+    "name": "Wistia",
+    "open_source": false,
+    "patterns": [
+      "User Traces",
+      "Appropriate Delivery",
+      "Comments",
+      "Basic Controls"
+    ],
+    "provider": "WISTIA",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-17T22:21:17.905Z",
+    "url": "http://wistia.com"
+  },
+  {
+    "__v": 7,
+    "_id": "54c8c12ae0f5a9e07b3ddabe",
+    "availability": "Online available.",
+    "category": "-99",
+    "description": "JoVE, the Journal of Visualized Experiments, is a peer reviewed video journal. An artical usualy consists of a structured text and a video. The video is positioned at the top of the article. A table of content allows a quick navigation inside the audiovisual content. When scrolling down the written text the video moves to the right side panels but keeps playing. Also the chapter marks are visible in the side panel. Consequently a simultaneous presentation of text and video arises.\r\nThere is also a section at jove that contains some educational video on how to conduct studies and apply certain methods. In that part the table of content is extended by the corresponding transcript of the section.\r\n\r\nFurther more related videos/articles are presented to continue learning about science subjects.",
+    "name": "JoVE",
+    "open_source": false,
+    "patterns": [
+      "Related Videos",
+      "Table of Content",
+      "Simultaneous Media",
+      "Transcript",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "MyJoVE Corp.",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Video Learning Environment"
+    ],
+    "updated_at": "2015-02-17T09:45:44.884Z",
+    "url": "http://www.jove.com"
+  },
+  {
+    "__v": 9,
+    "_id": "54c8bd3fe0f5a9e07b3ddabd",
+    "availability": "Product description and many different online demo (after registration) are availlable.",
+    "category": "-99",
+    "description": "Several video tracks of different qualities or sizes can be chosen. The rate of playback is adjustable. Multilingual captions can be included. \r\nComments get annotated on the timeline and listed below the video. Fixed images can be overlay on the video. Custom overlay can be defined at a certain point in the video. A table of content provides a quick access to sections of the video. Multiple Choice questions can be also placed inside the video. ",
+    "name": "Apreggio",
+    "open_source": false,
+    "patterns": [
+      "Comments",
+      "Annotated Timeline",
+      "Overlays",
+      "Playback Speed",
+      "Table of Content",
+      "Assessment",
+      "Closed Captions",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "Viddler, Inc",
+    "tags": [
+      "Player",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T20:33:09.121Z",
+    "url": "http://info.viddler.com/arpeggio-features"
+  },
+  {
+    "__v": 7,
+    "_id": "54c89b7be0f5a9e07b3ddab4",
+    "availability": "Public available as download. Purely documented.",
+    "category": "-99",
+    "description": "Open Video Player is available for Adobe Flash, Microsoft Silverlight and HTML5. Each Player selects the appropriate configuration to deliver flash or HTML video in terms of the optimal video format.\r\nBeside these more or less basic features the player is capable to present Media RSS files (MRSS). Syndicated video files including a thunbnail are read one by one and being presented in a row. The user can click through the sequential aligned thumbnails and select a video for playback. This approach can be considered to playback playlists.",
+    "name": "Open Video Player",
+    "open_source": false,
+    "patterns": [
+      "Playlist",
+      "Sequential Media",
+      "Basic Controls"
+    ],
+    "provider": "Open Video Player",
+    "tags": [
+      "Video Framework",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T12:45:43.896Z",
+    "url": "http://openvideoplayer.sourceforge.net/html5video/"
+  },
+  {
+    "__v": 8,
+    "_id": "54c8aa24e0f5a9e07b3ddab7",
+    "availability": "Online demo is available.",
+    "category": "-99",
+    "description": "vzaar is another video hosting service that provides typical functions such as add videos, make them browsable and searchable, ect. pp. Remarkable are the customized watermarks that vzaar \"burns\" into the video after the upload. \r\n\r\nVideo looping will automatically restart the video when playback ends. Beside that a \"End Screen Text\" can be defined to deliver a take away message (e.g. a link to share the content).\r\n\r\nAnalytics components are mainly related with Google Analytics: play count, playback time/date, user location, amount of time the video was played, bandwidth consumption.\r\n\r\nFurthermore subtitles, playlists\r\n\r\nA jQuery library provides some extra support for time-dependent cue point (e.g. to include polls, quized, adds) and time-related annotation such as chapter marks (\"Chapterizer\"). Remarkable is the \"Bookmarkifier\" that stores a playback position related to a video in a coockie. After closing the window the user can make return to the temporal position when he/she returns to the video. The so called \"Pre- and Postrollinator\" allows the definition of videos that should be play before and after the original content. This feature might be known from add videos but in its core it is a way of sequencing media.\r\nSee the jQuery library on github: https://github.com/vzaar/vzaar-jquery",
+    "name": "vzaaar",
+    "open_source": false,
+    "patterns": [
+      "Loop",
+      "Temporal Bookmarks",
+      "Journaled Navigation",
+      "Table of Content",
+      "Sequential Media",
+      "Add Video",
+      "Video Manager",
+      "Overlays",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "vzaar Limited",
+    "tags": [
+      "Video Portal",
+      "Video Framework",
+      "Online Environment",
+      "Video Authoring Environment"
+    ],
+    "updated_at": "2015-02-17T10:07:13.969Z",
+    "url": "http://vzaar.com/"
+  },
+  {
+    "__v": 8,
+    "_id": "54c8a1aee0f5a9e07b3ddab5",
+    "availability": "Public demos are accessibe. Source Code is not freely available.",
+    "category": "-99",
+    "description": "Projekktor is a video player framework. The provides a delivery of the best matched concerning the available display size of the device and the quality. Its is not mentioned how the quality measurement works. Anyway it is possible to change the between different quality versions of a video during the playback. \r\n\r\nThe player is supposed to be capable to handle playlists and RSS feed. However, this could not be confirmed by testing the provided demos.",
+    "name": "Projekktor",
+    "open_source": false,
+    "patterns": [
+      "Appropriate Delivery",
+      "Basic Controls",
+      "Annotated Timeline",
+      "Shortcut Commands"
+    ],
+    "provider": "Sascha Kluer",
+    "tags": [
+      "Video Framework",
+      "Player"
+    ],
+    "updated_at": "2016-02-05T23:43:39.363Z",
+    "url": "http://www.projekktor.com/"
+  },
+  {
+    "__v": 13,
+    "_id": "54c8c42de0f5a9e07b3ddabf",
+    "availability": "",
+    "category": "-99",
+    "description": "Digital-tutors is a comprehensive collection of software training videos (> 45.000 videos). The videos cover the usage of about 70 different software applications in the area of 3D-Modelling, special effects, design and game development. \r\nRemarkable are the offered learning paths. A learning path is ordered set of training videos to obtain a certain learning goal. A path is structured by several levels where each of it contains some videos. In contrast to these lists that are defined by an instructor that users can collect their own learning videos in a so called \"backpack\" for download. In a playlist single videos or whole lessons get collected for online use. Multiple playlists can be defined. \r\n\r\nSimilar to a ePortfolio digital-tutors suggests their users to produce a demo reel as a collection of their best work. These portfolio is dedicated to potential employers.\r\nWith \"virtual bookmarks\" users can tag content inside the video. Reoccurring tags are not clustered in the tag list. That means each tag has a tag name and is related to one point within the playback time. User notes work in a similar way. These notes can be defined at a point in time. Tags and notes become visible on the timeline but are not accessible by clicking on the timeline (at least in the watched demo courses).\r\nSome of the videos provide captions that allow a in-video search. In \"Viewing History\" the previously watched videos are stored including the playback position where the user left off.\r\nA very nice feature is the way of storing the viewing history inside a learning path. In a list next to the video all lessons of a course are listed. Below the lesson title a horizontal bar indicates how much of the lesson has been watching. When returning to a previously watched lesson the playback continues at the point of the last visit.",
+    "name": "digital-tutors",
+    "open_source": false,
+    "patterns": [
+      "Playlist",
+      "Video Manager",
+      "Sequential Media",
+      "Temporal Tags",
+      "User Notes",
+      "Search",
+      "Viewing History",
+      "User Notes",
+      "Journaled Navigation",
+      "Annotated Timeline",
+      "Classified Marks",
+      "Loading Indicator",
+      "Direct Authoring",
+      "Basic Controls"
+    ],
+    "provider": "video-tutors",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-03-10T11:54:37.575Z",
+    "url": "http://www.digitaltutors.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54c8b805e0f5a9e07b3ddabc",
+    "availability": "The company has been sold and shut its service by the end of 2009. The page is partly accessible via the WayBackMachine.",
+    "category": "-99",
+    "description": "Veotag was a startup company that promoted so called \"veotags\". These kind of annotation is time-related in the sense of a navigable table of content. But veotags were also time-dependent in terms of highlighted comments or transcripts, appearing subtitles. Through these annotated content a inside-video search could be supported.\r\nVeotags appeared to the right of the viewing area of the player. As the video plays, each veotag gets highlighted. By a click the video playback jumps to the corresponding position. Remarkable is that a veotag could be incorporated by further sub-tags.\r\n",
+    "name": "veotag",
+    "open_source": false,
+    "patterns": [
+      "Table of Content",
+      "Comments",
+      "Search",
+      "Basic Controls"
+    ],
+    "provider": "Veotag.com",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-02-16T07:59:31.379Z",
+    "url": ""
+  },
+  {
+    "__v": 7,
+    "_id": "56b514ec6f82cb6b2b14bb48",
+    "availability": "Online available as open source including a demo.",
+    "category": "-99",
+    "description": "Paella Player is an alternative player for Opencast. \r\n\r\nSimilar to a table of content the synchronized slides are used as time-related anchores. The slides can be browsed in a stribe above the timeline. Multilingual closed captions (subtitles) are combined with a transcript that can be search. Remarkable are the layout presets to re-arrange the video and the slides in different sizes and positions. \r\n\r\nThe player theme an be easily switched.  ",
+    "name": "Paella Player",
+    "open_source": false,
+    "patterns": [
+      "Visual Summary",
+      "Appropriate Delivery",
+      "Closed Captions",
+      "Transcript",
+      "Table of Content",
+      "Search",
+      "Simultaneous Media",
+      "Playback Speed",
+      "Skip Back",
+      "Full Screen",
+      "Shortcut Commands",
+      "Basic Controls"
+    ],
+    "provider": "Universitat Politecnica Valencia",
+    "tags": [
+      "Online Environment",
+      "Open Source",
+      "Player"
+    ],
+    "updated_at": "2016-02-05T23:33:44.707Z",
+    "url": "http://paellaplayer.upv.es"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9eb7",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "My Video is a romanian video portal similar to YouTube but particular focused on TV content such as films, television series and TV live broadcasts. Registered users can upload, rate, discuss and share video contents. The social network components are much more elaborated then at YouTube. Users have a profile page including a guest book, they can store and share the favorite clips and they can collect a playlist that plays videos contineously.",
+    "id": 2,
+    "name": "My Video",
+    "patterns": [
+      "Add Video",
+      "Search",
+      "Playlist",
+      "User Ratings",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "MyVideo Broadband S.R.L.",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:04:07.501Z",
+    "url": "http://www.myvideo.de/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9eb8",
+    "availability": "Online available, registration needed.",
+    "category": "Portal",
+    "description": "The french company Dailymotion is on of the biggest video on demand and streaming portals in the USA. It offers many television, music and fun videos. Users are invited to upload their content and curate their own collections that can be piped into the web. Obviously there are only a few educational resources.  Stream, Videozap, Jukebox, Badge, Subtitles, and Videowall are remarkable video applications that are part of the portal.  \r\n\r\n**Dailymotion Stream:** Presentation of full screen high quality videos that are arranged in a sequence. Browsing is enabled by keyboard commands (key up: search, key down: navigate stream left and right). See: [http://www.dailymotion.com/stream](http://www.dailymotion.com/stream)  \r\n\r\n**Jukebox:** It is a smart playlist that can be added (embedded) to any website. The playlist includes videos of up to five pre-selected Featured Channels. Embedded in a website the current video of the playlist is shown while the following videos are shown in a row below. The appearance and function of the playlist is configurable by predefined themes, auto-play, overlayed meta data, muted volume. See: [http://www.dailymotion.com/en/factory/jukebox](http://www.dailymotion.com/en/factory/jukebox)\r\n\r\n**Videozap:** A user defined playlist that contains a set of videos to play them on demand. A Videozap is designed for embedding on a website. The resulting presentation consists of a two column layout. The videos are presented as thumbnails on the left. The currently selected video will be played on the right.  \r\n\r\n**Badge:** To promote uploaded videos on other web pages three different embed codes are provided that a) just link to the uploaded videos of the user (called Badge), b)  a Carousel to quicly browse a sequential thumbnail list of the uploaded videos including the title and abstract without being able to play the videos, and c) a grid view of the thumbnailed videos including its title. See: [http://www.dailymotion.com/en/extras/badge](http://www.dailymotion.com/en/extras/badge)  \r\n\r\n**Subtitles:** Dailymotion provides a multi-track interface to annotate subtitles/caption in several languages. It is also possible to import and export srt-files. See: [https://faq.dailymotion.com/hc/en-us/articles/201963227-How-do-I-add-subtitles-to-a-video-](https://faq.dailymotion.com/hc/en-us/articles/201963227-How-do-I-add-subtitles-to-a-video- )  \r\n\r\n**Videowall:** Up to 81 videos can be grouped in a video (thumbnail) wall. The wall is a grid of maximum 9 x 9 cells of equal dimensions. On hovering a video its thumbnail enlarges and the title is displayed. See: [http://www.dailymotion.com/en/factory/videowall](http://www.dailymotion.com/en/factory/videowall)",
+    "id": 3,
+    "name": "Dailymotion",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Add Video",
+      "Related Videos",
+      "Sequential Media",
+      "Full Screen",
+      "Closed Captions",
+      "Viewing History",
+      "Loading Indicator",
+      "Multi-Timeline Editing",
+      "Basic Controls"
+    ],
+    "provider": "Dailymotion",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-10T12:18:16.595Z",
+    "url": "http://www.dailymotion.com/de"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9eb9",
+    "availability": "Online available, registration needed",
+    "category": "Portal",
+    "description": "Clipfish is a German video portal specialized on TV, music, film, series, ect.  They provide playlists, user comments (timely unrelated), resource-based tags, and ratings. ",
+    "id": 4,
+    "name": "Clipfish",
+    "patterns": [
+      "Add Video",
+      "Playlist",
+      "User Ratings",
+      "Video Manager",
+      "Search",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Clipfish GmbH & Co. KG",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T09:53:30.053Z",
+    "url": "http://www.clipfish.de/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9eba",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "US video portal dedicated to original content producers. It offers a lot off artistic movies in high quality. The content is organized in channels and can be searched. The feature \"watch later\" works as a playlist. The \"couche mode\" allows full screen presentation of sequential ordered videos. ",
+    "id": 5,
+    "name": "Vimeo",
+    "patterns": [
+      "Add Video",
+      "Search",
+      "Video Manager",
+      "Playlist",
+      "Full Screen",
+      "Sequential Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Vimeo, LLC",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Search Engine"
+    ],
+    "updated_at": "2015-02-17T09:54:33.394Z",
+    "url": "http://vimeo.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ebb",
+    "availability": "Online available for Apple or Windows users.",
+    "category": "Portal",
+    "description": "Apples video portal works in combination with its hardware products and is meant as a distribution platform that educators can use to curate customized courses and lessons to their audience. People that have assigned to a course can discuss with each other. Outside the Apple-universe it is hard to get a glance at the product. ",
+    "id": 6,
+    "name": "iTunes U",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "Apple Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-15T22:26:00.621Z",
+    "url": "http://www.apple.com/de/education/itunes-u/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ebc",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "Lecture2Go is an university portal to distribute lecture recordings and conference casts. Lectures are provided in series of multiple videos. The videos are typically streamed as a collage of lecturer video and synchronized presentation slides as well as some meta data (lecturer, title, institution) in a single stream/file, Users can share and download the content. Videos that belong to series are pushed in various RSS feeds concerning individual system and bandwide requirements of the user. Further more time accurate references, namely Citation2Go, are enabled. However, segments of a video can be referenced by an URL in a way that only the segment is going to be deliverd.   The whole platform is available as open source software: http://lecture2go-open-source.rrz.uni-hamburg.de/web/os/installation ",
+    "id": 7,
+    "name": "Lecture2Go",
+    "patterns": [
+      "Temporal Bookmarks",
+      "Follow Revisions",
+      "Appropriate Delivery",
+      "Media Fragments",
+      "Basic Controls"
+    ],
+    "provider": "Medienkompetenzzentrum, Regionales Rechenzentrum der Universität Hamburg",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2016-01-17T22:21:38.619Z",
+    "url": "http://lecture2go.uni-hamburg.de/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ebd",
+    "availability": "Online available.",
+    "category": "Collection",
+    "description": "The Online Vorlesung provides a structured directory of lecture recordings that were produced at some universities in Germany. Content producers or those who find valuable resource can submit these resources to be added to the collection.  ",
+    "id": 8,
+    "name": "Online Vorlesung",
+    "patterns": [
+      "Search",
+      "Basic Controls"
+    ],
+    "provider": "Ulrich Bannier (Hamburg/DE)",
+    "tags": [
+      "Misc",
+      "Video Portal"
+    ],
+    "updated_at": "2015-02-16T08:19:07.948Z",
+    "url": "http://www.online-vorlesungen.de/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ebe",
+    "accessible": true,
+    "availability": "Online available for members of the university.",
+    "category": "Portal",
+    "description": "Lecture portal of the Ludwig Maximilian Universität Munich/Germany. It provides several features to acces time-related contet, e.g. browsing by slides, annotate content. ",
+    "id": 9,
+    "name": "Unterrichtsmitschau 2.0",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Sequential Media",
+      "Visual Summary",
+      "Simultaneous Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "LMU Munich",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:55:58.973Z",
+    "url": "http://videoonline.edu.lmu.de/"
+  },
+  {
+    "__v": 5,
+    "_id": "54bd63692ab0a86f323c9ebf",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "The video portal offered by the Massachusetts Institute of Technology provides different types (e.g. educational, community, events, feature) of videos that represent teaching and learning as well as life at the campus. These videos are spread accross several channels in a broadcasting manner. The more then 10.000 video can be browsed or searched including filters.",
+    "id": 10,
+    "name": "MIT Video",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "Massachusetts Institute of Technology",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T20:04:57.787Z",
+    "url": "http://video.mit.edu/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ec0",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "The eLecture portal of the Alber-Ludwigs University in Freiburg/Germany appears more as collection of references to different learning resources such as Lecturnity or Flash videos. News feeds inform about recently added resources per lecture. ",
+    "id": 12,
+    "name": "Electures-Portal",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "Albert-Ludwigs University Freiburg",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-16T08:09:50.361Z",
+    "url": "http://electures.informatik.uni-freiburg.de/portal/web/guest/home"
+  },
+  {
+    "__v": 12,
+    "_id": "54bd63692ab0a86f323c9ec1",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "lernfunk.de is video portal of the university of Osnabrück. It provides a basic and an advanced player. Both are based on Open Cast Matterhorn. To control the playback regarding a better accessibility several keyboard shortcuts are defined. Beside temporal segmentation (table of contents) the user can switch between the lecturer and the presentation slides provided as stream. The advanced player provides a viewing statistic along the timeline. Several levels of video quality and size can be chosen.  Lectures series are accessible in a RSS feed.   ",
+    "id": 13,
+    "name": "lernfunk.de",
+    "patterns": [
+      "User Traces",
+      "Appropriate Delivery",
+      "Table of Content",
+      "Follow Revisions",
+      "Sequential Media",
+      "Shortcut Commands",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "virtUOSZentrum für Informationsmanagementund virtuelle Lehre, Universität Osnabrück",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Open Source",
+      "Video Learning Environment"
+    ],
+    "updated_at": "2016-01-17T22:53:04.506Z",
+    "url": "http://lernfunk.de/portal-ui/user-interface/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9ec2",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "The Slovenian video portal with recordings of lectures, conferences, interviews, and tutorials from all subjects in arts and science. They describe there self as „peer-reviewed videos enriched with slides“. The videos can be accessed through a good categorical system, related videos (by topic, author, and personal viewing history) and by search. Users obtain the possibility to rate, share or review the content. Sometimes there is also a slightly chance to meet someone in the chat. All content is provided under a creative commons licence.  The video player has remarkable features such as - a sliding split screen between the lecturer and slide presentation - thumbnailed preview of the slides along side the timeline - slides are annotated on the timeline - each slide is directly accessible by a click on its title in the table of contents  Beside the development the company is engaged in a few research projects.",
+    "id": 14,
+    "name": "VideoLectures.NET",
+    "patterns": [
+      "Related Videos",
+      "Viewing History",
+      "Search",
+      "User Ratings",
+      "Table of Content",
+      "Annotated Timeline",
+      "Simultaneous Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "VideoLectures.NET",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:01:28.951Z",
+    "url": "http://videolectures.net/"
+  },
+  {
+    "__v": 5,
+    "_id": "54bd63692ab0a86f323c9ec3",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "webcasts.berkeley is a slim lecture (,and event) browser catorized by semster and department. The videos itself are dristibuted through YouTube or iTunes U. Also the view count and user ratings are obtained from these providers.  The portal also provides audio content.  ",
+    "id": 15,
+    "name": "webcasts.berkeley",
+    "patterns": [
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "UC Berkeley",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T20:04:57.788Z",
+    "url": "http://webcast.berkeley.edu/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9ec4",
+    "availability": "Free use of demo application.",
+    "category": "Desktop Video Environment, Video Authoring Environment",
+    "description": "Lecturnity is a Java application to capture screen or presentation slides in motion. The presentation of these captures can be controlled by stop marks and by focusing certain parts of the video frame by highlight or zooming them. In general the videos are delivered as flash files. Thus, Lecturnity is not fully platform independent. \r\n\r\nA semantical analysis helps segmenting and structuring the content into a larger collection. An in-depth search makes even slide content and annotations accessible by search. Further more basic editing capabilities (cut, highlight, text annotation) and search functionalities are provided even in post production mode (authoring on the fly). Especially slides content is stored as small information chunks such as text blocks or images. Each chunk can be edited, annotated or highlighted on a multi-track timeline authoring environment. Hence, Lecturnity provides a way of video manipulation. These annotation features are dedicated for the person who prepares a video for later instructional use. The students/users are not allowed to make additions to the video. \r\n\r\nLecturnity supports self organized learning through self assessment (e.g. fill-in tasks, drag'n drop tasks, multiple choice). The test results can be exported to standard formats. Beside the assessment polls can be launched. \r\n\r\nFor certain navigation and control elements shortcuts can be defined. Unfortunately they are not in line with common standards.\r\n\r\nLecturnity is able to deliver the content for multiple bandwidths, devices (mobile, playstation), display sizes, and web browsers.",
+    "id": 16,
+    "name": "Lecturnity",
+    "patterns": [
+      "Visual Highlighting",
+      "Annotations",
+      "Table of Content",
+      "Overlays",
+      "Assessment",
+      "Video Manipulation",
+      "Assessment",
+      "Appropriate Delivery",
+      "Search",
+      "Multi-Timeline Editing",
+      "Shortcut Commands",
+      "Polls",
+      "Basic Controls"
+    ],
+    "provider": "imc AG",
+    "tags": [
+      "Video Authoring Environment",
+      "Desktop Environment",
+      "Annotation Tool",
+      "Video Learning Environment"
+    ],
+    "updated_at": "2016-01-18T12:00:53.435Z",
+    "url": "http://www.lecturnity.de/de/lecturnity/uebersicht/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ec5",
+    "availability": "Online available for registered users.",
+    "category": "Portal, ",
+    "description": "Magma Media Server is a basic post production tool to cut and annotate lecture recording. The videos are provided in a structural way and are being categorized by lessons. Magma is capaple of synchronizing three video streams, e.g. the lecturer, a tablet and the presentation slides. Further more, a table of contents allows quick access to chapters.\r\nUnfortunately Magma comes with an Adobe Flash Player. ",
+    "id": 17,
+    "name": "Magma Media Server",
+    "patterns": [
+      "Table of Content",
+      "Video Manager",
+      "Simultaneous Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Bildungsportal Sachen GmbH",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2016-02-04T22:14:10.573Z",
+    "url": "https://bildungsportal.sachsen.de/magma"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ec6",
+    "availability": "Online available, but demo only.",
+    "category": "Portal, Video Learning Environment",
+    "description": "Sofatutor is a German tutoring service for K12 students. It offers high quality videos in all subject areas. Every video is followed by a test. Users can also chat with a real tutor. ",
+    "id": 18,
+    "name": "Sofatutor",
+    "patterns": [
+      "Related Videos",
+      "Assessment",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "sofatutor GmbH",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:39:20.464Z",
+    "url": "http://www.sofatutor.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ec7",
+    "availability": "Online available.",
+    "category": "Portal, Video Learning Environment",
+    "description": "Lecturio provides postgraduate training videos in the area of economy, software, law and medicine. The high quality videos are complemented with online tests and exercises. Each course consists of a series of lectures. \r\n\r\nWhen opening a  video it is displayed in the centre of the page. Below the video related videos can be selected. Also temporal unrelated comments have their place. Above the video three drop down menus provide quick access to (1) other lessons in the course, (2) all chapters of the video, (3) assessment questions. During my tests I could not figure out whether the self assessments are time-related or not.\r\n \r\nWithin the video frame a bunch of control elements is presented in both, full screen and normal playback mode.  First of all a skip button allows to browser through the chapters back and forth. Also the lectures of the same course can be sequential traversed. The playback speed is adjustable on four levels: 1 / 1.25 / 1.5 / 2. Further more users can skip back for 30 Seconds by clicking a button.  \r\n\r\nThe delivery of the video is adopted to the users connection quality. Lower or higher resolutions or qualities can be selected.\r\n\r\nAll chapters are annotated on the timeline. On mouse over at the chapter beginning the title of the chapter can be displayed.\r\n",
+    "id": 19,
+    "name": "Lecturio",
+    "patterns": [
+      "Video Manager",
+      "Search",
+      "User Ratings",
+      "Appropriate Delivery",
+      "Full Screen",
+      "Playback Speed",
+      "Sequential Media",
+      "Skip Back",
+      "Annotated Timeline",
+      "Table of Content",
+      "Loading Indicator",
+      "Related Videos",
+      "Basic Controls"
+    ],
+    "provider": "Lecturio GmbH",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:34:34.444Z",
+    "url": "http://www.lecturio.de/"
+  },
+  {
+    "__v": 11,
+    "_id": "54bd63692ab0a86f323c9ec8",
+    "availability": "Online available for customers and registered users. Scientif papers available.",
+    "category": "Video Learning Environment",
+    "description": "EduBreak is a German service provider of interactive instructional videos with a special focus on temporal and spatio-temporal annotations. Users are invited to discuss their annotation together. Further more web blogs and ePortfolios were provided.\r\n\r\nThe most interesting feature is maybe the way of annotating transparent objects like ovals, squares, and arrows. The objects can be resized, rotated and statically placed on top of the video frame. Additionally a text comment or description of the object can be defined. Further more it is possible to classify the annotation with traffic light color (e.g. red for critical remarks, green for good parts). Another classification system was found on the flash player version. Unfortunately some parts of the screen do not render properly. This is caused by flash. The newer, experimental html5 player does not have this additional classifier.  \r\nA neat feature is presentation of the comment in a side bar on the right. All comments can be filtered by author and traffic light classification. In the newer player version the comment get aligned up in row. Beside that eduBreak has an extra section where all comments are listed unlike blog posts. Users are invited to re-comment on them. A search function considers the comments and annotations. \r\nAll annotation appear on the timeline. They get marked in the color the selected traffic light. When hovering the timeline a preview image appears.   \r\n\r\nSee also [http://sports-coaching-education.de/start](http://sports-coaching-education.de/start)\r\n",
+    "id": 20,
+    "name": "EduBreak",
+    "patterns": [
+      "Add Video",
+      "Annotations",
+      "Classified Marks",
+      "Annotated Timeline",
+      "Visual Highlighting",
+      "Comments",
+      "Overlays",
+      "Direct Authoring",
+      "Visual Summary",
+      "Search",
+      "Video Manager",
+      "Appropriate Delivery",
+      "Basic Controls"
+    ],
+    "provider": "Ghostthinker - Agentur für Wissensinnovationen",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-04T22:25:05.415Z",
+    "url": "http://www.ghostthinker.de/de/produkte/edubreak-campus"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9ec9",
+    "availability": "Online demo available.",
+    "category": "Video Authoring Environment, Online Video Application, ",
+    "description": "XIMPEL (eXtensible Interactive Media Player for Entertainment and Learning) is a non-linearer video player based on Adobe Flex and XML. XIMPEL video player features different visual overlays (geometric figures, text, images, colours, scoring by click, ...) and interactive elements such as hyperlinks. User can define their own interactive video environment. Additionally (branching) questions can be posed, and user ca define playlists.   See example: http://ximpel.few.vu.nl/climateprofiler/ ",
+    "id": 21,
+    "name": "XIMPEL",
+    "patterns": [
+      "Add Video",
+      "Playlist",
+      "Overlays",
+      "Hyperlinks",
+      "Viewing History",
+      "Assessment",
+      "Playlist",
+      "Basic Controls"
+    ],
+    "provider": "XIMPEL",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype",
+      "Open Source",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-02-16T07:42:37.564Z",
+    "url": "http://www.ximpel.org/  "
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9eca",
+    "availability": "Online free trial available.",
+    "category": "Video Learning Environment",
+    "description": "Mediasilo is an online video service for uploading, commenting and sharing videos within a group. Videos, images, audio, zipped archives, and other documents can be uploaded. The content is organized in projects. Access to the project resources can be managed for indivudual users. It is possible to further organize the content in folders and define resource-based tags and customized meta data.   Users can comment and discuss video contents. All comments can be seen on the timeline and in a panel next to the video. Transcripts of a video need to be purchased but can not be created by the user. In the provided trial version a visual summary could not generarted by taking selected frames as a \"poster\". The application was developed with Adobe Flex and therefor it delivers flash videos only. The possibility to change the delivery options to \"progressiv/download\" or \"stream\" has negative effects on the delivery and destroys the UI of the player partwise.    ",
+    "id": 22,
+    "name": "MediaSilo",
+    "patterns": [
+      "Add Video",
+      "Comments",
+      "Video Manager",
+      "Transcript",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "MediaSilo, Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T13:06:32.885Z",
+    "url": "http://www.mediasilo.com/"
+  },
+  {
+    "__v": 15,
+    "_id": "54bd63692ab0a86f323c9ecb",
+    "availability": "Online available, local installation possible.",
+    "category": "Framework",
+    "description": "Popcorn.js is software framework for time-dependent media annotation such as images, web pages, tweets, other videos, ect. It is also capable to define overlays including hyperlinks. In conjunction with butter.app or the so called Mozilla Popcorn Maker it is capable to produce many different styles of interactive videos.  PopcornMaker is also a component of Mozilla WebMaker that is free to use. Currently the platform supports different media sources (e.g. YouTube, Vimeo, HTML5, as well as audio from Soundcloud, Clyp) the following events to be annotated to a video: \r\n\r\n- Text: Display text such as captions along with the video. \r\n- Popup: Open a popup window to present content in it. \r\n- Googlemap: Show coordinates on the map during the playback. \r\n- Image: Present images synchronous to the video. \r\n- Loop: Looping a segment of a video. \r\n- Skip: Skiping a segment of a video automatically instead of cutting it out. \r\n- Pause: Hold the video. \r\n- Wikipedia: Present a Wikipedia article for a dedicated periode of time next to the video. \r\n- 3D Model: Temporaly present a 3D Model beside the video. \r\n\r\nSee also: https://popcorn.webmaker.org/",
+    "id": 23,
+    "name": "Popcorn.js & PopcornMaker ",
+    "patterns": [
+      "Add Video",
+      "Simultaneous Media",
+      "Hyperlinks",
+      "Overlays",
+      "Closed Captions",
+      "Loop",
+      "Synchronized Map",
+      "Remix",
+      "Annotations",
+      "Multi-Timeline Editing",
+      "Basic Controls",
+      "Break"
+    ],
+    "provider": "Mozilla Foundation",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Video Framework",
+      "Online Environment",
+      "Open Source",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-06T23:43:23.065Z",
+    "url": "http://popcornjs.org/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ecc",
+    "availability": "Online demo available, free to install locally.",
+    "category": "Framework",
+    "description": "Timesheet.js is a french software framework to animate HTML and synchronize various contents (e.g. images, subtitles, slides). Videos are only one possible application scenario beside HTML slides and audio files. Continuous media incorporates annotated timelines that represent the content sections. ",
+    "id": 24,
+    "name": "Timesheets.js",
+    "patterns": [
+      "Table of Content",
+      "Overlays",
+      "Simultaneous Media",
+      "Annotated Timeline",
+      "Basic Controls"
+    ],
+    "provider": "Fabien Cazenave, INRIA/FR",
+    "tags": [
+      "Video Framework",
+      "Online Environment",
+      "Open Source",
+      "Player"
+    ],
+    "updated_at": "2015-02-16T07:34:37.129Z",
+    "url": "http://wam.inrialpes.fr/timesheets/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ecd",
+    "accessible": true,
+    "availability": "Online demo available.",
+    "category": "Online Video Application",
+    "description": "Openhypervideo was considered as a framework but comes as a set of other frameworks such as popcorn.js. Features are: sequences of media files, cut beginning and end of videos, multilingual transcripts, interlinking, ect.",
+    "id": 25,
+    "name": "openhypervideo",
+    "patterns": [
+      "Add Video",
+      "Hyperlinks",
+      "Sequential Media",
+      "Simultaneous Media",
+      "Annotated Timeline",
+      "Basic Controls"
+    ],
+    "provider": "Sascha Jäger, filmicweb",
+    "tags": [
+      "Online Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-01-19T22:56:01.768Z",
+    "url": "http://www.open-hypervideo.org/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9ece",
+    "availability": "Online demos available, free to install.",
+    "category": "Video Player",
+    "description": "Cacophony is an interactive video player and framework. It features branching questions, inline drawings, rotate 3D objects, different canvas effects. Unluckily some of the provides examples are CPU intensive and therefore hardly applicable. ",
+    "id": 26,
+    "name": "cacophonyjs",
+    "patterns": [
+      "Branching Videos",
+      "Inline Drawing",
+      "Assessment",
+      "Basic Controls"
+    ],
+    "provider": "Johnny Broadway",
+    "tags": [
+      "Video Framework",
+      "Online Environment",
+      "Open Source",
+      "Player"
+    ],
+    "updated_at": "2015-02-16T07:51:10.931Z",
+    "url": "http://www.cacophonyjs.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ecf",
+    "availability": "Several publication available. Online demo disappeared.",
+    "category": "Video Authoring Environment, Online Video Application, ",
+    "description": "The Simple Interactive Video Authoring Suite (SIVA) is an authoring environment for interactive videos. With that tool users are able to construct, manipulate and browse rich interactive videos.   \r\nSee demo to experience the user interface (not available anymore):  \r\nhttp://siva.uni-passau.de/sites/default/files/proj_html5/ICUnet/index.html  \r\nhttp://siva.uni-passau.de/sites/default/files/proj_html5/HAAS/index.html",
+    "id": 27,
+    "name": "SIVA Producer ",
+    "patterns": [
+      "Table of Content",
+      "Simultaneous Media",
+      "Hyperlinks",
+      "Detail on Demand",
+      "Basic Controls"
+    ],
+    "provider": "University of Passau",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype",
+      "Annotation Tool",
+      "Desktop Environment"
+    ],
+    "updated_at": "2015-03-03T20:50:49.343Z",
+    "url": "http://www.mirkul.uni-passau.de/vorarbeiten/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ed0",
+    "availability": "Online demo available.",
+    "category": "Autoring Environment",
+    "description": "Viddix is a product of a small company based in the Netherlands. They have two main products: First is an overlay player that allows the spatio-temporal annotation of arbitrary media items. The second is the dual screen player that enables users to define time-dependend media, such as websites, pictures, other video or surveys.",
+    "id": 31,
+    "name": "Viddix",
+    "patterns": [
+      "Overlays",
+      "Assessment",
+      "Simultaneous Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "VIDDIX B.V",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:42:14.240Z",
+    "url": "http://www.viddix.com/watch/4704edf4d1479/demo-viddix"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9ed1",
+    "availability": "Online available.",
+    "category": "Video Authoring Environment",
+    "description": "VideoAnt is an academic video annotation tool that enables users to work with referenced video sources (e.g. mp4 or videos from YouTube). These wrapped up videos can be annotated with a subject heading and a text comment to a certain position in time. The screen is divided by the timeline on top and the video next to the comment list below. The video can be controlled by the standard YouTube control elements. To add a comment a button below the video frame can be pressed. Each comment is visualized on the timeline above the video and comment list. On hovering the the marks on the timeline the title of the comment appears. Clicking on them moves the playback to the temporal position and highlights the the comment in the list. Other user can comment on these annotations (nested comments). By selecting a comment box the playback proceeds at the corresponding position. It is possible to edit or delete a previously annotated comment. \r\nExport functions for RSS, JSON, XML, and text are provided aside common sharing and embedding facilities. All date is stored on the server. Access is provided through third party accounts at google, facebook, twitter or shiboleth.",
+    "id": 32,
+    "name": "VideoAnt",
+    "patterns": [
+      "Add Video",
+      "Comments",
+      "Annotations",
+      "Annotated Timeline",
+      "Basic Controls",
+      "Direct Authoring"
+    ],
+    "provider": "Academic Technology Services, College of Education & Human Development, University of Minnesota",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-08T15:08:37.622Z",
+    "url": "https://ant2.cehd.umn.edu/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9ed2",
+    "availability": "Only accessible on requested.",
+    "category": "misc",
+    "description": "VideoClix is a company that offers a service to recognize objects within videos that can be linked to interactive controls, e.g. overlay images and so on. The company is specialized on online marketing.   The timeline handle has an unique feature that allows users to jump discrete steps forward and backward. They provide also interesting metrics about the click rates, ect.",
+    "id": 33,
+    "name": "VideoClix",
+    "patterns": [
+      "Object Tracking",
+      "Simultaneous Media",
+      "Overlays",
+      "Hyperlinks",
+      "Table of Content",
+      "User Traces",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "VideoClix",
+    "tags": [
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T20:32:16.456Z",
+    "url": "http://www.videoclix.tv/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9ed3",
+    "availability": "Online demo and research articles available.",
+    "category": "Video Authoring Environment",
+    "description": "Add Information to Video (ADIVI) is an interactive video authoring and player environment. It supports interlinking features such as detail on demand, overlays, and hyperlinks.",
+    "id": 35,
+    "name": "ADIVI",
+    "patterns": [
+      "Add Video",
+      "Related Videos",
+      "Detail on Demand",
+      "Simultaneous Media",
+      "Hyperlinks",
+      "Overlays",
+      "Visual Highlighting",
+      "Branching Videos",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "InnoTeamS GmbH",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T20:32:23.849Z",
+    "url": "http://www.adivi.net/en/"
+  },
+  {
+    "__v": 13,
+    "_id": "54bd63692ab0a86f323c9ed4",
+    "availability": "Online available after registration for trial use.",
+    "category": "Video Authoring Environment, Online Video Application, ",
+    "description": "Kaltura offers a whole product family of video-related tools and platforms. The company started as a open source initiative in 2006 but changed its strategies on behalf of its commercial activities.  \r\n\r\nKaltura Capture offers the presentation of video and slides side by side. The text on the slides is searchable. Longer videos can be split into smaller units and accessed directly. Captured videos can be edited in a timeline interface taht supports multiple tracks for video, audio and other content like images. Videos can be trimed, supplemented with audio tracks. Transitions are also possible. The resulting products can be become the starting point of new version in terms of a remix.\r\n\r\nKaltura Management Console: \r\n\r\n- multilingual subtitles can be annotated or imported from SRT, XML or text transcripts. \r\n- analytics: play count, drop-off rate, user activities (editing, sharing, downloading), geographical distribution of users, user specific watching patterns (watched it all, watched parts or nothing at all). The latter data can be correlated with other data sources mentioned before.  \r\n\r\nKaltura Media Space purposes a corporate or educational video portal. It provides typical features like search, related videos, multiple RSS playlists (most rated, most viewed, by tag), captions from SRT or DFXP, and customizable video galleries,  \r\n\r\nSee: http://corp.kaltura.com/Products/Video-Applications/Kaltura-Mediaspace-Video-Portal  \r\n\r\nKaltura provides extension for several third party portals, e.g. drupal, wordpress, moodle, Sakai, Canvas, Desire2learn, Blackboard, and MS SharePoint. ",
+    "id": 36,
+    "name": "Kaltura",
+    "patterns": [
+      "Add Video",
+      "Table of Content",
+      "Search",
+      "Simultaneous Media",
+      "Closed Captions",
+      "Appropriate Delivery",
+      "Playlist",
+      "Loading Indicator",
+      "Remix",
+      "Multi-Timeline Editing",
+      "Annotated Timeline",
+      "User Traces",
+      "Related Videos",
+      "Basic Controls"
+    ],
+    "provider": "Kaltura Inc.",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Video Portal",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-05T23:45:29.529Z",
+    "url": "http://corp.kaltura.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ed5",
+    "accessible": true,
+    "availability": "Demos are not executable on modern computers anymore. Publications and project website available.",
+    "category": "Video Authoring Environment",
+    "description": "MediaLoom is the result of a Masterthesis in 1997 that is based on the \"hyperscripting tool\" of Nitin Sawhney (see HyperCafe). Videos can be placed in nodes forming a network through its resource-based links (graph-based authoring interface). During playback the video can be layouted in 3x3 matrix. Links are not limited to an area within the video frame but the whole frame works as a link anchor. So there is only one link at a time whereas sequences are possible.  MediaLoom has been used to produce several interactive films: - Prisoner of Life: A Short Cuts Hypervideos. See: http://www.ascentstage.com/medialoom/prisoner.html - Orbital Hypervideo, an interview with the british techno producers Orbital. See: http://www.ascentstage.com/medialoom/paper.html",
+    "id": 37,
+    "name": "MediaLoom",
+    "patterns": [
+      "Add Video",
+      "Playback Speed",
+      "Simultaneous Media",
+      "Hyperlinks",
+      "Basic Controls"
+    ],
+    "provider": "John Tolva (Georgia Institute of Technology)",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-01-19T22:26:06.715Z",
+    "url": "http://www.ascentstage.com/medialoom/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ed6",
+    "availability": "Described in a research article.",
+    "category": "Video Authoring Environment",
+    "description": "Video-Wiki is suite of web applications for collaborative markup and remixing of video content. A transcript of the video narration is used as objects that can be rearranged in order to remix the original video footage. Each paragraph of the transcript is related to a speaker/character of the \"The Wizzard of Oz\".  Search results for certain characters or terms form a custom video.   Source: Blankinship, E., Bakhtiar, M. Video-Wikis and Media Fluency. In IDC’07 (Aalborg, 2007), 175–176.",
+    "id": 38,
+    "name": "Video-Wiki",
+    "patterns": [
+      "Search",
+      "Transcript",
+      "Video Manipulation",
+      "Remix",
+      "Basic Controls"
+    ],
+    "provider": "Blankenship, Eric & Bakhtiar, Mikhak",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-02-16T15:02:48.660Z",
+    "url": "http://dl.acm.org/citation.cfm?id=1297320"
+  },
+  {
+    "__v": 12,
+    "_id": "54bd63692ab0a86f323c9ed7",
+    "availability": "Online available.",
+    "category": "Video Authoring Environment",
+    "description": "Hyperfilm subsumes an authoring and player environment for hypervideos. Hyperlinks can be attached with spatial hotspots at a given time. The hotspot moves its position to avoid further interruptions of the video content. The hotspot animation stops in a list right next to the video frame. Each hotspot is related to other media resources (web link, film, image, text, slideshow, file, test, message) that become accessible after selecting the hotspot inside the video frame. All these resources are displayed/played in a modal window. As a result it becomes an implementation of details on demand. The advanced version of Hyperfilm allows users to comment these links. Player and authoring component are based on Adobe Flash.  Example films: - Crescere in città con Torino 2000 - Le prime civita. See: http://www.hyperfilm.eu/capitello/fiume/civilta.html",
+    "id": 39,
+    "name": "Hyperfilm",
+    "patterns": [
+      "Add Video",
+      "Hyperlinks",
+      "Simultaneous Media",
+      "Overlays",
+      "Detail on Demand",
+      "Assessment",
+      "Annotated Timeline",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "Hyperfilm Srl",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-03-03T20:32:31.421Z",
+    "url": "http://hyperfilm.newcloudsite.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ed8",
+    "availability": "Several publications and screencast demo videos available.",
+    "category": "Authoring Environment, Video Learning Environment",
+    "description": "Its a special purpose authoring environment for hierarchical linked video clips. The people behind HyperHitchcock coined the term 'detail on demand' for additional vidographic information on user request. There is only one link provided at a time. So this concept can not be considered as a spatio temporal link. For the return behaviour several modes can be selected (e.g. return to the beginning of the source video, go back to point, where the link was pressed, ect.). HyperHitchcock is a dedicated authoring environment for these kind of hypervideos. Another feature is the automatic summarize of the linked videos.    \r\n\r\nSee screen cast at Vimeo: http://vimeo.com/82328222",
+    "id": 41,
+    "name": "Hyper-Hitchcock",
+    "patterns": [
+      "Add Video",
+      "Sequential Media",
+      "Annotated Timeline",
+      "Detail on Demand",
+      "Visual Summary",
+      "Basic Controls"
+    ],
+    "provider": "Texas A&M University & FX Palo Alto Laboratory",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2016-02-03T08:16:12.906Z",
+    "url": ""
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ed9",
+    "accessible": false,
+    "availability": "Only documented in research paper.",
+    "category": "Intercative Film",
+    "description": "HyperCafe is an early implementation of an interactive video respectively hypervideo. It represents an virtual cafe with tables where conversations taking place. The viewer can watch the cafe as a whole an select one of the tables to follow the ongoing conversation (video) there. These conversations run in parallel and in a loop. During a conversation small videos from the adjoining tables are displayed as a link to another table. The authors tried to keep the filmic experience by minimizing the use of interface elements. Therefor link opportunities were signalled by changing mous pointers or audio cues.  See paper: SAWHNEY, Nitin; BALCOM, David; SMITH , Ian: HyperCafe: narrative and aesthetic properties of hypervideo. In: HYPERTEXT ’96: Proceedings of the the seventh ACM conference on Hypertext. New York, NY, USA: ACM, 1996, S. 1–10 ",
+    "id": 42,
+    "name": "HyperCafe",
+    "patterns": [
+      "Hyperlinks",
+      "Loop",
+      "Basic Controls"
+    ],
+    "provider": "MIT MediaLab",
+    "tags": [
+      "Interactive Film",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-01-25T15:25:04.627Z",
+    "url": ""
+  },
+  {
+    "__v": 11,
+    "_id": "54bd63692ab0a86f323c9eda",
+    "availability": "Can be installed on a local PC, e.g. on Debian from apt-repository",
+    "category": "Video Framework, Desktop Application",
+    "description": "Annotate Digital Video, Exchange on the NEt (Advene) is a framework that provides models and tools to design and reuse annotations schemas. User communities can exchange their discourse material (comments, annotations, relations) independent of the video source. Advene allow the annotation of different content types: plain text, HTML, simple structured content, numeric values, and SVG graphics. Basic computer vision algorithms are implemented, e.g. shot detection, object tracking, activity traces. However Advene is a complex application that requires the user to read the documentation carefully.  \r\n\r\nSource Package: https://packages.debian.org/testing/advene ",
+    "id": 43,
+    "name": "Advene",
+    "patterns": [
+      "Add Video",
+      "Annotations",
+      "User Notes",
+      "Object Tracking",
+      "Annotated Timeline",
+      "Transcript",
+      "Closed Captions",
+      "Multi-Timeline Editing",
+      "Multi-Timeline Editing",
+      "Basic Controls"
+    ],
+    "provider": "LIRIS, University of Lyon",
+    "tags": [
+      "Video Authoring Environment",
+      "Desktop Environment",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-03T08:18:01.395Z",
+    "url": "http://liris.cnrs.fr/advene/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9edb",
+    "availability": "Only documented in research papers.",
+    "category": "Interactive Film",
+    "description": "Based on the framework HyperActive these MIT MediaLab production represents an hierarchical structured hypervideo. The story is about a dinner party at Julias house. All food, drinks and accessory items act as hyperlinks leading to overlayed text explanations or videos (e.g. on how to prepare that meal). From there the way back (like the back button in a web browser) to the source video or to additional items (\"nested links\") is opened by thumbnail images representing the target video scene.  \r\n\r\nSee paper:  \r\nDakss, Jonathan: HyperActive: An Automated Tool for Creating Hyper- linked Video, Columbia University, Diploma thesis, 1997.  \r\nBove et al. (2000): Hyperlinked television research at the MIT Media Laboratory.",
+    "id": 44,
+    "name": "Interactive Dinner At Julia's",
+    "patterns": [
+      "Journaled Navigation",
+      "Object Tracking",
+      "Detail on Demand",
+      "Basic Controls"
+    ],
+    "provider": "MIT Media Laboratory",
+    "tags": [
+      "Interactive Film",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-03-03T21:15:12.182Z",
+    "url": ""
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9edc",
+    "availability": "The service has been closed so that only video at YouTube demonstrats the features of BubblePLY.",
+    "category": "Video Authoring Environment",
+    "description": "BubblePLY was a video platform with integrated authoring environment to add content layers to videos. The representation of these layers could be one of the following items or a combination of it: bubbles, images, animations, links, text, videos, clip-arts, subtitles. The number of items (they called them bubbles) per video was not limited. Beside the spatial position, also the temporal position and dimension could be defined.   See demo video: https://www.youtube.com/watch?v=aXBYJ0ZdEqM",
+    "id": 45,
+    "name": "BubblePLY",
+    "patterns": [
+      "Add Video",
+      "Overlays",
+      "Hyperlinks",
+      "Annotations",
+      "Direct Authoring",
+      "Closed Captions",
+      "Detail on Demand",
+      "Direct Authoring",
+      "Basic Controls"
+    ],
+    "provider": "PLYmedia Inc.",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-03T08:27:00.619Z",
+    "url": "https://www.youtube.com/watch?v=aXBYJ0ZdEqM"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9edd",
+    "availability": "The only sources of information is a product video on YouTube dating from Aug 28, 2007.",
+    "category": "Portal",
+    "description": "Asterpix was a start-up company combining object recognition or tracking with hypervideo technology. Detected objects in a video called beacons and were displayed as little circles, following the object. The user could click on them to obtain further information (notes) or links to other resources including videos. Notes could be expanded. Additionally there is a list of all beacons in a video. The display of beacons could be turned on and off while its occurrence was shown on the timeline.  See video demo: https://www.youtube.com/watch?v=k7NXioTRR88",
+    "id": 46,
+    "name": "Asterpix",
+    "patterns": [
+      "Add Video",
+      "Hyperlinks",
+      "Overlays",
+      "Object Tracking",
+      "Annotated Timeline",
+      "Detail on Demand",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "Asterpix (has disappeared)",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-03-03T20:32:39.014Z",
+    "url": ""
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ede",
+    "availability": "See project website as well as the mentioned articles there.",
+    "category": "Interactive Film",
+    "description": "HyperSoap is a short soap opera film where users could click on objects like furniture, clothing, and other items to obtain detailed information for purchase.  ",
+    "id": 47,
+    "name": "HyperSoap",
+    "patterns": [
+      "Overlays",
+      "Object Tracking",
+      "Basic Controls"
+    ],
+    "provider": "MIT Media Labratory",
+    "tags": [
+      "Interactive Film",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-02-06T09:42:09.111Z",
+    "url": "http://www.media.mit.edu/hypersoap/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9edf",
+    "availability": "Arte.tv changes its interface design from time to time. ",
+    "category": "Portal",
+    "description": "The french-german TV station provides several interesting features within its on demand service. Although they are still using a flash-based player (in 2015) features like time-accurate bookmarks or playlists (only in 2012) are remarkable.",
+    "id": 48,
+    "name": "Arte.tv",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Temporal Bookmarks",
+      "Full Screen",
+      "Playlist",
+      "Related Videos",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "ARTE G.E.I.E.",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T13:06:21.688Z",
+    "url": "http://videos.arte.tv/de/videos/"
+  },
+  {
+    "__v": 11,
+    "_id": "54bd63692ab0a86f323c9ee0",
+    "availability": "Not fully accessible because of browser/plugin incompatibilities.",
+    "category": "Interactive Film",
+    "description": "Clouds over Cuba is the title of an interactive documentary about the Cuban missile crisis in 1962. The film is controlled by keyboard shortcuts to skip a scene, fast forward/backward, adjust playback speed. The timeline has been used to manage the documentary by its intercative features. Interestingly the lineare timeline representation comes with a handle that moved at different speeds.\r\nBeside that video features the film refers on many historic documents and recordings. Even the meeting calendar of John F. Kennedy can be imported in a calendar application to call the recordings and documents over the 14 days that the crisis lasts in 1962.  \r\n\r\nSee also the case study: http://cloudsovercuba.com/casestudy/",
+    "id": 49,
+    "name": "Clouds over Cuba",
+    "patterns": [
+      "Classified Marks",
+      "Playback Speed",
+      "Overlays",
+      "Sequential Media",
+      "Branching Videos",
+      "Shortcut Commands",
+      "Annotated Timeline",
+      "Hyperlinks",
+      "Basic Controls"
+    ],
+    "provider": "John F Kennedy Presidential Library and Museum",
+    "tags": [
+      "Interactive Film",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-17T22:53:11.930Z",
+    "url": "http://cloudsovercuba.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ee1",
+    "availability": "Online available.",
+    "category": "Interactive Film",
+    "description": "BlackGoldBoom ist a non-linear film of several interlinked media resources. The film documents the oil rush in North Dakota. The content structure is a sequential order of scenes that are broken up by branching pages with pop-up links to single resources (e.g. YouTube videos). Also overlays are offered to present further material, e.g. in a image gallery or links on a scale between two opposite opinions (love - hate). The player provides no timeline but controls to skip forward and backward through the scenes.  \r\n\r\nSee also: http://roughride.blackgoldboom.com/",
+    "id": 51,
+    "name": "BlackGoldBoom",
+    "patterns": [
+      "Sequential Media",
+      "Hyperlinks",
+      "Overlays",
+      "Branching Videos",
+      "Basic Controls"
+    ],
+    "provider": "Todd Melby (lead producer)",
+    "tags": [
+      "Interactive Film",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-03T20:50:17.903Z",
+    "url": "http://blackgoldboom.com/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9ee2",
+    "availability": "Has been online available until Dezember 2014.",
+    "category": "Portal, Authoring Environment",
+    "description": "MetaVid is community driven open video archive of both houses of the U.S. congress. It startet in 2006 and is still providing up to date speeches of the members of congress. The resources are searchable by speaker name, date, speech content, and other external resources. Each video is split into segments that represent a table of content including a transcript of the spoken words. The embedding function includes start and end times of the clip so that fractions can be referenced.\r\n\r\nSee Source: [http://www.mediawiki.org/wiki/Extension:MetavidWiki](http://www.mediawiki.org/wiki/Extension:MetavidWiki)",
+    "id": 52,
+    "name": "MetaVid",
+    "patterns": [
+      "Temporal Bookmarks",
+      "Table of Content",
+      "Media Fragments",
+      "Transcript",
+      "Basic Controls"
+    ],
+    "provider": "University of California Santa Cruz and the Sunlight Foundation.",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-07T01:07:13.473Z",
+    "url": "http://metavid.ucsc.edu/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ee3",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "OpenImages is a meta archive of historic film documents. It provides an extended search and offers related material to each media. The films are provided under a creative commons licence and they are being made accessible through an API.",
+    "id": 53,
+    "name": "OpenImages",
+    "patterns": [
+      "Related Videos",
+      "Search",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Netherlands Institute for Sound and Vision",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T10:46:58.847Z",
+    "url": "http://www.openimages.eu/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ee4",
+    "availability": "Free trial available.",
+    "category": "Video Authoring Environment",
+    "description": "Authoring tool to enrich or convert slide presentations by adding actors, voices, interactions, tests, and video. The resulting learning materials are scaling on different devices.  \r\n\r\nOther features: \r\n\r\n- Location aware learning: tests and contents can be depended on the geographic positions of the attends.  \r\n- several quiz/test types (single choice, true/false, multiple choice, matching, sequence) that can be imported/exported in GIFT-Format. All these assessment tasks are put on a slide and therefore separate from the video content.",
+    "id": 55,
+    "name": "Adobe Captivate",
+    "patterns": [
+      "Add Video",
+      "Appropriate Delivery",
+      "Assessment",
+      "Basic Controls"
+    ],
+    "provider": "Adobe Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Desktop Environment"
+    ],
+    "updated_at": "2016-01-18T13:25:21.040Z",
+    "url": "http://www.adobe.com/de/products/captivate.html"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ee5",
+    "availability": "Online available upon request. Restricted because of copyright issues.",
+    "category": "Desktop Authoring Software",
+    "description": "Although most parts of the original film have been destroyed, the remaining 30 minutes are accessible in a table of content. For each scene of the script a description, animated still images, occurring places and people are provided in a video manager.\r\nIn a simultaneous manner a map is synchronized to the film where the real places get marked.\r\nSince many historic personalities have been cast members some of them get highlighted during the playback. On demand further information about the can be obtained. A list of these persons is shown in the menu. Thus, it can be considered as a tag list because some of the people listed there appear several times in the video. \r\nSimultaneous to the playback photos of the todays scenery are presented next to the video. \r\nAll annotations are mapped on the timeline. Furthermore, a preview scrubber appears when hovering the timeline at a certain position. \r\nThe speech has been transcribed in order to present it as subtitles and text transcript.\r\n\r\nFor editing a adopted version of Mozilla Popcorn Maker provides multiple editing tracks to annotated the mentioned contents.\r\n\r\nThe content delivery in the player adopts to the target device and display. Except for the presentation of additional content the film fills the available display space (full screen). The video can be zoomed in and out in order to examine visual details such as persons. The playback can be skiped back for some seconds to review volatile information. For the same purpose the playback rate is adjustable. Most of the mentioned controls correspond to keyboard commands, too.",
+    "id": 63,
+    "name": "Theresienstadt Explained",
+    "patterns": [
+      "Synchronized Map",
+      "Visual Highlighting",
+      "Overlays",
+      "Simultaneous Media",
+      "Full Screen",
+      "Classified Marks",
+      "Video Manager",
+      "Multi-Timeline Editing",
+      "Annotations",
+      "Skip Back",
+      "Closed Captions",
+      "Transcript",
+      "Annotated Timeline",
+      "Visual Summary",
+      "Zoom",
+      "Playback Speed",
+      "Temporal Tags",
+      "Table of Content",
+      "Shortcut Commands",
+      "Loading Indicator",
+      "Appropriate Delivery",
+      "Multi-Timeline Editing",
+      "Basic Controls"
+    ],
+    "provider": "nise81.com",
+    "tags": [
+      "Video Learning Environment"
+    ],
+    "updated_at": "2016-02-03T08:18:31.861Z",
+    "url": "http://theresienstadt-film.net"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ee6",
+    "accessible": true,
+    "availability": "Online description and demo video available.",
+    "category": "Video Player",
+    "description": "The video player is part of a complete suite of capturing, authoring and distribution applications. The player features: a table of content including thumbnails, synchronized lecturer and presentations slides, search functionality, personal notes (as bookmarks), rating, and many more.",
+    "id": 67,
+    "name": "Panopto",
+    "patterns": [
+      "Add Video",
+      "Appropriate Delivery",
+      "Temporal Bookmarks",
+      "User Notes",
+      "Table of Content",
+      "Simultaneous Media",
+      "Search",
+      "User Ratings",
+      "User Traces",
+      "User Notes",
+      "Basic Controls"
+    ],
+    "provider": "Panopto",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T23:07:39.098Z",
+    "url": "http://www.panopto.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ee7",
+    "availability": "Online demo available.",
+    "category": "Video Player",
+    "description": "As addition to its books Pearson provides some instructional videos. The player as well as the whole environment provides only basic functionality, but a neat subtitle feature.  See demo: http://mediaplayer.pearsoncmg.com/_ph_cc_hsmlLG_set.title.VideoSolutions__/ph/streaming/esm/ecs_hibbeler_engmech_13/p13_45.m4v",
+    "id": 69,
+    "name": "VideoSolutions",
+    "patterns": [
+      "Closed Captions",
+      "Basic Controls"
+    ],
+    "provider": "Pearson Education, Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:53:36.150Z",
+    "url": "http://www.pearsonhighered.com/videosolutions/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9ee8",
+    "availability": "Research papers and project website document DIVER and WebDIVER",
+    "category": "Video Learning Environment",
+    "description": "DIVER stands for Digital Interactive Video Exploration and Reflection. It is a software environment for panoramic video records that encompass 360-degree imagery from a dynamic visual environment. Users can point to parts of the video they want to follow. DIVER allows the annotation of text to segments of video. These annotations can be commented by others. In that way DIVER supports a collaborative video analysis as well as a collaboration about the video.  \r\n\r\nSee paper: \r\nPea, R., & Lindgren, R. (2008). Video Collaboratories for Research and Education: An Analysis of Collaboration Design Patterns. IEEE Transactions on Learning Technologies, 1(4), 1–13.",
+    "id": 84,
+    "name": "DIVER/WebDIVER",
+    "patterns": [
+      "Annotations",
+      "Comments",
+      "Temporal Tags",
+      "Basic Controls",
+      "Direct Authoring"
+    ],
+    "provider": "Stanford Center for Innovations in Learning (SCIL)",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-08T15:08:50.886Z",
+    "url": "http://diver.stanford.edu/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ee9",
+    "availability": "Online available in Internet Explorer.",
+    "category": "Video Player",
+    "description": "In 2010 FOKUS developed an non-linear videoplayer that encompasses different types of overlayed annotations and detail on demand contents. The application is based on Microsoft Silverlight.  \r\n\r\nSee demo: http://193.174.152.29/nlv/?id=27",
+    "id": 85,
+    "name": "Non-linear Video",
+    "patterns": [
+      "Overlays",
+      "Detail on Demand",
+      "Hyperlinks",
+      "Basic Controls"
+    ],
+    "provider": "Fraunhofer-Instituts für Offene Kommunikationssysteme FOKUS",
+    "tags": [
+      "Online Environment",
+      "Research Prototype",
+      "Annotation Tool",
+      "Video Authoring Environment"
+    ],
+    "updated_at": "2015-03-03T20:51:33.481Z",
+    "url": "http://www.fraunhofer.de/de/presse/filme/non-linear-video.html"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9eea",
+    "availability": "The company disapeared in 2014 but screenshots document its functionality.  ",
+    "category": "Video Player",
+    "description": "Control Video Speed was a desktop application that allowed the user to control the speed of loaded videos. ",
+    "id": 91,
+    "name": "Control Video Speed",
+    "patterns": [
+      "Playback Speed",
+      "Basic Controls"
+    ],
+    "provider": "",
+    "tags": [
+      "Desktop Environment",
+      "Player"
+    ],
+    "updated_at": "2015-02-16T08:20:34.478Z",
+    "url": "http://www.controlvideospeed.com/"
+  },
+  {
+    "__v": 16,
+    "_id": "54bd63692ab0a86f323c9eec",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "56.com is one of the largest chines video portals that provides some interesting features to organize personal viewing: playlists, related videos, media fragment addressing, video effects (size, rotation, contrast), export of fragments as animated GIF, and history of seen videos.",
+    "id": 95,
+    "name": "56.com",
+    "patterns": [
+      "Add Video",
+      "Loading Indicator",
+      "Playlist",
+      "Related Videos",
+      "Temporal Bookmarks",
+      "Viewing History",
+      "Media Fragments",
+      "Video Manipulation",
+      "Basic Controls"
+    ],
+    "provider": "56.com",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T09:33:22.980Z",
+    "url": "http://www.56.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9eed",
+    "availability": "Online demo available.",
+    "category": "Framework",
+    "description": "PHP Melody is a video CMS including social network capabilities. It has several features: - automatic embedding of video links from more then 40 video portals - live RTMP streaming - users can follow each other or watch their activity stream and activity notification. Videos are generally organized in categories and sub categories. Videos can also accessed via a basic search function (only metadata, not inside the video) or by chance. In case more then one video belongs to a category or search result they will be listed in a video manager.  On a player page related, popular, and recently added videos are listed next to currently playing video. A simple rating via thumb up or down is included. Below the video users can make comments to the video as a whole.",
+    "id": 96,
+    "name": "PHP Melody",
+    "patterns": [
+      "Add Video",
+      "Follow Revisions",
+      "Related Videos",
+      "Loading Indicator",
+      "User Ratings",
+      "Video Manager",
+      "Search",
+      "Basic Controls"
+    ],
+    "provider": "PHPSUGAR",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T11:03:42.040Z",
+    "url": "http://www.phpsugar.com/phpmelody.html"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9eee",
+    "availability": "Online available.",
+    "category": "Interactive Film",
+    "description": "Amazonie is an artistic interactive film with non-linear and linear navigation facilities across several episodes. The videos include some overlays that are linked to further information.  - subtitles for lyrics of background music - the sections of a video are mapped on the timeline",
+    "id": 97,
+    "name": "Amazonie",
+    "patterns": [
+      "Related Videos",
+      "Annotated Timeline",
+      "Overlays",
+      "Hyperlinks",
+      "Sequential Media",
+      "Closed Captions",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "ARTE GEIE",
+    "tags": [
+      "Interactive Film",
+      "Online Environment"
+    ],
+    "updated_at": "2015-09-23T07:14:41.538Z",
+    "url": "http://amazonie.arte.tv/de/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9eef",
+    "availability": "Online demo and source code available. Link above disappeared in Feb 2015.",
+    "category": "Video Environment",
+    "description": "CyTube is a web application for media synchronization. Videos from different distributors can be arranged in playlists or used to build a mashup.  See also github source code and description: https://github.com/calzoneman/sync",
+    "id": 98,
+    "name": "CyTube",
+    "patterns": [
+      "Playlist",
+      "Basic Controls"
+    ],
+    "provider": "Calvin Montgomery",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T11:06:14.163Z",
+    "url": "http://www.synchtube.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ef0",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "Chinese video hosting platform. Users are permitted to upload their videos. Furthermore YouKu has agreements with television stations and film producers to distribute their contents. Beside typical portal functions YouKu provides a viewing history.",
+    "id": 99,
+    "name": "YouKu",
+    "patterns": [
+      "Add Video",
+      "Viewing History",
+      "Video Manager",
+      "Search",
+      "Related Videos",
+      "Basic Controls"
+    ],
+    "provider": " Youku Tudou Inc.",
+    "tags": [
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T22:58:56.669Z",
+    "url": "http://www.youku.com"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ef1",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Video Authoring Environment",
+    "description": "Zaption allows the production of video mashups. Videos can be arranged in sequence. These sequences can be enriched with other contents to set up a so called learning tour. The videos itself can be grabbed from different distributors, e.g. from YouTube or Vimeo. Assessment questions or poll can be included to a point in time, when the playback will halt and a text field to input the answer appears. Both video sequences and assessment is mapped to the timeline. Beside that other media types can be displayed in parallel: images, text, discussions, websites. A 'learning tour' can be linked or embedded into other websites. The product is rounded up with some analytic plots.  ",
+    "id": 100,
+    "name": "zaption",
+    "patterns": [
+      "Add Video",
+      "Annotated Timeline",
+      "Assessment",
+      "Sequential Media",
+      "Annotated Timeline",
+      "User Traces",
+      "Simultaneous Media",
+      "Basic Controls"
+    ],
+    "provider": "Zaption Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T22:37:00.016Z",
+    "url": "http://www.zaption.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ef2",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Video Learning Environment, Authoring Environment",
+    "description": "TEDed provides a simple interface to construct video based learning arrangements that include: a video from YouTube or somewhere else (\"watch\"), a set of test questions (\"think\"), text resources to deepen the understanding (\"dig deeper\"), and a discussion forum \"discuss\".  To build such an lesson users need to register. Existing lessons can also be adopted to personal needs (remixed).",
+    "id": 101,
+    "name": "TEDed",
+    "patterns": [
+      "Add Video",
+      "Sequential Media",
+      "Assessment",
+      "Remix",
+      "Basic Controls"
+    ],
+    "provider": "TED",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-19T22:27:01.568Z",
+    "url": "http://ed.ted.com/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9ef3",
+    "availability": "Online available.",
+    "category": "Portal, Video Learning Environment",
+    "description": "Meaningful discussions around videos is the claim behind vialogues. The Portal provides a slim interface that consists of a video and a list of time-related comments next to it. A user can comment or click on a comment to reach a particular temporal position in the video. Further more other video resources are recommended, sharing and embedding is enabled, and basic analytics functions are provided.",
+    "id": 102,
+    "name": "vialogues",
+    "patterns": [
+      "Add Video",
+      "Comments",
+      "Annotations",
+      "User Traces",
+      "Related Videos",
+      "Direct Authoring",
+      "Basic Controls"
+    ],
+    "provider": "EdLab, Teachers College, Columbia University",
+    "tags": [
+      "Online Environment",
+      "Video Portal"
+    ],
+    "updated_at": "2015-03-10T12:03:22.723Z",
+    "url": "https://vialogues.com/"
+  },
+  {
+    "__v": 13,
+    "_id": "54bd63692ab0a86f323c9ef4",
+    "availability": "Online available.",
+    "category": "Video Portal",
+    "description": "Metta.io is a company based in Budapest that provides many features to enrich the video viewing experience. Videos from other resources are mashed up with synchronized text, links, images. The presentation of the loaded video gets interrupted for quizzes and polls. Quizzes, polls and cuts between sequential aligned videos are visualized on the timeline. Additionally users are invited to comment on the content. Unfortunately users are not able to hold the playback, it runs through the entire video after opening a lesson.",
+    "id": 103,
+    "name": "metta.io",
+    "patterns": [
+      "Classified Marks",
+      "Add Video",
+      "Assessment",
+      "Polls",
+      "Annotated Timeline",
+      "Simultaneous Media",
+      "Overlays",
+      "Hyperlinks",
+      "Comments",
+      "Loading Indicator",
+      "Basic Controls",
+      "Annotations"
+    ],
+    "provider": "Dragontape Ltd./HU",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-13T12:43:10.798Z",
+    "url": "http://www.metta.io/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9ef5",
+    "availability": "Online available.",
+    "category": "Video Authoring Environment, Online Video Application",
+    "description": "Videonotes provides a useful application the keep up with a growing number of video content. It supports time-accurate text annotations (transcripts). Each paragraph on the note sheet next to the video is labelled with a time stamp. By clicking on a time stamp the user can jump to the temporal position in the video.  Arbitrary videos taken from YouTube, Vimeo, and several MOOC providers (e.g. Coursera, Khaan Acedemy) can be loaded. The transcripts can be exported or shared with others. The application is tied with with Google docs. So each user must be registered at Google in order to store the application data persistently.  See source: https://github.com/UniShared/videonotes",
+    "id": 104,
+    "name": "videoNot.es",
+    "patterns": [
+      "User Notes",
+      "Annotations",
+      "Table of Content",
+      "Transcript",
+      "Direct Authoring",
+      "Basic Controls"
+    ],
+    "provider": " VideoNot.es",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-03T08:27:23.472Z",
+    "url": "http://www.videonot.es/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9ef6",
+    "availability": "Online available.",
+    "category": "Portal, Video Authoring Environment",
+    "description": "Educanon provides a video platform with some authoring facilities. Instructors can organize courses and invite students. The videos in each course are presented in a video manager. Videos can be taken from external platforms or uploaded in order to link time-depending assessment questions to them. These questions are visualized on the timeline.\r\n\r\n The following questions types can be assigned to a video: \r\n\r\n* multiple choice: provide the user a question with selected answer options. For each option an explanation can be given why the item is a correct or wrong answer to the question.  \r\n* free response: provide the user a question. The answer needs to be submitted in a text area. In that case no feedback can be entered\r\n* reflective pause: Define a question or make remark without requiring the user to submit an answer.\r\n\r\nThe premium version of eduCanon offers some more time-dependent features such as \r\n\r\n* Check all Apply:  \r\n* Skip Segment: Jump forward in time\r\n* Website: Simple reference on web resources\r\n* Fill-in Blanks: Define a text where certain words are presented as blancs that the user is asked to fill out.\r\n\r\nAll the mentioned types of annotations are covered by an analytics dashboard (distributions of annotation/question types, percentage of answered questions, answered questions per playback minute, and a tag cloud of the submitted answers). Beside that, grades can be determined for the attending users.",
+    "id": 105,
+    "name": "eduCanon",
+    "patterns": [
+      "Add Video",
+      "Assessment",
+      "Annotated Timeline",
+      "User Traces",
+      "Hyperlinks",
+      "Annotations",
+      "Video Manager",
+      "Basic Controls",
+      "Break"
+    ],
+    "provider": "eduCanon",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2016-02-06T23:43:59.946Z",
+    "url": "https://www.educanon.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9ef7",
+    "availability": "Online available.",
+    "category": "Video Portal, Collection, ",
+    "description": "Huzzaz is portal where users can collect videos from different sources in a sequential collection. These collections are classified and tagged in order to become searchable. The perception of the collections goes one by one, after one video ends the next starts. The collection can be considered as playlist that an curator shares with the public.",
+    "id": 106,
+    "name": "huzzaz",
+    "patterns": [
+      "Add Video",
+      "Sequential Media",
+      "Playlist",
+      "Basic Controls"
+    ],
+    "provider": "Huzzaz",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-16T07:53:01.774Z",
+    "url": "https://huzzaz.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ef8",
+    "availability": "Online available if subscribed for a free trial or through some universities that opened their video archive for the public.",
+    "category": "Authoring Environment, Video Player",
+    "description": "MediaSite combines video capturing, content management, delivery, and post analysis in one product. \r\nOn the landing page a short summary is provided by a thumbnail, abstract, links, and other meta data such as title, author, tags, and time of capturing. \r\n\r\nMediaSite offers a HTML5 video player. The simultaneous presentation of lecturer and slide video can be switched from the one side to the other. There are also alternative view combination (overlapped, beside or single source). For some lectures a visual summary can be activated, but it is hardly possible to view the slides or speaker video at a glance. Because these thumbnail previews move alongside the timeline they disturb the visual presentation. \r\nBeside that the slide content can be zoomed in. Users can search text in the slides. Playback speed can be adjusted step by step (0.5, 1.0, 1.4, 1.6, and 2.0 times). Another neat feature is a short hand button to go two seconds back in time. In order to re-hear the last words it is useful function, especially because it is hard to navigate such tiny steps backward on the timeline. Users can also send comments to the lecturer regarding a specific point in time. These comments are not visible to other users. MediaSite offers also a sharing function where users can send an email including some comments and a link to an exact playback time in the video (e.g. http://example.com/Play/c145b55312d7483e8c47c831c0ab26be1d?playFrom=366000). \r\n",
+    "id": 107,
+    "name": "MediaSite",
+    "patterns": [
+      "User Traces",
+      "Simultaneous Media",
+      "Comments",
+      "Playback Speed",
+      "Video Manager",
+      "Search",
+      "Temporal Bookmarks",
+      "Skip Back",
+      "Zoom",
+      "Related Videos",
+      "Basic Controls"
+    ],
+    "provider": "Sonic Foundry, Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-18T12:27:01.932Z",
+    "url": "http://www.sonicfoundry.com/mediasite"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9ef9",
+    "availability": "Research paper available.",
+    "category": "",
+    "description": "MOVieGoer is a prototype of a cooperative learning environment. It purposed a joint knowledge generation around hypervideos. Spatio-temporal annotations are anchored as so called sensitive regions. These regions can be related with moving objects in the video. The movement of the regions follows an interpolation of exact positions at certain keyframes within a range of time.   Design and concept of the application was elaborated in a masters thesis of Anja Wipfler. \r\n\r\nSee:  http://www.anjawipfler.de/hypervideo.html",
+    "id": 109,
+    "name": "MOVieGoer",
+    "patterns": [
+      "Annotations",
+      "Overlays",
+      "Object Tracking",
+      "Basic Controls"
+    ],
+    "provider": "Zentrum für Graphische Datenverarbeitung (ZGDV) in Darmstadt",
+    "tags": [
+      "Video Authoring Environment",
+      "Research Prototype",
+      "Online Environment",
+      "Video Learning Environment"
+    ],
+    "updated_at": "2016-01-18T12:25:53.815Z",
+    "url": "http://www.anjawipfler.de/hypervideo.html"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9efa",
+    "accessible": false,
+    "availability": "Text discription and screenshot is available online.",
+    "category": "",
+    "description": "The Lecture Browser is an early research prototype of the Berkeley Multimedia Research Center. Beside the player and learning environment they implemented also an automatic lecture production system (ALPS). Core functions include: search within and across all lectures, indexed keywords within one lecture, hyperlinks on external resources, synchronized presentation of slides next to the video frame of the lecturer. ",
+    "id": 110,
+    "name": "BMRC Lecture Browser",
+    "patterns": [
+      "Search",
+      "Hyperlinks",
+      "Temporal Tags",
+      "Simultaneous Media",
+      "Table of Content",
+      "Annotated Timeline",
+      "Basic Controls"
+    ],
+    "provider": "Berkeley Multimedia Research Center (BMRC)",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-01-26T19:32:21.234Z",
+    "url": "http://www.eecs.berkeley.edu/XRG/Summary/Old.summaries/01abstracts/chema.1.html"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9efb",
+    "availability": "Only product description available.",
+    "category": "",
+    "description": "Rich Video Authoring for Utility Films is a commercial hypervideo authoring software that can be used to construction detail on demand and other hypervideo variants.",
+    "id": 111,
+    "name": "rivafx",
+    "patterns": [
+      "Hyperlinks",
+      "Detail on Demand",
+      "Basic Controls"
+    ],
+    "provider": "memex GmbH",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-10T12:37:51.289Z",
+    "url": "http://rivavx.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9efc",
+    "availability": "online, registration required",
+    "category": "",
+    "description": "With The Mad Video users grab videos from big suppliers in order to annotate overlay tags to them. The provide a set of predefined tag designs: circles, rectangles, and banners that can be placed on top/centre/buttom or right/middle/left, or positioned without constraints. Unfortunately most of the templates are labelled as 'coming soon'. The content of the tags is limited to persons, places/maps, products, pets, music, video, groups, and a contact form. These contents cannot be freely chosen but were provided by a web search mechanism. Further more the temporal positioning and dimensioning is constrained by scenes that were automatically detected by the tool. Publishing includes basic embedding and sharing facilities.  It can be concluded that The Mad Video provides a simplified authoring environment for spatio-temporal hypervideos.  The tool itself is obviously based on or at least inspired by the Mozilla PopcornMaker. ",
+    "id": 112,
+    "name": "The Mad Video",
+    "patterns": [
+      "Add Video",
+      "Temporal Tags",
+      "Hyperlinks",
+      "Overlays",
+      "Annotations",
+      "Basic Controls"
+    ],
+    "provider": "The Mad Video Inc.",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2016-01-18T12:29:35.203Z",
+    "url": "http://www.themadvideo.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9efd",
+    "availability": "Online demos available.",
+    "category": "",
+    "description": "wireWAX is UK-based advertising agency specialized on interactive advertisement clips. They provide an advanced user interface with many non-standard control elements. Mainly there are overlay elements that are statically positioned or attached to moving objects in the film. These overlays provide access to detail on demand contents like image galleries or other videos. All these events are represented on the timeline. Furthermore all these disrupting things can be disabled.   ",
+    "id": 113,
+    "name": "wireWAX",
+    "patterns": [
+      "Annotated Timeline",
+      "Object Tracking",
+      "Overlays",
+      "Detail on Demand",
+      "Classified Marks",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "wireWAX Inc.",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Misc"
+    ],
+    "updated_at": "2015-02-17T12:00:50.890Z",
+    "url": "https://www.wirewax.com/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9efe",
+    "availability": "undefined",
+    "category": "",
+    "description": "Ivotek is another service that allows object tracking for advertising purposes. Typical objects are: cloths, furniture, and parts of a car. Tracked objects can be highlighted or explored by the user searching for interactive elements (game based scenarios might be possible). When the mouse hovers the tracked object it gets highlighted by a frame. Additionally a text label appears next to the object frame. When clicking an object that videos halts and a pop up window with further information regarding the object appears. So the details come up on demand. After closing the pop up the playback continues.\r\n\r\nRemarkable is the absence of any playback controls. \r\n\r\nIvotek also fosters a presentation mode where a virtual mouse pointer navigated within the video frame to hover the tracked objects. This feature can be considered as a new type of visual highlighting. \r\n\r\nAll video content will be stored in the cloud.",
+    "id": 114,
+    "name": "ivotek",
+    "patterns": [
+      "Object Tracking",
+      "Detail on Demand",
+      "Visual Highlighting",
+      "Overlays",
+      "Basic Controls"
+    ],
+    "provider": "ivotek",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-02-17T12:11:05.550Z",
+    "url": "http://www.ivotek.com/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9eff",
+    "availability": "Online available while some features require an user account.",
+    "category": "",
+    "description": "tele-TASK (tele-Teaching Anywhere Solution Kit) is the name of a bunch of technologies for lecture and presentation recording, its post-processing and delivery.   The tele-TASK Web Portal features advanced search, resource-based tags, related videos, recently viewed videos, to add annotations, user ratings, and personal playlists. The video player synchronizes two video streams. One of the lecturer and the screen-casted presentation or demo. The viewer can switch the aspect ration of the streams (4:3 or 16:9). A table of content and a slide preview is included. The slide transitions are also visible on the timeline. Lectures are also delivered as podcast (MP4)",
+    "id": 115,
+    "name": "tele-TASK",
+    "patterns": [
+      "Annotated Timeline",
+      "Simultaneous Media",
+      "User Ratings",
+      "Table of Content",
+      "Annotations",
+      "Playlist",
+      "Related Videos",
+      "Search",
+      "Video Manager",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Hasso Plattner Institute",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:12:01.281Z",
+    "url": "http://www.tele-task.de/"
+  },
+  {
+    "__v": 5,
+    "_id": "54bd63692ab0a86f323c9f00",
+    "availability": "On request online available due copyright restrictions. Limited access from outside Germany.",
+    "category": "",
+    "description": "'Zeugen der Shoa' is a result of research project at FU Berlin that aims to make hundreds visual testimonies of shoa survivals available on the net. These videos are made accessible through an category system (camps, place, birth places, victim type, ect.) and by full text search. The letter is been made possible by transcripting all spoken words of the interviews with the shoa victims. The transcripts are provided beside the video and can be used to navigate inside the video. The part-wise long interviews are split up into sequential parts.",
+    "id": 116,
+    "name": "Zeugen der Shoa",
+    "patterns": [
+      "Sequential Media",
+      "Transcript",
+      "Search",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "CDIS, FU Berlin",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment",
+      "Search Engine"
+    ],
+    "updated_at": "2015-02-17T12:14:10.661Z",
+    "url": "http://www.zeugendershoah.de/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9f01",
+    "accessible": true,
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "YoVisto is German lecture portal. Videos are topically synchronized with slides. All contents are semantically attributed in order to enhance searchability. The video player comes with a remarkable timeline feature. User activities and slide positions are visualized parallel to the timeline. Slides can be previewed on mouse over.\r\n\r\nAn earlier version of YoVisto that was build upon SMIL facilitated time-based tags and discussions. See: Matthias, G., Sack, H., & Waitelonis, J. (2007). Quality-Improvement of University Seminars through Enhanced Podcasts on yovisto.com. http://users.minet.uni-jena.de/~sack/Material/elba2008.pdf",
+    "id": 117,
+    "name": "YoVisto",
+    "patterns": [
+      "Annotated Timeline",
+      "Visual Summary",
+      "Simultaneous Media",
+      "User Traces",
+      "Temporal Tags",
+      "Comments",
+      "Basic Controls"
+    ],
+    "provider": "yovisto GmbH",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-01-26T21:24:22.207Z",
+    "url": "http://www.yovisto.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f02",
+    "availability": "Only described in research papers.",
+    "category": "",
+    "description": "HyperVideo is a collaborative video learning environment that facilitates the annotation of spatio-temporal hyperlinks to segments of a video. It aims to construct a non-linear video information space through collaborative activities of annotating and reflecting.  The link anchors in the video appear as sensitive region. A sensitive region can be related to several links. Link target can either be a piece of software uploaded to the application or a resource behind a given URL in the web. All links can be discussed by a group of users. Users in general are allowed to annotate and discuss links.  \r\n\r\nSee literature: \r\n*  Zahn, C., Hesse, F., Finke, M., Media, K., Pea, R., Mills, M., & Rosen, J. (2005). Advanced Digital Video Technologies to Support Collaborative Learning in School Education and Beyond. In Proceedings of the 2005 conference on Computer support for collaborative learning: learning 2005: the next 10 years! (pp. 737–742). International Society of the Learning Sciences.",
+    "id": 118,
+    "name": "HyperVideo",
+    "patterns": [
+      "Comments",
+      "Visual Highlighting",
+      "Annotations",
+      "Hyperlinks",
+      "Basic Controls"
+    ],
+    "provider": "Computer Graphics Center/Darmstadt and Knowledge Media Research Center/Tübingen",
+    "tags": [
+      "Video Learning Environment",
+      "Research Prototype",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-01-18T13:17:44.593Z",
+    "url": ""
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9f03",
+    "availability": "Online available.",
+    "category": "",
+    "description": "ScienceMovies promotes researcher that were funded by the VolkswagenStifung. The reaserchers have been producing a series of ten short videos. The videos are lined up in a sequence that can be manually traversed.  Above the video site visitors can rate the videos (1-5 stars). Next to it is numbered link row pointing to the individual videos. The video player itself does not provide any special functions beside the basic control elements. After loading a video the playback needs to started manually. A thrubber as well as a progress bar on the timeline indicates the status of loading.\r\nBelow the player the sequences are listed with a title, a still frame, and an abstract. Further down users can post questions to the researcher.",
+    "id": 119,
+    "name": "ScienceMovies",
+    "patterns": [
+      "Sequential Media",
+      "User Ratings",
+      "Loading Indicator",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "VolkswagenStiftung",
+    "tags": [
+      "Online Environment",
+      "Video Portal"
+    ],
+    "updated_at": "2016-02-08T15:13:48.178Z",
+    "url": "http://www.sciencemovies.de/en"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9f04",
+    "availability": "Online demo available.",
+    "category": "",
+    "description": "TransLectures is an EU-funded project to develop tools for the automatic transcription and translation of online educational videos. The transcripts are provided in the player next to the video. It is split up into meaningful pieces, e.g. sentences, and can be used like a table of contents. Furthermore the language can be switched so that video in another language is presented that provides the same learning contents.",
+    "id": 120,
+    "name": "transLectures",
+    "patterns": [
+      "Add Video",
+      "Table of Content",
+      "Transcript",
+      "Simultaneous Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "transLectures.NET",
+    "tags": [
+      "Video Learning Environment",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-03-10T12:02:11.193Z",
+    "url": "https://www.translectures.eu/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f05",
+    "availability": "Online demo available.",
+    "category": "",
+    "description": "Open Video Annotation Project provides a simple user interface to view and annotated text to a temporal position and dimension. The spatial placement is not supported. As the name suggests it is based on open standards but at the time of evaluation the source code has not been available. The most exiting feature is the way that the annotations are visualized along the timeline. As an analytical component the number of annotation per time is plotted in a graph.",
+    "id": 121,
+    "name": "Open Video Annotation Project",
+    "patterns": [
+      "User Traces",
+      "Annotations",
+      "Overlays",
+      "Annotated Timeline",
+      "Loading Indicator",
+      "Basic Controls",
+      "Direct Authoring"
+    ],
+    "provider": "Center for Hellenic Studies, Harvard University & Junta de Andalucia",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-08T15:09:02.429Z",
+    "url": "http://www.openvideoannotation.org/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9f06",
+    "availability": "Online demo available.",
+    "category": "",
+    "description": "Video Lecture Jukebox is a project of mediamixer.eu. It is an sample application that makes use of media fragment identifieres. In the demo only a single video is provided from that several parts can be played. The fractions are stored in a playlist that can be clicked through.",
+    "id": 122,
+    "name": "Video Lecture Jukebox",
+    "patterns": [
+      "Sequential Media",
+      "Playlist",
+      "Media Fragments",
+      "Temporal Bookmarks",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Modul University Vienna",
+    "tags": [
+      "Online Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-02-17T12:19:05.766Z",
+    "url": "http://www.mediamixer.eu/jukebox/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f07",
+    "availability": "Online Available.",
+    "category": "Portal",
+    "description": "ShmoopTube is only a part of a K12 learning environment. The portal offers some basic functions like related videos and some sharing facilities. Interesting is the availability of a navigable transcript. Unfortunately it can neither be used to navigate inside the video, nor to corresponding lines get highlighted.",
+    "id": 123,
+    "name": "ShmoopTube",
+    "patterns": [
+      "Related Videos",
+      "Transcript",
+      "Sequential Media",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Shmoop University",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-19T07:53:42.695Z",
+    "url": "http://www.shmoop.com/video/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f08",
+    "availability": "Online Available",
+    "category": "Portal",
+    "description": "Podcampus is a joint initiative of more then 30 educational institutions to distributed selected online videos. The videos are structured by topics and channels. In general it appears as portal with standard functionalities: search, browse, embed, and share. ",
+    "id": 124,
+    "name": "podcampus",
+    "patterns": [
+      "Search",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "Multimedia Kontor Hamburg GmbH",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment",
+      "Desktop Environment",
+      "Search Engine"
+    ],
+    "updated_at": "2015-02-16T08:49:40.487Z",
+    "url": "http://www.podcampus.de/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f09",
+    "availability": "Online demo and source code available.",
+    "category": "",
+    "description": "The Synote Media Fragment Player allows to extract spatial and temporal media fragments to be highlighted or delivered as separate file. Because this feature is relatively new they compare browser support.  See demo: http://smfplayer.synote.org/smfplayer/demo.html",
+    "id": 126,
+    "name": "Synote Media Fragment Player",
+    "patterns": [
+      "Media Fragments",
+      "Basic Controls"
+    ],
+    "provider": "University of Southampton",
+    "tags": [
+      "Video Framework",
+      "Online Environment",
+      "Research Prototype",
+      "Open Source",
+      "Player"
+    ],
+    "updated_at": "2015-02-16T07:33:54.095Z",
+    "url": "http://smfplayer.synote.org/smfplayer/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f0a",
+    "availability": "Online available.",
+    "category": "",
+    "description": "NPTEL is an Indian university portal for lecture recording. The content is structured by subject and lecture. Within a lecture recording the user can navigate inside by using the two-level table of content. The content table is also searchable. This feature was build by the help of http://videopulp.in/ while the video player in use is flowplayer.",
+    "id": 127,
+    "name": "NPTEL",
+    "patterns": [
+      "Table of Content",
+      "Basic Controls"
+    ],
+    "provider": "NPTEL",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:21:44.319Z",
+    "url": "http://nptel.ac.in/courses.php?disciplineId=106"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9f0b",
+    "availability": "Online demo available.",
+    "category": "",
+    "description": "Includ media annotation from sources like DBPedia to present them on top of the video. For media delivery different qualities, media formats (WEBM, MP4), and delivery protocols (HTTP, RTSP, RTMP) versions can be selected. In the showcase the members of the band Radiohead were detected automatically in order to extract the scenes where they occure. these media fragments are accessible in a fragment browser. The browser is based on a timeline where the band member are annotated. By scrolling through the timeline thumbnails of the corresponding fragments are displayed and can be played on the demand. When watching the persons are highlighted and label with their name. By clicking on the persons their biography is displayed.  See show case: http://ninsuna.elis.ugent.be/ShowCase/",
+    "id": 128,
+    "name": "Ninsuna",
+    "patterns": [
+      "Annotated Timeline",
+      "Overlays",
+      "Media Fragments",
+      "Hyperlinks",
+      "Basic Controls"
+    ],
+    "provider": "Multimedia Lab - Ghent University",
+    "tags": [
+      "Interactive Film",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-03-03T20:29:32.345Z",
+    "url": "http://ninsuna.elis.ugent.be/radiohead"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f0c",
+    "availability": "virtUOS suspended all developments. Research papers are still available.",
+    "category": "",
+    "description": "VirtPresenter was developed at the virtUOS at the University of Osnabrück. It purposes the recording of lectures along side the used presentation slides.   Beside the lecturer video the corresponding slides are streamed. Thus this application is dedicated for presentation of lecture recordings that cover 60 to 90 minutes a table of content is offered. Each title of a slide is accessible in the table of content.  Slide transitions are visualized on the timeline.  Remarkable is the presentation of user activities that are caused by the current user, from other users or both. It is also possible to obtain entry points in the video.  VirtPresenter has been integrated in several other applications: WordpressMU, facebook, studIP, and iTunesU. In spite of that virtPresenter has been mainly incorporated in the Lernfunk portal. See: http://www.lernfunk.de/ ",
+    "id": 129,
+    "name": "virtpresenter",
+    "patterns": [
+      "Simultaneous Media",
+      "User Traces",
+      "Table of Content",
+      "Annotated Timeline",
+      "Basic Controls"
+    ],
+    "provider": "virtUOS - Center for Information Management and Virtual Teaching, University of Osnabrück",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-03-10T12:04:30.673Z",
+    "url": "http://www.virtuos.uni-osnabrueck.de/VirtPresenter/Beispiele"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f0d",
+    "availability": "Online available, registration necessary.",
+    "category": "",
+    "description": "VideoReadr allows the simultaneous presentation of an audio transcript next to the video. The corresponding paragraph is highlighted while the text scrolls up and down automatically. In favour of a better accessibility the font size can be increased.",
+    "id": 132,
+    "name": "VideoReadr",
+    "patterns": [
+      "Add Video",
+      "Transcript",
+      "Simultaneous Media",
+      "Basic Controls"
+    ],
+    "provider": "aflatune, Inc",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2015-02-16T07:38:01.695Z",
+    "url": "http://www.videoreadr.com/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f0e",
+    "availability": "Online demo available but productions needs to be payed.",
+    "category": "",
+    "description": "VideoStir allows you to talk to your web site visitors in a video that let you appear as an avatar. The video is personal speech with the speaker in front. Background is removed from the video. The position on page, navigational setting, and repetition-rate per visitor can be configured. ",
+    "id": 133,
+    "name": "VideoStir",
+    "patterns": [
+      "Add Video",
+      "Simultaneous Media",
+      "Basic Controls"
+    ],
+    "provider": "VideoStir Ltd",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-16T06:56:01.053Z",
+    "url": "http://videostir.com/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f0f",
+    "availability": "Online available.",
+    "category": "Portal",
+    "description": "Videogram is an Japanese-US-American company. They provide an extraordinary navigation in a large video space. The videos are presented in a tiled wall, sorted by their dominating colours. All videos are retrieved from YouTube, vimeo, DailyMotion. On mouse-over the selected frames of a video are animated as a visual summary. With a facebook account users can comment on the videos.  Searching and browsing relays on the known mechanisms (search, channels, categories, related videos) of YouTube.",
+    "id": 134,
+    "name": "Videogram",
+    "patterns": [
+      "Video Manager",
+      "Visual Summary",
+      "Related Videos",
+      "Search",
+      "Basic Controls"
+    ],
+    "provider": " Cinemacraft",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Search Engine"
+    ],
+    "updated_at": "2015-02-16T06:44:31.000Z",
+    "url": "http://www.videogram.com/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9f10",
+    "availability": "Online for registered usres",
+    "category": "Mooc",
+    "description": "Coursera is one of the big MOOC providers. The video player they provide appears basic but provides neat function like optional captions in several languages, a pagination to watch one video after another, and buttons to increase or decrease the playback speed.",
+    "id": 135,
+    "name": "coursera",
+    "patterns": [
+      "Playback Speed",
+      "Sequential Media",
+      "Closed Captions",
+      "Video Manager",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Coursera Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:56:15.186Z",
+    "url": "https://www.coursera.org/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9f11",
+    "availability": "Online available for registered users.",
+    "category": "",
+    "description": "edx is another big MOOC provider. Courses are structured along two dimensions. One is filled with the weekly topics and addition materials on a vertical menu. The second is on horizontal axis where sequences of videos or files are aligned.  The video player is very nicely designed. Playback speed is adjustable. They also provide a remarkable combination of subtitles and transcript. While corresponding paragraphs get highlighted beside the video it is always possible to scroll and read the entire transcript. This features works the same in full screen mode.  According to the second navigational dimension users can browser through the resources that were put in a sequence.   The edx source has been used by many other educational institution, e.g. Stanford University. See: https://class.stanford.edu/  The source code is available on github: https://github.com/edx/edx-platform  ",
+    "id": 136,
+    "name": "edX",
+    "patterns": [
+      "Transcript",
+      "Closed Captions",
+      "Playback Speed",
+      "Sequential Media",
+      "Simultaneous Media",
+      "Full Screen",
+      "Basic Controls"
+    ],
+    "provider": "edX Inc.",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Video Framework",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T12:53:57.186Z",
+    "url": "https://www.edx.org/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9f12",
+    "availability": "Online for registered users.",
+    "category": "MOOC",
+    "description": "Udacity is big provider of MOOCs related to computer sciences. In the \"classroom\" of each course videos are the major learning resource.  Course navigation is divided into a dashboard (current status of learning progress), classroom (videos), materials (e.g. a syllabus), discussions (a forum), and an overview (course abstract, organizers). The single videos are streamed from YouTube, but a non-standard video player is used to structure the course material. Therefore several short videos and quick assignments are sequenced. Each element is displayed as rectangle of equal size on a navigation bar that appears to be a timeline. On the one hand it presents the course elements in the right order and provides their title on mouse-over - similar to a table of content. On the other hand their dimensions do not correspond to the playback time of each episode so it is timely unrelated. However, the currently viewed section is orange highlighted while the previously watched section are shown in blue. Subsequently the timeline also purposes as a user trace or macro viewing history.   The mentioned assignments can be considered as assessment tasks. Beside multiple or single choice formats also fill-in tasks are presented to activate the user or foster reflection of the previously learned stuff. In all seen cased the lecturer introduced and explained the question to the viewer. So the position and content of these in-video assessments has been considered during the production of the video.  In the \"dash board\" users can view their progress in learning by means of previously and currently watched videos. ",
+    "id": 137,
+    "name": "Udacity",
+    "patterns": [
+      "Classified Marks",
+      "Annotated Timeline",
+      "Viewing History",
+      "Table of Content",
+      "Assessment",
+      "Sequential Media",
+      "User Traces",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Udacity, Inc",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-17T12:37:47.096Z",
+    "url": "https://www.udacity.com/"
+  },
+  {
+    "__v": 12,
+    "_id": "54bd63692ab0a86f323c9f13",
+    "availability": "Online demo available.",
+    "category": "",
+    "description": "vi-wiki is an extension for MediaWiki to add spatio-temporal hyperlinks to HTML5 videos of wiki pages. These links can be annotated directly in the player on the article page or in the creole source view. In the creole markup it is also possible to define the videos. Each video including its annotations is put into a closure. Within that it is also possible to concatenate multiple videos into a sequence.",
+    "id": 138,
+    "name": "vi-wiki",
+    "patterns": [
+      "Add Video",
+      "Hyperlinks",
+      "Overlays",
+      "Annotations",
+      "Loading Indicator",
+      "Basic Controls",
+      "Direct Authoring"
+    ],
+    "provider": "nise81.com",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2016-02-08T15:09:16.244Z",
+    "url": "https://p2pu.org/en/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f14",
+    "availability": "Online available for registered users.",
+    "category": "",
+    "description": "A course is split into different chapters that contain several sections of multiple videos. This sequence of sections and videos is mapped as a navigation panel on top of the video player.  The player is vertically split between the video and a quiz. These little assignments (multiple choice) are permanently presented next to the video without any temporal relation.  Further more different playback rates and quality levels of the video can be selected.",
+    "id": 139,
+    "name": "iversity",
+    "patterns": [
+      "Add Video",
+      "Appropriate Delivery",
+      "Playback Speed",
+      "Assessment",
+      "Video Manager",
+      "Basic Controls"
+    ],
+    "provider": "iversity GmbH ",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment"
+    ],
+    "updated_at": "2015-03-10T11:56:51.610Z",
+    "url": "https://iversity.org/"
+  },
+  {
+    "__v": 6,
+    "_id": "54bd63692ab0a86f323c9f15",
+    "availability": "Online for registered users.",
+    "category": "MOOC",
+    "description": "openHPI provides several computer science related online courses. A course runs for six to eight weeks. In every week a sequence of learning materials is offered. Videos can be followed by self assessments, literature recommendations or introducing texts. The video player is vertically split in two parts. On the right the lecturer video can be seen and on the left is another video of presentation slides or desktop screens. The proportion of size can be changed by a slider handle. The playback speed is adjustable.",
+    "id": 140,
+    "name": "openHPI",
+    "patterns": [
+      "Playback Speed",
+      "Simultaneous Media",
+      "User Traces",
+      "Sequential Media",
+      "Basic Controls"
+    ],
+    "provider": "Hasso Plattner Institute Potsdam",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Research Prototype"
+    ],
+    "updated_at": "2015-03-10T11:59:40.241Z",
+    "url": "https://open.hpi.de/"
+  },
+  {
+    "__v": 10,
+    "_id": "54bd63692ab0a86f323c9f16",
+    "availability": "Online Available als Open Educational Resource.",
+    "category": "",
+    "description": "IWRM education is a hypervideo learning environment about integrated water resources management. It incorporates more then 40 lectures that are categorized and tagged. Each video is synchronized with slide images. On these slides appear temporal links to other videos. Two types of links were distinguished: 1) standard links that lead to a temporal position in another video, and 2) cycle links that work like the first type, but include a return link to the link source for a dedicated period of time.  The chapters or sections can be accessed in a table of content.  IWRM education provides further more a full-text search on all slides of teh videos.  The software was build in javascript, HTML, and CSS. Therefor it can be used without a server as a por­ta­ble stand-​​alone web application.",
+    "id": 141,
+    "name": "IWRM education",
+    "patterns": [
+      "Hyperlinks",
+      "Simultaneous Media",
+      "Video Manager",
+      "Search",
+      "Detail on Demand",
+      "Table of Content",
+      "Loading Indicator",
+      "Annotated Timeline",
+      "Related Videos",
+      "Playlist",
+      "Classified Marks",
+      "Related Videos",
+      "Appropriate Delivery",
+      "Basic Controls"
+    ],
+    "provider": "IHP/HWRP Secretariat, Federal Institute of Hydrology, Germany",
+    "tags": [
+      "Video Learning Environment",
+      "Online Environment",
+      "Desktop Environment",
+      "Research Prototype",
+      "Open Source"
+    ],
+    "updated_at": "2016-01-17T23:00:59.814Z",
+    "url": "http://www.iwrm-education.org/"
+  },
+  {
+    "__v": 7,
+    "_id": "54bd63692ab0a86f323c9f17",
+    "availability": "Online available for registered users.",
+    "category": "",
+    "description": "Since its foundation the Khan Academy has changed its way of learning design. Starting from assignments videos serve as an aid to explain concepts that are necessary to fullfil the assignment.  The video player delivers YouTube videos but is able to show a transcript below. Also the playback speed is adjustable in case HTML5 is set as default at YouTube. Some videos are provided with assessment tasks. ",
+    "id": 142,
+    "name": "Khan Academy",
+    "patterns": [
+      "Transcript",
+      "Assessment",
+      "Playback Speed",
+      "Basic Controls"
+    ],
+    "provider": "Khan Academy",
+    "tags": [
+      "Video Learning Environment",
+      "Video Portal",
+      "Online Environment"
+    ],
+    "updated_at": "2015-02-16T06:49:01.157Z",
+    "url": "https://www.khanacademy.org"
+  },
+  {
+    "__v": 11,
+    "_id": "54bd63692ab0a86f323c9f18",
+    "availability": "Online available",
+    "category": "",
+    "description": "At Wiki Commons a few thousand videos are stored that were published under a free license or that are royalty-free. The videos are severed in many different formats, resolutions and quality levels. Sequential browsing is enabled by a nice and accessible interface.\r\nWiki Commons can be considered as the media database for different projects of the Wikimedia Foundation. First of all Wikipedia uses Wiki Commons as media backend.",
+    "id": 143,
+    "name": "Wiki Commons",
+    "patterns": [
+      "Add Video",
+      "Sequential Media",
+      "Appropriate Delivery",
+      "Video Manager",
+      "Search",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Wikimedia Foundation",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Search Engine",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T12:28:21.482Z",
+    "url": "http://commons.wikimedia.org/"
+  },
+  {
+    "__v": 11,
+    "_id": "54bd63692ab0a86f323c9f19",
+    "availability": "Online available for registered users.",
+    "category": "",
+    "description": "Amara is an advanced tool to annotated video subtitles in different languages. The creation process consists of three steps: \r\n\r\n1.  select video URL as well as source and target language, \r\n2.  type what you hear by the help of keyboard shortcuts, \r\n3.   synchronize the lines to its exact positions, \r\n4.   review the captions and publish it including a translation for the title and an abstract.  \r\n\r\nThe timeline in step 2 is zoomed into detail. In contrast to other timelines the annotation stays at a fixed position while the timeline scale moves behind it on playback. Because the annotations need to be synchronized one by one it makes sense.  Unfortunately the strict wizards does not allow to go a step back.   Beside that users can leave notes that are related to the video as a whole.",
+    "id": 144,
+    "name": "Amara / Universal Subtitles",
+    "patterns": [
+      "Annotated Timeline",
+      "Annotations",
+      "Closed Captions",
+      "Shortcut Commands",
+      "Direct Authoring",
+      "Multi-Timeline Editing",
+      "Basic Controls"
+    ],
+    "provider": "Participatory Culture Foundation",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-01-17T22:53:21.822Z",
+    "url": "http://universalsubtitles.org/en/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f1a",
+    "availability": "Online, some features require registration.",
+    "category": "",
+    "description": "As a digital library for Internet Archive stores also a great amount of video footage. The videos are filed into different collections and sub-collections.  Comparable to a playlist users can collect certain videos as bookmarks. This resource-related bookmarks are public available as RSS feed. In the player scenes can be previewed on the timeline. When a videos has ended related resources are presented.",
+    "id": 145,
+    "name": "Internet Archive",
+    "patterns": [
+      "Related Videos",
+      "Visual Summary",
+      "Playlist",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "Internet Archive",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Search Engine"
+    ],
+    "updated_at": "2015-02-17T12:31:57.904Z",
+    "url": "https://archive.org/"
+  },
+  {
+    "__v": 9,
+    "_id": "54bd63692ab0a86f323c9f1b",
+    "availability": "Online available.",
+    "category": "",
+    "description": "Plumi is a plone video portal offering typically video portal functions (e.g. playlist, search, video manager). Remarkable for the player is  feature for multilingual subtitles.",
+    "id": 147,
+    "name": "Plumi",
+    "patterns": [
+      "Add Video",
+      "Playlist",
+      "Related Videos",
+      "Video Manager",
+      "Closed Captions",
+      "Search",
+      "Loading Indicator",
+      "Basic Controls"
+    ],
+    "provider": "EngageMedia",
+    "tags": [
+      "Video Portal",
+      "Online Environment",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-17T12:54:11.864Z",
+    "url": "http://blog.plumi.org/"
+  },
+  {
+    "__v": 8,
+    "_id": "54bd63692ab0a86f323c9f1c",
+    "availability": "Online available as source code and video demo.",
+    "category": "",
+    "description": "Hyperaudio Pad is another realization of the the Video Wiki that facilitated video editing through manipulating the transcript text. By dragging phrases of video transcript to another text field users can remix the order and arrangement of the corresponding video scenes. Hyperaudio Pad also allows it to remix parts of multiple video into one. Technically they make use of media fragments.   See concept, demo video, and source code:  http://happyworm.com/blog/2011/08/08/the-hyperaudio-pad-a-software-product-proposal/   http://happyworm.com/screencams/hyperaudiopad/2013-04-04/demo1-standard.m4v https://github.com/maboa/hyperaudiopad  Recently they launched it as commercial service: http://hyperaud.io/pad/",
+    "id": 149,
+    "name": "Hyperaudio Pad",
+    "patterns": [
+      "Add Video",
+      "Transcript",
+      "Video Manipulation",
+      "Media Fragments",
+      "Remix",
+      "Basic Controls"
+    ],
+    "provider": "Happyworm Ltd.",
+    "tags": [
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool",
+      "Open Source"
+    ],
+    "updated_at": "2015-02-16T15:02:19.710Z",
+    "url": "http://happyworm.com"
+  },
+  {
+    "__v": 15,
+    "_id": "54bd63692ab0a86f323c9f1d",
+    "availability": "Online available for viewing. To create such contents a registration is needed.",
+    "category": "",
+    "description": "Touchcast is service for production and presentation of interactive videos. Users can capture videos with their tablets by using two cameras.   The content inside the portal is organized in channels. Further more categories for featured and trending videos are available.   The essential feature of the video player is the opportunity to watch content on demand. On demand content could be a video, a image or a web page. While watching these contents the source video stays visible as a thumbnail (e.g. for videos on demand) or continues to play in a small window (e.g. for images on demand). In both cases the minimized source video works as a return link. Beside that additional content can be displayed on top of the video as an overlay. Touchcast allows the user to add various content types. Beside just displaying images they could also be activated to become a link to a external resource. If the users feels disturbed by an overlay he/she can remove it.  All annotations (on demand and overlays) are mapped on the timeline for quick access. Very nice is idea to animate the slider handle when jumping to a point on the timeline. ",
+    "id": 150,
+    "name": "touchcast",
+    "patterns": [
+      "Classified Marks",
+      "Add Video",
+      "Synchronized Map",
+      "Detail on Demand",
+      "Hyperlinks",
+      "Annotated Timeline",
+      "Annotations",
+      "Branching Videos",
+      "Overlays",
+      "Loading Indicator",
+      "Related Videos",
+      "Video Manipulation",
+      "Basic Controls"
+    ],
+    "provider": "touchcast",
+    "tags": [
+      "Video Portal",
+      "Video Authoring Environment",
+      "Online Environment",
+      "Annotation Tool"
+    ],
+    "updated_at": "2016-02-05T23:34:09.718Z",
+    "url": "http://www.touchcast.com/"
+  }
+]
