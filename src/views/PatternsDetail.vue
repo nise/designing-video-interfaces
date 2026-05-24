@@ -290,8 +290,8 @@ function renderText(text) {
 async function loadPattern(id) {
   try {
     const [patRes, portalRes] = await Promise.all([
-      fetch("/data/patterns.json"),
-      fetch("/data/portals.json"),
+      fetch(`${import.meta.env.BASE_URL}data/patterns.json`),
+      fetch(`${import.meta.env.BASE_URL}data/portals.json`),
     ]);
     const patterns = await patRes.json();
     pattern.value = patterns.find((p) => slugify(p.name) === id) || null;
@@ -309,7 +309,7 @@ watch(
 onMounted(async () => {
   await loadPattern(route.params.id);
   try {
-    const r = await fetch("/data/references.bib");
+    const r = await fetch(`${import.meta.env.BASE_URL}data/references.bib`);
     references.value = parseBib(await r.text());
   } catch (e) {
     console.warn("Could not load references.bib", e);

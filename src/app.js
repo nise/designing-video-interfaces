@@ -76,7 +76,7 @@ const PortalsList = {
   methods: { slugify },
   async mounted() {
     try {
-      const response = await fetch("/data/portals.json");
+      const response = await fetch(`${import.meta.env.BASE_URL}data/portals.json`);
       this.portals = await response.json();
     } catch (error) {
       console.error("Error loading portals:", error);
@@ -150,7 +150,7 @@ const PatternsList = {
   },
   async mounted() {
     try {
-      const response = await fetch("/data/patterns.json");
+      const response = await fetch(`${import.meta.env.BASE_URL}data/patterns.json`);
       this.patterns = await response.json();
     } catch (error) {
       console.error("Error loading patterns:", error);
@@ -211,7 +211,7 @@ const PortalsDetail = {
   },
   async mounted() {
     try {
-      const response = await fetch("/data/portals.json");
+      const response = await fetch(`${import.meta.env.BASE_URL}data/portals.json`);
       const portals = await response.json();
       this.portal = portals.find((p) => slugify(p.name) === this.$route.params.id);
     } catch (error) {
@@ -320,8 +320,8 @@ const PatternsDetail = {
     async loadPattern(id) {
       try {
         const [patRes, portalRes] = await Promise.all([
-          fetch("/data/patterns.json"),
-          fetch("/data/portals.json"),
+          fetch(`${import.meta.env.BASE_URL}data/patterns.json`),
+          fetch(`${import.meta.env.BASE_URL}data/portals.json`),
         ]);
         const patterns = await patRes.json();
         this.pattern = patterns.find((p) => slugify(p.name) === id) || null;

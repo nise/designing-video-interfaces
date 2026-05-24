@@ -153,8 +153,8 @@ onMounted(async () => {
   window.addEventListener("keydown", onKeydown);
   try {
     const [portalRes, imgRes] = await Promise.all([
-      fetch("/data/portals.json"),
-      fetch("/data/images.json"),
+      fetch(`${import.meta.env.BASE_URL}data/portals.json`),
+      fetch(`${import.meta.env.BASE_URL}data/images.json`),
     ]);
     const portals = await portalRes.json();
     allImages.value = await imgRes.json();
