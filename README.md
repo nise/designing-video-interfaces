@@ -10,7 +10,7 @@ _Designing Video Interfaces_ is a web applications for exploring interaction des
 
 **Pattern Browser**
 
-- _45 interaction design patterns_ organised into Micro and Macro levels with functional sub-sections
+- _42 interaction design patterns_ organised into Micro and Macro levels with functional sub-sections
 - _Selection wizard_ to find patterns matching a specific use case
 - _Favourite patterns_ with heart-toggle, persisted in localStorage
 - _Confidence indicators_ distinguishing proto-patterns, candidate patterns, and validated patterns
