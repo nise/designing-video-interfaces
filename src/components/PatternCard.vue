@@ -79,7 +79,7 @@ const description = computed(() =>
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  border-left: 4px solid #3b82f6;
+  border-left: 1px solid #ccc;
   position: relative;
 }
 
@@ -110,15 +110,19 @@ const description = computed(() =>
 .card-link {
   display: block;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .card-thumb {
   width: 100%;
-  aspect-ratio: 4/3;
+  max-width: 100%;
+  max-height: 180px;
+  height: 180px;
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: 0.75rem;
   background: #f3f4f6;
+  flex-shrink: 0;
 }
 
 .card-thumb-img {

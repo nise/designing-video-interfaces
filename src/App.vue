@@ -7,8 +7,10 @@
         >
         <ul class="nav-menu">
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/portals">Portals</router-link></li>
-          <li><router-link to="/patterns">Patterns</router-link></li>
+          <li><router-link to="/patterns">Design Patterns</router-link></li>
+          <li>
+            <router-link to="/portals">Video Learning Environments</router-link>
+          </li>
           <li><router-link to="/about">About</router-link></li>
         </ul>
       </div>

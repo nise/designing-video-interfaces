@@ -10,11 +10,11 @@
         interaction design patterns and analysis of 100+ video applications.
       </p>
       <div class="cta-buttons">
-        <router-link to="/portals" class="btn btn-primary"
-          >Explore Portals</router-link
+        <router-link to="/patterns" class="btn btn-primary"
+          >View Design Patterns</router-link
         >
-        <router-link to="/patterns" class="btn btn-secondary"
-          >View Patterns</router-link
+        <router-link to="/portals" class="btn btn-scondary"
+          >Explore Video Learning Environments</router-link
         >
       </div>
     </section>
@@ -23,20 +23,20 @@
       <h2>What's Inside</h2>
       <div class="grid grid-3">
         <div class="feature-card">
-          <h3>42 Patterns</h3>
+          <h3>42 Design Patterns</h3>
           <p>
             Common solutions for recurring design problems in video learning
             environments.
           </p>
         </div>
         <div class="feature-card">
-          <h3>100+ Portals</h3>
+          <h3>100+ Video Learning Environments</h3>
           <p>
             Video learning environments categorized and analyzed with
             screenshots and examples.
           </p>
         </div>
-        <div class="feature-card">
+        <div hidden class="feature-card">
           <h3>Detailed Analysis</h3>
           <p>
             In-depth examination of UI elements and their implementation across
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section hidden class="about">
       <h2>About This Project</h2>
       <p>
         This project combines interaction design patterns with a comprehensive

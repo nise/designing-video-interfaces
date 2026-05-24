@@ -427,6 +427,8 @@ const sectionedPatterns = computed(() => {
     functions: section.functions
       .map((func) => {
         const ps = filteredPatterns.value.filter((p) => {
+          const id = p._id?.$oid || p.name;
+          if (assignedIds.has(id)) return false;
           const tags = p.management?.tags || [];
           return tags.includes(section.level) && tags.includes(func.tag);
         });
@@ -716,6 +718,7 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: start;
 }
 
 .section-level {
