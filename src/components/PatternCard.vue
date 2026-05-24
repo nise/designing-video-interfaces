@@ -56,7 +56,7 @@ const starsTitle = computed(() => confTitle(props.pattern));
 
 const thumbnail = computed(() => {
   if (props.pattern.illustration)
-    return props.pattern.illustration.replace(/^\/static/, "");
+    return import.meta.env.BASE_URL + props.pattern.illustration.replace(/^\/static\//, "");
   const ev = props.pattern.evidence?.find((e) => e.example);
   return ev ? import.meta.env.BASE_URL + "img/screenshots/" + ev.example : null;
 });
