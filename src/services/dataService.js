@@ -23,10 +23,12 @@ function normalizePattern(p) {
   };
 }
 
+const base = import.meta.env.BASE_URL;
+
 export const dataService = {
   async getPortals() {
     try {
-      const response = await fetch("/data/portals.json");
+      const response = await fetch(`${base}data/portals.json`);
       if (!response.ok) throw new Error("Failed to load portals");
       const data = await response.json();
       return data.map(normalizePortal);
@@ -43,7 +45,7 @@ export const dataService = {
 
   async getPatterns() {
     try {
-      const response = await fetch("/data/patterns.json");
+      const response = await fetch(`${base}data/patterns.json`);
       if (!response.ok) throw new Error("Failed to load patterns");
       const data = await response.json();
       return data.map(normalizePattern);
@@ -60,7 +62,7 @@ export const dataService = {
 
   async getImages() {
     try {
-      const response = await fetch("/data/images.json");
+      const response = await fetch(`${base}data/images.json`);
       if (!response.ok) throw new Error("Failed to load images");
       return await response.json();
     } catch (error) {
