@@ -151,7 +151,9 @@ const PatternsList = {
         return pattern.illustration.replace(/^\/static/, "");
       }
       const ev = pattern.evidence && pattern.evidence.find((e) => e.example);
-      return ev ? import.meta.env.BASE_URL + "img/screenshots/" + ev.example : null;
+      return ev
+        ? import.meta.env.BASE_URL + "img/screenshots/" + ev.example
+        : null;
     },
   },
   async mounted() {

@@ -3389,7 +3389,7 @@
         "type": "is-contained-by",
         "pattern_collection": "own",
         "description": "",
-        "label": "Annotaions",
+        "label": "Annotations",
         "_id": {
           "$oid": "5a036b7e9372e05d2a36f7a4"
         }

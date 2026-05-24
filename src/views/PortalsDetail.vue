@@ -91,7 +91,11 @@
           ‹
         </button>
         <img
-          :src="baseUrl + 'img/screenshots/' + portalImages[lightbox.index]?.filename"
+          :src="
+            baseUrl +
+            'img/screenshots/' +
+            portalImages[lightbox.index]?.filename
+          "
           :alt="portalImages[lightbox.index]?.caption || portal?.name"
           class="lb-img"
           @error="$event.target.style.display = 'none'"

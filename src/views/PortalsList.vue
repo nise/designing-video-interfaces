@@ -38,7 +38,9 @@
             <td class="td-thumb">
               <img
                 v-if="imagesByPortal[portal.name]?.length"
-                :src="baseUrl + 'img/screenshots/' + imagesByPortal[portal.name][0]"
+                :src="
+                  baseUrl + 'img/screenshots/' + imagesByPortal[portal.name][0]
+                "
                 :alt="portal.name"
                 class="portal-thumb"
                 @click="openLightbox(portal.name, 0)"
