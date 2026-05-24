@@ -121,11 +121,14 @@ This software uses the following open source packages: [Vue.js 3](https://vuejs.
 **Cite this software:**
 
 ```bibtex
-@phdthesis{Seidel2017-VideoPatterns,
-  title  = {Designing Video Interfaces for Digital Learning Environments},
+@book{Seidel2017-diss,
+  title = {Interaction {{Design Patterns}} Und {{CSCL-Scripts}} Für {{Videolernumgebungen}}},
   author = {Seidel, Niels},
-  year   = {2017},
-  school = {Technische Universität Dresden},
+  date = {2018},
+  publisher = {Technische Universität Dresden},
+  location = {Dresden},
+  url = {http://nbn-resolving.de/urn:nbn:de:bsz:14-qucosa-233756},
+  pagetotal = {380}
 }
 ```
 

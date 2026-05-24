@@ -14,7 +14,8 @@
           The Author of this work is <em>Niels Seidel</em>. He is a researcher,
           writer, and software engineer in the field of interaction design, web
           development, and distance learning. Currently he is working at the
-          FernUniversität Hagen (Germany) at the chair for Cooperative Systems.
+          FernUniversität Hagen (Germany) at CATALPA - Center of Advanced
+          Technology for Assistent Learning and Predictive Analytics.
         </p>
         <p>
           You can follow him on
@@ -28,11 +29,16 @@
         </p>
       </section>
 
-      <hr />
-
       <section class="about-section">
         <h2>Further Reading</h2>
         <ul>
+          <li>
+            Seidel, N. (2018). Interaction Design Patterns und CSCL-Scripts für
+            Videolernumgebungen. Technische Universität Dresden.
+            <a href="http://nbn-resolving.de/urn:nbn:de:bsz:14-qucosa-233756"
+              >http://nbn-resolving.de/urn:nbn:de:bsz:14-qucosa-233756</a
+            >
+          </li>
           <li>
             Seidel, N. (2017): Empirical Evaluation Methods for Pattern
             Languages: Sketches, Classification, and Network Analysis.
@@ -105,8 +111,6 @@
         </ul>
       </section>
 
-      <hr />
-
       <section class="about-section">
         <h2>Related Pattern Languages</h2>
         <ul>
@@ -171,8 +175,6 @@
         </ul>
       </section>
 
-      <hr />
-
       <section class="about-section">
         <h2>Terms of Use</h2>
         <p>
@@ -195,22 +197,9 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.about-content h1 {
-  color: #1e3a8a;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #fbbf24;
-  padding-bottom: 1rem;
-}
-
 .about-section {
   margin-bottom: 2.5rem;
   line-height: 1.8;
-}
-
-.about-section h2 {
-  color: #3b82f6;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
 }
 
 .about-section p {

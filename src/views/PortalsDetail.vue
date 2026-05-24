@@ -192,7 +192,7 @@ onUnmounted(() => {
 .portal-detail h1 {
   color: #1e3a8a;
   margin-bottom: 2rem;
-  border-bottom: 2px solid #fbbf24;
+  border-bottom: 2px solid #003366;
   padding-bottom: 1rem;
 }
 

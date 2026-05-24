@@ -67,7 +67,7 @@
 
 <style scoped>
 .jumbotron {
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  background-color: #1e3a8a;
   color: white;
   padding: 3rem 0;
   border-radius: 8px;
@@ -78,11 +78,14 @@
 .jumbotron h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
-.jumbotron .lead {
+.jumbotron .lead,
+.jumbotron p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .cta-buttons {

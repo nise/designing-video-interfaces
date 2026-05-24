@@ -77,9 +77,7 @@
             class="footer-logo"
           />
         </div>
-        <p class="footer-copy">
-          &copy; 2024 Niels Seidel. GNU GPL v3 or later.
-        </p>
+        <p class="footer-copy">&copy; 2018-2026 Niels Seidel. CC-BY.</p>
       </div>
     </footer>
   </div>
@@ -136,7 +134,7 @@
 }
 
 .nav-menu a.router-link-active {
-  border-bottom: 2px solid #fbbf24;
+  border-bottom: 2px solid #003366;
 }
 
 main {
@@ -145,11 +143,11 @@ main {
 }
 
 .footer {
-  background: #1f2937;
-  color: #9ca3af;
+  background: #fff;
+  color: #555;
   text-align: center;
   padding: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .footer-logos {

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Video Learning Environments</h1>
-    <p>Browse all {{ portals.length }} portals</p>
+    <p>Browse {{ portals.length }} environments</p>
     <div v-if="sortedPortals.length" class="table-responsive">
       <table class="table">
         <thead>

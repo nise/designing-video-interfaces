@@ -1,9 +1,8 @@
 <template>
   <div class="container">
-    <div class="jumbotron">
-      <h2>Design Patterns of video-based Learning Environments</h2>
-      <p>Explore {{ patterns.length }} design patterns</p>
-    </div>
+    <h1>Design Patterns of video-based Learning Environments</h1>
+    <p>Explore {{ patterns.length }} design patterns</p>
+
     <div class="filter-bar">
       <input
         v-model="searchQuery"
