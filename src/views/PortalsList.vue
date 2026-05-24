@@ -38,7 +38,7 @@
             <td class="td-thumb">
               <img
                 v-if="imagesByPortal[portal.name]?.length"
-                :src="'/img/screenshots/' + imagesByPortal[portal.name][0]"
+                :src="baseUrl + 'img/screenshots/' + imagesByPortal[portal.name][0]"
                 :alt="portal.name"
                 class="portal-thumb"
                 @click="openLightbox(portal.name, 0)"
@@ -106,7 +106,7 @@
             ‹
           </button>
           <img
-            :src="'/img/screenshots/' + lightboxImages[lightbox.index]"
+            :src="baseUrl + 'img/screenshots/' + lightboxImages[lightbox.index]"
             :alt="lightbox.portal"
             class="lb-img"
             @error="$event.target.style.display = 'none'"
@@ -129,6 +129,7 @@
 </template>
 
 <script setup>
+const baseUrl = import.meta.env.BASE_URL;
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { slugify, truncate } from "../composables/utils.js";
 

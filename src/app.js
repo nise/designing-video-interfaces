@@ -1,18 +1,21 @@
-import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createApp } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 
 function slugify(str) {
-  return (str || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return (str || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function renderText(text) {
-  if (!text) return '';
+  if (!text) return "";
   // Convert markdown links [label](url) to <a href> tags.
   // Normalize /patterns/view/Pattern-Name and /patterns/Pattern-Name → /patterns/pattern-name
   return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) => {
     const normalized = url.replace(
       /^\/patterns\/(?:view\/)?(.+)$/,
-      (m, slug) => '/patterns/' + slug.toLowerCase()
+      (m, slug) => "/patterns/" + slug.toLowerCase(),
     );
     return `<a href="${normalized}">${label}</a>`;
   });
@@ -76,7 +79,9 @@ const PortalsList = {
   methods: { slugify },
   async mounted() {
     try {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/portals.json`);
+      const response = await fetch(
+        `${import.meta.env.BASE_URL}data/portals.json`,
+      );
       this.portals = await response.json();
     } catch (error) {
       console.error("Error loading portals:", error);
@@ -124,10 +129,11 @@ const PatternsList = {
     filteredPatterns() {
       if (!this.searchQuery) return this.patterns;
       const q = this.searchQuery.toLowerCase();
-      return this.patterns.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        (p.consequences && p.consequences.toLowerCase().includes(q)) ||
-        (p.problem && p.problem.toLowerCase().includes(q))
+      return this.patterns.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          (p.consequences && p.consequences.toLowerCase().includes(q)) ||
+          (p.problem && p.problem.toLowerCase().includes(q)),
       );
     },
   },
@@ -144,13 +150,15 @@ const PatternsList = {
       if (pattern.illustration) {
         return pattern.illustration.replace(/^\/static/, "");
       }
-      const ev = pattern.evidence && pattern.evidence.find(e => e.example);
-      return ev ? "/img/screenshots/" + ev.example : null;
+      const ev = pattern.evidence && pattern.evidence.find((e) => e.example);
+      return ev ? import.meta.env.BASE_URL + "img/screenshots/" + ev.example : null;
     },
   },
   async mounted() {
     try {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/patterns.json`);
+      const response = await fetch(
+        `${import.meta.env.BASE_URL}data/patterns.json`,
+      );
       this.patterns = await response.json();
     } catch (error) {
       console.error("Error loading patterns:", error);
@@ -205,15 +213,21 @@ const PortalsDetail = {
   },
   methods: {
     ok(val) {
-      return val && val !== 'undefined' && String(val).trim() !== '' && val !== '-';
+      return (
+        val && val !== "undefined" && String(val).trim() !== "" && val !== "-"
+      );
     },
     slugify,
   },
   async mounted() {
     try {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/portals.json`);
+      const response = await fetch(
+        `${import.meta.env.BASE_URL}data/portals.json`,
+      );
       const portals = await response.json();
-      this.portal = portals.find((p) => slugify(p.name) === this.$route.params.id);
+      this.portal = portals.find(
+        (p) => slugify(p.name) === this.$route.params.id,
+      );
     } catch (error) {
       console.error("Error loading portal:", error);
     }
@@ -270,7 +284,7 @@ const PatternsDetail = {
         <h3>Examples</h3>
         <div v-for="ev in evidenceItems" :key="ev.example" style="margin-bottom:1.5rem;padding-left:1rem;border-left:3px solid #ccc">
           <p v-html="renderText(ev.rational)"></p>
-          <img v-if="ev.example" :src="'/img/screenshots/' + ev.example" :alt="ev.example" style="max-width:100%;border-radius:4px;margin-top:0.5rem;" @error="$event.target.style.display='none'" />
+          <img v-if="ev.example" :src="'${import.meta.env.BASE_URL}img/screenshots/' + ev.example" :alt="ev.example" style="max-width:100%;border-radius:4px;margin-top:0.5rem;" @error="$event.target.style.display='none'" />
         </div>
       </div>
 
@@ -295,25 +309,30 @@ const PatternsDetail = {
     usedInPortals() {
       if (!this.pattern?.name) return [];
       return this.portals.filter(
-        (p) => p.patterns && p.patterns.includes(this.pattern.name)
+        (p) => p.patterns && p.patterns.includes(this.pattern.name),
       );
     },
     relatedPatterns() {
       if (!this.pattern?.related_patterns) return [];
       return this.pattern.related_patterns.filter(
-        (rp) => rp.label && rp.label !== 'undefined'
+        (rp) => rp.label && rp.label !== "undefined",
       );
     },
     evidenceItems() {
       if (!this.pattern?.evidence) return [];
       return this.pattern.evidence.filter(
-        (ev) => ev.rational && ev.rational !== 'undefined' && ev.rational.trim() !== ''
+        (ev) =>
+          ev.rational &&
+          ev.rational !== "undefined" &&
+          ev.rational.trim() !== "",
       );
     },
   },
   methods: {
     ok(val) {
-      return val && val !== 'undefined' && String(val).trim() !== '' && val !== '-';
+      return (
+        val && val !== "undefined" && String(val).trim() !== "" && val !== "-"
+      );
     },
     slugify,
     renderText,
@@ -332,7 +351,7 @@ const PatternsDetail = {
     },
   },
   watch: {
-    '$route.params.id'(id) {
+    "$route.params.id"(id) {
       this.loadPattern(id);
     },
   },

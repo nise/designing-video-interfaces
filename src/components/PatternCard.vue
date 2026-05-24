@@ -58,7 +58,7 @@ const thumbnail = computed(() => {
   if (props.pattern.illustration)
     return props.pattern.illustration.replace(/^\/static/, "");
   const ev = props.pattern.evidence?.find((e) => e.example);
-  return ev ? "/img/screenshots/" + ev.example : null;
+  return ev ? import.meta.env.BASE_URL + "img/screenshots/" + ev.example : null;
 });
 
 const description = computed(() =>

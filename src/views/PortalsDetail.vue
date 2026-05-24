@@ -61,7 +61,7 @@
           @click="openLightbox(i)"
         >
           <img
-            :src="'/img/screenshots/' + img.filename"
+            :src="baseUrl + 'img/screenshots/' + img.filename"
             :alt="img.caption || portal.name"
             class="portal-image"
             @error="$event.target.parentElement.style.display = 'none'"
@@ -91,7 +91,7 @@
           ‹
         </button>
         <img
-          :src="'/img/screenshots/' + portalImages[lightbox.index]?.filename"
+          :src="baseUrl + 'img/screenshots/' + portalImages[lightbox.index]?.filename"
           :alt="portalImages[lightbox.index]?.caption || portal?.name"
           class="lb-img"
           @error="$event.target.style.display = 'none'"
@@ -115,6 +115,7 @@
 </template>
 
 <script setup>
+const baseUrl = import.meta.env.BASE_URL;
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { slugify, ok } from "../composables/utils.js";

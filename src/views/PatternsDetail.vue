@@ -77,7 +77,7 @@
         <p v-html="renderText(ev.rational)"></p>
         <img
           v-if="ev.example"
-          :src="'/img/screenshots/' + ev.example"
+          :src="baseUrl + 'img/screenshots/' + ev.example"
           :alt="ev.example"
           class="evidence-img"
           @error="$event.target.style.display = 'none'"
@@ -153,6 +153,8 @@
 import { ref, computed, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { slugify, ok, confLevel, confTitle } from "../composables/utils.js";
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const route = useRoute();
 const pattern = ref(null);
