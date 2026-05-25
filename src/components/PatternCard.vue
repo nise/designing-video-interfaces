@@ -84,6 +84,7 @@ const description = computed(() =>
   flex-direction: column;
   border-left: 1px solid #ccc;
   position: relative;
+  height: auto;
 }
 
 .fav-btn {
@@ -117,22 +118,27 @@ const description = computed(() =>
 }
 
 .card-thumb {
-  width: 100%;
+  /*width: 100%;
   max-width: 100%;
   max-height: 180px;
-  height: 180px;
+  height: 180px;*/
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: 0.75rem;
-  background: #f3f4f6;
+  background: #fff;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .card-thumb-img {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  overflow: hidden;
   object-fit: cover;
   display: block;
+  margin: 0 auto;
 }
 
 .card-title {
