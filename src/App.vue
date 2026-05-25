@@ -11,6 +11,7 @@
           <li>
             <router-link to="/portals">Video Learning Environments</router-link>
           </li>
+          <li><router-link to="/analysis">Analysis</router-link></li>
           <li><router-link to="/about">About</router-link></li>
         </ul>
       </div>

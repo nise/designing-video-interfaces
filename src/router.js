@@ -6,6 +6,7 @@ import PortalsDetail from "./views/PortalsDetail.vue";
 import PatternsList from "./views/PatternsList.vue";
 import PatternsDetail from "./views/PatternsDetail.vue";
 import About from "./views/About.vue";
+import Analysis from "./views/Analysis.vue";
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: "/about",
     name: "About",
     component: About,
+  },
+  {
+    path: "/analysis",
+    name: "Analysis",
+    component: Analysis,
   },
 ];
 

@@ -36,13 +36,13 @@
             screenshots and examples.
           </p>
         </div>
-        <div hidden class="feature-card">
-          <h3>Detailed Analysis</h3>
+        <router-link to="/analysis" class="feature-card feature-card--link">
+          <h3>Pattern Analysis</h3>
           <p>
-            In-depth examination of UI elements and their implementation across
-            different platforms.
+            In-depth examination of how often each design pattern is implemented
+            across all video learning environments — with co-occurrence data.
           </p>
-        </div>
+        </router-link>
       </div>
     </section>
 
@@ -116,6 +116,20 @@
 .feature-card h3 {
   color: #1e3a8a;
   margin-bottom: 0.5rem;
+}
+
+.feature-card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.feature-card--link:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .about {
