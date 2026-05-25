@@ -76,12 +76,12 @@ const visibleEdges = computed(
 // Group cluster positions as fractions of (width, height)
 // Arranged in a 3-wide × 2-tall ring
 const GROUP_POS = {
-  "Basic Functions":    { fx: 0.18, fy: 0.28 },
-  "Temporal Access":    { fx: 0.50, fy: 0.14 },
-  "Contribution":       { fx: 0.82, fy: 0.28 },
-  "Structuring":        { fx: 0.82, fy: 0.72 },
-  "Self-organization":  { fx: 0.50, fy: 0.86 },
-  "Layout":             { fx: 0.18, fy: 0.72 },
+  "Basic Functions": { fx: 0.18, fy: 0.28 },
+  "Temporal Access": { fx: 0.5, fy: 0.14 },
+  Contribution: { fx: 0.82, fy: 0.28 },
+  Structuring: { fx: 0.82, fy: 0.72 },
+  "Self-organization": { fx: 0.5, fy: 0.86 },
+  Layout: { fx: 0.18, fy: 0.72 },
 };
 
 function draw() {
@@ -226,11 +226,7 @@ function draw() {
         .select("circle")
         .attr("stroke", "#0f172a")
         .attr("stroke-width", 3);
-      showTooltip(
-        event,
-        d.id,
-        `${d.count} environments · ${d.group}`,
-      );
+      showTooltip(event, d.id, `${d.count} environments · ${d.group}`);
     })
     .on("mousemove", moveTooltip)
     .on("mouseout", (event) => {
@@ -322,8 +318,15 @@ function hideTooltip() {
   tooltip.value.visible = false;
 }
 
-watch(() => props.portals, () => { if (props.portals.length) draw(); });
-watch(minEdge, () => { if (props.portals.length) draw(); });
+watch(
+  () => props.portals,
+  () => {
+    if (props.portals.length) draw();
+  },
+);
+watch(minEdge, () => {
+  if (props.portals.length) draw();
+});
 
 onMounted(() => {
   if (props.portals.length) draw();

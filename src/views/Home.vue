@@ -3,16 +3,25 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
-        <div class="hero-badge">PhD Research &middot; TU Dresden &middot; 2012–2017</div>
+        <div class="hero-badge">
+          PhD Research &middot; TU Dresden &middot; 2012–2017
+        </div>
         <h1>Designing Video Interfaces</h1>
-        <p class="hero-lead">Interaction Design Patterns for Video Learning Environments</p>
+        <p class="hero-lead">
+          Interaction Design Patterns for Video Learning Environments
+        </p>
         <p class="hero-desc">
-          A research-based catalogue of 42 interaction design patterns and 121 analysed video
-          learning environments — grounded in empirical evaluation and years of field study.
+          A research-based catalogue of 42 interaction design patterns and 121
+          analysed video learning environments — grounded in empirical
+          evaluation and years of field study.
         </p>
         <div class="cta-buttons">
-          <router-link to="/patterns" class="btn btn-primary">Browse Design Patterns</router-link>
-          <router-link to="/portals" class="btn btn-secondary">Explore Environments</router-link>
+          <router-link to="/patterns" class="btn btn-primary"
+            >Browse Design Patterns</router-link
+          >
+          <router-link to="/portals" class="btn btn-secondary"
+            >Explore Environments</router-link
+          >
         </div>
       </div>
     </section>
@@ -44,21 +53,26 @@
       <div class="container">
         <h2>Explore the Collection</h2>
         <div class="feature-grid">
-
           <router-link to="/patterns" class="feature-card feature-card--link">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="3" y="3" width="7" height="7" rx="1"/>
-                <rect x="14" y="3" width="7" height="7" rx="1"/>
-                <rect x="3" y="14" width="7" height="7" rx="1"/>
-                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
               </svg>
             </div>
             <h3>Design Patterns</h3>
             <p>
-              42 interaction design patterns organised at Micro and Macro levels across six
-              functional groups. Each pattern documents context, problem, forces, solution,
-              consequences, and real-world examples with screenshots.
+              42 interaction design patterns organised at Micro and Macro levels
+              across six functional groups. Each pattern documents context,
+              problem, forces, solution, consequences, and real-world examples
+              with screenshots.
             </p>
             <ul class="feature-highlights">
               <li>Pattern selection wizard</li>
@@ -70,17 +84,26 @@
 
           <router-link to="/portals" class="feature-card feature-card--link">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="2" y="4" width="20" height="14" rx="2"/>
-                <polygon points="10,9 10,15 15,12" fill="currentColor" stroke="none"/>
-                <line x1="8" y1="20" x2="16" y2="20"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <rect x="2" y="4" width="20" height="14" rx="2" />
+                <polygon
+                  points="10,9 10,15 15,12"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <line x1="8" y1="20" x2="16" y2="20" />
               </svg>
             </div>
             <h3>Video Learning Environments</h3>
             <p>
-              121 video learning environments collected, categorised, and examined for their
-              design choices. Browse sortable tables, full screenshot galleries, and detailed
-              portal pages.
+              121 video learning environments collected, categorised, and
+              examined for their design choices. Browse sortable tables, full
+              screenshot galleries, and detailed portal pages.
             </p>
             <ul class="feature-highlights">
               <li>Sortable &amp; filterable table view</li>
@@ -91,18 +114,24 @@
 
           <router-link to="/analysis" class="feature-card feature-card--link">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <line x1="4" y1="20" x2="4" y2="4"/>
-                <line x1="4" y1="20" x2="20" y2="20"/>
-                <rect x="7" y="12" width="3" height="8" rx="0.5"/>
-                <rect x="12" y="7" width="3" height="13" rx="0.5"/>
-                <rect x="17" y="10" width="3" height="10" rx="0.5"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <line x1="4" y1="20" x2="4" y2="4" />
+                <line x1="4" y1="20" x2="20" y2="20" />
+                <rect x="7" y="12" width="3" height="8" rx="0.5" />
+                <rect x="12" y="7" width="3" height="13" rx="0.5" />
+                <rect x="17" y="10" width="3" height="10" rx="0.5" />
               </svg>
             </div>
             <h3>Pattern Analysis</h3>
             <p>
-              Frequency charts, co-occurrence tables, and a force-directed network showing
-              how patterns cluster and co-appear across the 121 environments.
+              Frequency charts, co-occurrence tables, and a force-directed
+              network showing how patterns cluster and co-appear across the 121
+              environments.
             </p>
             <ul class="feature-highlights">
               <li>Pattern frequency bar charts</li>
@@ -110,7 +139,6 @@
               <li>Group-level clustering</li>
             </ul>
           </router-link>
-
         </div>
       </div>
     </section>
@@ -121,32 +149,55 @@
         <div class="research-text">
           <h2>About the Research</h2>
           <p>
-            <em>Designing Video Interfaces</em> is the result of a PhD project at
-            <strong>Technische Universität Dresden</strong>. Data collection and pattern
-            elaboration was completed in March 2017. The author, <strong>Niels Seidel</strong>,
-            is a researcher in interaction design and distance learning, currently at
-            CATALPA — Center of Advanced Technology for Assisted Learning and Predictive
-            Analytics at FernUniversität Hagen.
+            <em>Designing Video Interfaces</em> is the result of a PhD project
+            at <strong>Technische Universität Dresden</strong>. Data collection
+            and pattern elaboration was completed in March 2017. The author,
+            <strong>Niels Seidel</strong>, is a researcher in interaction design
+            and distance learning, currently at CATALPA — Center of Advanced
+            Technology for Assisted Learning and Predictive Analytics at
+            FernUniversität Hagen.
           </p>
-          <router-link to="/about" class="btn btn-outline">More about the project</router-link>
+          <router-link to="/about" class="btn btn-outline"
+            >More about the project</router-link
+          >
         </div>
         <div class="research-pubs">
           <h3>Key Publications</h3>
           <ul>
             <li>
-              Seidel, N. (2018). <em>Interaction Design Patterns und CSCL-Scripts für Videolernumgebungen.</em>
+              Seidel, N. (2018).
+              <em
+                >Interaction Design Patterns und CSCL-Scripts für
+                Videolernumgebungen.</em
+              >
               TU Dresden.
-              <a href="http://nbn-resolving.de/urn:nbn:de:bsz:14-qucosa-233756" target="_blank" rel="noopener">Thesis</a>
+              <a
+                href="http://nbn-resolving.de/urn:nbn:de:bsz:14-qucosa-233756"
+                target="_blank"
+                rel="noopener"
+                >Thesis</a
+              >
             </li>
             <li>
-              Seidel, N. (2017). <em>Empirical Evaluation Methods for Pattern Languages.</em>
+              Seidel, N. (2017).
+              <em>Empirical Evaluation Methods for Pattern Languages.</em>
               EuroPLoP 2017.
-              <a href="http://doi.org/10.1145/3147704.3147719" target="_blank" rel="noopener">DOI</a>
+              <a
+                href="http://doi.org/10.1145/3147704.3147719"
+                target="_blank"
+                rel="noopener"
+                >DOI</a
+              >
             </li>
             <li>
               Seidel, N. (2016). <em>Video Assessment Patterns.</em>
               EuroPLoP 2016.
-              <a href="http://doi.org/10.1145/3011784.3011820" target="_blank" rel="noopener">DOI</a>
+              <a
+                href="http://doi.org/10.1145/3011784.3011820"
+                target="_blank"
+                rel="noopener"
+                >DOI</a
+              >
             </li>
           </ul>
         </div>
@@ -238,7 +289,9 @@
   font-weight: 500;
   display: inline-block;
   margin-top: 1rem;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .btn-outline:hover {
@@ -318,7 +371,10 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
 }
 
 .feature-card--link:hover {
@@ -372,7 +428,7 @@
 }
 
 .feature-highlights li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: #3b82f6;

@@ -65,8 +65,8 @@
         <p class="section-desc">
           Nodes are design patterns (sized by frequency, colored by category).
           Edges connect patterns that appear together in the same learning
-          environment — the thicker the line, the more co-occurrences.
-          Drag nodes, scroll to zoom.
+          environment — the thicker the line, the more co-occurrences. Drag
+          nodes, scroll to zoom.
         </p>
         <PatternNetwork
           :portals="portals"
