@@ -112,11 +112,9 @@
   font-weight: bold;
   color: white;
   text-decoration: none;
-  transition: opacity 0.3s;
 }
 
 .navbar-brand:hover {
-  opacity: 0.8;
 }
 
 .nav-menu {
@@ -128,15 +126,14 @@
 .nav-menu a {
   color: white;
   text-decoration: none;
-  transition: opacity 0.3s;
 }
 
 .nav-menu a:hover {
-  opacity: 0.8;
+  border-bottom: 2px solid #fff;
 }
 
 .nav-menu a.router-link-active {
-  border-bottom: 2px solid #003366;
+  border-bottom: 2px solid #fff;
 }
 
 main {
