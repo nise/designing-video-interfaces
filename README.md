@@ -86,6 +86,8 @@ python3 -m http.server 3004 --directory dist
 
 > **Note:** You cannot open `dist/index.html` directly via `file://` — the browser blocks `fetch()` calls due to CORS restrictions. Always use an HTTP server.
 
+As soon as code is pushed to the main branch, a new version of the page is compiled for GitHub Pages.
+
 ## Data Export
 
 The JSON files in `public/data/` are exports from a MongoDB database. To refresh them from the running backend:
@@ -124,7 +126,7 @@ This software uses the following open source packages: [Vue.js 3](https://vuejs.
 
 ```bibtex
 @book{Seidel2017-diss,
-  title = {Interaction {{Design Patterns}} Und {{CSCL-Scripts}} Für {{Videolernumgebungen}}},
+  title = {Interaction {{Design Patterns}} und {{CSCL-Scripts}} Für {{Videolernumgebungen}}},
   author = {Seidel, Niels},
   date = {2018},
   publisher = {Technische Universität Dresden},
