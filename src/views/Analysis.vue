@@ -60,6 +60,22 @@
         </div>
       </section>
 
+      <section class="network-section">
+        <h2>Pattern Co-occurrence Network</h2>
+        <p class="section-desc">
+          Nodes are design patterns (sized by frequency, colored by category).
+          Edges connect patterns that appear together in the same learning
+          environment — the thicker the line, the more co-occurrences.
+          Drag nodes, scroll to zoom.
+        </p>
+        <PatternNetwork
+          :portals="portals"
+          :pattern-group="PATTERN_GROUP"
+          :group-color="GROUP_COLOR"
+          :pattern-counts="patternCounts"
+        />
+      </section>
+
       <section class="cooccurrence-section">
         <h2>Most Frequent Pattern Combinations</h2>
         <p class="section-desc">
@@ -102,6 +118,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { slugify } from "../composables/utils.js";
+import PatternNetwork from "../components/PatternNetwork.vue";
 
 // Pattern → category mapping (derived from original analysisStructs.js)
 const PATTERN_GROUP = {
@@ -362,6 +379,16 @@ const topCoOccurrences = computed(() => {
 .bar-pct {
   color: #999;
   font-size: 0.78rem;
+}
+
+/* Network */
+.network-section {
+  margin-bottom: 3rem;
+}
+
+.network-section h2 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
 }
 
 /* Co-occurrence table */
