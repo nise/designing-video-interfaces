@@ -15,21 +15,7 @@
       <span class="ctrl-hint">{{ visibleEdges }} connections shown</span>
     </div>
 
-    <svg ref="svgEl" class="network-svg">
-      <defs>
-        <marker
-          id="arrow"
-          viewBox="0 -5 10 10"
-          refX="10"
-          refY="0"
-          markerWidth="6"
-          markerHeight="6"
-          orient="auto"
-        >
-          <path d="M0,-5L10,0L0,5" fill="#aaa" />
-        </marker>
-      </defs>
-    </svg>
+    <svg ref="svgEl" class="network-svg"></svg>
 
     <!-- Tooltip -->
     <div
@@ -39,18 +25,6 @@
     >
       <strong>{{ tooltip.title }}</strong>
       <span v-if="tooltip.sub">{{ tooltip.sub }}</span>
-    </div>
-
-    <!-- Legend -->
-    <div class="network-legend">
-      <div
-        v-for="(color, group) in groupColor"
-        :key="group"
-        class="legend-item"
-      >
-        <span class="legend-dot" :style="{ background: color }"></span>
-        {{ group }}
-      </div>
     </div>
   </div>
 </template>
@@ -68,12 +42,12 @@ const props = defineProps({
 
 const svgEl = ref(null);
 const container = ref(null);
-const minEdge = ref(10);
+const minEdge = ref(3);
 const tooltip = ref({ visible: false, x: 0, y: 0, title: "", sub: "" });
 
 let simulation = null;
 
-// Compute all co-occurrence pairs once from portals
+// All co-occurrence counts computed from portals
 const allPairs = computed(() => {
   const pairs = {};
   props.portals.forEach((portal) => {
@@ -96,9 +70,19 @@ const maxPossibleEdge = computed(() => {
 });
 
 const visibleEdges = computed(
-  () =>
-    Object.values(allPairs.value).filter((c) => c >= minEdge.value).length,
+  () => Object.values(allPairs.value).filter((c) => c >= minEdge.value).length,
 );
+
+// Group cluster positions as fractions of (width, height)
+// Arranged in a 3-wide × 2-tall ring
+const GROUP_POS = {
+  "Basic Functions":    { fx: 0.18, fy: 0.28 },
+  "Temporal Access":    { fx: 0.50, fy: 0.14 },
+  "Contribution":       { fx: 0.82, fy: 0.28 },
+  "Structuring":        { fx: 0.82, fy: 0.72 },
+  "Self-organization":  { fx: 0.50, fy: 0.86 },
+  "Layout":             { fx: 0.18, fy: 0.72 },
+};
 
 function draw() {
   if (!props.portals.length || !svgEl.value) return;
@@ -108,16 +92,23 @@ function draw() {
   if (simulation) simulation.stop();
 
   const width = container.value?.clientWidth || 900;
-  const height = 600;
+  const height = 700;
   svg.attr("width", width).attr("height", height);
 
-  // Build graph data
+  // Build nodes — all patterns that appear in portals
   const patternNames = Object.keys(props.patternCounts);
-  const nodes = patternNames.map((name) => ({
-    id: name,
-    group: props.patternGroup[name] || "Other",
-    count: props.patternCounts[name] || 0,
-  }));
+  const nodes = patternNames.map((name) => {
+    const group = props.patternGroup[name] || "Other";
+    const pos = GROUP_POS[group] || { fx: 0.5, fy: 0.5 };
+    return {
+      id: name,
+      group,
+      count: props.patternCounts[name] || 0,
+      // initial position near group centroid with jitter
+      x: pos.fx * width + (Math.random() - 0.5) * 80,
+      y: pos.fy * height + (Math.random() - 0.5) * 80,
+    };
+  });
 
   const links = Object.entries(allPairs.value)
     .filter(([, c]) => c >= minEdge.value)
@@ -131,23 +122,50 @@ function draw() {
   const strokeScale = d3
     .scaleLinear()
     .domain([minEdge.value, maxCount])
-    .range([1, 14])
+    .range([0.8, 12])
+    .clamp(true);
+
+  const opacityScale = d3
+    .scaleLinear()
+    .domain([minEdge.value, maxCount])
+    .range([0.25, 0.85])
     .clamp(true);
 
   const maxNodeCount = d3.max(nodes, (d) => d.count) || 1;
-  const radiusScale = d3
-    .scaleSqrt()
-    .domain([0, maxNodeCount])
-    .range([6, 22]);
+  const radiusScale = d3.scaleSqrt().domain([0, maxNodeCount]).range([5, 20]);
 
-  // Zoom/pan layer
+  // Zoom/pan
   const g = svg.append("g");
   svg.call(
     d3
       .zoom()
-      .scaleExtent([0.3, 4])
+      .scaleExtent([0.25, 5])
       .on("zoom", (e) => g.attr("transform", e.transform)),
   );
+
+  // Group label rings (drawn first, behind everything)
+  const groupLabelData = Object.entries(GROUP_POS).map(([name, pos]) => ({
+    name,
+    x: pos.fx * width,
+    y: pos.fy * height,
+    color: props.groupColor[name] || "#999",
+  }));
+
+  g.append("g")
+    .attr("class", "group-labels")
+    .selectAll("text")
+    .data(groupLabelData)
+    .join("text")
+    .attr("x", (d) => d.x)
+    .attr("y", (d) => d.y)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .attr("font-weight", "600")
+    .attr("fill", (d) => d.color)
+    .attr("opacity", 0.35)
+    .attr("pointer-events", "none")
+    .style("user-select", "none")
+    .text((d) => d.name);
 
   // Links
   const linkSel = g
@@ -156,26 +174,28 @@ function draw() {
     .selectAll("line")
     .data(links)
     .join("line")
-    .attr("stroke", "#c8d3e0")
-    .attr("stroke-opacity", 0.7)
+    .attr("stroke", "#94a3b8")
+    .attr("stroke-opacity", (d) => opacityScale(d.count))
     .attr("stroke-width", (d) => strokeScale(d.count))
     .attr("stroke-linecap", "round")
     .style("cursor", "default")
     .on("mouseover", (event, d) => {
-      d3.select(event.currentTarget).attr("stroke", "#666").attr("stroke-opacity", 1);
-      showTooltip(
-        event,
-        `${d.source.id ?? d.source} ↔ ${d.target.id ?? d.target}`,
-        `${d.count} co-occurrences`,
-      );
+      d3.select(event.currentTarget)
+        .attr("stroke", "#334155")
+        .attr("stroke-opacity", 1);
+      const srcId = d.source.id ?? d.source;
+      const tgtId = d.target.id ?? d.target;
+      showTooltip(event, `${srcId} ↔ ${tgtId}`, `${d.count} co-occurrences`);
     })
     .on("mousemove", moveTooltip)
-    .on("mouseout", (event) => {
-      d3.select(event.currentTarget).attr("stroke", "#c8d3e0").attr("stroke-opacity", 0.7);
+    .on("mouseout", (event, d) => {
+      d3.select(event.currentTarget)
+        .attr("stroke", "#94a3b8")
+        .attr("stroke-opacity", opacityScale(d.count));
       hideTooltip();
     });
 
-  // Node group
+  // Node groups (circle + label)
   const nodeSel = g
     .append("g")
     .attr("class", "nodes")
@@ -202,31 +222,43 @@ function draw() {
         }),
     )
     .on("mouseover", (event, d) => {
-      showTooltip(event, d.id, `Used by ${d.count} environments · ${d.group}`);
+      d3.select(event.currentTarget)
+        .select("circle")
+        .attr("stroke", "#0f172a")
+        .attr("stroke-width", 3);
+      showTooltip(
+        event,
+        d.id,
+        `${d.count} environments · ${d.group}`,
+      );
     })
     .on("mousemove", moveTooltip)
-    .on("mouseout", hideTooltip);
+    .on("mouseout", (event) => {
+      d3.select(event.currentTarget)
+        .select("circle")
+        .attr("stroke", "white")
+        .attr("stroke-width", 2);
+      hideTooltip();
+    });
 
-  // Circles
   nodeSel
     .append("circle")
     .attr("r", (d) => radiusScale(d.count))
-    .attr("fill", (d) => props.groupColor[d.group] || "#999")
+    .attr("fill", (d) => props.groupColor[d.group] || "#94a3b8")
     .attr("stroke", "white")
     .attr("stroke-width", 2);
 
-  // Labels
   nodeSel
     .append("text")
     .text((d) => d.id)
     .attr("text-anchor", "middle")
-    .attr("dy", (d) => radiusScale(d.count) + 11)
-    .attr("font-size", "9px")
-    .attr("fill", "#333")
+    .attr("dy", (d) => radiusScale(d.count) + 10)
+    .attr("font-size", "8.5px")
+    .attr("fill", "#1e293b")
     .attr("pointer-events", "none")
     .style("user-select", "none");
 
-  // Force simulation
+  // Force simulation with group clustering
   simulation = d3
     .forceSimulation(nodes)
     .force(
@@ -234,14 +266,32 @@ function draw() {
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance(80)
-        .strength(0.4),
+        .distance(60)
+        .strength(0.25),
     )
-    .force("charge", d3.forceManyBody().strength(-250))
-    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("charge", d3.forceManyBody().strength(-180))
     .force(
       "collide",
-      d3.forceCollide((d) => radiusScale(d.count) + 14),
+      d3.forceCollide((d) => radiusScale(d.count) + 12),
+    )
+    // Pull each node toward its group centroid
+    .force(
+      "x",
+      d3
+        .forceX((d) => {
+          const pos = GROUP_POS[d.group] || { fx: 0.5 };
+          return pos.fx * width;
+        })
+        .strength(0.18),
+    )
+    .force(
+      "y",
+      d3
+        .forceY((d) => {
+          const pos = GROUP_POS[d.group] || { fy: 0.5 };
+          return pos.fy * height;
+        })
+        .strength(0.18),
     )
     .on("tick", () => {
       linkSel
@@ -257,33 +307,27 @@ function showTooltip(event, title, sub) {
   const rect = container.value.getBoundingClientRect();
   tooltip.value = {
     visible: true,
-    x: event.clientX - rect.left + 12,
-    y: event.clientY - rect.top - 10,
+    x: event.clientX - rect.left + 14,
+    y: event.clientY - rect.top - 12,
     title,
     sub,
   };
 }
-
 function moveTooltip(event) {
   const rect = container.value.getBoundingClientRect();
-  tooltip.value.x = event.clientX - rect.left + 12;
-  tooltip.value.y = event.clientY - rect.top - 10;
+  tooltip.value.x = event.clientX - rect.left + 14;
+  tooltip.value.y = event.clientY - rect.top - 12;
 }
-
 function hideTooltip() {
   tooltip.value.visible = false;
 }
 
-watch(
-  () => [props.portals, minEdge.value],
-  () => draw(),
-  { deep: false },
-);
+watch(() => props.portals, () => { if (props.portals.length) draw(); });
+watch(minEdge, () => { if (props.portals.length) draw(); });
 
 onMounted(() => {
   if (props.portals.length) draw();
 });
-
 onUnmounted(() => {
   if (simulation) simulation.stop();
 });
@@ -322,7 +366,7 @@ onUnmounted(() => {
 }
 
 .ctrl-range {
-  width: 120px;
+  width: 130px;
   accent-color: #1e3a8a;
 }
 
@@ -340,45 +384,16 @@ onUnmounted(() => {
 
 .network-tooltip {
   position: absolute;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.92);
   color: white;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 5px;
   font-size: 0.82rem;
   pointer-events: none;
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  max-width: 240px;
+  max-width: 260px;
   z-index: 10;
-  white-space: nowrap;
-}
-
-.network-legend {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 6px;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.78rem;
-  color: #444;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
 }
 </style>
