@@ -2,6 +2,8 @@
 
 _Designing Video Interfaces_ is a web applications for exploring interaction design patterns and video learning environments documented in Niels Seidel's PhD research.
 
+See demo: [https://nise.github.io/designing-video-interfaces/](https://nise.github.io/designing-video-interfaces/)
+
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/CATALPAresearch/video-patterns/commit-activity)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-green.svg)](http://perso.crans.org/besson/LICENSE.html)
 ![](https://img.shields.io/badge/vue.js-3-green)

@@ -257,7 +257,7 @@ onUnmounted(() => {
 }
 
 .table thead {
-  background: #f3f4f6;
+  background-color: #fff;
   border-bottom: 2px solid #1e3a8a;
 }
 
